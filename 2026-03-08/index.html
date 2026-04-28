@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-03-08 · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.CAysBO01.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <header class="max-w-[700px] mx-auto px-6 py-8 flex items-center justify-between"> <a href="/digest/" class="font-mono text-sm text-[#888] hover:text-accent transition-colors">
+digest /
+</a> <nav class="flex gap-6 text-sm text-[#888]"> <a href="/digest/" class="hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="hover:text-accent transition-colors">posts</a> </nav> </header> <main class="max-w-[700px] mx-auto px-6 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← home</a> </div> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl prose-h1:font-medium
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888] prose-h2:border-b prose-h2:border-[#f0f0f0]
+    prose-h3:text-base prose-h3:font-semibold prose-h3:animate-on-scroll
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+    prose-strong:font-semibold
+    [&_blockquote]:border-l-4 [&_blockquote]:border-accent [&_blockquote]:bg-[#f5f3ff] [&_blockquote]:px-4 [&_blockquote]:py-2 [&_blockquote]:rounded-r-md
+  "><h1>2026-03-08 ダイジェスト</h1>
+<h2>技術・エンジニアリング</h2>
+<h3>Claude Code v2.1.71 — /loop・cron・エコシステム爆発</h3>
+<ul>
+<li><strong>Claude Code v2.1.71リリース</strong>: /loop（定期実行コマンド）、cronスケジューリング、音声操作拡張、プラグイン管理改善。<a href="https://qiita.com/NaokiIshimura/items/42c99337a5825bde01fb">Qiita</a></li>
+<li><strong>Everything Claude Code (ECC) ★65,000超</strong>: Claude Code拡張システムの実践ガイドがZennで公開。計画→実装→レビュー→テストを仕組み化。<a href="https://zenn.dev/haboshi/articles/everything-claude-code-guide">Zenn</a></li>
+<li><strong>GSD (GET Shit Done)</strong>: Claude Code/Codexの弱点（状態管理・信頼性低下）を解決するOSS。Xで114K Views。<a href="https://zenn.dev/komlock_lab/articles/gsd-guide-handson">Zenn</a></li>
+<li><strong>Claude Code 3ヶ月自律運用の記録</strong>: 800 Feature超の設計・レビュー・実装・テストをAIに委譲。「信頼するが検証する」運用設計の実践知。<a href="https://zenn.dev/glanlion/articles/ai-driven-dev-800-features">Zenn</a></li>
+<li><strong>CLAUDE.md 634行で壊れた話</strong>: コンテキスト肥大化の実害とリファクタリング手法。<a href="https://qiita.com/murata-seiji/items/a218569ae0d6acfb8263">Qiita</a></li>
+<li><strong>Claude Code安全設計系</strong>: .env保護ベストプラクティス、Hooksによる機密ファイル保護、コンテキスト渡し方の実測比較。<a href="https://zenn.dev/caen/articles/aa1359184dfef2">Zenn</a> / <a href="https://zenn.dev/zhaojiayi/articles/83431a9cf72487">Zenn</a> / <a href="https://zenn.dev/mkxxx/articles/7eca831888e283">Zenn</a></li>
+<li><strong>Golf Scanner</strong>: MCPサーバーを発見・監査するOSSツール（YC X25）。<a href="https://github.com/golf-mcp/golf-scanner">GitHub</a></li>
+<li><strong>apc-cli</strong>: Claude Code/Cursor/Copilot間のAIメモリ同期ツール。<a href="https://github.com/FZ2000/apc-cli">GitHub</a></li>
+<li><strong>PolyClaude</strong>: 数学的最適化でClaude Codeのレート制限を回避するローテーションツール。HN注目。<a href="https://github.com/ArmanJR/PolyClaude">GitHub</a></li>
+<li><strong>Strata</strong>: エントロピーベースでClaude Code読み取りコストを31-43%削減。<a href="https://github.com/noopz/strata">GitHub</a></li>
+</ul>
+<h3>AIモデル・LLMリリース</h3>
+<ul>
+<li><strong>GPT-5.3 Instant</strong>: リアルタイムアプリ向け低レイテンシ特化モデル。音声アシスタント・ライブコパイロット用途。<a href="https://www.emergingtechdaily.com/post/gpt-5-release-2026-dates-gpt-5-3-updates">emergingtechdaily.com</a></li>
+<li><strong>Gemini 3.1 Pro</strong>: 1Mトークンコンテキスト、ARC-AGI-2で77.1%。Flash-Liteは$0.25/100万入力トークン。<a href="https://llm-stats.com/llm-updates">llm-stats.com</a></li>
+<li><strong>Qwen 3.5 Small</strong>: スマホ・ノートPC上でローカル動作。Qwen 3 Maxはオープンソース首位スコア。DGX Sparkでの速度比較記事も。<a href="https://www.theneurondaily.com/p/openai-gemini-qwen-new-models">theneurondaily.com</a> / <a href="https://zenn.dev/nooop/articles/e3b39acee3ae55">Zenn</a></li>
+<li><strong>Steerling-8B</strong>: 全トークンの出力根拠を訓練データまで追跡可能な解釈可能LLM。<a href="https://techcrunch.com/2026/02/23/guide-labs-debuts-a-new-kind-of-interpretable-llm/">TechCrunch</a></li>
+<li><strong>Fundamental NEXUS</strong>: 構造化企業データ専用テーブルモデル（$255M Series A）。<a href="https://medium.com/@martinkeywood/llm-lowdown-weekly-march-2-2026-c85f0174f7dd">Medium</a></li>
+</ul>
+<h3>その他技術</h3>
+<ul>
+<li><strong>Karpathy autoresearch</strong>: 単GPU nanochat自動研究。HN 142pt。<a href="https://github.com/karpathy/autoresearch">GitHub</a></li>
+<li><strong>SWE-CI</strong>: AIエージェントのCI保守能力ベンチマーク。HN 84pt。<a href="https://arxiv.org/abs/2603.03823">arxiv</a></li>
+<li><strong>Eyot</strong>: GPUをスレッドとして扱うプログラミング言語。HN 32pt。<a href="https://cowleyforniastudios.com/2026/03/08/announcing-eyot/">cowleyforniastudios.com</a></li>
+<li><strong>Sem</strong>: エンティティレベルdiff on Git。HN 46pt。<a href="https://github.com/ataraxy-labs/sem">GitHub</a></li>
+<li><strong>PS5へのLinux移植→Steam Machine化</strong>: HN 87pt。<a href="https://xcancel.com/theflow0/status/2030011206040256841">xcancel.com</a></li>
+<li><strong>Apple 512GB Mac Studio消滅</strong>: RAM不足の静かな認定。HN 173pt。<a href="https://arstechnica.com/gadgets/2026/03/apples-512gb-mac-studio-vanishes-a-quiet-acknowledgement-of-the-ram-shortage/">Ars Technica</a></li>
+<li><strong>PyPyがメンテナンス停止状態</strong>: uv PRで警告追加。HN 249pt。<a href="https://github.com/astral-sh/uv/pull/17643">GitHub</a></li>
+<li><strong>Trawl</strong>: 自然言語フィールドでスクレイピング（CSSセレクタ不要）。<a href="https://github.com/akdavidsson/trawl">GitHub</a></li>
+</ul>
+<hr>
+<h2>ビジネス・スタートアップ</h2>
+<ul>
+<li><strong>Anthropic Pentagon続報</strong>: DoD供給網リスク指定→OpenAI代替契約→ChatGPTアンインストール295%増。一方Claude消費者成長は急加速、ChatGPT超えのDAU。<a href="https://techcrunch.com/2026/03/06/claudes-consumer-growth-surge-continues-after-pentagon-deal-debacle/">TechCrunch</a></li>
+<li><strong>Wayve $1.5B調達</strong>: 自動運転AI、評価額$8.6B。<a href="https://techstartups.com/2026/03/05/top-startup-and-tech-funding-news-march-5-2025/">techstartups.com</a></li>
+<li><strong>Ayar Labs $500M（シリーズE）</strong>: 光通信チップ、NVIDIA・AMD出資。<a href="https://news.crunchbase.com/venture/biggest-funding-rounds-space-tech-sierra-ai-ayar/">Crunchbase</a></li>
+<li><strong>Grow Therapy $150M（シリーズD）</strong>: メンタルヘルスプラットフォーム、累計$328M。<a href="https://techstartups.com/2026/03/02/top-startup-and-tech-funding-news-march-2-2025/">techstartups.com</a></li>
+<li><strong>国内</strong>: Gaianixx（光通信デバイス材料）20億円、羅針盤（インバウンドツアー）14.5億円。経産省がAI・宇宙スタートアップの上場後債務保証拡充。<a href="https://www.nikkei.com/article/DGXZQOUC06A6F0W6A300C2000000/">日経</a></li>
+<li><strong>OpenAI</strong>: ロボティクス責任者Kalinowski退任（Pentagon契約への抗議）。adult mode再延期。<a href="https://techcrunch.com/2026/03/07/openai-robotics-lead-caitlin-kalinowski-quits-in-response-to-pentagon-deal/">TechCrunch</a></li>
+<li><strong>Nintendo</strong>: 米政府を関税返還で提訴（最高裁判決後）。<a href="https://techcrunch.com/2026/03/06/nintendo-sues-the-u-s-government-for-a-refund-on-tariffs/">TechCrunch</a></li>
+<li><strong>Robinhood スタートアップファンド</strong>: NYSE上場も初日は苦戦。Mercor・Ramp・Stripe等に個人投資家がアクセス可能に。<a href="https://techcrunch.com/2026/03/06/robinhoods-startup-fund-stumbles-in-nyse-debut/">TechCrunch</a></li>
+<li><strong>Sundar Pichai</strong>: $692M報酬パッケージ（Waymo・Wing連動）。<a href="https://techcrunch.com/2026/03/07/google-just-gave-sundar-pichai-a-692m-pay-package/">TechCrunch</a></li>
+</ul>
+<hr>
+<h2>投資・相場</h2>
+<ul>
+<li><strong>日経平均</strong>: 55,620円（+342円）。半導体・AI関連に物色集中。中東リスクで上値は重い</li>
+<li><strong>S&amp;P500</strong>: 6,740（-1.4%）。雇用統計ショック（-92,000人、失業率4.4%）＋原油高で下落</li>
+<li><strong>ドル円</strong>: 157-158円台。有事ドル買い＋貿易赤字拡大懸念で160円視野。佐々木融氏は年末165円シナリオ提示</li>
+<li><strong>原油</strong>: WTI $92タッチ。ホルムズ海峡リスクで$7-10プレミアム上乗せ</li>
+<li><strong>S&amp;P500リバランス</strong>: Vertiv・SoFi・Lumentumの新規組入れ観測</li>
+</ul>
+<hr>
+<h2>地政学・国際ニュース</h2>
+<ul>
+<li><strong>イラン攻撃2週目</strong>: ハメネイ師および幹部数十名死亡、イラン海軍・空軍壊滅状態。死者1,300人超。トランプ大統領は攻撃拡大を示唆。ホルムズ海峡実質閉鎖。<a href="https://www.npr.org/2026/03/07/nx-s1-5739242/iran-war-oil-trump-israel-spain-economy-one-week">NPR</a> / <a href="https://www.bloomberg.com/jp/news/articles/2026-03-07/TBIZ1NKJH6V400">Bloomberg</a></li>
+<li><strong>米スペイン対立</strong>: スペインが米軍基地の中東作戦使用を拒否→トランプが全貿易停止警告。NATO内亀裂。<a href="https://www.npr.org/2026/03/07/nx-s1-5739242/iran-war-oil-trump-israel-spain-economy-one-week">NPR</a></li>
+<li><strong>欧州ReArm Europe</strong>: 2030年まで最大8,000億ユーロの追加防衛支出。ドイツはGDP比3.5%・3,770億ユーロの軍事調達を計画。<a href="https://www.consilium.europa.eu/en/policies/european-defence-readiness/">EU Council</a></li>
+<li><strong>米関税Section 122移行</strong>: 最高裁IEEPA違憲判決後、全世界一律15%関税（150日間限定）に切替。1,300億ドル超の返還手続き開始。<a href="https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/">Tax Foundation</a></li>
+<li><strong>Foxconn会長</strong>: 「米国-イラン戦争は誰も望んでいない」。サプライチェーンへの影響を警告。<a href="https://timesofindia.indiatimes.com/technology/tech-news/foxconn-chairman-says-us-iran-war-will-impact-everyone-i-think-this-war-is-something-that-/articleshow/129142964.cms">Times of India</a></li>
+</ul>
+<hr>
+<h2>市場ペイン・ユーザー不満</h2>
+<ul>
+<li><strong>SaaS疲れ・ツール疲れ</strong>: 日本のSaaS導入企業70.6%が課題。「UX/機能のわかりづらさ46.1%」「業務フロー不一致38.1%」「相談先なし61.7%」。<a href="https://enterprisezine.jp/news/detail/14573">EnterpriseZine</a></li>
+<li><strong>「SaaSの死」加速</strong>: AIコーディング能力向上で汎用SaaSから自社AIエージェント自作へ移行。KKR株2日で8%下落。<a href="https://blogs.itmedia.co.jp/itsolutionjuku/2026/02/saasai.html">ITmedia</a> / <a href="https://www.nikkei.com/article/DGXZQOUB04CFM0U6A200C2000000/">日経</a></li>
+<li><strong>ツール導入はプロセス問題を隠すだけ</strong>: 意思決定やアカウンタビリティの欠如はツールで解決不能。<a href="https://itsdaniellethompson.medium.com/why-tools-dont-fix-operational-problems-2468382e330d">Medium</a></li>
+</ul>
+<hr>
+<h2>個人開発・MicroSaaS</h2>
+<ul>
+<li><strong>ポートフォリオ型が勝つ</strong>: 30アプリ→月$22k、学習しながら月$28kポートフォリオの事例。<a href="https://www.indiehackers.com/post/tech/from-failed-app-to-30-app-portfolio-making-22k-mo-in-less-than-a-year-myy3U7K9evxGOVOHti8s">Indie Hackers</a></li>
+<li><strong>配信が最優先</strong>: 「完璧なアーキテクチャ2ヶ月→顧客ゼロ」が典型失敗。SEO/メールリスト/PLGを先に確保。<a href="https://meysam.io/blog/my-2025-in-retrospect/">meysam.io</a></li>
+<li><strong>MicroSaaS市場の現実</strong>: 70%は月$1,000未満。$50,000/月超は1-2%。<a href="https://medium.com/startup-insider-edge/the-100k-mrr-illusion-5-micro-saas-founders-proving-its-possible-and-how-they-did-it-c3571dd336b3">Medium</a></li>
+<li><strong>AIが参入障壁を破壊</strong>: 差別化は「課題選定」と「配信」に完全シフト。<a href="https://www.thesuccessfulprojects.com/indie-hackers-build-saas-with-no-code-and-ai/">thesuccessfulprojects.com</a></li>
+<li><strong>日本</strong>: B向け小規模ツール+サブスクが再現性高い。M&amp;A（収益2年分）も出口として定着。<a href="https://note.com/bubecode/n/nb90768350a20">note.com</a></li>
+</ul>
+<hr>
+<h2>SEO・Web動向</h2>
+<ul>
+<li><strong>Google Discover Coreアップデート（2月）</strong>: 英語圏先行、全言語に拡大予定。<a href="https://developers.google.com/search/blog/2026/02/discover-core-update">developers.google.com</a></li>
+<li><strong>インテント不一致の厳格化</strong>: キーワード上位でも検索意図を満たさないページは急速に順位下落。<a href="https://bestow.in/google-algorithm-updates-2026-for-marketers">bestow.in</a></li>
+<li><strong>GEO（AI検索最適化）が必須に</strong>: AI Overviewでの引用がブランド指名検索のトリガー化。<a href="https://blog.formzu.com/seo-strategy-2026">blog.formzu.com</a></li>
+</ul>
+<hr>
+<h2>税務・法律</h2>
+<ul>
+<li><strong>インボイス2割特例→3割特例</strong>: 2026年9月終了→10月から個人事業主のみ3割特例。仕入税額控除は80%→70%(2026/10)→50%→30%→0%(2031/10)。<a href="https://www.yamada-partners.jp/tax-topics/r080126">yamada-partners.jp</a></li>
+<li><strong>少額減価償却資産特例</strong>: 30万円未満一括経費計上の期限が2026年3月31日。今月中の取得が有利。<a href="https://sogyotecho.jp/hukugyou-keihi/">sogyotecho.jp</a></li>
+<li><strong>法人化ライン</strong>: 課税所得800-900万円超 or 年間売上1,000万円超が目安。<a href="https://m-assets.com/lp/online/blog/freelance-incorporation-timing">m-assets.com</a></li>
+</ul>
+<hr>
+<h2>健康・ウェルネス</h2>
+<ul>
+<li><strong>Sinclair教授「老化逆転」臨床試験準備中</strong>: エピジェネティック再プログラミング療法。<a href="https://www.worldgovernmentssummit.org/media-hub/news/detail/ageing-could-soon-be-reversible-says-harvard-scientist-at-wgs-2026">WGS</a></li>
+<li><strong>長寿研究</strong>: 単一経路→「システム間協調」（代謝・免疫・ミトコンドリア・腸内細菌）へ。Healthspan重視。<a href="https://lifexresearch.com/exploring-emerging-longevity-research-trends-for-2026/">lifexresearch.com</a></li>
+<li><strong>バイオハッキング「シンプル回帰」</strong>: 睡眠時刻の安定性、回復重視。GLP-1経口版・パッチなど新剤形普及。<a href="https://daveasprey.com/2026-biohacking-trends-report/">daveasprey.com</a></li>
+</ul>
+<hr>
+<h2>事業チャンス候補</h2>
+<table>
+<thead>
+<tr>
+<th>タイトル</th>
+<th>根拠</th>
+<th>難易度</th>
+<th>移動済み</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SaaS疲れ解消コンサル/ガイド（日本語）</td>
+<td>導入企業70%課題・「SaaSの死」・相談先なし61.7%</td>
+<td>低</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>AIエージェント自作テンプレート販売</td>
+<td>SaaS→自作AIツール移行トレンド・Claude Code ECC★65k</td>
+<td>低</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>インボイス3割特例シミュレーター</td>
+<td>10月制度変更・2割特例終了・既存ideas.mdと連動</td>
+<td>低</td>
+<td>[ ]</td>
+</tr>
+</tbody></table>
+</article>  </main> <script type="module">const r=new IntersectionObserver(e=>{e.forEach(s=>{s.isIntersecting&&(s.target.classList.add("visible"),r.unobserve(s.target))})},{threshold:.1});function t(){document.querySelectorAll(".animate-on-scroll").forEach(e=>{e.classList.remove("visible"),r.observe(e)})}t();document.addEventListener("astro:page-load",t);</script></body></html>

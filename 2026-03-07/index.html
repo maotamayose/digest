@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-03-07 · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.CAysBO01.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <header class="max-w-[700px] mx-auto px-6 py-8 flex items-center justify-between"> <a href="/digest/" class="font-mono text-sm text-[#888] hover:text-accent transition-colors">
+digest /
+</a> <nav class="flex gap-6 text-sm text-[#888]"> <a href="/digest/" class="hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="hover:text-accent transition-colors">posts</a> </nav> </header> <main class="max-w-[700px] mx-auto px-6 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← home</a> </div> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl prose-h1:font-medium
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888] prose-h2:border-b prose-h2:border-[#f0f0f0]
+    prose-h3:text-base prose-h3:font-semibold prose-h3:animate-on-scroll
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+    prose-strong:font-semibold
+    [&_blockquote]:border-l-4 [&_blockquote]:border-accent [&_blockquote]:bg-[#f5f3ff] [&_blockquote]:px-4 [&_blockquote]:py-2 [&_blockquote]:rounded-r-md
+  "><h1>2026-03-07 ダイジェスト</h1>
+<h2>技術・エンジニアリング</h2>
+<h3>Claude Code エコシステム急拡大</h3>
+<ul>
+<li><strong>Claude がFirefoxで22件の脆弱性発見</strong>: AnthropicとMozillaのセキュリティ連携。14件が高深刻度。HN 309pt。<a href="https://techcrunch.com/2026/03/06/anthropics-claude-found-22-vulnerabilities-in-firefox-over-two-weeks/">TechCrunch</a> / <a href="https://www.anthropic.com/news/mozilla-firefox-security">Anthropic</a></li>
+<li><strong>Claude Code 本番DB誤削除事件</strong>: TerraformコマンドでDB消去。HN 107pt/112コメント。AIの不可逆操作問題が再注目。Zennでpreflight-gate設計（AI不可逆操作を複数AIクロスレビューで防ぐ）も同日公開。<a href="https://twitter.com/Al_Grigor/status/2029889772181934425">Twitter</a> / <a href="https://zenn.dev/sei_ai_lab/articles/ai-agent-preflight-gate-safety">Zenn</a></li>
+<li><strong>Claude Code for IntelliJ Beta リリース</strong>: JetBrainsプラグイン。<a href="https://plugins.jetbrains.com/plugin/27310-claude-code-beta-">JetBrains Marketplace</a></li>
+<li><strong>claude-forge ★419</strong>: oh-my-zshインスパイアのClaude Codeプラグインフレームワーク（11 AIエージェント・36コマンド・15スキル・6層セキュリティフック）。<a href="https://github.com/sangrokjung/claude-forge">GitHub</a></li>
+<li><strong>MedgeClaw ★681</strong>: 生物医学AI研究アシスタント（Claude Code + 140K科学スキル）。<a href="https://github.com/xjtulyc/MedgeClaw">GitHub</a></li>
+<li><strong>753 PR・人間コード0行でmacOSアプリ</strong>: 45日間で純AI開発でmacOSアプリを完成させた実例。<a href="https://reddit.com/r/ClaudeAI/comments/1rmns6u/">Reddit</a></li>
+<li><strong>geo-lint</strong>: GEO（Generative Engine Optimization）対応のコンテンツlinter。92ルールでAIサーチエンジン向けSEOを自動チェック。<a href="https://github.com/IJONIS/geo-lint">GitHub</a></li>
+<li><strong>TrueLine MCP</strong>: Claude CodeのEditツールがold textをtokenとして消費する問題を解決。<a href="https://www.wormbytes.ca/2026/03/04/trueline-mcp-announcement/">wormbytes.ca</a></li>
+<li><strong>Zenn日本語知見</strong>: AIが書いたコードの理解チェックゲート（GitHub Actions + Claude API）、MCPよりCLIツールがエージェントに優位という論考、Agent Teamsでスクラムチームを構成するフレームワーク</li>
+<li><strong>「Anthropic、新しいSlackを作ってくれ」</strong>: Fivetranが公開した記事がHN 215pt/194コメントの大反響。Slackの検索・通知・パフォーマンス劣化への不満が爆発。エンタープライズチャットツールの代替ニーズが再燃。<a href="https://www.fivetran.com/blog/anthropic-please-make-a-new-slack">fivetran.com</a></li>
+<li><strong>OBLITERATUS</strong>: OSSのLLM検閲除去ツール。HN 133pt/58コメント。オープンウェイトモデルの安全性ガードレール除去が技術的に容易であることを示す。<a href="https://github.com/elder-plinius/OBLITERATUS">GitHub</a></li>
+<li><strong>LLMは「受入基準」を先に定義すると最も精度が高い</strong>: HN 77pt/71コメント。プロンプト設計のベストプラクティスとして「何をもって正解とするか」を先に書くことの有効性を実証。<a href="https://blog.katanaquant.com/p/your-llm-doesnt-write-correct-code">blog.katanaquant.com</a></li>
+<li><strong>PicoClawでClaude CodeをTelegramから遠隔操作</strong>: 外出先からTelegramで指示を飛ばし、定期的にリポジトリをチェックさせる仕組み。<a href="https://qiita.com/nogataka/items/d4b6bdea821f1c43bc24">Qiita</a></li>
+<li><strong>MCPサーバーの隠れたコスト問題</strong>: 接続しているだけで毎ターントークンが消費される実測報告。Claude Code Skillsのハルシネーション問題、<code>.env</code>ファイルのAIエージェント保護設計も。<a href="https://qiita.com/kenimo49/items/ddfbf74c192c9b528df1">Qiita</a> / <a href="https://zenn.dev/aria3/articles/claude-code-skills-security">Zenn</a></li>
+<li><strong>AIエージェントのマルチセッション・マルチモデル運用が具体化</strong>: Claude Code→Codexへのタスク引き継ぎ、Grok/Gemini/Claude使い分け、マルチセッション管理ツール比較など、複数エージェント協調パターンが成熟。<a href="https://zenn.dev/maedana/articles/claude-code-multi-session-tools-comparison">Zenn</a></li>
+</ul>
+<h3>AIモデル・LLMリリース</h3>
+<ul>
+<li><strong>GPT-5.2リリース</strong>: 40万トークンコンテキスト、AIME 2025数学ベンチマーク満点。<a href="https://llm-stats.com/llm-updates">llm-stats.com</a></li>
+<li><strong>Gemini 3.1 Pro Preview</strong>: 100万トークンコンテキスト、テキスト・画像・音声・動画・コードのマルチモーダル推論。<a href="https://theagencyjournal.com/geminis-latest-sizzle-flash-lite-and-pixel-magic-from-march-2026/">theagencyjournal.com</a></li>
+<li><strong>Google Search AIモード拡張</strong>: Gemini Canvasが米国全ユーザーに開放。ドキュメント作成・カスタムツール生成がSearch上で可能。<a href="https://techcrunch.com/2026/03/04/https-techcrunch-com-2026-03-04-google-search-rolls-out-geminis-canvas-in-ai-mode-to-all-us-users/">TechCrunch</a></li>
+<li><strong>DeepSeek V4発表（3月第1週）</strong>: 兆パラメータMoEモデル、~32Bアクティブパラメータ、ネイティブマルチモーダル、100万トークンコンテキスト、Huawei Ascendチップ最適化。NVIDIAなしでフロンティアモデルを実現する中国のアプローチが加速。<a href="https://llm-stats.com/ai-news">Financial Times/llm-stats.com</a></li>
+<li><strong>GPT-5.3-Codex-Spark</strong>: コーディング特化の軽量・高速モデル。効率重視へのハードウェア戦略転換。<a href="https://llm-stats.com/llm-updates">llm-stats.com</a></li>
+<li><strong>DeepSeek-V3.2・GLM-5（744B）</strong>: OSS陣営がフロンティアモデルに迫る勢い。<a href="https://www.shakudo.io/blog/top-9-large-language-models">shakudo.io</a></li>
+</ul>
+<hr>
+<h2>ビジネス・スタートアップ</h2>
+<ul>
+<li><strong>Anthropic vs Pentagon</strong>: $200M契約失敗→OpenAIが代替契約→ChatGPTのアンインストール295%急増。スタートアップの連邦契約リスクの教訓。<a href="https://techcrunch.com/video/anthropics-pentagon-deal-is-a-cautionary-tale-for-startups-chasing-federal-contracts/">TechCrunch</a></li>
+<li><strong>Claudeの消費者成長続く</strong>: Pentagon事件後もClaude appはChatGPT超えのインストール数・DAU。<a href="https://techcrunch.com/2026/03/06/claudes-consumer-growth-surge-continues-after-pentagon-deal-debacle/">TechCrunch</a></li>
+<li><strong>OpenAI $110B調達</strong>: バリュエーション$730B（Amazon・NVIDIA・SoftBank主導）。AIをインフラとして埋め込むモデルへ。<a href="https://blog.mean.ceo/startup-funding-news-march-2026/">blog.mean.ceo</a></li>
+<li><strong>TerraPower（Bill Gates）原子炉建設許可取得</strong>: NRCが10年ぶりに発行。<a href="https://techcrunch.com/2026/03/06/bill-gates-terrapower-gets-approval-to-build-new-nuclear-reactor/">TechCrunch</a></li>
+<li><strong>Pasqal SPAC $2B</strong>: フランス量子コンピュータ企業がNasdaqへ。<a href="https://techcrunch.com/2026/03/06/quantum-scale-up-pasqal-plans-2b-spac-listing-promises-to-remain-french/">TechCrunch</a></li>
+<li><strong>WhatsApp、競合AI chatbotをブラジルでも解放</strong>: 欧州に続き拡大。Meta DMA対応。<a href="https://techcrunch.com/2026/03/06/after-europe-whatsapp-will-let-rival-ai-companies-offer-chatbots-in-brazil/">TechCrunch</a></li>
+<li><strong>国内2月調達</strong>: NOT A HOTEL 101億円・Turing（完全自動運転）32億円がトップ。経産省がポスト上場支援拡充（AI・ロボット・宇宙対象）。<a href="https://prtimes.jp/main/html/rd/p/000000446.000032589.html">prtimes.jp</a></li>
+</ul>
+<hr>
+<h2>投資・相場</h2>
+<ul>
+<li>日経平均: 55,620円（+0.62%）。3月5日に1,032円高の大幅反発あり</li>
+<li>S&amp;P500: 6,830.71（-0.56%）。イラン紛争リスクで変動</li>
+<li>ドル円: 157.88〜157.90円（円安継続）</li>
+<li><strong>WTI原油</strong>: 週間+35%（先物史上最大の週間上昇）。ホルムズ海峡リスク直撃</li>
+<li><strong>米GDPNow</strong>: 1Q成長率予測 3.0%→2.1%に下方修正。エネルギー価格高騰の影響</li>
+<li><strong>テック雇用悪化</strong>: 2008・2020リセッションを超える悪化水準。HN 772pt/519コメント（今回更新: 前回303pt→772ptに急伸）。<a href="https://twitter.com/JosephPolitano/status/2029916364664611242">Twitter</a></li>
+<li><strong>米国2月雇用</strong>: 92,000人減少、失業率4.4%。<a href="https://www.housingwire.com/articles/february-2026-jobs-report-92000-loss/">housingwire.com</a></li>
+</ul>
+<hr>
+<h2>地政学・国際ニュース</h2>
+<ul>
+<li><strong>イラン紛争（開戦7日目）</strong>: ホルムズ海峡タンカー通航80%以上減少。VLCC運賃が$42万/日超（前週比+94%）、コンテナ各社が戦争リスク割増金を導入。原油価格急騰。<a href="https://j-log.com/2026/03/06/%E3%82%A4%E3%83%A9%E3%83%B3%E7%B4%9B%E4%BA%89%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%8B%A2%E3%81%A8%E5%9B%BD%E9%9A%9B%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%83%BB%E8%88%AA%E7%A9%BA%E8%B2%A8%E7%89%A9">j-log.com</a></li>
+<li><strong>ウクライナ和平交渉停滞</strong>: 米露ウク三者協議を延期。200人ずつの捕虜交換は継続。</li>
+<li><strong>パキスタン・アフガニスタン国境紛争</strong>: 1週間の衝突でアフガン側11.5万人避難。</li>
+<li><strong>未成年SNS規制の国際的拡大</strong>: インドネシア16歳以下規制、インドKarnataka同様の提案。</li>
+</ul>
+<hr>
+<h2>市場ペイン・ユーザー不満</h2>
+<ul>
+<li><strong>開発者向けデバッグ統合ツール不足</strong>: HN「What developer tool do you wish existed in 2026?」でブラウザコンソール+バックエンドログ+ネットワーク統合→LLMに渡せるローカルデバッグツール、無料Linux対応のPeek定義参照ツール、英語→TDD自動生成ツールの需要。<a href="https://news.ycombinator.com/item?id=46345827">HN</a></li>
+<li><strong>SaaSのUI/料金不透明さが継続課題</strong>: 直感的でないUI、テンプレ返答のサポート、チェックアウト時の隠れコストがトップ不満。53%がモバイルで3秒以上のロードで離脱。</li>
+<li><strong>ツール導入≠問題解決の構造的ペイン</strong>: 組織がプロセスの根本課題を放置したままSaaS導入しても問題が可視化・増幅されるだけという指摘。</li>
+</ul>
+<hr>
+<h2>個人開発・MicroSaaS</h2>
+<ul>
+<li><strong>Senja.io $1M ARR</strong>: 2人チーム・ブートストラップ・3年9ヶ月で達成。テスティモニアル収集SaaS。<a href="https://www.thesuccessfulprojects.com/how-two-indie-hackers-built-a-successful-micro-saas-senja-io-1m-arr/">thesuccessfulprojects.com</a></li>
+<li><strong>失敗パターン</strong>: 「完璧なアーキテクチャで2ヶ月開発→顧客ゼロ」が典型。課金意思の事前確認をしていないことが最大の失因。<a href="https://www.indiehackers.com/post/i-built-a-saas-in-9-days-for-200-launched-on-hn-to-zero-signups-heres-what-actually-happened-87c39638c6">indiehackers.com</a></li>
+<li><strong>勝ちパターン</strong>: バーティカルAIツールへの集中。多アプリポートフォリオ（30アプリ・月$22k）も成立。<a href="https://superframeworks.com/articles/saaspocalypse-saas-crash-opportunity-indie-hackers">superframeworks.com</a></li>
+<li><strong>AntForms</strong>: 無料フォームビルダー、1ヶ月で12K+ visitors、Product Hunt #1。</li>
+<li><strong>Google Ads学習シミュレーター</strong>: 「安全に練習できる場所がない」というペインから6週間で開発・ローンチ。検証→開発の好例。</li>
+<li><strong>高校生が$5K+ MRR達成</strong>: 広告費・VC・従業員ゼロで500人以上の有料顧客。毎日コツコツ改善を続けた個人開発。<a href="https://reddit.com/r/SaaS/comments/1rewncv/">Reddit</a></li>
+<li><strong>SUUMO住みたい街ランキング2026</strong>: 大宮が3年連続2位。23区北部「東京ノース」や千葉・茨城のコスパ駅台頭。不動産コンテンツSEOのネタ。<a href="https://suumo.jp/journal/2026/03/06/215518/">suumo.jp</a></li>
+</ul>
+<hr>
+<h2>不動産テック・PropTech</h2>
+<ul>
+<li><strong>PropTech投資が2026年2月だけで$10億超</strong>: AIネイティブ企業に資金が集中。Compass・Redfin・RocketのMLS離脱という業界構造変化も進行中。<a href="https://www.inman.com">inman.com</a></li>
+<li><strong>Realtor.com × NAR「PropTech Startup Showdown」at SXSW（3月13日）</strong>: 業界がスタートアップを公式に取り込む構図が加速。<a href="https://www.prnewswire.com/news-releases/calling-all-trailblazers-introducing-the-inaugural-proptech-startup-showdown-at-sxsw-2026-302648343.html">prnewswire.com</a></li>
+<li><strong>Agentic AI移行が不動産でも開始</strong>: Seller Intent Signalをリアルタイム毎時更新で提供。AI予測精度72%が実用域に。<a href="https://goliathdata.com/7-ai-tools-that-will-transform-real-estate-prospecting-in-2026">goliathdata.com</a></li>
+<li><strong>日本市場</strong>: 2026年度に2021年度比250%超成長予測、約1.5兆円規模。<a href="https://www.fidx.co.jp/%E4%B8%8D%E5%8B%95%E7%94%A3%E3%83%86%E3%83%83%E3%82%AF2026%E5%B9%B4%E6%9C%80%E5%89%8D%E7%B7%9A%EF%BC%9A167%E5%84%84%E3%83%89%E3%83%AB%E5%B8%82%E5%A0%B4%E3%81%8C%E7%A4%BA%E3%81%99ai%E9%9D%A9%E5%91%BD/">fidx.co.jp</a></li>
+<li><strong>FinCEN AML規則が米国タイトル手続きを変革</strong>: 買い手・売り手の行動パターンに変化。新ワークフロー導入。<a href="https://www.housingwire.com/articles/fincens-aml-rule-reshaping-title-processes-and-buyer-behavior/">housingwire.com</a></li>
+<li><strong>Compassが消費者への在庫表示を刷新</strong>: 従来のポータル表示の非効率を解消する新アプローチ。<a href="https://www.inman.com/2026/03/06/compass-is-rethinking-how-inventory-reaches-consumers-and-thats-long-overdue/">inman.com</a></li>
+<li><strong>米住宅市場</strong>: 金利・中央値リスト価格が下落中だが、在庫は前年比増加。消極的な買い手プールが拡大。<a href="https://www.inman.com/2026/03/06/the-market-keeps-tipping-toward-a-pool-of-reluctant-buyers/">inman.com</a></li>
+</ul>
+<hr>
+<h2>SEO・Web動向</h2>
+<ul>
+<li><strong>Google 2月Discover コアアップデート完了</strong>: Discover専用初のコアアップデート。ローカル関連性の高いコンテンツ優遇、クリックベイト抑制。<a href="https://developers.google.com/search/blog/2026/02/discover-core-update">developers.google.com</a></li>
+<li><strong>3月コアアップデート3/13開始</strong>: E-E-A-T強化、トピカルオーソリティ重視（サイト全体の専門性評価）、AI生成コンテンツの検出精度向上。約2週間で完了予定。<a href="https://www.thesmbhub.com/news/google-march-2026-core-update/">thesmbhub.com</a> / <a href="https://www.quantifimedia.com/march-2026-google-core-update">quantifimedia.com</a></li>
+<li><strong>GEO（Generative Engine Optimization）</strong>: AI検索エンジン向け最適化が概念として定着しつつある。geo-lintというツールも登場。</li>
+</ul>
+<hr>
+<h2>海外ビジネス</h2>
+<ul>
+<li><strong>日本・UAE間CEPA交渉妥結</strong>: 中東市場への参入障壁が大幅低下。<a href="https://www.jetro.go.jp/biznews/2026/03/d540035fdfa23b16.html">jetro.go.jp</a></li>
+<li><strong>トルコが「Made in EU」枠組みに承認</strong>: EU公共調達への参加が可能に。<a href="https://www.jetro.go.jp/biznews/2026/03/032194b121012750.html">jetro.go.jp</a></li>
+<li><strong>中国が内需型成長へシフト</strong>: 「全要素生産性向上」政策を発表。中国拠点日系企業は戦略再評価の局面。<a href="https://www.jetro.go.jp/biznews/2026/03/dfe08d63381a1611.html">jetro.go.jp</a></li>
+</ul>
+<hr>
+<h2>税務・法律</h2>
+<ul>
+<li><strong>インボイス2割特例→3割特例へ移行（2026年10月）</strong>: 2割特例が9月終了、10月から3割特例開始。同時に免税事業者からの仕入税額控除が80%→70%に縮小。BtoB取引のフリーランスは登録しないと取引条件悪化リスク。<a href="https://kiyosumi-tax.jp/column/invoice-freelance-2026-change">kiyosumi-tax.jp</a></li>
+<li><strong>FDA初のエピジェネティック再プログラム療法ヒト臨床試験を承認</strong>: 当初は緑内障等の眼疾患が対象。<a href="https://www.worldgovernmentssummit.org/media-hub/news/detail/ageing-could-soon-be-reversible-says-harvard-scientist-at-wgs-2026">worldgovernmentssummit.org</a></li>
+</ul>
+<hr>
+<h2>健康・ウェルネス</h2>
+<ul>
+<li><strong>老化の「逆転」が臨床試験へ</strong>: Harvard David Sinclairがエピジェネティック再プログラム療法の臨床試験開始を宣言。<a href="https://www.worldgovernmentssummit.org/media-hub/news/detail/ageing-could-soon-be-reversible-says-harvard-scientist-at-wgs-2026">worldgovernmentssummit.org</a></li>
+<li><strong>ヘルスパン重視</strong>: 長生きより「質の高い年数」へ。2026年ウェルネス調査で37.8%が「長寿」を最重要トレンドと回答。GLP-1薬とAIガイドトレーニングが続く。<a href="https://www.prnewswire.com/news-releases/2026-life-time-wellness-survey-results-are-in-strength-training-and-longevity-lead-new-year-priorities-with-82-focused-more-on-wellbeing-302650843.html">prnewswire.com</a></li>
+<li><strong>地球温暖化が顕著に加速</strong>: 最新研究。HN 778pt/768コメント（今日最高pt）。<a href="https://www.researchsquare.com/article/rs-6079807/v1">researchsquare.com</a></li>
+</ul>
+<hr>
+<h2>事業チャンス候補</h2>
+<table>
+<thead>
+<tr>
+<th>タイトル</th>
+<th>根拠</th>
+<th>難易度</th>
+<th>移動済み</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GEO（AI検索最適化）解説コンテンツ＋日本語linterツール</td>
+<td>geo-lint登場・AI Overviewによるトラフィック激減・Discover Coreアップデート完了</td>
+<td>低</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Claude Code本番安全設計ガイド（Zenn有料記事）</td>
+<td>DB誤削除事件HN 107pt・preflight-gate Zenn記事の注目</td>
+<td>低</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Google Ads学習シミュレーター（日本語版）</td>
+<td>Redditで「安全に練習できる場所がない」ペイン確認済み・英語版がローンチ直後</td>
+<td>中</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>日本不動産売主向けAgenticAIツール</td>
+<td>PropTech投資急増・日本市場250%成長予測・Seller Intent Signal実用化</td>
+<td>高</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>SaaS疲れ解消ガイド＋ローカルファーストHTMLツール集</td>
+<td>HN「Anthropicに新Slack作ってほしい」215pt・ソフトウェア品質劣化への不満構造化・SaaS購読疲れ</td>
+<td>低〜中</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>インボイス3割特例＋基礎控除統合シミュレーター</td>
+<td>10月から2割→3割特例移行・控除率80→70%縮小の二重変化</td>
+<td>低</td>
+<td>[ ]</td>
+</tr>
+</tbody></table>
+</article>  </main> <script type="module">const r=new IntersectionObserver(e=>{e.forEach(s=>{s.isIntersecting&&(s.target.classList.add("visible"),r.unobserve(s.target))})},{threshold:.1});function t(){document.querySelectorAll(".animate-on-scroll").forEach(e=>{e.classList.remove("visible"),r.observe(e)})}t();document.addEventListener("astro:page-load",t);</script></body></html>

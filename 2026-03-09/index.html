@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-03-09 · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.CAysBO01.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <header class="max-w-[700px] mx-auto px-6 py-8 flex items-center justify-between"> <a href="/digest/" class="font-mono text-sm text-[#888] hover:text-accent transition-colors">
+digest /
+</a> <nav class="flex gap-6 text-sm text-[#888]"> <a href="/digest/" class="hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="hover:text-accent transition-colors">posts</a> </nav> </header> <main class="max-w-[700px] mx-auto px-6 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← home</a> </div> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl prose-h1:font-medium
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888] prose-h2:border-b prose-h2:border-[#f0f0f0]
+    prose-h3:text-base prose-h3:font-semibold prose-h3:animate-on-scroll
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+    prose-strong:font-semibold
+    [&_blockquote]:border-l-4 [&_blockquote]:border-accent [&_blockquote]:bg-[#f5f3ff] [&_blockquote]:px-4 [&_blockquote]:py-2 [&_blockquote]:rounded-r-md
+  "><h1>2026-03-09 ダイジェスト</h1>
+<h2>技術・エンジニアリング</h2>
+<h3>Claude Code v2.1.71 — /loop・cron・エコシステム成熟</h3>
+<ul>
+<li><strong>Claude Code v2.1.71</strong>: /loop（定期実行）、cronスケジューリング、音声操作拡張。「定時に働くAI同僚」として運用するパターン浮上。<a href="https://qiita.com/taketsuyo/items/54d7f9e43cdc260f0ff1">Qiita</a></li>
+<li><strong>Claude Code Container（Docker隔離）</strong>: <code>--dangerouslySkipPermissions</code>の事故を防ぐゼロコンフィグDocker環境。HN注目。<a href="https://github.com/Luxusio/claude-code-container">GitHub</a></li>
+<li><strong>コンテキスト圧縮の仕組み解説</strong>: Claude Codeの会話圧縮メカニズム詳細。<a href="https://niji.webs.me/blog/2026-03-08-how-claude-code-compresses-context.html">Blog</a></li>
+<li><strong>CLAUDE.md 634行で関係が壊れた話</strong>: 巨大化したCLAUDE.mdの問題と対処法。<a href="https://qiita.com/murata-seiji/items/a218569ae0d6acfb8263">Qiita</a></li>
+<li><strong>カナリア文字列でAgent記憶保持を測定</strong>: Claude/Codex/Geminiで検証。2,664行規模では渡し方の差なし。唯一の欠損はツール出力truncation。<a href="https://zenn.dev/mkxxx/articles/7eca831888e283">Zenn</a></li>
+<li><strong>3ヶ月自律運用で800+ Feature</strong>: 「信頼するが検証する」運用設計の実践知。<a href="https://zenn.dev/glanlion/articles/ai-driven-dev-800-features">Zenn</a></li>
+<li><strong>Blender MCP Server（100+ツール）</strong>: Claude CodeからBlender制御。Godot/Unity版も。<a href="https://reddit.com/r/ClaudeAI/comments/1ro7nof/">Reddit</a></li>
+<li><strong>Claude Agent SDK Python v0.1.48</strong>: fine-grained tool streamingバグ修正、CLI v2.1.71バンドル</li>
+<li><strong>AGENTS.md/CLAUDE.md評価ツール群</strong>: A/Bテスト・lint・統合管理（agents-md-evals, ai-context-kit, agentify）</li>
+<li><strong>GSD（GET Shit Done）</strong>: Claude Code/Codexの状態管理・信頼性問題を解決するOSS。X 114K Views。<a href="https://zenn.dev/komlock_lab/articles/gsd-guide-handson">Zenn</a></li>
+<li><strong>.envを勝手に読ませない対策</strong>: Codexが別プロジェクトのAPIキーを読み込んだ事故への対処。<a href="https://zenn.dev/caen/articles/aa1359184dfef2">Zenn</a></li>
+<li><strong>MiniMax-M2.5でClaude Code UIを動かす</strong>: 制限回避のためのモデル差し替え手法。<a href="https://zenn.dev/enaporp/articles/d354155d2cfb5c">Zenn</a></li>
+</ul>
+<h3>AIモデル・LLMリリース</h3>
+<ul>
+<li><strong>GPT-5.4 Thinking</strong>: ChatGPT Plus/Team/Pro向け。事前思考計画、深層ウェブリサーチ強化。GPT-5.2 Thinkingを置き換え。<a href="https://releasebot.io/updates/openai">OpenAI</a></li>
+<li><strong>DeepSeek V4 発表見込み</strong>: 1兆パラメータ、ネイティブマルチモーダル（画像・動画・テキスト）。<a href="https://www.pymnts.com/artificial-intelligence-2/2026/deepseek-poised-to-unveil-latest-ai-model/">PYMNTS</a></li>
+<li><strong>Zhipu AI GLM-5</strong>: 744B MoE（アクティブ44B）、200Kコンテキスト、SWE-bench 77.8%。Huawei Ascendチップ学習。</li>
+<li><strong>Gemini 3.1 Pro</strong>: 1Mトークンコンテキスト、ARC-AGI-2で77.1%。Flash-Liteは$0.25/100万トークン</li>
+<li><strong>中国勢大量投入</strong>: Tencent/Alibaba/Baidu/ByteDanceから3月中に計5モデル。OSSで20+モデル公開</li>
+</ul>
+<h3>LLM再ライセンス問題</h3>
+<ul>
+<li><strong>LLMによる大規模コード書き換え+ライセンス変更</strong>: chardetプロジェクトでLLMリライトの著作権・ライセンスが曖昧に。OSSの新たな論点。<a href="https://www.phoronix.com/news/Chardet-LLM-Rewrite-Relicense">Phoronix</a></li>
+</ul>
+<h3>HN注目</h3>
+<ul>
+<li><strong>Beagle（AST保存型ソースコード管理）</strong>: テキストdiffではなくAST単位で変更管理。HN 11pt。<a href="https://github.com/gritzko/librdx/tree/master/be">GitHub</a></li>
+<li><strong>Blogtato（Git同期のCLI RSSリーダー）</strong>: Taskwarriorライクなフィード管理。HN 24pt。<a href="https://github.com/kantord/blogtato">GitHub</a></li>
+<li><strong>LibreOffice、EUにCRA準拠を要請</strong>: OSSのサイバーレジリエンス法対応問題。HN 58pt</li>
+<li><strong>SaaSスタック→5つのHTMLファイルに置換</strong>: フリーランサーが請求書・提案書・契約書を単一HTMLで実装。HN注目。<a href="https://news.ycombinator.com/item?id=47298161">HN</a></li>
+<li><strong>Oracle 最大3万人削減</strong>: AIデータセンター投資の原資として。<a href="https://www.cio.com/article/4125103/">CIO</a></li>
+</ul>
+<h3>SEO・Web動向</h3>
+<ul>
+<li><strong>Google March 2026 コアアップデート（3/13〜）</strong>: E-E-A-T強化、低品質AIコンテンツ検出精度向上。約2週間でロールアウト予定</li>
+<li><strong>Discoverコアアップデート（2月）</strong>: 「ここ10年で最大級」の順位変動。英語(米国)→全言語へ拡大予定。<a href="https://developers.google.com/search/blog/2026/02/discover-core-update">Google Search Central</a></li>
+<li><strong>インテント不一致への厳格化</strong>: ユーザーの「本来の意図」を満たさないページの順位急落</li>
+<li><strong>人間中心・専門性重視が加速</strong>: AIコンテンツ耐性低下。専門家による高品質コンテンツが明確優遇</li>
+</ul>
+<h3>UX・デザイントレンド</h3>
+<ul>
+<li><strong>インタラクティブ製品プレビュー</strong>: 静的スクリーンショット→埋め込みデモ・ガイド付きツアーがヒーローセクション標準に。<a href="https://www.saasframe.io/blog/10-saas-landing-page-trends-for-2026-with-real-examples">SaaSFrame</a></li>
+<li><strong>AIパーソナライゼーション</strong>: 訪問者の流入元・ペルソナに応じてCTA・ビジュアルを動的切替</li>
+<li><strong>ナビゲーション簡素化+スティッキーCTA</strong>: ナビ自体をコンバージョンファネルの一部として設計</li>
+</ul>
+<hr>
+<h2>ビジネス・スタートアップ</h2>
+<h3>資金調達・M&amp;A</h3>
+<ul>
+<li><strong>OpenAI $1,100億調達</strong>: 評価額$7,300億。Amazon・NVIDIA・SoftBank主導。史上最大</li>
+<li><strong>Ayar Labs（光通信チップ）</strong>: Series E $5億。NVIDIA・AMDリード。<a href="https://news.crunchbase.com/venture/biggest-funding-rounds-space-tech-sierra-ai-ayar/">Crunchbase</a></li>
+<li><strong>Sierra Space</strong>: $5.5億、評価額$80億。商業宇宙ステーション</li>
+<li><strong>Wayve（自動運転AI）</strong>: $15億、評価額$86億</li>
+<li><strong>Uala（アルゼンチン・ネオバンク）</strong>: $1.95億、評価額$32億。ラテンアメリカ金融</li>
+<li><strong>Gaianixx（光通信デバイス材料）</strong>: 20億円。三井金属CVC等。光通信は国内外で投資集中</li>
+<li><strong>羅針盤（インバウンドツアー）</strong>: 14.5億円。オリエンタルランドCVC等</li>
+<li><strong>経産省がスタートアップ向け債務保証拡充</strong>: AI・宇宙領域の上場後支援</li>
+</ul>
+<h3>TechCrunch注目</h3>
+<ul>
+<li><strong>OpenAI-Pentagon問題</strong>: ロボティクスリードCaitlin Kalinowskiが国防省契約に抗議して辞任。Pro-Human Declaration発表と衝突。<a href="https://techcrunch.com/2026/03/07/openai-robotics-lead-caitlin-kalinowski-quits-in-response-to-pentagon-deal/">TC</a></li>
+<li><strong>$40スマートフォン構想</strong>: 通信キャリア連合が2,000万人をオンラインへ。部品コスト上昇が課題。<a href="https://techcrunch.com/2026/03/07/push-for-40-smartphones-builds-momentum-but-still-faces-cost-hurdles/">TC</a></li>
+<li><strong>AI倫理ロードマップ</strong>: Pro-Human Declarationが最終化された直後にPentagon-Anthropic対立。<a href="https://techcrunch.com/2026/03/07/a-roadmap-for-ai-if-anyone-will-listen/">TC</a></li>
+</ul>
+<h3>個人開発・MicroSaaS</h3>
+<ul>
+<li><strong>Senja.io</strong>: 2人チーム完全ブートストラップでARR $1M。テスティモニアル収集ツール。SEO+PLGが成長エンジン</li>
+<li><strong>ポートフォリオ戦略</strong>: 1失敗→30アプリ→月$22K。別例:独学→月$28K SaaSポートフォリオ</li>
+<li><strong>Language Arbitrage Playbook</strong>: フランス語市場で月$65K。言語圏の未開拓市場を狙う手法。<a href="https://reddit.com/r/indiehackers/comments/1ri0ux8/">Reddit</a></li>
+<li><strong>2026年は初期投資$1K未満が主流</strong>: ノーコード・AIビルダー普及。SNS運用・営業支援・請求書管理がニッチ</li>
+<li><strong>MicroSaaS市場</strong>: 年間約30%成長、2024年$157億→2030年$596億見込み。独立SaaS創業者の39%がソロ</li>
+<li><strong>AI Search Playbook</strong>: ChatGPTに推薦されるための戦略。比較ページ作成→AI引用獲得。<a href="https://reddit.com/r/indiehackers/comments/1rh236e/">Reddit</a></li>
+<li><strong>700+苦情スレッド分析</strong>: 購入意向を予測する5つのフレーズを特定。<a href="https://reddit.com/r/SaaS/comments/1rkiuf0/">Reddit</a></li>
+</ul>
+<h3>海外ビジネス</h3>
+<ul>
+<li><strong>日本投資家が海外債券3.42兆円純売却</strong>: 2024年以降最大。国内金利上昇でリバランス。<a href="https://www.japantimes.co.jp/business/2026/03/05/economy/japan-investors-overseas-bonds/">Japan Times</a></li>
+<li><strong>2026年度税制改正の海外事業影響</strong>: 海外R&amp;D税額控除変更、海外EC事業者への消費税課税義務新設。<a href="https://www.ey.com/en_jp/technical/ey-japan-tax-library/tax-alerts/2026/tax-alerts-02-17">EY</a></li>
+<li><strong>ASEAN-日本パートナーシップ強化</strong>: サプライチェーン多元化でASEAN重要性再確認</li>
+<li><strong>インド・アフリカ進出意欲高水準</strong>: インドで「拡大」志向8割超。アフリカ製造業7割が拡大志向</li>
+<li><strong>JETRO調査</strong>: 12,900社対象。脱炭素取り組み企業は全地域で43%と過去最高</li>
+</ul>
+<h3>市場ペイン</h3>
+<ul>
+<li><strong>SaaS疲れ（ツール分散）</strong>: 複数ツールに情報散乱。開発者の75%がツールチェーン維持に時間浪費。SaaS4社時価総額15兆円消失。<a href="https://www.nikkei.com/article/DGXZQOGN236910T20C26A1000000/">日経</a></li>
+<li><strong>モバイルファースト機能欠如</strong>: CRMのモバイル機能不足が最大の未充足ニーズ（273K件レビュー分析）</li>
+<li><strong>フリーランス向け会計の空白</strong>: 不規則収入・四半期税金・多通貨に既存会計ソフト未対応</li>
+<li><strong>ニッチ業種スケジューリング不足</strong>: 美容・医療等の業種特化機能が汎用ツールでカバー不可</li>
+<li><strong>SaaS→HTML置換</strong>: フリーランスがSaaSスタック全体を5つのローカルHTMLアプリに置換。<a href="https://news.ycombinator.com/item?id=47298161">HN</a></li>
+</ul>
+<hr>
+<h2>投資・資産運用</h2>
+<ul>
+<li><strong>S&amp;P500</strong>: 6,740（週間-2.0%）。年初来リターン消失。原油高+雇用統計下振れの二重圧力</li>
+<li><strong>日経平均</strong>: 58,850円（週間+3.56%）。半導体・AI関連に物色集中。先物は54,020円まで調整</li>
+<li><strong>ドル円</strong>: 157円台半ば。有事ドル買い+原油高（日本の中東依存90%）で円安加速。年末165円予想も。<a href="https://www.gaitame.com/media/entry/2026/03/07/100000">外為どっとコム</a></li>
+<li><strong>原油</strong>: WTI $86超。週間+28%急騰。ホルムズ海峡事実上封鎖。日本GDPを0.18%押し下げ</li>
+<li><strong>FRB利下げ9月以降に後退</strong>: インフレ圧力（原油高）で日米金利差縮小せず</li>
+<li><strong>注目</strong>: イラン3/4に米国に接触し協議提案→原油上げ幅縮小。外交進展次第で急速巻き戻しの可能性</li>
+</ul>
+<hr>
+<h2>地政学・国際ニュース</h2>
+<ul>
+<li><strong>イラン攻撃9日目</strong>: テヘラン石油貯蔵施設への攻撃。ハメネイ師死亡、死者1,300人超。トランプ大統領が地上部隊投入に言及。<a href="https://www.npr.org/2026/03/07/nx-s1-5739242/iran-war-oil-trump-israel-spain-economy-one-week">NPR</a></li>
+<li><strong>中東地域波及</strong>: イランがクウェート・カタール・サウジ・UAEの米軍資産に報復。ヒズボラがイスラエルに攻撃開始</li>
+<li><strong>米スペイン対立激化</strong>: 基地使用拒否→トランプが全貿易断絶脅迫。NATO内亀裂深刻化</li>
+<li><strong>欧州防衛費</strong>: トランプがNATO全加盟国にGDP比5%要求。2030年まで8,000億EUR見通し</li>
+<li><strong>中国経済低迷</strong>: 全人代中、若年層雇用難が深刻化</li>
+</ul>
+<hr>
+<h2>不動産テック・PropTech</h2>
+<ul>
+<li><strong>PropTech投資2月$10億超</strong>: 38件、少数大型案件に集中。<a href="https://www.inman.com/2026/03/06/proptech-investment-hits-1b-in-february-as-investors-place-bigger-more-selective-bets/">Inman</a></li>
+<li><strong>Smart Bricks（AI投資物件探索）</strong>: a16z主導$5Mプレシード。OpenAI/Anthropic/Blackstone出身エンジェル。<a href="https://techcrunch.com/2026/02/10/proptech-startup-smart-bricks-raises-5-million-pre-seed-in-round-led-by-a16z/">TC</a></li>
+<li><strong>SXSW PropTech Startup Showdown（3/13）</strong>: NAR×Realtor.com共催。AI/フィンテック/建設テック6社。<a href="https://www.prnewswire.com/news-releases/calling-all-trailblazers-introducing-the-inaugural-proptech-startup-showdown-at-sxsw-2026-302648343.html">PRNewswire</a></li>
+<li><strong>Agentic AIがPropTech次の波</strong>: 調達・価格設定・在庫管理で自律AIが実用段階。<a href="https://www.icsc.com/news-and-views/icsc-exchange/next-phase-of-proptech-agentic-ai-in-2026">ICSC</a></li>
+<li><strong>日本不動産テック市場167億ドル</strong>: 専門家70%が新テクノロジーツール導入済、41%がAI利用中。関心がUIから金融インフラ・AI業務運営へシフト</li>
+<li><strong>REINS囲い込み規制が本格運用フェーズ</strong>: QRコード付き媒介契約書でスマホから取引状況確認可能。2026年は執行・摘発事例が注目</li>
+<li><strong>AI予測分析で「売り時」先読み</strong>: Smartzip等が売却可能性の高いオーナーを6〜12ヶ月前に特定</li>
+<li><strong>FinCEN AMLルール</strong>: 不動産タイトル・エスクロープロセスに影響。買主・売主の新ワークフロー発生。<a href="https://www.housingwire.com/articles/fincens-aml-rule-reshaping-title-processes-and-buyer-behavior/">HousingWire</a></li>
+<li><strong>住宅ローン変動型選択が減少</strong>: 金利上昇トレンドの影響。<a href="https://suumo.jp/journal/2026/03/04/215439/">SUUMO</a></li>
+<li><strong>住みたい街ランキング2026</strong>: 大宮3年連続2位。<a href="https://suumo.jp/journal/2026/03/06/215518/">SUUMO</a></li>
+<li><strong>米住宅需要は上昇、在庫減少</strong>: イラン紛争下でも低金利6%台で堅調。<a href="https://www.housingwire.com/articles/mortgage-rates-housing-demand-2026-2/">HousingWire</a></li>
+</ul>
+<hr>
+<h2>税務・法律</h2>
+<ul>
+<li><strong>基礎控除の大幅引き上げ</strong>: 段階制に変更。合計所得132万円以下で最大95万円。年収160万円以下は所得税ゼロ。<a href="https://www.nikkei.com/article/DGXZQOUB308AO0Q6A130C2000000/">日経</a></li>
+<li><strong>インボイス2割特例が2026年9月終了→3割特例へ</strong>: 個人事業者のみ対象（法人不可）。簡易課税or原則課税への移行準備必要</li>
+<li><strong>仕入税額控除の経過措置が5段階に延長（〜2031年）</strong>: 80%→70%→50%→30%→0%。当初3段階から緩和</li>
+<li><strong>副業の損益通算</strong>: 「事業所得」なら通算可、「雑所得」なら不可。継続赤字は否認リスク</li>
+<li><strong>法人化タイミング</strong>: 課税所得800〜900万円が目安。消費税免税メリット（設立後最大2年）も考慮</li>
+<li><strong>少額減価償却資産特例が2026年3月末で期限</strong>: 30万円未満資産の一括経費計上。PC・機材は期限前取得が有利</li>
+<li><strong>特定親族特別控除の新設</strong>: 19〜22歳の親族、所得58〜123万円で適用</li>
+</ul>
+<hr>
+<h2>健康・ウェルネス</h2>
+<ul>
+<li><strong>老化「逆転」が臨床試験段階へ</strong>: ハーバードSinclair教授、エピジェネティック・リプログラミング療法のヒト臨床準備中。<a href="https://www.worldgovernmentssummit.org/media-hub/news/detail/ageing-could-soon-be-reversible-says-harvard-scientist-at-wgs-2026">WGS 2026</a></li>
+<li><strong>長寿研究のパラダイムシフト</strong>: 単一メカニズム→「システム間協調の喪失」として老化を捉え直す方向へ。<a href="https://www.eurekalert.org/news-releases/1116021">EurekAlert</a></li>
+<li><strong>百寿者研究</strong>: 長寿は多因子レジリエンス（保護的遺伝子・効率的代謝・低炎症・好ましいライフスタイル）。<a href="https://www.nature.com/articles/s41514-026-00339-z">npj Aging</a></li>
+<li><strong>Brain-First Longevity Framework</strong>: 神経ネットワーク保存・回復を長寿医療の基盤に</li>
+<li><strong>加齢した腸の自己修復</strong>: 腸の修復を促す方法発見。腸内ヴィロームが免疫・代謝バランスに重要</li>
+<li><strong>厚労省「身体活動ガイド2023」</strong>: 成人1日8,000歩以上推奨。健康日本21（第三次）で目標設定</li>
+</ul>
+<hr>
+<h2>事業チャンス候補</h2>
+<table>
+<thead>
+<tr>
+<th>タイトル</th>
+<th>根拠</th>
+<th>難易度</th>
+<th>移動済み</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>フリーランス向けローカルファーストHTML業務ツール集</td>
+<td>SaaS疲れ+HNで「5つのHTMLに置換」注目。日本語版空白</td>
+<td>低</td>
+<td>[x] 既存</td>
+</tr>
+<tr>
+<td>基礎控除引き上げ＋インボイス統合シミュレーター</td>
+<td>段階制変更+3割特例で混乱大。一体ツール需要高い</td>
+<td>低</td>
+<td>[x] 既存</td>
+</tr>
+<tr>
+<td>不動産売主向けAI売却タイミング通知ツール</td>
+<td>Smartzip等の予測分析+REINS囲い込み規制で売主テック武装進行。らくらく大家さんの拡張として</td>
+<td>中</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Language Arbitrage（言語圏裁定）SaaS</td>
+<td>フランス語市場で月$65K事例。日本語→東南アジア言語圏への横展開</td>
+<td>中</td>
+<td>[ ]</td>
+</tr>
+</tbody></table>
+</article>  </main> <script type="module">const r=new IntersectionObserver(e=>{e.forEach(s=>{s.isIntersecting&&(s.target.classList.add("visible"),r.unobserve(s.target))})},{threshold:.1});function t(){document.querySelectorAll(".animate-on-scroll").forEach(e=>{e.classList.remove("visible"),r.observe(e)})}t();document.addEventListener("astro:page-load",t);</script></body></html>

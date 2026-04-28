@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-03-31 · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.CAysBO01.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <header class="max-w-[700px] mx-auto px-6 py-8 flex items-center justify-between"> <a href="/digest/" class="font-mono text-sm text-[#888] hover:text-accent transition-colors">
+digest /
+</a> <nav class="flex gap-6 text-sm text-[#888]"> <a href="/digest/" class="hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="hover:text-accent transition-colors">posts</a> </nav> </header> <main class="max-w-[700px] mx-auto px-6 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← home</a> </div> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl prose-h1:font-medium
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888] prose-h2:border-b prose-h2:border-[#f0f0f0]
+    prose-h3:text-base prose-h3:font-semibold prose-h3:animate-on-scroll
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+    prose-strong:font-semibold
+    [&_blockquote]:border-l-4 [&_blockquote]:border-accent [&_blockquote]:bg-[#f5f3ff] [&_blockquote]:px-4 [&_blockquote]:py-2 [&_blockquote]:rounded-r-md
+  "><h1>2026-03-31 ダイジェスト</h1>
+<h2>技術・エンジニアリング</h2>
+<h3>AxiosのNPMパッケージが侵害、RATを配布</h3>
+<p>人気HTTPライブラリAxiosの悪意あるバージョンがNPMに公開され、リモートアクセストロイ（RAT）が仕込まれた。先日のTelnyxに続くサプライチェーン攻撃で、<code>package-lock.json</code>のバージョン固定と依存関係監査の重要性が改めて浮き彫りに。<a href="https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan">StepSecurity</a></p>
+<h3>Claude.mdでトークン63%削減の手法が話題</h3>
+<p>Claude Codeの出力トークンを63%削減する汎用的なCLAUDE.md設定がHN 130ptを獲得。プロンプト設計だけでAPI費用を大幅に圧縮できる実例として注目されており、個人開発者のコスト最適化に直結する。<a href="https://github.com/drona23/claude-token-efficient">GitHub</a></p>
+<h3>OpenAIがClaude Code用Codexプラグインを公開</h3>
+<p>OpenAIが自社のCodexをClaude Codeのスキルとして動作させるプラグインを公式リリース。競合プラットフォームにプラグインを提供するという異例の動きで、AIコーディングツールの競争がエコシステムレイヤーに移行しつつあることを示唆する。<a href="https://github.com/openai/codex-plugin-cc">GitHub</a></p>
+<h3>Chops：AIスキルを横断管理するmacOSアプリ（★1,049）</h3>
+<p>Claude Code・Cursor・Codex・Windsurf・Ampなど複数のAIコーディングツールのスキルを一元管理・編集できるmacOSアプリ。スキルが乱立する中、管理ツール自体が需要のあるカテゴリとして立ち上がり始めている。<a href="https://github.com/Shpigford/chops">GitHub</a></p>
+<h3>Google Play、全開発者に本人確認を義務化</h3>
+<p>Googleが全Android開発者に対して身分証明書による本人確認を義務付けると発表（HN 168pt）。スパム・詐欺アプリ排除が目的だが、個人開発者のストア参入障壁が上がる方向への規制強化として注視が必要。<a href="https://android-developers.googleblog.com/2026/03/android-developer-verification-rolling-out-to-all-developers.html">Google</a></p>
+<h2>ビジネス・スタートアップ</h2>
+<h3>Qodo、AIコード検証で$70M調達</h3>
+<p>AIが大量生成するコードの品質検証に特化したスタートアップQodoが$70Mを調達。AI Codingの普及でコード量が爆発する中、「書く」より「検証する」側に価値が移行しつつあり、個人開発者にとってもコードレビュー・テスト自動化ツール領域のチャンスを示唆する。<a href="https://techcrunch.com/2026/03/30/qodo-bets-on-code-verification-as-ai-coding-scales-raises-70m/">TechCrunch</a></p>
+<h3>Meta、Instagram有料プランをテスト開始</h3>
+<p>Instagramでプレミアムサブスクリプションのテストが開始。足跡を残さずにストーリーを閲覧できる機能等が含まれる。SNSプラットフォームの収益モデルが広告からサブスク併用へ移行する動きであり、クリエイターエコノミー周辺のツール需要にも影響する。<a href="https://techcrunch.com/2026/03/30/meta-starts-testing-a-premium-subscription-on-instagram/">TechCrunch</a></p>
+<h3>LiteLLM、Delveとの提携を解消 — 偽コンプライアンス疑惑</h3>
+<p>LLMゲートウェイとして人気のLiteLLMが、セキュリティ認証の不正疑惑が浮上したDelveとの関係を断った。マルウェア被害も発覚しており、LLMプロキシ選定時のセキュリティ審査の重要性を再認識させる事例。<a href="https://techcrunch.com/2026/03/30/popular-ai-gateway-startup-litellm-ditches-controversial-startup-delve/">TechCrunch</a></p>
+<h3>韓国Rebellions、AI推論チップで$400M調達・IPO準備</h3>
+<p>Nvidia対抗のAI推論専用チップを開発するRebellionsが$400Mを調達し、評価額$2.3Bに。年内IPOを計画しており、推論コスト低下は個人開発者がAIサービスを運用する際の原価構造に直結する。<a href="https://techcrunch.com/2026/03/30/ai-chip-startup-rebellions-raises-400-million-at-2-3b-valuation-in-pre-ipo-round/">TechCrunch</a></p>
+<h3>Base44、ソロ開発→Wixに買収の衝撃</h3>
+<p>一人の開発者がアパートから6ヶ月で構築したBase44がWixに買収された。ノーコード/ローコード領域でソロファウンダーの高速エグジットが相次いでおり、AI活用による個人開発のレバレッジが現実のものになりつつある。<a href="https://reddit.com/r/indiehackers/comments/1rwdcdv/solo_founders_are_winning_faster_than_ever_right/">Reddit r/indiehackers</a></p>
+<h2>投資・資産運用</h2>
+<h3>イラン戦争で世界市場12兆ドル消失</h3>
+<p>2月28日の米・イスラエルによるイラン攻撃開始以降、世界の株式時価総額が約12兆ドル蒸発した。S&amp;P500は3月だけで7.4%下落、テック株は5カ月連続の月間下落と2002年以来の長期低迷。個人投資家にとってはポートフォリオの地域分散・セクター分散を見直す局面。<a href="https://www.bloomberg.com/news/videos/2026-03-31/where-to-invest-after-12-trillion-market-cap-wipeout-video">Bloomberg</a></p>
+<h3>アルミ月間10%急騰、中東製錬所攻撃で供給危機</h3>
+<p>イランがUAE・バーレーンのアルミ製錬施設を攻撃し、世界生産能力の約9%が影響を受けた。LMEアルミ価格は3,500ドル/トンに迫り、月間10%の上昇。Ford・Teslaなど自動車メーカーの生産減速リスクも浮上している。<a href="https://www.cnbc.com/2026/03/30/iran-attacks-aluminum-producers-shockwaves-market-metals.html">CNBC</a></p>
+<h3>ドル、2022年以来の月間最大上昇</h3>
+<p>中東有事を背景に安全資産としてのドル買いが加速し、3月のドル指数は2022年9月以来の最大月間上昇を記録。ドル円は159円台に到達。日米金利差の縮小シナリオも描きにくく、円安圧力は継続の見通し。<a href="https://www.bloomberg.com/news/articles/2026-03-31/dollar-wraps-up-best-month-since-2022-amid-war-in-middle-east">Bloomberg</a></p>
+<h3>金価格上昇、FRB利下げ観測と停戦期待で</h3>
+<p>トランプ大統領がホルムズ海峡未開通でもイラン戦終結を検討との報道を受け、金価格が続伸。FRBパウエル議長の「長期インフレは制御下」発言も利下げ期待を後押ししており、金はリスクヘッジ資産として注目が集まっている。<a href="https://www.bloomberg.com/news/articles/2026-03-30/gold-steadies-as-fed-s-powell-says-long-term-inflation-in-check">Bloomberg</a></p>
+<h3>新興国株、2026年の上昇を全て消失</h3>
+<p>イラン戦争によるエネルギー危機が新興国経済を直撃し、新興国株式指数は2026年の上昇分を全て吐き出した。原油高によるインフレ圧力と経常収支悪化が重なり、アジア市場の下落幅は米国を上回っている。<a href="https://www.bloomberg.com/news/articles/2026-03-31/asian-stocks-wipe-out-2026-gains-as-war-drives-inflation-worries">Bloomberg</a></p>
+<h2>地政学・国際情勢</h2>
+<h3>米、イランエネルギー攻撃を4/6まで猶予延長</h3>
+<p>トランプ大統領はイランのエネルギー施設への攻撃を4月6日まで一時停止すると発表。米特使ウィトコフが15項目の和平案を提示したが、イラン側は拒否し独自の条件を提示。原油はBrent $108/バレルに上昇し、S&amp;P500は開戦以来最大の日次下落（-1.74%）を記録した。<a href="https://www.cnbc.com/2026/03/26/trump-iran-war-oil-energy-pause.html">CNBC</a></p>
+<h3>Anthropic対国防総省、裁判所がAI倫理で企業側支持</h3>
+<p>国防総省がAnthropicを「サプライチェーンリスク」に指定し約$200Mの契約を盾に軍事AI利用の制限撤廃を迫ったが、カリフォルニア連邦地裁が3/26に指定を差し止め。自律型兵器・国内監視へのAI利用の線引きを巡り、商用AI企業と政府の力関係を再定義する判例となりうる。<a href="https://www.technologyreview.com/2026/03/30/1134881/the-pentagons-culture-war-tactic-against-anthropic-has-backfired/">MIT Technology Review</a></p>
+<h3>ホワイトハウス、国家AI立法枠組みを発表</h3>
+<p>3/20、トランプ政権が連邦レベルの包括的AI立法枠組みを公表。州法の不統一を排し、児童保護・著作権・言論の自由・イノベーション促進の6分野を規定。州ごとに異なるAI規制の統一を目指す内容で、テック企業のコンプライアンス体制に直接影響する。<a href="https://www.whitehouse.gov/releases/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/">The White House</a></p>
+<h3>イラン紛争でサイバー戦が激化、中東全域に波及</h3>
+<p>Palo Alto Unit 42の報告によると、紛争関連のフィッシングURLが7,381件、約60のハクティビストグループが活動中。UAE当局は日量9万〜20万件のサイバー攻撃を検知し、70%以上が国家支援型。イランは27日連続のインターネット遮断が継続しており、物理戦とサイバー戦が並行するハイブリッド紛争の様相を呈している。<a href="https://unit42.paloaltonetworks.com/iranian-cyberattacks-2026/">Palo Alto Unit 42</a></p>
+<h3>EU議会、米EU貿易協定の批准作業を一時停止</h3>
+<p>米国の度重なる関税変更とグリーンランド主権を巡る対欧圧力を受け、EU議会が貿易協定の批准手続きを中断。「ゼロ関税」交渉と報復措置リストの準備を並行で進める構えで、大西洋間の通商関係は1970年代以来の不安定期に入った。<a href="https://www.cnbc.com/2026/02/24/us-eu-trade-deal-eu-parliament-suspends-trade-deal-trump-tariffs-eu-retaliation-aci.html">CNBC</a></p>
+<h2>不動産テック</h2>
+<h3>Realtor.comがChatGPTと統合</h3>
+<p>Realtor.comがChatGPTプラグインを導入し、住宅購入者が対話形式で住宅価格や地域情報を取得できるようになった。ただし物件閲覧にはRealtor.comへの遷移が必要で、ポータル送客モデルを維持している。不動産検索のAI化が大手でも本格化し、個人開発者にとってはニッチ特化のAI検索ツールに参入余地がある。<a href="https://www.inman.com/2026/03/30/realtor-com-meets-homebuyers-wherever-they-are-with-chatgpt-integration/">Inman</a></p>
+<h3>新築分譲向けAIセールスエージェントが本格始動</h3>
+<p>新築開発プロジェクトでは数千のリードに対しエージェントが1〜2人しかいない課題があり、AIセールスエージェントがリード対応を自動化する動きが不可逆的段階に入った。営業プロセスのAI化は日本の分譲販売にも応用可能で、事業機会として注目。<a href="https://www.inman.com/2026/03/30/the-ai-sales-agent-for-new-homes-is-here-and-theres-no-going-back/">Inman</a></p>
+<h3>Compass国際部門が34万エージェント対象に拡大</h3>
+<p>Compass International HoldingsがRory Golodを成長担当社長に任命し、2026〜2027年で34万エージェントへのプラットフォーム展開を目指す。米国発の不動産テックプラットフォームのグローバル戦略が加速しており、業界構造の変化を示唆する。<a href="https://www.housingwire.com/articles/rory-golod-cih-growth/">HousingWire</a></p>
+<h3>西成の不動産会社が高齢者入居拒否を解消する仕組みを構築</h3>
+<p>大阪・西成区で空き家を買い取り高齢者を受け入れる不動産会社が、死後事務サポートサービスと組み合わせて孤独死・認知症リスクの課題に取り組んでいる。2045年に人口半減が予測される地域で、空き家×高齢者マッチングはテック介入の余地が大きい。<a href="https://suumo.jp/journal/2026/03/19/215493/">SUUMOジャーナル</a></p>
+<h3>Coming Soon物件がDOJ介入の引き金に</h3>
+<p>米最大級MLS・CRMLSの幹部が、Coming Soon（公開前物件）の運用が反トラスト法に抵触しDOJ介入を招くリスクを指摘。MLS掲載ルールの緩和か厳格化かで業界が二分しており、物件流通の透明性が米国不動産の次の争点になっている。<a href="https://www.inman.com/2026/03/30/how-coming-soons-could-lead-to-doj-intervention/">Inman</a></p>
+<h2>SEO・Web動向</h2>
+<h3>3月コアアップデート開始（3/27〜）</h3>
+<p>Googleが2026年最初のコアアップデートを3月27日にロールアウト開始。完了まで最大2週間。「あらゆる種類のサイトから関連性の高いコンテンツを表示する」ことを目的とし、E-E-A-T基準の厳格化とAI Overview時代を意識した品質評価の見直しが進む。<a href="https://searchengineland.com/google-march-2026-core-update-rolling-out-now-472759">Search Engine Land</a></p>
+<h3>Search Liveが200カ国以上に拡大</h3>
+<p>Gemini 3.1 Flash Liveを搭載したGoogle Search Live（音声・カメラ検索）が、米国のみからAI Mode提供中の全市場へ一気に拡大。テキスト入力に代わる会話型・視覚型検索の比率が高まり、従来のキーワード最適化だけでは不十分になる転換点。<a href="https://www.searchenginejournal.com/google-takes-search-live-global-with-gemini-3-1-flash-live/570602/">Search Engine Journal</a></p>
+<h3>初のDiscover専用コアアップデート完了</h3>
+<p>2月に実施されたDiscoverコアアップデートは、Google史上初のDiscover単独更新。ローカル関連性の重視、クリックベイト抑制、トピック別の専門性評価が導入された。Discover経由のトラフィックに依存するメディアにとって構造的な変化。<a href="https://developers.google.com/search/blog/2026/02/discover-core-update">Google Search Central Blog</a></p>
+<h3>Personal Intelligenceが検索・Gemini・Chromeに拡大</h3>
+<p>Googleが「Personal Intelligence」をAI Mode、Geminiアプリ、Chrome内Geminiに展開。ユーザーのメール・カレンダー等の個人データを横断して検索結果をパーソナライズする機能で、万人共通のSERP前提が崩れる方向に進んでいる。<a href="https://blog.google/products-and-platforms/products/search/personal-intelligence-expansion/">Google Blog</a></p>
+<h2>税務・法律・健康</h2>
+<h3>少額減価償却の上限が40万円に拡大</h3>
+<p>中小企業者等の少額減価償却資産の即時償却上限が30万円未満から40万円未満に引き上げられる。2026年4月施行予定で、年間合計300万円の枠は据え置き。物価高騰でPC・機材の単価が上がっている中、フリーランスの設備投資判断に直結する改正。<a href="https://www.mof.go.jp/tax_policy/tax_reform/outline/fy2026/08taikou_03.htm">財務省 令和8年度税制改正大綱</a></p>
+<h3>iDeCo拠出上限が月7.5万円へ引き上げ</h3>
+<p>個人事業主（第1号被保険者）のiDeCo拠出限度額が月6.8万円から7.5万円に引き上げられる。2026年12月施行。加入可能年齢も70歳未満に拡大され、所得控除による節税効果がさらに大きくなる。<a href="https://dc.rakuten-sec.co.jp/about/revised/202505/">楽天証券 iDeCo制度改正</a></p>
+<h3>FDA初のエピジェネティック若返り療法を承認</h3>
+<p>Life Biosciences社のER-100がFDAからIND承認を取得し、史上初のエピジェネティック・リプログラミング療法のヒト臨床試験が開始。緑内障・視神経症の患者を対象に、3つの山中因子（OCT4, SOX2, KLF4）で細胞の若返りを図る。抗老化研究が動物実験からヒト試験へ移行した歴史的転換点。<a href="https://longevity.technology/news/fda-clears-first-human-trial-of-epigenetic-reprogramming-therapy/">Longevity Technology</a></p>
+<h3>短時間・高強度運動がほどほどの運動より効果大</h3>
+<p>最新の研究で、短時間の高強度インターバル運動（HIIT）が中程度の運動と比べて約2倍の身体鍛錬効果を持ち、脳卒中回復にも有効であることが示された。デスクワーク中心のエンジニアが限られた時間で健康を維持するのに実用的な知見。<a href="https://www.businessinsider.jp/article/291815-192-884/">Business Insider Japan</a></p>
+<h2>市場ペイン・ユーザーの不満</h2>
+<h3>MCPサーバー経由のプロンプト注入が無防備</h3>
+<p>外部MCPサーバーがツール応答にLLMへの隠し指示を埋め込める問題が報告されている。AIコーディングツールを業務で使う開発者にとって、信頼境界が曖昧なまま外部ツール連携が進んでおり、ゲートウェイ層やサニタイズ機構が未整備。個人開発者が「応答クリーニングゲートウェイ」を自作して対処している状況。<a href="https://reddit.com/r/ClaudeAI/comments/1s8acge/a_tool_tried_to_override_claudes_behavior_so_i/">r/ClaudeAI</a></p>
+<h3>AIコーディングのトークン消費が可視化できない</h3>
+<p>Claude Codeで大規模リファクタリング中に使用量上限に突然到達しセッションが停止する問題。使用量やコンテキスト消費量の可視性がなく、作業が中断される。同様にOpusからSonnetへの無断モデル切替やコンテキスト自動圧縮の報告も複数あり、開発者がセッション制御を失っている。<a href="https://reddit.com/r/ClaudeAI/comments/1s88zpm/claude_code_just_killed_my_refactor_midsession_so/">r/ClaudeAI</a></p>
+<h3>AI生成コードのリファクタリング負債が顕在化</h3>
+<p>AIでコードを高速生成できるようになった一方、生成されたコードの構造改善（リファクタリング）は依然として人間が設計判断を下す必要がある。AIが量産した低品質コードが技術的負債として蓄積するペインが指摘されている。<a href="https://www.adamhjk.com/blog/you-still-have-to-refactor-even-with-ai/">adamhjk.com</a></p>
+<h3>AI DB操作で破壊的クエリが素通りする</h3>
+<p>MCPでClaudeにDB接続すると、生成されたSQLがそのまま実行され、DELETE/DROPなどの破壊的クエリを防ぐ仕組みがない。SQLGuard MCPという「クエリファイアウォール」が自作されるほど、AIとDBの間にガードレールが欠如している。<a href="https://reddit.com/r/ClaudeDev/comments/1rzdu5g/sqlguard_mcp_a_query_firewall_between_claude_and/">r/ClaudeDev</a></p>
+<h3>AIコーディングツールのコンテキスト爆発でコスト月$500超</h3>
+<p>AI開発ツール利用時にコンテキストが際限なく膨張し、トークンコストが月500ドル以上に達する問題。76%のトークン削減を実現するオープンソースの「コンテキストオプティマイザー」が開発されるほど深刻。個人開発者向けの軽量な解決策に事業機会がある。<a href="https://reddit.com/r/ClaudeDev/comments/1l885by/built_an_opensource_universal_ai_context/">r/ClaudeDev</a></p>
+<hr>
+<h2>事業チャンス候補</h2>
+<table>
+<thead>
+<tr>
+<th>タイトル</th>
+<th>根拠</th>
+<th>難易度</th>
+<th>移動済み</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AIコード検証・レビュー自動化ツール</td>
+<td>Qodo $70M調達＋AI生成コード負債の顕在化。「書く」から「検証する」への価値シフト</td>
+<td>中</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>MCPセキュリティゲートウェイ</td>
+<td>プロンプト注入＋DB破壊的クエリの2つのペインが同時に存在。ガードレール需要は明確</td>
+<td>低〜中</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>AIコーディングのコスト可視化・最適化ツール</td>
+<td>トークン消費不可視＋月$500超コスト＋コンテキスト爆発。76%削減のOSSも登場済み</td>
+<td>低</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>不動産AI検索（日本特化）</td>
+<td>Realtor.com×ChatGPT統合が先行。日本のポータルは未対応でニッチ参入余地あり</td>
+<td>中</td>
+<td>[x]</td>
+</tr>
+</tbody></table>
+</article>  </main> <script type="module">const r=new IntersectionObserver(e=>{e.forEach(s=>{s.isIntersecting&&(s.target.classList.add("visible"),r.unobserve(s.target))})},{threshold:.1});function t(){document.querySelectorAll(".animate-on-scroll").forEach(e=>{e.classList.remove("visible"),r.observe(e)})}t();document.addEventListener("astro:page-load",t);</script></body></html>

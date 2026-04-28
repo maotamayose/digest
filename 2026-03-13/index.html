@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-03-13 · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.CAysBO01.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <header class="max-w-[700px] mx-auto px-6 py-8 flex items-center justify-between"> <a href="/digest/" class="font-mono text-sm text-[#888] hover:text-accent transition-colors">
+digest /
+</a> <nav class="flex gap-6 text-sm text-[#888]"> <a href="/digest/" class="hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="hover:text-accent transition-colors">posts</a> </nav> </header> <main class="max-w-[700px] mx-auto px-6 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← home</a> </div> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl prose-h1:font-medium
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888] prose-h2:border-b prose-h2:border-[#f0f0f0]
+    prose-h3:text-base prose-h3:font-semibold prose-h3:animate-on-scroll
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+    prose-strong:font-semibold
+    [&_blockquote]:border-l-4 [&_blockquote]:border-accent [&_blockquote]:bg-[#f5f3ff] [&_blockquote]:px-4 [&_blockquote]:py-2 [&_blockquote]:rounded-r-md
+  "><h1>2026-03-13 ダイジェスト</h1>
+<h2>技術・エンジニアリング</h2>
+<h3>Claude Code エコシステム：プラグイン時代の本格化</h3>
+<ul>
+<li><strong>公式プラグイン59個が公開</strong> — <code>/plugin install</code> でLSP・MCP・スキル・フックをワンコマンドでインストール可能に。<a href="https://zenn.dev/chmod644/articles/claude-code-plugins-all-59">Zenn</a></li>
+<li><strong>Anthropic公式Skillsガイド（33p PDF）</strong> — スキル構成の最適化でトークン消費40%削減の事例報告。<a href="https://qiita.com/yurukusa/items/f69920b4a02cf7e2988c">Qiita</a></li>
+<li><strong>全社導入の意思決定記事</strong> — gemcookが社内標準化の経緯を公開。<a href="https://zenn.dev/gemcook/articles/claude-code-company-wide">Zenn</a></li>
+<li><strong>Agent Team活用</strong> — 議論形式の調査スキル（discussion-board）の設計紹介。1タスク集中協力型の使い方。<a href="https://zenn.dev/elm/articles/c4b6c2fdc1bf39">Zenn</a></li>
+<li><strong>faceted-prompting</strong> — スキル管理の保守性向上ツール。Claude Code/Codex間の共有問題を解決。<a href="https://zenn.dev/nrs/articles/88f158aca0505b">Zenn</a></li>
+<li><strong>ARIS（Auto-Research-In-Sleep）★330</strong> — 睡眠中にClaude Codeで自律ML研究を回すスキル集。<a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep">GitHub</a></li>
+<li><strong>Claude Agent SDK Python</strong> — <code>tag_session</code>（Unicode対応）、<code>rename_session</code>、<code>RateLimitEvent</code> 型追加。<a href="https://github.com/anthropics/claude-agent-sdk-python">GitHub</a></li>
+</ul>
+<h3>AIモデル動向：三つ巴の構図</h3>
+<ul>
+<li><strong>GPT-5.4リリース（3/5）</strong> — ネイティブPC操作（OSWorld 75%、人間超え）、100万トークンコンテキスト。<a href="https://www.buildfastwithai.com/blogs/gpt-5-4-review-benchmarks-2026">buildfastwithai</a></li>
+<li><strong>Claude Opus 4.6</strong> — SWE-Bench Verified 80.8%でコーディング最強を維持。MMMU Pro 85.1%。</li>
+<li><strong>Gemini 3.1 Pro（2/19）</strong> — GPQA Diamond 94.3%、ARC-AGI-2 77.1%。100万トークン対応で$2/$12/Mと最安。</li>
+<li><strong>Mercury 2</strong> — 推論拡散アーキテクチャで1,000+ tokens/sec。Haiku/GPT-5 Miniの5倍速。</li>
+</ul>
+<h3>その他注目技術</h3>
+<ul>
+<li><strong>Vite 8.0リリース</strong>（HN 144pt）。<a href="https://vite.dev/blog/announcing-vite8">Vite Blog</a></li>
+<li><strong>&quot;Shall I implement it? No&quot;</strong>（HN 1152pt / 433コメント）— AIコーディングの限界に関する大議論。<a href="https://gist.github.com/bretonium/291f4388e2de89a43b25c135b44e41f0">Gist</a></li>
+<li><strong>AI顔認証の誤認逮捕</strong>（HN 552pt）— 無実の祖母が数ヶ月拘留。<a href="https://www.grandforksherald.com/news/north-dakota/ai-error-jails-innocent-grandmother-for-months-in-north-dakota-fraud-case">Grand Forks Herald</a></li>
+<li><strong>Alchemy</strong> — TypeScriptだけでCloudflare/AWSインフラを書けるIaC。★1.9k。<a href="https://zenn.dev/caru/articles/96de2600acec67">Zenn</a></li>
+<li><strong>Cloudflare Browser Rendering /crawl API</strong> — CSSセレクタ不要、URLとJSON Schemaだけでスクレイピング。<a href="https://zenn.dev/jphfa/articles/cloudflare-browser-rendering-crawl-api">Zenn</a></li>
+<li><strong>OneCLI</strong> — AIエージェント用シークレットVault（Rust製OSS）。プレースホルダーキーでエージェントにアクセス権を与える。<a href="https://github.com/onecli/onecli">GitHub</a></li>
+<li><strong>Chrome ARM64 Linux対応</strong>（HN 88pt）。<a href="https://blog.chromium.org/2026/03/bringing-chrome-to-arm64-linux-devices.html">Chromium Blog</a></li>
+</ul>
+<h3>SEO・検索動向</h3>
+<ul>
+<li><strong>Google 3月コアアップデート開始</strong> — 独自調査サイト+22%、アグリゲーション型は大幅下落・インデックス削除。<a href="https://www.quantifimedia.com/march-2026-google-core-update">Quantifi Media</a></li>
+<li><strong>史上初のGoogle Discover専用コアアップデート</strong> — 8億人超のDiscover配信ロジック変更。<a href="https://www.abhs.in/blog/google-march-2026-core-algorithm-update-discover-what-developers-publishers-must-do">ABHS</a></li>
+<li><strong>AI Overviewsの二極化</strong> — 表示検索の80%超がノークリック。しかし引用されたブランドはオーガニックCTR+35%。<a href="https://note.com/taichi_webpro/n/n577fba917868">note.com</a></li>
+<li><strong>検索順位ボラティリティ2ヶ月超継続</strong> — 1月初旬からベースラインに未復帰。</li>
+</ul>
+<h2>ビジネス・スタートアップ</h2>
+<h3>資金調達ハイライト</h3>
+<ul>
+<li><strong>OpenAI $1,100億</strong> — 未上場史上最大の調達。<a href="https://news.crunchbase.com/venture/biggest-funding-rounds-ai-openai-semiconductors-matx/">Crunchbase</a></li>
+<li><strong>Nscale $20億 Series C</strong>（Nvidia出資、AI計算基盤）。<strong>Rhoda AI $4.5億 Series A</strong>（ロボティクスAI）</li>
+<li><strong>Rox AI 評価額$12億</strong> — AI-native CRM。<a href="https://techcrunch.com/2026/03/12/sales-automation-startup-rox-ai-hits-1-2b-valuation-sources-say/">TechCrunch</a></li>
+<li><strong>Wonderful $1.5億 Series B</strong>（評価額$20億、Series Aから4ヶ月）。<strong>Gumloop $5,000万</strong>（Benchmark、AIエージェントビルダー）</li>
+<li><strong>Sunday $11.5億</strong> — 家庭用ヒューマノイドロボット「Memo」。1,000人ウェイトリスト。<a href="https://techcrunch.com/2026/03/12/humanoid-robotics-maker-sunday-reaches-1-15b-valuation-to-build-household-robots/">TechCrunch</a></li>
+<li><strong>国内</strong>: 羅針盤14.5億円（インバウンド）、CULTA 7億円、ATOMica 5.8億円</li>
+</ul>
+<h3>テック業界動向</h3>
+<ul>
+<li><strong>Atlassian 10%人員削減（1,600人）</strong> — AI投資へ再配分。<a href="https://techcrunch.com/2026/03/12/atlassian-follows-blocks-footsteps-and-cuts-staff-in-the-name-of-ai/">TechCrunch</a></li>
+<li><strong>Webflow、Vidoso（AIコンテンツ生成）を買収</strong>。Facebook MarketplaceにMeta AI自動返信機能</li>
+<li><strong>Substack、ビルトイン録画スタジオ</strong> — 最大2名ゲストとの事前収録→直接公開。Tesla、英国で電力小売ライセンス取得</li>
+<li><strong>経産省</strong>: AI・宇宙スタートアップの上場後資金支援を拡充（債務保証制度強化）</li>
+</ul>
+<h3>個人開発・MicroSaaS</h3>
+<ul>
+<li><strong>ポートフォリオ戦略の実証</strong> — 30アプリで月$22k、独学→月$28kの複数事例。<a href="https://www.indiehackers.com/post/tech/from-failed-app-to-30-app-portfolio-making-22k-mo-in-less-than-a-year-myy3U7K9evxGOVOHti8s">Indie Hackers</a></li>
+<li><strong>2026年の勝ちパターン = 「調整問題」を解くAIツール</strong> — 会計・コンプライアンス・ESGレポート等のニッチ業務フロー自動化。Botkeeper（2,000+ SMB顧客）が代表例。<a href="https://growpredictably.com/micro-saas-examples">growpredictably</a></li>
+<li><strong>SaaS Crash 2026</strong> — SaaS時価総額$1兆超が蒸発。AIエージェントによるシート課金崩壊が構造要因。<a href="https://www.saastr.com/the-2026-saas-crash-its-not-what-you-think/">SaaStr</a></li>
+</ul>
+<h3>ペインポイント信号</h3>
+<ul>
+<li><strong>「AI脳疲れ」（AI Brain Fry）</strong> — HBR調査でAIツール過多による認知的過負荷が確認。ツール数が増えるほど逆効果のパラドックス。<a href="https://www.helpnetsecurity.com/2026/03/09/harvard-business-review-ai-workplace-fatigue-report/">Help Net Security</a></li>
+<li><strong>開発者の13%が14以上のツールを使い分け</strong> — 年間100時間超をコンテキストスイッチに浪費。<a href="https://jellyfish.co/library/developer-productivity/pain-points/">Jellyfish</a></li>
+<li><strong>Bloatware不満の高まり</strong> — 「シンプルで軽量なツールが欲しい」がHNで多数。<a href="https://news.ycombinator.com/item?id=46345827">HN</a></li>
+</ul>
+<h2>不動産テック</h2>
+<ul>
+<li><strong>米上院 ROAD to Housing Act 可決（89-10）</strong> — 350戸以上保有の投資家による戸建購入を禁止。建設・リノベ目的は7年売却条件付き例外。<a href="https://www.housingwire.com/articles/senate-passes-21st-century-road-to-housing-act/">HousingWire</a></li>
+<li><strong>CRMLS、RealReports（AI物件インテリジェンス）を無償提供拡大</strong> — ゾーニング・リーエン・気候リスクを集約。<a href="https://www.inman.com/2026/03/12/nations-2nd-largest-mls-expands-no-cost-access-to-ai-property-intelligence-platform/">Inman</a></li>
+<li><strong>Propy、フロリダでAIタイトル企業買収</strong> — 手作業70%削減、処理件数2倍。<a href="https://www.housingwire.com/articles/propy-expands-ai-title-rollup-with-florida-acquisition/">HousingWire</a></li>
+<li><strong>日本：Hajime Construction、Utah州Wright Homesの51%取得</strong> — 日系企業の米住宅市場進出が本格化。<a href="https://www.housingwire.com/articles/hajime-wright-homes-acquisition-utah-homebuilder/">HousingWire</a></li>
+<li><strong>SXSW PropTech Startup Showdown初開催</strong> — Realtor.com/NAR主催。AIエージェントツール領域のスタートアップ6社が登壇</li>
+<li><strong>AIツール日常利用率87%超、Agentic CRM採用89%</strong> — SmartZip・Offrs等の「プレディクティブ・セラーリード」がエージェント主戦場に</li>
+<li><strong>REINS囲い込み規制が定着フェーズ</strong> — QRコード付き登録証明書で売主がスマホから公開状況を直接確認可能に</li>
+<li><strong>Smart Bricks $500万（a16z speedrun）</strong> — AI不動産投資案件発掘。OpenAI/Airbnb/Anthropic/Blackstone出身者がエンジェル参加</li>
+</ul>
+<h2>投資・資産運用</h2>
+<ul>
+<li><strong>日経平均 53,786円（▼666円）</strong> — イラン紛争警戒で続落。<a href="https://www.nikkei.com/markets/worldidx/chart/nk225/">日経</a></li>
+<li><strong>S&amp;P500 6,672.62（▼1.52%）</strong> — 3日続落、11月以来の安値圏。ボラティリティ19-20%。<a href="https://www.thestreet.com/investing/stock-market-today-march-12-2026">TheStreet</a></li>
+<li><strong>ドル円 159.43円</strong> — 有事ドル買いで年初来安値接近。160円突破が視野、介入警戒も。<a href="https://www.bloomberg.com/jp/news/articles/2026-03-12/TBRD8QKJH6V400">Bloomberg</a></li>
+<li><strong>ブレント原油 &gt;$100/バレル</strong> — ホルムズ海峡実質閉鎖で2月$73→$107（+40%超）。IEA備蓄放出も抑制できず</li>
+<li><strong>日本投資家、海外債券3.42兆円売却</strong>（2024年以来最大）— 国内金利上昇でリバランス。<a href="https://www.japantimes.co.jp/business/2026/03/05/economy/japan-investors-overseas-bonds/">Japan Times</a></li>
+<li><strong>来週の注目</strong>: 日銀/FRBの政策コントラスト、ドル円160円突破の可能性</li>
+</ul>
+<h2>地政学・国際</h2>
+<ul>
+<li><strong>米・イスラエル対イラン攻撃 Day 12</strong> — ハメネイ師殺害→後継モジタバ師が徹底抗戦宣言。イラン死者1,300人超、避難民320万人。ホルムズ海峡閉鎖継続。<a href="https://www.aljazeera.com/news/2026/3/11/iran-war-what-is-happening-on-day-12-of-us-israel-attacks">Al Jazeera</a></li>
+<li><strong>トランプ訪中（3/31-4/2）</strong> — 2017年以来初。大豆・航空機・レアアース、Section 301調査を圧力カードに。<a href="https://www.cnbc.com/2026/03/12/section-301-trade-probe-china-trump-xi-beijing-summit.html">CNBC</a></li>
+<li><strong>西側同盟の亀裂</strong> — 対イラン政策で米欧間に乖離が表面化</li>
+<li><strong>グリーンランド問題</strong> — デンマーク議会選挙で主要争点に</li>
+</ul>
+<h2>税務・法律</h2>
+<ul>
+<li><strong>インボイス2割特例、9月末終了→3割特例へ</strong>（法人対象外）。<a href="https://www.zenshoren.or.jp/2026/01/12/post-43625">全商連</a></li>
+<li><strong>仕入税額控除 80%→70%（2026年10月〜）</strong> — 上限額10億→1億円にも引下げ。<a href="https://sogyotecho.jp/inputtaxcredit-extension/">起業の窓口</a></li>
+<li><strong>少額減価償却資産特例 3月31日期限</strong> — 30万円未満の一括経費計上。PC・機材購入は今月中が有利</li>
+<li><strong>法人化ボーダーライン 800〜900万円</strong> — インボイス登録済みなら免税期間メリット限定的</li>
+<li><strong>副業の「事業所得」認定厳格化</strong> — 継続的赤字は雑所得判定リスク</li>
+</ul>
+<h2>海外ビジネス</h2>
+<ul>
+<li><strong>JETRO調査</strong>: 海外事業黒字見込み66.5%（2年連続増）。インド事業拡大志向8割超。<a href="https://www.jetro.go.jp/world/reports/2026/01/23f5d9f6472b5c0d.html">JETRO</a></li>
+<li><strong>日本の対米投資$5,500億コミット</strong> — SOMPOなど保険大手も米国クレジット投資拡大</li>
+<li><strong>海外EC事業者への消費税課税強化</strong>（2026年度税制改正）。<a href="https://www.ey.com/en_jp/technical/ey-japan-tax-library/tax-alerts/2026/tax-alerts-02-17">EY Japan</a></li>
+<li><strong>Japan-Gulfビジネス投資フォーラム</strong> — JETROがドバイで開催。エネルギー・インフラ中心</li>
+</ul>
+<h2>健康・ウェルネス</h2>
+<ul>
+<li><strong>腸-脳コミュニケーションで記憶喪失を逆転</strong>（HN 289pt）— Stanford新研究。<a href="https://med.stanford.edu/news/all-news/2026/03/gut-brain-cognitive-decline.html">Stanford Med</a></li>
+<li><strong>エピジェネティック・リプログラミングがヒト臨床試験段階へ</strong> — Elysium ER-100が史上初の臨床試験開始予定。<a href="https://www.worldgovernmentssummit.org/media-hub/news/detail/ageing-could-soon-be-reversible-says-harvard-scientist-at-wgs-2026">WGS 2026</a></li>
+<li><strong>老化研究のパラダイムシフト</strong> — 個別パスウェイ修復→システム間協調の維持へ。4月ベルリンTargeting Longevity会議</li>
+<li><strong>ブルーゾーンの長寿効果が新研究で再検証・確認</strong> — 食事・コミュニティ・身体活動・目的意識の複合効果。<a href="https://www.news-medical.net/news/20260105/Blue-zones-longevity-claims-validated-by-new-research.aspx">News Medical</a></li>
+</ul>
+<h2>UX・デザイン</h2>
+<ul>
+<li><strong>AIパーソナライゼーション/アダプティブUI</strong> — CVR約40%向上。Machine Experience Design台頭。<a href="https://www.saasframe.io/blog/10-saas-landing-page-trends-for-2026-with-real-examples">SaaSFrame</a></li>
+<li><strong>インタラクティブ・プロダクトプレビュー</strong> — ヒーローセクションに埋め込みデモが標準化</li>
+<li><strong>Bento Grid + グラスモーフィズム復権</strong> — Apple 2025リデザイン起点</li>
+<li><strong>静かで賢いモーション</strong> — Material Expressiveに代表される触覚的インタラクション。<a href="https://uxdesign.cc/10-ux-design-shifts-you-cant-ignore-in-2026-8f0da1c6741d">UX Collective</a></li>
+</ul>
+<hr>
+<h2>事業チャンス候補</h2>
+<table>
+<thead>
+<tr>
+<th>タイトル</th>
+<th>根拠</th>
+<th>難易度</th>
+<th>移動済み</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GEOスコア更新</td>
+<td>Google 3月コアアップデート+Discover専用アップデート+AI Overviews引用ブランドCTR+35%で追い風加速</td>
+<td>-</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>不動産売主AIツール スコア更新</td>
+<td>REINS QRコード定着+AI利用率87%+プレディクティブセラーリード主戦場化</td>
+<td>-</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>SaaS疲れガイド スコア更新</td>
+<td>「AI Brain Fry」HBR調査で科学的裏付け+ツール過多パラドックス</td>
+<td>-</td>
+<td>[x]</td>
+</tr>
+</tbody></table>
+</article>  </main> <script type="module">const r=new IntersectionObserver(e=>{e.forEach(s=>{s.isIntersecting&&(s.target.classList.add("visible"),r.unobserve(s.target))})},{threshold:.1});function t(){document.querySelectorAll(".animate-on-scroll").forEach(e=>{e.classList.remove("visible"),r.observe(e)})}t();document.addEventListener("astro:page-load",t);</script></body></html>

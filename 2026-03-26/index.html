@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-03-26 · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.CAysBO01.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <header class="max-w-[700px] mx-auto px-6 py-8 flex items-center justify-between"> <a href="/digest/" class="font-mono text-sm text-[#888] hover:text-accent transition-colors">
+digest /
+</a> <nav class="flex gap-6 text-sm text-[#888]"> <a href="/digest/" class="hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="hover:text-accent transition-colors">posts</a> </nav> </header> <main class="max-w-[700px] mx-auto px-6 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← home</a> </div> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl prose-h1:font-medium
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888] prose-h2:border-b prose-h2:border-[#f0f0f0]
+    prose-h3:text-base prose-h3:font-semibold prose-h3:animate-on-scroll
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+    prose-strong:font-semibold
+    [&_blockquote]:border-l-4 [&_blockquote]:border-accent [&_blockquote]:bg-[#f5f3ff] [&_blockquote]:px-4 [&_blockquote]:py-2 [&_blockquote]:rounded-r-md
+  "><h1>2026-03-26 ダイジェスト</h1>
+<h2>技術・エンジニアリング</h2>
+<h3>GitHub Copilot、対話データを学習利用へ</h3>
+<p>2026年4月24日からCopilot Free/Pro/Pro+ユーザーの入力・出力・コードスニペットがデフォルトでモデル学習に使われる。オプトアウトは可能だが、プライバシー重視の開発者がClaude Code等の代替ツールへ移行する契機になりうる。<a href="https://github.blog/news-insights/company-news/updates-to-github-copilot-interaction-data-usage-policy/">GitHub Blog</a></p>
+<h3>ARC-AGI-3：静的パズルからエージェント評価へ</h3>
+<p>従来の画像パターン解答ではなく「新環境の探索・動的な目標習得・継続学習」を測るインタラクティブなベンチマーク（HN 289pt）。AIを「最終答え」ではなく「学習効率」で評価するパラダイムシフトで、今後のモデル選定基準を変える可能性。<a href="https://arcprize.org/arc-agi/3">ARC Prize</a></p>
+<h3>Claude出力の90%がスター2未満のリポジトリへ</h3>
+<p>claudescode.devのデータ（HN 210pt）によると、Claude Code経由のコミット2000万件超のうち9割が無名プロジェクトに集中。週+8%成長・61日倍増ペースで、個人開発者の新規プロダクト立ち上げインフラとして機能していることが定量的に示された。<a href="https://www.claudescode.dev/?window=since_launch">claudescode.dev</a></p>
+<h3>LiteLLM、依存パッケージ経由でマルウェア混入</h3>
+<p>日340万DLのAIプロキシライブラリLiteLLMがサプライチェーン攻撃を受けた。SOC2/ISO27001取得済みでの発覚で、AIツールチェーンのセキュリティ審査の甘さを露呈。LLMラッパーを自社プロダクトに組み込む際のベンダー審査強化が急務。<a href="https://techcrunch.com/2026/03/25/delve-did-the-security-compliance-on-litellm-an-ai-project-hit-by-malware/">TechCrunch</a></p>
+<h3>Claude Code auto modeで権限スキップが安全に</h3>
+<p>Anthropic公式が「auto mode」を解説。従来<code>--dangerously-skip-permissions</code>が必要だったヘッドレス実行を、分類器ベースの安全判断で代替可能にした。CI/CD・夜間バッチへの組み込みがより現実的に。<a href="https://www.anthropic.com/engineering/claude-code-auto-mode">Anthropic Engineering</a></p>
+<h2>ビジネス・スタートアップ</h2>
+<h3>AIスキル格差：Anthropicが格差拡大を警告</h3>
+<p>AnthropicがAxios AI Summitで発表した調査によると、AIパワーユーザーと非熟練ユーザーの生産性・報酬格差が急拡大中。「AIを使いこなす側」にいること自体が競合優位になる局面で、ツール習熟が事業の差別化要因に。<a href="https://techcrunch.com/2026/03/25/the-ai-skills-gap-is-here-says-ai-company-and-power-users-are-pulling-ahead/">TechCrunch</a></p>
+<h3>Apple App Store Connect：100指標追加</h3>
+<p>アプリ開発者向けプラットフォームを刷新し、収益化・サブスクリプション・ユーザー行動に関する100以上の新指標を追加。一次データアクセスが大幅拡充され、個人開発者のサブスク型アプリ改善PDCAが回しやすくなる。<a href="https://techcrunch.com/2026/03/25/apple-overhauls-its-app-developer-platform-with-100-new-metrics-more-tools/">TechCrunch</a></p>
+<h3>AI API価格戦争：コスト60%超削減が現実に</h3>
+<p>GPT-4o換算で2024年比93%のコスト削減が実現。300以上のモデルを単一APIキーで利用できるアグリゲーターも台頭。プロンプトキャッシュ・Batch API・モデルティアリングの組み合わせで個人開発者のバーンレートが劇的に下がった。<a href="https://dev.to/lemondata_dev/ai-api-market-in-2026-pricing-trends-new-players-and-whats-coming-2haj">DEV Community</a></p>
+<h3>Deccan AI：AIトレーニングデータ市場に$25M調達</h3>
+<p>インド人材特化のAIトレーニングデータ・評価プラットフォームがシリーズA $25M。貢献者収入は最大$7,000/月。専門知識をAI企業に提供するプラットフォーム型ビジネスの参入余地を示す。<a href="https://techcrunch.com/2026/03/25/deccan-ai-raises-25m-as-ai-training-push-relies-on-india-based-workforce/">TechCrunch</a></p>
+<h2>投資・資産運用</h2>
+<h3>GSが景気後退確率30%に引き上げ</h3>
+<p>ゴールドマン・サックスが米景気後退確率を25%→30%に引き上げ、Moody&#39;sのザンディ氏は約50%と試算。イラン戦争の原油高騰・労働市場の疲弊・財政刺激の剥落が同時進行。<a href="https://fortune.com/2026/03/25/will-there-be-recession-goldman-forecast-oil-price-inflation-economy/">Fortune</a></p>
+<h3>NY連銀CMDI、2025年5月以来の最高水準</h3>
+<p>企業社債市場機能不全指数が3月に急上昇。投資適格債コンポーネントは2023年12月以来の高水準で、「長期高金利固定化」が信用市場を締め付けている。<a href="https://www.bloomberg.com/news/articles/2026-03-25/us-credit-market-grew-more-dysfunctional-in-march-ny-fed-says">Bloomberg</a></p>
+<h3>米・イラン停戦交渉で原油ジェットコースター相場</h3>
+<p>米国が15項目の停戦案を提示し原油が一時6〜7%急落したが、イラン拒否で翌日反発。「停戦交渉相場」が定着し、ヘッジ需要とボラティリティが同時に高まっている。<a href="https://www.investing.com/news/commodities-news/oil-prices-tumble-over-6-on-report-of-us-peace-proposal-to-iran-4578983">Investing.com</a></p>
+<h3>ドル円159円台、有事のドル買い継続</h3>
+<p>MSCIアジア太平洋指数1%安、ドル円は159円台半ばに到達。イラン停戦の進展・後退が日替わりで変わる状況が続き、円安圧力は当面解消しない見通し。<a href="https://www.oanda.jp/lab-education/market_news/2026_03_26_usdjpy/">OANDA Japan</a></p>
+<h2>地政学・国際情勢</h2>
+<h3>米・イスラエル対イラン戦争、外交交渉は膠着</h3>
+<p>開戦26日目。イランは米国の停戦案を拒否、クウェート国際空港への攻撃で大規模火災。ホルムズ海峡で約2,000隻の船舶・2万人の船員が立ち往生し、物流・エネルギー市場への打撃が継続。<a href="https://www.aljazeera.com/news/2026/3/25/us-israel-war-on-iran-whats-happening-on-day-26-of-attacks">Al Jazeera</a></p>
+<h3>最高裁IEEPA違憲判決後、トランプ新関税調査を発令</h3>
+<p>IEEPA関税無効化後、Section 301に基づきEU・中国・メキシコ等十数か国を対象とした新たな貿易調査を発動。全輸入品に一律10%の関税が適用中で、15%への引き上げも示唆。3/31〜4/2に訪中・米中首脳会談が予定。<a href="https://www.nbcnews.com/business/economy/trump-trade-war-section-301-rcna263026">NBC News</a></p>
+<h3>ウクライナ30日停戦案、国連決議も履行不透明</h3>
+<p>ウクライナが即時30日停戦を受け入れる意向を示し国連総会も決議を採択したが、ロシアはクリミア・ドンバス割譲を条件として主張。Polymarketでは3月末停戦の確率1%以下。<a href="https://www.euronews.com/2026/03/10/russia-and-ukraine-both-claim-front-line-progress-with-us-brokered-peace-talks-on-hold">Euronews</a></p>
+<h3>トランプ訪中（3/31〜4/2）で米中首脳会談へ</h3>
+<p>関税・台湾・テクノロジー規制が議題。AIチップ輸出規制の緩和・強化どちらに転ぶかがエンジニアに直接影響するポイント。<a href="https://www.aljazeera.com/news/2026/3/15/us-china-hold-trade-talks-in-paris-to-clear-path-to-trump-xi-summit">Al Jazeera</a></p>
+<h2>不動産テック</h2>
+<h3>ZillowがAIモード検索をベータ公開</h3>
+<p>会話型AIで物件検索・比較・ツアー予約まで完結する「AI mode」をベータ公開。修繕費用推定・ローン試算・近隣情報を統合し、20年分の物件データとFair Housing Classifierを搭載。<a href="https://www.inman.com/2026/03/25/zillow-goes-ai-mode-with-new-home-search-assistant/">Inman</a></p>
+<h3>Zillow Preview拡大、MLS外流通が加速</h3>
+<p>KW・RE/MAX等と組んだ「Preview」プログラムに24ブローカレッジが新規参加。MLS前物件がポータルで可視化される流れが加速し、MLS団体CMLSは「情報の非対称性」と反発。構造対立が鮮明に。<a href="https://www.inman.com/2026/03/25/cmls-coming-soon-zillow-premarketing-real-estate-listings/">Inman</a></p>
+<h3>Friday Harbor AI、審査前スクリーニングで採用拡大</h3>
+<p>Waterstone Mortgage（LO200名超）が書類不備・収入計算ミスをクロージング前に検出するFriday Harbor AIを全国展開に採用。Encompass連携の単機能SaaSが「実際に機能する初めてのAIソリューション」と評価。<a href="https://www.housingwire.com/articles/waterstone-mortgage-adopts-friday-harbor-ai-pre-underwriting/">HousingWire</a></p>
+<h3>RE/MAX、バイヤー手数料訴訟を$8.5Mで和解</h3>
+<p>買主手数料の談合に関するBatton訴訟で$8.5Mの和解に合意。NARルール変更後も訴訟が続き、手数料透明化・比較ツールや買主向け交渉支援プロダクトの需要を後押し。<a href="https://www.inman.com/2026/03/25/remax-settles-buyer-commission-lawsuit-for-8-5m/">Inman</a></p>
+<h2>SEO・Web動向</h2>
+<h3>Google 3月スパムアップデート完了（20時間以内）</h3>
+<p>3月24日12:00 PT開始→25日7:30 AM PT完了。「scaled content abuse」（AIで大量生成したオリジナル性のないページ）を標的。E-E-A-Tシグナルの重み付けが強化され、監視対象サイトの55%が影響を受けた。<a href="https://searchengineland.com/google-march-2026-spam-update-done-rolling-out-472455">Search Engine Land</a></p>
+<h3>AI OverviewsがEC検索の14%に拡大</h3>
+<p>AI Overviewsの商品検索クエリへの表示率が14%に到達（2024年11月の2.1%から5.6倍増）。「best ○○」系の情報クエリでは83%に達し、AI Overview内での引用有無がCTRを決定的に左右する構造に。<a href="https://searchengineland.com/google-ai-overviews-shopping-queries-report-471981">Search Engine Land</a></p>
+<h3>AI Modeで購入完結、ゼロクリック加速</h3>
+<p>米国対象リテーラーでAI Mode内から直接購入が可能に。検索→商品ページ→カートの従来導線が単一AI会話に圧縮され、オーガニック経由のトラフィックモデルが根本から変わる。<a href="https://www.numinix.com/blog/march-2026-seo-algorithm-news-update/">Numinix</a></p>
+<h2>税務・法律・健康</h2>
+<h3>国保逃れスキームに厚労省が規制通達</h3>
+<p>一般社団法人の役員に形式的に就任して社保料を削減するスキームに対し、厚労省が判定基準を示す通達を発出。役員報酬を上回る会費を法人に納付している場合は社保の被保険者と認めないと明示。<a href="https://taxlabor.com/kokoku-nige-scheme-tsutatsu-2026/">taxlabor.com</a></p>
+<h3>青色申告特別控除が最大75万円に拡大へ</h3>
+<p>令和8年度税制改正大綱で65万円→75万円への引き上げが確定方向。電子申告・電子帳簿保存が条件で、クラウド会計ソフト導入のインセンティブがさらに高まる。<a href="https://sogyotecho.jp/tax-reform-2026-outline/">sogyotecho.jp</a></p>
+<h3>育児中フリーランスの国民年金保険料が免除に</h3>
+<p>2026年10月施行予定。国民年金第1号被保険者が子どもの1歳到達まで保険料免除を受けられる制度が開始。父親も対象。会社員との格差が縮小し、フリーランス転向の障壁低下に。<a href="https://romsearch.officestation.jp/news/46863">romsearch.officestation.jp</a></p>
+<h3>解糖代謝物PEPが老化性炎症を抑制と判明</h3>
+<p>Nature Aging掲載のマウス・ヒト横断研究で、ホスホエノールピルビン酸（PEP）がcGAS–STINGシグナルを競合阻害し慢性炎症と認知機能低下を抑制することが示された。<a href="https://www.nature.com/articles/s43587-026-01087-1">Nature Aging</a></p>
+<h2>市場ペイン・ユーザーの不満</h2>
+<h3>AIエージェントのサンドボックス乱立で選択不能</h3>
+<p>37以上のサンドボックスソリューションが乱立し、開発者は選択できない状態。マイクロVMはセキュアだが低速・高コスト、WASMは高速だが機能制限ありと、三要素を同時に満たすものが存在しない。<a href="https://news.ycombinator.com/item?id=47444917">Hacker News</a></p>
+<h3>AIコーディングツールの品質変動が計測困難</h3>
+<p>Claude Codeの品質が時間帯・コンテキスト圧縮後に変動するが、変更はドキュメント化・公表されないため原因を追跡できない。有志がデイリーベンチマークを独自構築して監視せざるを得ない状況。<a href="https://news.ycombinator.com/item?id=46810282">Hacker News</a></p>
+<h3>AI依存パッケージのサプライチェーンリスクが顕在化</h3>
+<p>LiteLLMの事件で、月間9,500万DLのツールでもバージョンをピン留めしていなければ即座に被害を受けることが判明。AI関連プロジェクトでは依存管理の慣行が整っていない。<a href="https://www.bleepingcomputer.com/news/security/popular-litellm-pypi-package-compromised-in-teampcp-supply-chain-attack/">BleepingComputer</a></p>
+<h3>CI/CDパイプラインへのLLMテスト提案が未整備</h3>
+<p>変更箇所を分析してブロッキングすべきテストを提案するLLMベースのCIツールが存在せず、開発者はテスト選択を手動で行っている。<a href="https://news.ycombinator.com/item?id=46345827">Hacker News</a></p>
+<h3>AIエージェントの実行レイヤーに境界・トレースが欠如</h3>
+<p>AI生成コードをそのままevalするのは危険だが、実行境界・トレース・リプレイを提供する統合ランタイムが存在しない。Cloudflare Dynamic Workersが解決策を出したが、ツール単位の権限分離までは未対応。<a href="https://blog.cloudflare.com/dynamic-workers/">Cloudflare Blog</a></p>
+<hr>
+<h2>事業チャンス候補</h2>
+<table>
+<thead>
+<tr>
+<th>タイトル</th>
+<th>根拠</th>
+<th>難易度</th>
+<th>移動済み</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AIエージェント品質モニタリングSaaS</td>
+<td>Claude Code品質変動ペイン + デイリーベンチマーク需要。APIレスポンス品質を定点観測して通知するサービス</td>
+<td>中</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>AI依存パッケージ監査ツール</td>
+<td>LiteLLMサプライチェーン攻撃 + AI固有の依存管理不備。pyproject.toml/package.jsonのAI系パッケージのみ脆弱性・バージョン固定を監査</td>
+<td>低</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>GEO記事の追い風続く</td>
+<td>AI Overviews EC 14%・AI Mode内購入開始でゼロクリック加速。GEO解説コンテンツの需要がさらに裏付けられた（既存アイデア更新）</td>
+<td>—</td>
+<td>[x]</td>
+</tr>
+</tbody></table>
+</article>  </main> <script type="module">const r=new IntersectionObserver(e=>{e.forEach(s=>{s.isIntersecting&&(s.target.classList.add("visible"),r.unobserve(s.target))})},{threshold:.1});function t(){document.querySelectorAll(".animate-on-scroll").forEach(e=>{e.classList.remove("visible"),r.observe(e)})}t();document.addEventListener("astro:page-load",t);</script></body></html>
