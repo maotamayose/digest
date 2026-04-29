@@ -1,14 +1,7 @@
-<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-04-24 · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.CAysBO01.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <header class="max-w-[700px] mx-auto px-6 py-8 flex items-center justify-between"> <a href="/digest/" class="font-mono text-sm text-[#888] hover:text-accent transition-colors">
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-04-24 · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.D1dyOKt1.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
 digest /
-</a> <nav class="flex gap-6 text-sm text-[#888]"> <a href="/digest/" class="hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="hover:text-accent transition-colors">posts</a> </nav> </header> <main class="max-w-[700px] mx-auto px-6 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← home</a> </div> <article class="prose prose-slate max-w-none
-    prose-h1:font-mono prose-h1:text-xl prose-h1:font-medium
-    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888] prose-h2:border-b prose-h2:border-[#f0f0f0]
-    prose-h3:text-base prose-h3:font-semibold prose-h3:animate-on-scroll
-    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
-    prose-strong:font-semibold
-    [&_blockquote]:border-l-4 [&_blockquote]:border-accent [&_blockquote]:bg-[#f5f3ff] [&_blockquote]:px-4 [&_blockquote]:py-2 [&_blockquote]:rounded-r-md
-  "><h1>2026-04-24 ダイジェスト</h1>
-<h2>技術・エンジニアリング</h2>
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="max-w-[1100px] mx-auto px-6"> <div class="mb-10"> <a href="/digest/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← home</a> </div> <div class="flex gap-16 items-start"> <!-- メインコンテンツ --> <article class="min-w-0 flex-1 prose-custom"><h1>2026-04-24 ダイジェスト</h1>
+<h2 id="技術・エンジニアリング">技術・エンジニアリング</h2>
 <h3>GPT-5.5 公開、OpenAI が「スーパーアプリ化」に前進</h3>
 <p>OpenAI が GPT-5.5 を公開。複数カテゴリで能力向上を謳い、ChatGPT を単一モデルではなく「万能アプリ」として束ねる方針を明確化。Claude Opus 4.7 と直接競合するラインで、個人開発者はモデル横断の抽象化（agentic-stack 的アプローチ）の重要度が上がる。<a href="https://news.ycombinator.com/item?id=47879092">Hacker News</a> / <a href="https://openai.com/index/introducing-gpt-5-5/">OpenAI</a></p>
 <p><strong>今すぐ活かせる</strong>:</p>
@@ -50,7 +43,7 @@ digest /
 <li>Pro での Claude Code 運用をブログ/Zennで解説するなら「公式が削除→復活した履歴」を背景として書くと検索意図に刺さる（今週末〜来週がピーク）</li>
 <li><code>/schedule</code> で「Pro プラン内容を毎週月曜にスクレイプして diff 通知」する routine を仕込むと、次の静かな変更を先に察知できる</li>
 </ul>
-<h2>セキュリティ・サプライチェーン</h2>
+<h2 id="セキュリティ・サプライチェーン">セキュリティ・サプライチェーン</h2>
 <h3>npm/PyPI に GPT-Proxy 型バックドア出現</h3>
 <p>Aikido が npm・PyPI パッケージに潜む新手のバックドアを検知。感染サーバーを中国系 LLM のリレーノードに変える仕組みで、AIコーディングツール経由で依存に紛れ込むと、自分のサーバーが第三者の推論トラフィック中継に使われる。Bitwarden CLI 事案と同時期に進行中の別キャンペーン。<a href="https://www.aikido.dev/blog/gpt-proxy-backdoor-npm-pypi-chinese-llm-relay">Aikido</a></p>
 <p><strong>今すぐ活かせる</strong>:</p>
@@ -74,7 +67,7 @@ digest /
 <li>サードパーティ MCP を入れる前に、<code>command</code>/<code>args</code> が信頼バイナリか・ユーザー入力をそのまま渡す設計でないかをコードレビュー。npm パッケージ型 MCP はバージョンピン必須</li>
 <li>MCP サーバー経由でアクセス可能なリソース（GitLab トークン・Drive 認証）は「MCP が乗っ取られた場合」の被害範囲で見積もり直す</li>
 </ul>
-<h2>ビジネス・スタートアップ</h2>
+<h2 id="ビジネス・スタートアップ">ビジネス・スタートアップ</h2>
 <h3>Meta 8000人削減・MS 7%希望退職が同日発表</h3>
 <p>Metaは5/20から全社員の10%（約8000人）削減、Microsoftは年齢+勤続70以上対象に最大7%の希望退職。AIシフトによる大企業の人員圧縮が同日に並走し、元従業員のソロ起業流入が加速する地合い。<a href="https://techcrunch.com/2026/04/23/meta-job-cuts-10-percent-8000-employees/">TechCrunch (Meta)</a> / <a href="https://techcrunch.com/2026/04/23/microsoft-offers-buyout-for-up-to-7-of-u-s-employees/">TechCrunch (Microsoft)</a></p>
 <h3>Era、AIガジェット横断OSで$11M調達</h3>
@@ -85,7 +78,7 @@ digest /
 <p>月額×12になると誤解し、月額とほぼ同額で年額を販売。利用者の多くが年額で契約し想定収益の大部分が消失。料金設計でやりがちな失敗談で、プライシングの読者テストをせずローンチする危険を具体数値で示す。<a href="https://reddit.com/r/SaaS/comments/1s3oooq/stripe_mistake_that_cost_us_our_yearly_plan/">r/SaaS</a></p>
 <h3>Sierra、YC出身仏Fragmentを買収──AIエージェントSaaS再編</h3>
 <p>Bret Taylor率いるAIカスタマーサービスのSierraがYC出身仏Fragmentを取得。AIエージェントSaaS領域でプラットフォーマーによる早期M&amp;Aが動き始めた兆候で、ニッチ特化エージェントは自立成長より買収EXIT前提の設計が合理化しつつある。<a href="https://techcrunch.com/2026/04/23/bret-taylors-sierra-buys-yc-backed-ai-startup-fragment/">TechCrunch</a></p>
-<h2>投資・資産運用</h2>
+<h2 id="投資・資産運用">投資・資産運用</h2>
 <h3>日本3月コアCPI +1.8%、2月から加速</h3>
 <p>総務省が4/24発表した3月全国CPIは生鮮除く総合（コア）が前年同月比+1.8%で、2月の+1.6%から0.2pt拡大し市場予想を上回った。指数は112.1。日銀会合を週末に控え、追加利上げ判断に影響する注目材料。<a href="https://zai.diamond.jp/articles/-/487778">ザイFX</a> / <a href="https://www.stat.go.jp/data/cpi/sokuhou/tsuki/pdf/zenkoku.pdf">総務省統計局</a></p>
 <h3>続報: 日銀4/27-28会合、政策金利0.75%据え置き公算</h3>
@@ -96,7 +89,7 @@ digest /
 <p>4/23時点のWTIは$93.31/bbl、翌日は$94超え。米・イラン外交が進展を欠き4営業日続伸。4月ピークの$119から調整後も中東リスクで再浮上し、インフレ再燃懸念の一因に。<a href="https://fxdailyreport.com/wti-crude-oil-price-analysis-for-april-23-2026/">FXDailyReport</a> / <a href="https://tradingeconomics.com/commodity/crude-oil">Trading Economics</a></p>
 <h3>続報: FOMC 4/28-29、据え置き確率99%、CPI+3.3%が重し</h3>
 <p>Polymarketでは据え置き確率99.4%。3月CPIは前年比+3.3%（2月+2.4%から加速）、3月雇用統計は非農業部門雇用者数+17.8万人・失業率4.3%と堅調。ドットプロットは26年内1回利下げを維持。<a href="https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html">CME FedWatch</a> / <a href="https://www.jpmorgan.com/insights/global-research/economy/fed-rate-cuts">J.P. Morgan</a></p>
-<h2>地政学・国際情勢</h2>
+<h2 id="地政学・国際情勢">地政学・国際情勢</h2>
 <h3>EU、ウクライナへ9兆円融資・対ロ制裁第20弾を承認</h3>
 <p>EUは4月23日、ウクライナへの900億ユーロ規模の融資とロシアへの第20次制裁パッケージを承認。復活祭停戦（4/11-12）が双方の違反主張で崩壊した直後で、米国は停戦延長を模索し時間稼ぎの様相。<a href="https://france.news-pravda.com/en/world/2026/04/23/93780.html">Pravda France</a></p>
 <h3>続報: 米、イラン港湾への海上封鎖を継続・原油100ドル接近</h3>
@@ -105,7 +98,7 @@ digest /
 <p>北朝鮮は4/19、東部新浦付近から5発の戦術弾道ミサイル（火星11型派生）を発射し約136km先の標的に命中。今年7発目・4月だけで4回目。4月上旬にはクラスター弾頭搭載の3日間試験も実施し、金正恩が「5年の研究成果」と誇示。<a href="https://www.aljazeera.com/news/2026/4/19/north-korea-launches-ballistic-missiles-towards-sea-off-its-east-coast">Al Jazeera</a> / <a href="https://thediplomat.com/2026/04/north-korea-fires-5-tactical-ballistic-missiles/">The Diplomat</a></p>
 <h3>中国空母「遼寧」台湾海峡通過・日本MSDF通峡への対抗</h3>
 <p>中国東部戦区は4/18、海自護衛艦の台湾海峡通過翌日に東シナ海で海空合同戦備パトロールを実施。4/20には空母「遼寧」が台湾海峡を南下、フィリピン海・南シナ海で同時作戦展開。米比バリカタン演習への牽制と対米高官協議前の圧力と分析。<a href="https://www.japantimes.co.jp/news/2026/04/18/asia-pacific/china-east-china-sea-military-exercises/">Japan Times</a> / <a href="https://thediplomat.com/2026/04/chinas-liaoning-carrier-heads-south-more-than-a-routine-drill/">The Diplomat</a></p>
-<h2>不動産テック</h2>
+<h2 id="不動産テック">不動産テック</h2>
 <h3>HomeServices of America、仲介・融資・保険を統合基盤化</h3>
 <p>米大手HomeServicesがグループ内の仲介・モーゲージ・タイトル・保険を1プラットフォームに束ねたオールインワン基盤を発表。売主買主の動線を内製内で完結させ付帯収益を最大化する囲い込み型モデル。<a href="https://www.housingwire.com/articles/homeservices-of-america-launches-all-in-one-real-estate-solution/">HousingWire</a></p>
 <h3>Rechat、ブローカレッジ紹介導線を標準化</h3>
@@ -116,7 +109,7 @@ digest /
 <p>住宅価格高騰・ローン長期化を受け、残価設定型住宅ローン普及のカギとなる「特定残価設定ローン保険」を新設。月々返済額を抑えつつ残価下落リスクを保険でカバーする仕組み。<a href="https://suumo.jp/journal/2026/04/22/216564/">SUUMOジャーナル</a></p>
 <h3>岸和田市社協、社協自身が物件オーナーになる居住支援</h3>
 <p>岸和田市社協が地元不動産会社とタッグ、身寄りなしでも緊急連絡先を社協が引き受ける居住支援を展開。社協が物件オーナーにまでなる全国的に珍しい取り組み。<a href="https://suumo.jp/journal/2026/04/20/215296/">SUUMOジャーナル</a></p>
-<h2>SEO・Web動向</h2>
+<h2 id="seo・web動向">SEO・Web動向</h2>
 <h3>Bing、4月AI検索ランキング信号を正式拡張</h3>
 <p>Bing April 2026アップデートは、AI駆動ランキング信号を通常検索と生成回答画面に正式拡張。構造化データ精度とエンティティ関連性の重みが増し、Webmaster ToolsのAI Performanceダッシュボードで被引用URLを直接確認可能に。<a href="https://seovendor.co/bing-april-2026-algorithm-updates">SEOVendor</a></p>
 <h3>ChatGPT被引用、見出し一致と簡潔さが鍵</h3>
@@ -127,7 +120,7 @@ digest /
 <p>2025年11月にTel Avivで発表されたBranded Queries Filterが、2026年3月11日に全対象サイトへ開放完了。AIアシスト分類でブランド名・表記ゆれ・固有商品名クエリをブランド側に自動振り分けし、Web/画像/動画/ニュース全タイプで適用可能。<a href="https://developers.google.com/search/blog/2025/11/search-console-branded-filter">Google Search Central Blog</a></p>
 <h3>Search Console、週次・月次ビューと自然言語分析を追加</h3>
 <p>Performance レポートに週次・月次ビューが追加され、日次ゆらぎを抑えて長期トレンドを把握しやすく。AIパワード設定で「このクエリのモバイル比較を出して」など自然言語で条件・比較・メトリクスを指定可能に（Search results限定）。<a href="https://web.swipeinsight.app/topics/google-search-console">SwipeInsight</a></p>
-<h2>税務・法律・健康</h2>
+<h2 id="税務・法律・健康">税務・法律・健康</h2>
 <h3>インボイス「2割特例」終了、3割特例へ移行</h3>
 <p>2026年9月末で2割特例が終了し、10月から個人事業者向け「3割特例」が2年間（2027・2028年分）の経過措置として新設。免税事業者からの仕入税額控除は80%→70%→50%→30%→0%と段階縮減され、2031年9月末まで延長。サービス業個人は負担が2.5倍跳ね上がるリスクを回避。<a href="https://www.yamada-partners.jp/tax-topics/r080126">令和8年度税制改正解説（山田&amp;パートナーズ）</a></p>
 <h3>労基法、副業の割増賃金通算ルール撤廃へ</h3>
@@ -138,7 +131,7 @@ digest /
 <p>Nature Medicine 2026年4月号。34ヵ国18,701人を対象に73の環境・社会要因を解析。物理的曝露（大気汚染等）は構造的脳老化、社会的曝露（格差等）は機能的脳老化を加速。曝露負荷は脳老化リスクを3.3〜9.1倍に押し上げ、臨床診断の影響を上回った。<a href="https://www.nature.com/articles/s41591-026-04302-z">Nature Medicine</a></p>
 <h3>若年2型糖尿病、過去10年で急増（NEJM）</h3>
 <p>NEJM 2026年4月16日号。全米電子カルテデータベースの解析で、若年発症2型糖尿病の有病率が過去10年間で大幅に増加していることを確認。小児・思春期の代謝健康リスクとして、生活習慣介入の早期化が急務。<a href="https://www.nejm.org/toc/nejm/current">NEJM</a></p>
-<h2>市場ペイン・ユーザーの不満</h2>
+<h2 id="市場ペイン・ユーザーの不満">市場ペイン・ユーザーの不満</h2>
 <h3>Claudeの推論がターン間で保持されない暗黙仕様</h3>
 <p>チャットでClaude/Cowork/Claude Codeをまたいで推論状態が次ターンに引き継がれないことを当て物ゲームで検証。ユーザー側は「文脈がある前提」で指示を書くが実際は毎ターン再構成しており、長期プロジェクトで判断の一貫性が破綻する。告知もUIヒントも無い。<a href="https://reddit.com/r/ClaudeAI/comments/1stze9d/claudes_reasoning_doesnt_persist_between_turns_in/">r/ClaudeAI</a></p>
 <h3>CC harnessのサイレント変更で「別人化」、changelog要求噴出</h3>
@@ -148,7 +141,7 @@ digest /
 <h3>Claudeが長尺プロジェクトで脱線、markdown DIY harnessが量産</h3>
 <p>HyperWorkerのようなmarkdown + フォルダ構造のDIY harnessが登場。公式のメモリ/プランニング機能が長期プロジェクトで信用できず、個人が各々独自のharnessを自作してClaude Codeを「正気」に保っている状況。標準化ペインが濃い。<a href="https://reddit.com/r/ClaudeAI/comments/1stwczh/i_built_a_markdown_file_system_that_helps_stop/">r/ClaudeAI</a></p>
 <hr>
-<h2>事業チャンス候補</h2>
+<h2 id="事業チャンス候補">事業チャンス候補</h2>
 <table>
 <thead>
 <tr>
@@ -189,4 +182,4 @@ digest /
 <td>[ ]</td>
 </tr>
 </tbody></table>
-</article>  </main> <script type="module">const r=new IntersectionObserver(e=>{e.forEach(s=>{s.isIntersecting&&(s.target.classList.add("visible"),r.unobserve(s.target))})},{threshold:.1});function t(){document.querySelectorAll(".animate-on-scroll").forEach(e=>{e.classList.remove("visible"),r.observe(e)})}t();document.addEventListener("astro:page-load",t);</script></body></html>
+</article> <!-- スティッキーTOC --> <aside id="toc" class="hidden lg:block w-[180px] shrink-0 sticky top-28 opacity-0"> <p class="font-mono text-[10px] uppercase tracking-widest text-[#bbb] mb-4">Contents</p> <nav> <a href="#技術・エンジニアリング" data-toc-id="技術・エンジニアリング" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 技術・エンジニアリング </a><a href="#セキュリティ・サプライチェーン" data-toc-id="セキュリティ・サプライチェーン" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> セキュリティ・サプライチェーン </a><a href="#ビジネス・スタートアップ" data-toc-id="ビジネス・スタートアップ" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> ビジネス・スタートアップ </a><a href="#投資・資産運用" data-toc-id="投資・資産運用" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 投資・資産運用 </a><a href="#地政学・国際情勢" data-toc-id="地政学・国際情勢" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 地政学・国際情勢 </a><a href="#不動産テック" data-toc-id="不動産テック" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 不動産テック </a><a href="#seo・web動向" data-toc-id="seo・web動向" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> SEO・Web動向 </a><a href="#税務・法律・健康" data-toc-id="税務・法律・健康" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 税務・法律・健康 </a><a href="#市場ペイン・ユーザーの不満" data-toc-id="市場ペイン・ユーザーの不満" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 市場ペイン・ユーザーの不満 </a><a href="#事業チャンス候補" data-toc-id="事業チャンス候補" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 事業チャンス候補 </a> </nav> </aside> </div> </div>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html> <script type="module" src="/digest/_astro/_date_.astro_astro_type_script_index_0_lang.DdWaqLcw.js"></script>
