@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-05-01（金）週まとめ · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.CWi0Blq2.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/posts/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← posts</a> </div> <div id="ai-disclaimer" class="mb-8 px-4 py-3 bg-[#f9f9f9] border border-[#e8e8e8] rounded-lg text-sm text-[#666] flex items-start gap-3"> <span class="font-mono text-xs bg-[#eee] px-2 py-0.5 rounded shrink-0">AI</span> <p>
+This article is AI-assisted. Content may contain errors — please read critically.
+</p> <button id="dismiss-disclaimer" class="ml-auto shrink-0 text-[#bbb] hover:text-[#888] transition-colors text-lg leading-none" aria-label="閉じる">×</button> </div> <script type="module">const t="ai-disclaimer-dismissed",e=document.getElementById("ai-disclaimer"),i=document.getElementById("dismiss-disclaimer");localStorage.getItem(t)==="true"&&e&&(e.style.display="none");i?.addEventListener("click",()=>{e&&(e.style.display="none"),localStorage.setItem(t,"true")});</script> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888]
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+  "><h1>2026-05-01（金）週まとめ</h1>
+<hr>
+<p>お疲れ様です。WEB開発課の玉代勢です。</p>
+<p>【週まとめ】今週のピックアップ 3本</p>
+<p>今週、AI・不動産・セキュリティで気になったニュースをまとめました。</p>
+<hr>
+<p><strong>① Google検索、「AI概要に引用されるか」が新しいSEOの勝負どころに</strong></p>
+<p>Googleの検索結果に表示される「AI Overview（AIによる概要）」。引用されたページとされなかったページを比べると、引用ページのクリック率が35%高いという調査結果が公開されました（Stackmatixの調査より）。</p>
+<p>これまでのSEOは「上位に表示させること」が目標でしたが、今後は「AIに引用させること」が新たな基準になりつつあります。私たちが運営するサービスのSEO戦略にも、この視点が必要になってきそうです。</p>
+<p>参考: <a href="https://www.stackmatix.com/blog/google-ai-overviews-impact-seo-2026">https://www.stackmatix.com/blog/google-ai-overviews-impact-seo-2026</a></p>
+<hr>
+<p><strong>② 米国でついに「周辺の治安・学校の情報」を不動産サイトで見せられるようになった</strong></p>
+<p>米住宅都市開発省（HUD）が、不動産エージェントが「犯罪率」や「学校の評価」を顧客に提供しても法律違反にならないと明確化しました。</p>
+<p>背景として、公正住宅法（Fair Housing Act）という差別禁止の法律があり、これを根拠にZillow・Redfin等の大手不動産サイトは2021年以降、そうした情報をサイトから削除していました。今回の方針転換で、米国では物件探しの「周辺環境データ」が再び表に出てくることになります。</p>
+<p>日本でも「ハザードマップ」「学区情報」の提供範囲は常に議論になっており、米国の動向は参考になります。</p>
+<p>参考: <a href="https://www.housingwire.com/articles/hud-says-realtors-can-discuss-crime-and-school-data/">https://www.housingwire.com/articles/hud-says-realtors-can-discuss-crime-and-school-data/</a></p>
+<hr>
+<p><strong>③【エンジニア向け】Python機械学習ライブラリが改ざん——念のため確認を</strong></p>
+<p>AI・機械学習の開発でよく使われるPythonライブラリ「PyTorch Lightning」（ライトニング）の特定バージョン（v2.6.2・v2.6.3）に、悪意のあるコードが混入していることが確認されました。インストールすると、AWS・GitHubなどのAPIキーや認証情報が外部に送信される恐れがあります。</p>
+<p>該当バージョンを使っている方は v2.6.4 以上へのアップデートをお願いします。心当たりのない方も、開発環境の依存パッケージを定期的に確認する習慣が大切です。</p>
+<p>参考: <a href="https://semgrep.dev/blog/2026/malicious-dependency-in-pytorch-lightning-used-for-ai-training/">https://semgrep.dev/blog/2026/malicious-dependency-in-pytorch-lightning-used-for-ai-training/</a></p>
+<hr>
+<p>来週もよろしくお願いします。</p>
+</article>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html>
