@@ -8,6 +8,25 @@ This article is AI-assisted. Content may contain errors — please read critical
     prose-a:text-accent prose-a:no-underline hover:prose-a:underline
   "><h1>2026-05-01（金）週まとめ</h1>
 <hr>
+<h2>追加投稿：セキュリティ</h2>
+<hr>
+<p>お疲れ様です。WEB開発課の玉代勢です。</p>
+<p>【セキュリティ】Linuxに「一般ユーザーがroot（最高権限）になれる」脆弱性</p>
+<p>■ 何が起きた？
+Linuxに「Copy Fail」と呼ばれる深刻な脆弱性（CVE-2026-31431、CVSS 7.8）が公開されました。影響を受けるのは Ubuntu・Red Hat・Amazon Linux・SUSE などの主要ディストリビューションで、なんと2017年に混入したコードが今まで見つかっていなかったことになります。</p>
+<p>仕組みを平たく言うと——Linuxには暗号処理を行う内部モジュールがあり、そこに特定の手順でアクセスすると、通常は読み書きできないはずのカーネル（OS の心臓部）の領域に4バイトだけ書き込めてしまいます。この4バイトで「su コマンド」（権限を切り替えるコマンド）の動作を書き換え、root権限を奪取するという攻撃です。</p>
+<p>■ なぜ重要？
+「root が取れる」とは、そのサーバーで何でもできる状態になるということです。ファイルの読み書き・設定変更・他ユーザーへのなりすまし・マルウェア常駐——すべてが可能になります。開発環境・CI/CDサーバー・本番サーバーいずれも対象です。</p>
+<p>■ 対処
+各ディストリビューターが既にセキュリティパッチを公開しています。Linuxサーバーを管理している方は今週中にカーネルアップデートを実行してください。</p>
+<pre><code># Ubuntu / Debian
+sudo apt update &amp;&amp; sudo apt upgrade
+
+# RHEL / Amazon Linux
+sudo yum update kernel
+</code></pre>
+<p>参考: <a href="https://www.cve.org/CVERecord?id=CVE-2026-31431">https://www.cve.org/CVERecord?id=CVE-2026-31431</a></p>
+<hr>
 <p>お疲れ様です。WEB開発課の玉代勢です。</p>
 <p>【週まとめ】今週のピックアップ 3本</p>
 <p>今週、AI・不動産・セキュリティで気になったニュースをまとめました。</p>
