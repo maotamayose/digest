@@ -2,98 +2,121 @@
 digest /
 </a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="max-w-[1100px] mx-auto px-6"> <div class="mb-10"> <a href="/digest/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← home</a> </div> <div class="flex gap-16 items-start"> <!-- メインコンテンツ --> <article class="min-w-0 flex-1 prose-custom"><h1>2026-05-01 ダイジェスト</h1>
 <h2 id="技術・エンジニアリング">技術・エンジニアリング</h2>
-<h3>Claude Opus 4.7リリース：コーディング性能が13%向上</h3>
+<!-- sources-tech.md --><h3>Claude Opus 4.7リリース：コーディング性能が13%向上</h3>
 <p>Anthropicが2026年4月16日にClaude Opus 4.7を公開。コーディングベンチマークでOpus 4.6比13%の解決率向上を達成し、エージェント型の長時間タスクでの一貫性が大幅に改善された。価格は据え置き（入力$5/MTok）で既存ユーザーはそのまま移行できる。<a href="https://www.anthropic.com/news/claude-opus-4-7">Anthropic</a></p>
 <h3>Cloudflareエージェントがアカウント作成〜本番デプロイを全自動化</h3>
-<p>2026年4月30日、CloudflareがエージェントプロビジョニングプロトコルをStripe Projectsとの連携でオープンベータ開始。AIエージェントがCloudflareアカウント作成・ドメイン購入・APIトークン取得・Workers本番デプロイまでを人間不介入で実行できる。デフォルトの月$100支出上限で課金暴走を防ぐ設計。個人開発者がゼロからサービス立ち上げるコストを大幅削減できる。<a href="https://blog.cloudflare.com/agents-stripe-projects">Cloudflare Blog</a></p>
-<h3>open-design：Claude Designのローカル代替OSS（★8612）</h3>
+<p>2026年4月30日、CloudflareがエージェントプロビジョニングプロトコルをStripe Projectsとの連携でオープンベータ開始。AIエージェントがCloudflareアカウント作成・ドメイン購入・APIトークン取得・Workers本番デプロイまでを人間不介入で実行できる。デフォルトの月$100支出上限で課金暴走を防ぐ設計。<a href="https://blog.cloudflare.com/agents-stripe-projects">Cloudflare Blog</a></p>
+<h3>open-design：Claude Designのローカル代替OSS（★8612→9006）</h3>
 <p>Anthropic Labs有料サービス「Claude Design」に対抗するオープンソース実装が急速に支持を集めている。31スキル・72デザインシステム（Stripe・Notion・Linear等）を内蔵し、Claude Code / Codex / Cursor Agent等10種のCLIで動作。Apache-2.0ライセンスで自己ホスト可能。<a href="https://github.com/nexu-io/open-design">GitHub</a></p>
+<h3>Huashu Design ★10803 / Guizang PPT ★4419：skill群が急成長</h3>
+<p>HTML原生デザインskill「huashu-design」が★10803、マガジン風PPTを生成する「guizang-ppt-skill」が★4419を記録し、Claude Code向けskillが単体OSSとして急速にスターを集めている。「高スターskillを起点にしたSaaS化」という事業パターンが浮上している。<a href="https://github.com/alchaincyf/huashu-design">huashu-design</a> / <a href="https://github.com/op7418/guizang-ppt-skill">guizang-ppt-skill</a></p>
+<h3>Claude Code MAXだけで情報収集エージェントを本番運用</h3>
+<p>Claude Code RoutinesをGitHub Actionsと組み合わせることで、追加インフラなしにスケジュール型情報収集エージェントをMAXサブスク内で運用できることを実証した記事が公開された。サーバー費用ゼロで自律エージェントを本番運用するパターンとして具体的な実装例を示している。<a href="https://zenn.dev/team_soda/articles/f7e333e502e408">Zenn</a></p>
+<hr>
 <h2 id="セキュリティ・脆弱性">セキュリティ・脆弱性</h2>
-<h3>PyTorch Lightning汚染：Mini Shai-Hulud第三波</h3>
-<p>ML開発の主要ライブラリ <code>lightning</code> v2.6.2/2.6.3 が2026-04-30に改ざんされ、認証情報・暗号資産ウォレット・VPN設定を窃取するマルウェアが混入した。SAPのnpmパッケージ汚染と同一のMini Shai-Hulud攻撃者によるもので、PyPIとnpmを横断するサプライチェーン攻撃が継続・拡大している。v2.6.4以降へ即時アップグレードと依存関係スキャンが必要。<a href="https://semgrep.dev/blog/2026/malicious-dependency-in-pytorch-lightning-used-for-ai-training/">Semgrep Blog</a></p>
+<!-- sources-security.md → 詳細: intel/security/2026-05-01.md --><h3>PyTorch Lightning汚染：Mini Shai-Hulud第三波</h3>
+<p>ML開発の主要ライブラリ <code>lightning</code> v2.6.2/2.6.3 が2026-04-30に改ざんされ、認証情報・暗号資産ウォレット・VPN設定を窃取するマルウェアが混入した。SAPのnpmパッケージ汚染と同一の攻撃者によるもので、PyPIとnpmを横断するサプライチェーン攻撃が継続・拡大している。v2.6.4以降へ即時アップグレードと依存関係スキャンが必要。<a href="https://semgrep.dev/blog/2026/malicious-dependency-in-pytorch-lightning-used-for-ai-training/">Semgrep Blog</a></p>
 <h3>Linux "Copy Fail"：一般ユーザーからroot昇格（CVE-2026-31431）</h3>
 <p>主要Linuxディストリビューションに影響するローカル権限昇格の脆弱性（CVSS 7.8）が公開された。ページキャッシュへの制御された4バイト書き込みを悪用し、非特権ユーザーがrootを取得できる。開発環境・CI/CDサーバーも対象であり、即時パッチ適用が必要。<a href="https://thehackernews.com/2026/04/new-linux-copy-fail-vulnerability.html">The Hacker News</a></p>
 <h3>git push 1回でRCE：GitHub CVE-2026-3854（CVSS 8.7）</h3>
-<p>リポジトリへのpushアクセスを持つ認証済みユーザーが任意のコマンドをGitHub上で実行できるコマンドインジェクション脆弱性。GitHubは2時間以内に修正し、悪用の痕跡なしと報告しているが、CI/CDパイプラインやセルフホストGitHubを使う組織は影響範囲を確認すべき。<a href="https://github.blog/security/securing-the-git-push-pipeline-responding-to-a-critical-remote-code-execution-vulnerability/">GitHub Security Blog</a></p>
+<p>リポジトリへのpushアクセスを持つ認証済みユーザーが任意のコマンドをGitHub上で実行できるコマンドインジェクション脆弱性。GitHubは2時間以内に修正済みだが、セルフホストGitHubを使う組織は影響範囲を確認すべき。<a href="https://github.blog/security/securing-the-git-push-pipeline-responding-to-a-critical-remote-code-execution-vulnerability/">GitHub Security Blog</a></p>
+<h3>Gemini CLI に CVSS 10.0 の RCE 脆弱性</h3>
+<p>Google の <code>@google/gemini-cli</code> npm パッケージおよびGitHub Actionsワークフローで最大深刻度CVSS 10.0の脆弱性が発見・修正された。外部から細工したコンテンツを読み込ませるだけでホスト上で任意コマンドを実行できる。AI CLIツールをCI/CDに組み込んでいる開発者は即時バージョン確認が必要。<a href="https://thehackernews.com/2026/04/google-fixes-cvss-10-gemini-cli-ci-rce.html">The Hacker News</a></p>
 <h3>偽tanstackパッケージが27分で4版公開、.envを即時窃取</h3>
 <p>TanStackを模倣した偽npmパッケージが27分間で4バージョンを公開し、postinstallフックで <code>.env</code> ファイルを外部送信した。タイプスクワッティングの速度と手口が高度化しており、個人開発者がCIでnpm installするだけで秘密鍵・APIキー類が流出するリスクがある。<a href="https://www.aikido.dev/blog/fake-tanstack-packages-steal-env-files">Aikido</a></p>
 <h3>cPanel/WHM全バージョンに認証バイパス（CVE-2026-41940）</h3>
 <p>約7,000万ドメインを管理するcPanel &amp; WHM v110〜136の全サポート対象バージョンに認証バイパス脆弱性が発見され、既に野外での悪用が確認されている。PoCも公開済みのため早急なパッチ適用が必要。<a href="https://labs.watchtowr.com/the-internet-is-falling-down-falling-down-falling-down-cpanel-whm-authentication-bypass-cve-2026-41940/">watchTowr Labs</a></p>
+<h3>Adobe Acrobat/Readerに深刻な脆弱性、JPCERTが注意喚起</h3>
+<p>JPCERT/CCがAdobe AcrobatおよびReaderの脆弱性（APSB26-44）について注意喚起を公表した。悪意あるPDFを開くだけで任意コードが実行される恐れがある。Adobeの公式アップデートを速やかに適用すること。<a href="https://www.jpcert.or.jp/at/2026/at260011.html">JPCERT/CC</a></p>
+<h3>DPRKがAIにnpmマルウェアを生成させ開発者を標的</h3>
+<p>北朝鮮系グループがClaude Opus LLMを使って悪意あるnpmパッケージを生成・公開し、偽のコンサルティング会社を経由してエンジニアのシステムにRATを展開するキャンペーンが確認された。AIが攻撃インフラに転用される先例として、サプライチェーン攻撃の高度化・低コスト化を示す事例だ。<a href="https://thehackernews.com/2026/04/new-wave-of-dprk-attacks-uses-ai.html">The Hacker News</a></p>
+<p>▶ その他の項目: <a href="../security/2026-05-01.md">intel/security/2026-05-01.md</a></p>
+<hr>
 <h2 id="ビジネス・スタートアップ">ビジネス・スタートアップ</h2>
+<!-- sources-business.md --><h3>Anthropic、$900B超え評価額の大型調達が2週間以内に迫る</h3>
+<p>AnthropicがAppleやその他投資家から評価額$900B超の新ラウンドを近日配分する段階に入ったと報じられた。個人開発者が乗るAPIプラットフォームの価格・制約に直接影響しうる動きであり、Claude/APIエコシステムへの依存度を意識する機会となる。<a href="https://techcrunch.com/2026/04/30/anthropic-potential-900b-valuation-round-could-happen-within-two-weeks/">TechCrunch</a></p>
 <h3>Skio、$8M調達で$105Mキャッシュ売却</h3>
-<p>YC出身のサブスク決済フィンテック Skio が、競合 Recharge に$105Mで売却された。調達額$8Mに対してARR$32M・処理額$40Bを達成しており、少額調達・高効率成長モデルの好例。個人開発者にとって「VC資金に頼らず事業を売れるサイズまで育てる」ルートの現実的な参照点になる。<a href="https://techcrunch.com/2026/04/30/y-combinator-alum-skio-sells-for-105m-cash-only-raised-8m-founder-says/">TechCrunch</a></p>
+<p>YC出身のサブスク決済フィンテック Skio が、競合 Recharge に$105Mで売却された。調達額$8Mに対してARR$32M・処理額$40Bを達成しており、少額調達・高効率成長モデルの好例。「VC資金に頼らず事業を売れるサイズまで育てる」ルートの現実的な参照点になる。<a href="https://techcrunch.com/2026/04/30/y-combinator-alum-skio-sells-for-105m-cash-only-raised-8m-founder-says/">TechCrunch</a></p>
 <h3>Stripe Link、AIエージェントの決済を正式サポート</h3>
-<p>Stripe が Link ウォレットをアップデートし、AIエージェントが仮想カードまたはShared Payment Token経由でユーザーの承認を経て支払えるようにした。認証フローはOAuthベースで、エージェントが使い捨てカードを発行して決済する設計。「エージェントが自律的に購入する」インフラが整い始めたことで、AI Agent向けSaaSの商流設計が変わりうる。<a href="https://techcrunch.com/2026/04/30/stripe-link-digital-wallet-ai-agents-shopping/">TechCrunch</a></p>
+<p>Stripe が Link ウォレットをアップデートし、AIエージェントが仮想カードまたはShared Payment Token経由でユーザーの承認を経て支払えるようにした。「エージェントが自律的に購入する」インフラが整い始めたことで、AI Agent向けSaaSの商流設計が変わりうる。<a href="https://techcrunch.com/2026/04/30/stripe-link-digital-wallet-ai-agents-shopping/">TechCrunch</a></p>
 <h3>リーガルAI Legora、$5.6B評価でHarveyと激突</h3>
 <p>スウェーデン発のリーガルAI Legora がARR $100Mを超え、評価額$5.6Bに達した（Series D追加調達$50M）。18ヶ月でここまで到達し、1,000超の法律事務所・インハウスリーガルチームが利用。Harvey（評価額$11B）と欧米で真正面から競合しており、法律特化AI SaaSが「2強」体制に収れんしつつある。<a href="https://techcrunch.com/2026/04/30/legal-ai-startup-legora-hits-5-6-valuation-and-its-battle-with-harvey-just-got-hotter/">TechCrunch</a></p>
 <h3>Tim Cook退任、Apple記録的売上の裏でRAMageddon</h3>
 <p>Apple Q2 2026は売上$111.2B（全地域で2桁成長）を記録し、John Ternus がCEOに昇格（9月1日付）。一方でAI向けメモリ需要による「RAMageddon」でiPhoneのRAMコストが4倍に跳ね上がり、中高価格帯スマホ向けアプリ開発者は収益モデルを再評価する局面が来る。<a href="https://techcrunch.com/2026/04/30/as-tim-cook-steps-down-apple-hit-record-sales-but-a-chip-shortage-looms/">TechCrunch</a></p>
-<h3>AI需要でMac供給不足、MacBook Neoが品薄状態</h3>
-<p>Apple Q2のMac売上$8.4Bは市場予測を上回り、Mac mini・Mac Studio・MacBook Neoが供給制約に。ローカルAIモデルの実行環境として Mac が選ばれ始めており、Perplexityや複数学区がChromebookからNeoに乗り換えた。Mac向けAIネイティブアプリの需要が確実に上昇している。<a href="https://techcrunch.com/2026/04/30/apple-was-surprised-by-ai-driven-demand-for-macs/">TechCrunch</a></p>
+<hr>
 <h2 id="投資・資産運用">投資・資産運用</h2>
-<h3>政府・日銀が為替介入、円が155円台に急反発</h3>
-<p>4月30日、ドル円が一時160円台後半（1年9カ月ぶり安値）まで円安が進んだ直後、政府・日銀が円買い・ドル売り介入を実施。約5時間で5円超の急騰となり、本日早朝は155円台で推移している。連休中の追加介入警戒も継続。<a href="https://www.nikkei.com/article/DGXZQOUB30BGC0Q6A430C2000000/">日本経済新聞</a></p>
-<h3>日経平均、本日は反発予想・6万円攻防が焦点</h3>
-<p>前日（4月30日）に632円安で終えた日経平均は、本日5月1日に前夜のNYダウ高を追い風に反発が見込まれる。本日は伊藤忠商事・三菱商事・丸紅など主要商社の決算発表が集中しており、市場インパクトが大きい。<a href="https://kabutan.jp/news/marketnews/?b=n202605010266">株探ニュース</a></p>
+<!-- sources-finance.md --><h3>政府・日銀が為替介入、円が155円台に急反発</h3>
+<p>4月30日、ドル円が一時160円台後半（1年9カ月ぶり安値）まで円安が進んだ直後、政府・日銀が円買い・ドル売り介入を実施。約5時間で5円超の急騰となり、本日早朝は157円台で推移している。<a href="https://www.nikkei.com/article/DGXZQOUB30BGC0Q6A430C2000000/">日本経済新聞</a></p>
 <h3>商社決算：伊藤忠が2期連続最高益、三菱商事は3期連続減益</h3>
 <p>2026年3月期決算で伊藤忠商事は純利益9,000億円（前期比+2%）と2期連続最高益。一方、三菱商事は資源価格下落・円高逆風で26%減の7,000億円となり3期連続最終減益。非資源事業の比率が高い企業が優位に立つ構図が鮮明。<a href="https://www.nikkei.com/article/DGXZQOTG306MJ0Q5A430C2000000/">日本経済新聞</a></p>
-<h3>FOMC5月会合：パウエル任期満了で政策の「空白期間」</h3>
-<p>5月のFOMC会合はパウエル議長の任期最終会合となる。議長交代後の利下げ再開が焦点で、FOMC参加者間では「利下げなし（7名）」vs「2回以上（8名）」と大きく割れており、新議長の姿勢確認まで市場の不確実性は高止まり。<a href="https://www.dir.co.jp/report/research/economics/usa/20260319_025646.html">大和総研</a></p>
-<h3>原油WTI、106ドル台でホルムズ封鎖長期化を織り込む</h3>
-<p>WTI原油先物は106.88ドルで清算。ホルムズ海峡の実質封鎖が続く中、直近で一時111ドルの4年ぶり高値をつけており、IEAが「前例のない供給ショック」と表現。インフレ再加速への警戒が個人の生活防衛コスト増に直結している。<a href="https://www.nikkei.com/article/DGXZQOUB130670T10C26A4000000/">日本経済新聞</a></p>
+<h3>FOMC5月会合：3会合連続据え置き、内部対立が1992年以来最多</h3>
+<p>4月28・29日会合でFF金利3.50〜3.75%を据え置き、反対票は1992年以来最多。パウエル議長は5月15日の任期終了後も理事として残留する意向を表明。利下げ再開は2026年下半期以降との観測が強まっている。<a href="https://www.dir.co.jp/report/research/economics/usa/20260319_025646.html">大和総研</a></p>
+<h3>原油WTI、110ドル台——ホルムズ封鎖長期化を織り込む</h3>
+<p>WTI6月物が一時110.29ドルと高値を更新。ホルムズ海峡の事実上の封鎖が続き、エネルギーコスト高止まりが構造化しつつある。IEAが「前例のない供給ショック」と表現しており、インフレ再加速への警戒が続く。<a href="https://www.oanda.jp/lab-education/market_news/2026_05_01_wtioil/">OANDA</a></p>
+<h3>トヨタ・ソニーなど主要企業決算が5月8日に集中</h3>
+<p>5月8日にトヨタ・ソニーグループが決算発表予定。ソニーは3月期通期の営業利益を前期比20.6%増の1兆5400億円に上方修正済みで上振れ期待が高い。来週の日本株物色の方向性を左右するイベントとして要注意。<a href="https://www.nikkei.com/article/DGXZQOFL301I40Q6A430C2000000/">日本経済新聞</a></p>
+<hr>
 <h2 id="地政学・国際情勢">地政学・国際情勢</h2>
-<h3>米議会、半導体装置の対中規制を同盟国に拡大する法案提出</h3>
+<!-- sources-geopolitics.md --><h3>米議会、半導体装置の対中規制を同盟国に拡大する法案提出</h3>
 <p>米連邦議会の超党派議員が4月、日本・オランダなど同盟国に対しても150日以内に米国と同水準の対中輸出規制を求める「MATCH法」を提出した。東京エレクトロンやASMLが対象となり、不履行の場合は半導体製造装置の対中販売を全面禁止する条項を含む。<a href="https://www.nikkei.com/article/DGXZQOGN1607M0W6A410C2000000/">日経新聞</a></p>
-<h3>米商務省、中国・華虹半導体への出荷停止を命令</h3>
-<p>米商務省は4月28日、複数の半導体製造装置メーカーに中国半導体大手「華虹半導体」向けの出荷停止を命じた。5月14〜15日の米中首脳会談直前のタイミングで規制を強化したもので、首脳会談の交渉材料として半導体が使われていることを示す。<a href="https://www.tokyo-np.co.jp/article/485116">東京新聞</a></p>
-<h3>北朝鮮・ロシア間の初の自動車橋が連結完了、6月開通へ</h3>
-<p>ロシアと北朝鮮を結ぶ豆満江架橋（全長約5km）が4月21日に連結完了し、6月の正式開通が見込まれる。ロ朝は「包括的戦略パートナーシップ」の下で軍事・インフラの一体化を加速しており、対ロシア制裁の実効性低下が懸念される。<a href="https://www.nikkei.com/article/DGXZQOGR219790R20C26A4000000/">日経新聞</a></p>
-<h3>米比合同演習が史上最大規模で南シナ海に展開</h3>
-<p>「バリカタン2026」演習（4月20日〜5月8日）で米・比・日・豪・加の5カ国が計11隻を動員し、中国軍は18隻で対抗する形で圧力をかけている。5月14〜15日の米中首脳会談を前に軍事的緊張が高まっており、日本周辺の海上輸送路リスクが上昇している。<a href="https://japan.storm.mg/articles/1126120">風傳媒日本語版</a></p>
+<h3>中国、レアアース輸出を再規制——日米向け出荷が絞られる</h3>
+<p>2025年末の米中合意で一時凍結されたレアアース規制が、2026年3月以降に米国・日本向けのイットリウム・スカンジウム等の出荷を再び絞り込んでいる。日本の素材・半導体企業にとって調達リスクが高止まりしており、5月14日の首脳会談での合意も根本解決には程遠い。<a href="https://www.csis.org/analysis/chinas-new-rare-earth-and-magnet-restrictions-threaten-u-s-defense-supply-chains">CSIS</a></p>
+<h3>トランプ大統領が5/14-15に北京訪問、米中首脳会談へ</h3>
+<p>5月14〜15日にトランプ大統領が北京を訪問し習近平主席と会談する。農産品・航空機の輸入拡大のほか、「貿易委員会」メカニズム設置が俎上に載っている。台湾・テクノロジー統制など構造問題は未解決のまま。<a href="https://www.scmp.com/news/china/diplomacy/article/3351609/why-experts-say-trade-wins-arent-enough-xi-trump-summit-may">South China Morning Post</a></p>
 <h3>ロ・ウクライナ、復活祭停戦は不発・膠着継続</h3>
 <p>4月の「復活祭停戦」でロ・ウクライナは互いに違反を非難し合い、延長拒否でそのまま戦闘継続へ。トランプ政権が仲介する20項目の停戦案の詰めが続いているが、領土割譲・NATO問題で折り合いがつかず合意の見通しは立っていない。<a href="https://www.jiia.or.jp/jpn/report/2026/04/Outlook2026jp06.html">日本国際問題研究所</a></p>
+<h3>北朝鮮・ロシア間の初の自動車橋が連結完了、6月開通へ</h3>
+<p>ロシアと北朝鮮を結ぶ豆満江架橋（全長約5km）が4月21日に連結完了し、6月の正式開通が見込まれる。ロ朝は「包括的戦略パートナーシップ」の下で軍事・インフラの一体化を加速しており、対ロシア制裁の実効性低下が懸念される。<a href="https://www.nikkei.com/article/DGXZQOGR219790R20C26A4000000/">日経新聞</a></p>
+<hr>
 <h2 id="不動産テック">不動産テック</h2>
-<h3>HUD、リアルターによる犯罪・学校データ開示を解禁</h3>
-<p>HUDが2026年4月24日、不動産エージェントが犯罪率・学校品質を顧客に提供してもFair Housing Act違反にならないと明確化し、バイデン政権下の規制を撤回した。Realtor.com・Redfin・Truliaは2021年以降、同データをサイトから削除していたが、開示環境が一変する。日本でも周辺環境データの提供範囲が議論になっており、動向として注目できる。<a href="https://www.housingwire.com/articles/hud-says-realtors-can-discuss-crime-and-school-data/">HousingWire</a></p>
-<h3>AIが住宅ローン審査・サービシングを変革、年$25M効果を試算</h3>
-<p>Pennymacは35超のAIツール（自動コール要約・チャットボット・リード生成など）を展開し年間$2,500万の経済効果を見込む。CreditXpertはAIによるクレジットスコア最適化が借入希望者の60〜70%で30日以内に改善可能と示し、AI審査支援が前工程に入り込む流れが加速している。<a href="https://www.housingwire.com/articles/ai-mortgage-servicing-lending/">HousingWire</a></p>
-<h3>KW、13万人超のエージェント向けマーケツールを内製化</h3>
-<p>Keller Williamsが外部マーケティング会社Michael Lewis Marketing Suiteを買収し、全130,000エージェントへ2026年Q3までに展開する。大手ブローカレッジがエージェント向けマーテックを垂直統合する動きが鮮明で、エージェント支援SaaSの競争環境に影響する。<a href="https://www.businesswire.com/news/home/20260429485975/en/Keller-Williams-Acquires-Michael-Lewis-Marketing-Suite">BusinessWire</a></p>
+<!-- sources-realestate.md → 詳細: intel/real-estate/2026-05-01.md --><h3>HUD、リアルターによる犯罪・学校データ開示を解禁</h3>
+<p>HUDが2026年4月24日、不動産エージェントが犯罪率・学校品質を顧客に提供してもFair Housing Act違反にならないと明確化し、バイデン政権下の規制を撤回した。Realtor.com・Redfin・Truliaは2021年以降、同データをサイトから削除していたが、開示環境が一変する。<a href="https://www.housingwire.com/articles/hud-says-realtors-can-discuss-crime-and-school-data/">HousingWire</a></p>
+<h3>Real×REMAX $880M買収：テック vs 伝統の終止符</h3>
+<p>Real Brokerageが老舗フランチャイズREMAXを$880Mで買収合意。統合後は18万人超・120カ国規模のテック型巨人となる。REMAXのWeb集客資産を収益化しつつAIプラットフォーム「Leo」普及が勝敗を分ける。<a href="https://www.inman.com/2026/04/29/everything-you-need-to-know-about-the-real-remax-merger/">Inman</a></p>
+<h3>AIが住宅ローン審査・サービシングを変革</h3>
+<p>Pennymacは35超のAIツール（自動コール要約・チャットボット・リード生成など）を展開し年間$2,500万の経済効果を見込む。AI審査支援が前工程に入り込む流れが加速している。<a href="https://www.housingwire.com/articles/ai-mortgage-servicing-lending/">HousingWire</a></p>
+<h3>高齢単身者の賃貸終の棲家問題が顕在化</h3>
+<p>65歳以上単身者の賃貸割合は3人に1人（10年で約2割増）。管理会社が孤独死・緊急連絡先対応に追われる構造問題。業界・行政・福祉連携のギャップを埋めるサービス機会がある。<a href="https://suumo.jp/journal/2026/04/24/216482/">SUUMOジャーナル</a></p>
 <h3>Reeku、ワールドカップ特需を狙う賃借人向けサブレット代行を全米展開</h3>
-<p>ReekuはFIFA2026開催16都市に拡張し、賃借人が不在時にAirbnb運用を全代行するサービスで週平均$2,700の収益を試算。「賃借人が資産を稼がせる」モデルは日本でも民泊規制の緩和局面と重なり、管理会社を介した空室収益化SaaSの事業機会として参考になる。<a href="https://www.inman.com/2026/04/29/renters-in-world-cup-cities-could-turn-empty-apartments-into-2700-a-week/">Inman</a></p>
+<p>ReekuはFIFA2026開催16都市に拡張し、賃借人が不在時にAirbnb運用を全代行するサービスで週平均$2,700の収益を試算。「賃借人が資産を稼がせる」モデルは日本でも民泊規制の緩和局面と重なる。<a href="https://www.inman.com/2026/04/29/renters-in-world-cup-cities-could-turn-empty-apartments-into-2700-a-week/">Inman</a></p>
+<hr>
 <h2 id="seo・web動向">SEO・Web動向</h2>
-<h3>3月コアアップデート完了、過去最大級の変動</h3>
-<p>Googleは3月27日〜4月8日にコアアップデートを実施。SEMrushのボラティリティスコアは10段階中9.5を記録し、12月更新より大幅に激しく、上位3位の79.5%が入れ替わった。比較・アグリゲーター系のコンテンツが順位を落とし、一次情報源が優位に立つ傾向が顕著。<a href="https://searchengineland.com/march-2026-google-core-update-what-changed-474397">Search Engine Land</a></p>
+<!-- sources-seo.md --><h3>3月コアアップデート完了、過去最大級の変動</h3>
+<p>Googleは3月27日〜4月8日にコアアップデートを実施。SEMrushのボラティリティスコアは10段階中9.5を記録し、上位3位の79.5%が入れ替わった。比較・アグリゲーター系コンテンツが順位を落とし、一次情報源が優位に立つ傾向が顕著。<a href="https://searchengineland.com/march-2026-google-core-update-what-changed-474397">Search Engine Land</a></p>
 <h3>AI Overviews、9業種で表示率が58%急増</h3>
-<p>2025年2月〜2026年2月の1年間でAI Overviewsのトリガー率が約31%→48%に増加し、業種によっては教育(18%→83%)、B2B Tech(36%→82%)と急拡大した。一方でゼロクリック率はAI Modeで93%に達するとの調査もあり、オーガニック流入への構造的な圧力が続いている。<a href="https://almcorp.com/blog/google-ai-overviews-surge-9-industries/">ALM Corp</a></p>
+<p>2025年2月〜2026年2月の1年間でAI Overviewsのトリガー率が約31%→48%に増加し、業種によっては教育(18%→83%)、B2B Tech(36%→82%)と急拡大した。ゼロクリック率はAI Modeで93%に達するとの調査もあり、オーガニック流入への構造的な圧力が続いている。<a href="https://almcorp.com/blog/google-ai-overviews-surge-9-industries/">ALM Corp</a></p>
 <h3>AI Mode引用サイトはクリック35%増——非引用との格差拡大</h3>
 <p>AI Overviewsに引用されたページは非引用ページに比べオーガニッククリックが35%多く、有料クリックは91%多いという調査結果が公開された。「上位表示」より「AI Overviewsへの引用獲得」が優先目標となるSEO戦略の転換を示している。<a href="https://www.stackmatix.com/blog/google-ai-overviews-impact-seo-2026">Stackmatix</a></p>
+<h3>Googleがバックボタンハイジャックをスパム認定、6/15施行</h3>
+<p>ブラウザの「戻る」ボタンを押した際に訪問していないページへ誘導する手法を、Googleが新スパムポリシーで明示的に禁止する。6月15日から手動・自動の両方でペナルティが適用されるため、広告SDKや外部ライブラリ経由の実装も含めて早急な確認が必要。<a href="https://developers.google.com/search/blog/2026/04/back-button-hijacking">Google Search Central Blog</a></p>
 <h3>AndroidのSearchバーが「Ask Google」に刷新</h3>
 <p>4月29日、AndroidのSearchバーの表記が「Search…」から「Ask Google」に変更され、AIモードへの直接遷移UIが追加された。モバイルユーザーへのAI Mode露出が強化されており、検索UIがAI中心に一段と移行している。<a href="https://9to5google.com/2026/04/29/android-search-ask-google-bar/">9to5Google</a></p>
-<h3>Google AI ModeがChromeとの深い連携を開始</h3>
-<p>4月16日、Google AI ModeがChromeデスクトップ・モバイルと統合され、ブラウザ上からシームレスに呼び出せるようになった。検索とブラウジングの境界が薄れ、サイトへの誘導機会がさらに減少する可能性がある。<a href="https://9to5google.com/2026/04/16/google-ai-mode-chrome/">9to5Google</a></p>
+<hr>
 <h2 id="税務・法律・健康">税務・法律・健康</h2>
-<h3>改正安衛法でフリーランスが労災保護の対象に</h3>
+<!-- sources-lifestyle.md --><h3>改正安衛法でフリーランスが労災保護の対象に</h3>
 <p>2026年4月1日施行の改正労働安全衛生法により、個人事業者・フリーランスが労働災害の保護対象に追加された。発注者は業務中の死亡・負傷を労基署へ報告する義務を負い、混在作業現場での安全措置もフリーランスに拡大適用される。<a href="https://www.nikkei.com/article/DGXZQOUA07BDF0X00C25A5000000/">日本経済新聞</a></p>
 <h3>育児中フリーランスの国民年金保険料が免除へ</h3>
 <p>2026年10月から、国民年金第1号被保険者（自営業・フリーランス）は子どもが1歳になるまで保険料の支払いが免除される。免除期間も加入期間として認定され、将来の基礎年金額に影響しない点がポイント。<a href="https://freenance.net/media/money/insurance/35860/">FREENANCE MAG</a></p>
 <h3>高額療養費の自己負担上限が2026年8月から引き上げ</h3>
-<p>高額療養費制度の自己負担限度額が2026年8月と2027年8月の2段階で引き上げられる。年収約370万〜510万円層（区分ウ）の月上限は約8万円→約8.6万円に増加。一方、年間上限額の新設（同区分で53万円）も導入され、長期入院・慢性疾患への配慮も盛り込まれた。<a href="https://moneiro.jp/media/article/highcost-medical-expensebenefit-up">マネイロメディア</a></p>
-<h3>2026年基礎控除引き上げでフリーランスの節税効果</h3>
-<p>2026年確定申告（令和7年分）から基礎控除額が従来の48万円より引き上げられる改正が適用される。所得帯に応じて控除額が変わり、一定範囲に収まる個人事業主ほど恩恵が大きい。電子帳簿保存法の完全適用も同時期で、経費領収書の電子保存対応が必須になる。<a href="https://m-assets.com/lp/online/blog/freelance-kiso-kojo-2026">税理法人 辻総合会計</a></p>
+<p>高額療養費制度の自己負担限度額が2026年8月と2027年8月の2段階で引き上げられる。年収約370万〜510万円層の月上限は約8万円→約8.6万円に増加。一方、年間上限額の新設（同区分で53万円）も導入される。<a href="https://moneiro.jp/media/article/highcost-medical-expensebenefit-up">マネイロメディア</a></p>
+<h3>副業税務調査リスクが高まっている</h3>
+<p>国税庁はマイナンバーと金融機関情報の照合強化により、副業収入の無申告・過少申告への税務調査を増やしている。年間20万円超の所得は所得税申告が必要で、申告漏れが発覚すると延滞税・無申告加算税が加算される。<a href="https://gns-tax.or.jp/media/tax-investigation-side-business-office-worker/">GNs税務調査対策ナビ</a></p>
+<h3>GLP-1薬が「長寿介入」として注目される</h3>
+<p>GLP-1受容体作動薬（オゼンピック等）について、代謝改善・体重減少にとどまらず全身性炎症の低下・老化抑制効果が蓄積しつつある。調査対象医師の92%が使用または推奨しており、longevity分野の主流介入の一つとして位置づけられ始めた。<a href="https://honehealth.com/edge/longevity-trends/">Hone Health</a></p>
 <h3>Life Biosciences、FDA承認の老化リプログラミング試験が患者登録開始</h3>
 <p>David Sinclair（ハーバード大）が共同創業したLife Biosciences社が、部分的エピジェネティック・リプログラミングによる視機能回復の第1相臨床試験を開始。老化を「逆戻し可能な状態」として扱う初の人体試験として注目される。<a href="https://www.technologyreview.com/2026/01/27/1131796/the-first-human-test-of-a-rejuvenation-method-will-begin-shortly/">MIT Technology Review</a></p>
+<hr>
 <h2 id="市場ペイン・ユーザーの不満">市場ペイン・ユーザーの不満</h2>
-<h3>Claude Codeの使用量が読めない：5時間制限の不透明消費</h3>
+<!-- sources-pain.md --><h3>Claude Codeの使用量が読めない：5時間制限の不透明消費</h3>
 <p>Claude Maxの5時間セッションが「1〜2時間で消える」報告が急増。長コンテキストキャッシュ書き込みやサブエージェント並走が想定外のトークンを消費するが、/usage 画面の内訳が不正確で原因を特定できない。個人開発者が自作の使用量メーターを公開する事態になっている。<a href="https://reddit.com/r/ClaudeAI/comments/1t0aw95/throttle_meter_opensource_claude_code_usage_meter/">Reddit r/ClaudeAI</a></p>
 <h3>AIコーディングエージェントがセッション間でアーキテクチャを忘れる</h3>
 <p>Claude Codeなどのエージェントは、セッション終了ごとに「議論した設計判断・拒否したパターン・既知のバグ回避策」をすべて失う。次セッションで同じ提案を繰り返すため、個人開発者が記憶・ガバナンス層を自作して公開するケースが複数確認されている。<a href="https://reddit.com/r/ClaudeAI/comments/1t0acsf/i_built_an_opensource_memorygovernance_layer_for/">Reddit r/ClaudeAI</a></p>
-<h3>Claude CodeのReadツールがRetina画像を無断縮小する</h3>
-<p>Claude CodeのReadツールがRetinaスクリーンショットをサイレントダウンスケールし、テキストを読み取れなかった事実を報告しない。「自信ありげな要約」を返すため、ユーザーは出力が不正確だと気づけない。スクリーンショットからのデータ抽出ワークフローを組んでいる開発者が直撃する問題。<a href="https://reddit.com/r/ClaudeAI/comments/1t08qow/claude_code_read_tool_silently_downscales_images/">Reddit r/ClaudeAI</a></p>
+<h3>スポンサーシップ獲得が冷メールと仲介業者頼みのまま</h3>
+<p>イベント主催者やコンテンツクリエイターがスポンサーを探すとき、仲介業者に20〜30%を取られるか、自分でコールドメールを送り続けるかしか選択肢がない。スポンサーと出資者を直接マッチングするマーケットプレイスが存在せず、小規模な主催者はリソース不足で商談自体にたどり着けない。<a href="https://reddit.com/r/indiehackers/comments/1sqhzvd/the_sponsorship_industry_is_still_run_on_cold/">r/indiehackers</a></p>
+<h3>複数コーディングエージェントのAPI鍵・設定が全部バラバラ</h3>
+<p>Claude Code・Cursor・Codex・Copilotなど複数エージェントを並行使用すると、設定フォーマットがそれぞれ異なりAPIキーを全箇所に貼り直す必要がある。統一されたコントロールプレーン（MCP設定の集中管理）が存在せず、3本以上を同時に動かす開発者ほど管理コストが増大する。<a href="https://reddit.com/r/SideProject/comments/1t0kqzq/i_got_tired_of_repasting_api_keys_across_4_coding/">r/SideProject</a></p>
 <h3>Claude Opus 4.7品質劣化の不満が多発、上位モデルへの信頼崩壊</h3>
-<p>Max 20xヘビーユーザーを含む複数が「Opus 4.7は明確な品質後退」と訴えており、Redditスレッドが高反応。上位モデルに課金しているのに性能が下がる不満は、AIツール課金に懐疑的なロングテール層を形成しつつある。モデル性能を継続監視・比較するパーソナルツールへのニーズが示唆される。<a href="https://reddit.com/r/ClaudeAI/comments/1t0ffze/opus_47_is_a_genuine_regression_and_im_tired_of/">Reddit r/ClaudeAI</a></p>
-<h3>Apple App Store「月払い12ヶ月縛り」がユーザーを無断ロック</h3>
-<p>Appleが月払い形式の年間コミットメントサブスクリプションを導入。「月額」と表示されるが解約しても残金が請求される仕組みで、透明性のある課金フロー・解約フローを補助するツールへのニーズが生まれている（iOS 26.4以降で展開予定）。<a href="https://www.macrumors.com/2026/04/27/app-store-monthly-subscriptions-12-month-commitment/">MacRumors</a></p>
+<p>Max 20xヘビーユーザーを含む複数が「Opus 4.7は明確な品質後退」と訴えており、Redditスレッドが高反応。上位モデルに課金しているのに性能が下がる不満は、AIツール課金に懐疑的なロングテール層を形成しつつある。<a href="https://reddit.com/r/ClaudeAI/comments/1t0ffze/opus_47_is_a_genuine_regression_and_im_tired_of/">Reddit r/ClaudeAI</a></p>
 <hr>
 <h2 id="事業チャンス候補">事業チャンス候補</h2>
 <table>
@@ -133,6 +156,24 @@ digest /
 <td>賃借人向け民泊代行SaaS（日本版）</td>
 <td>Reekuモデル×日本民泊規制緩和、管理会社経由の空室収益化が事業機会として具体化</td>
 <td>中〜高</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Claude Code skill OSSのSaaS化</td>
+<td>huashu★10803・guizang★4419の急成長。高スターskillを起点に有料版・ホスティングサービス化する動線が成立</td>
+<td>中</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>スポンサーシップ直接マッチングSaaS</td>
+<td>r/indiehackers強ペイン。仲介業者20-30%カットの代替として小規模イベント主催者×スポンサー直接接続</td>
+<td>中</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>マルチエージェントMCP設定一元管理ツール</td>
+<td>Claude Code/Cursor/Codex並行利用者のペインが可視化。HarborはOSSで出たがSaaSはまだない</td>
+<td>低〜中</td>
 <td>[ ]</td>
 </tr>
 </tbody></table>
