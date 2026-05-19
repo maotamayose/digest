@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-05-19-miniplasma · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.CWi0Blq2.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/posts/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← posts</a> </div> <div id="ai-disclaimer" class="mb-8 px-4 py-3 bg-[#f9f9f9] border border-[#e8e8e8] rounded-lg text-sm text-[#666] flex items-start gap-3"> <span class="font-mono text-xs bg-[#eee] px-2 py-0.5 rounded shrink-0">AI</span> <p>
+This article is AI-assisted. Content may contain errors — please read critically.
+</p> <button id="dismiss-disclaimer" class="ml-auto shrink-0 text-[#bbb] hover:text-[#888] transition-colors text-lg leading-none" aria-label="閉じる">×</button> </div> <script type="module">const t="ai-disclaimer-dismissed",e=document.getElementById("ai-disclaimer"),i=document.getElementById("dismiss-disclaimer");localStorage.getItem(t)==="true"&&e&&(e.style.display="none");i?.addEventListener("click",()=>{e&&(e.style.display="none"),localStorage.setItem(t,"true")});</script> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888]
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+  "><p>お疲れ様です。WEB開発課の玉代勢です。</p>
+<p>【セキュリティ】「フルパッチ済みWindows 11」でも権限を奪われるゼロデイが公開——パッチ管理の前提が崩れた</p>
+<p>Windows Updateを毎月適用し、完全に最新状態のWindows 11でも SYSTEM権限を取られる脆弱性のPoC（実証コード）が公開されました。</p>
+<p>■ 何が起きた？
+研究者 Chaotic Eclipse が「MiniPlasma」と名付けたゼロデイの実証コードを公開しました。
+Windowsのクラウドストレージ連携ドライバ（cldflt.sys）に存在する特権昇格の欠陥で、最新パッチが当たったWindows 11でも管理者権限（SYSTEM）を奪取できます。
+同じ研究者は1ヶ月以内に BitLocker 突破（YellowKey）・別の特権昇格（GreenPlasma）も公開しており、今回は3本目です。
+同じ月の Pwn2Own Berlin 2026 では47件のゼロデイが一度に実演されています。</p>
+<p>■ これまでと何が違う？
+・「Patch Tuesdayを律儀に当てれば守れる」という前提自体が崩れた
+・研究者がベンダーの修正速度を超えるペースで PoC をリリースしている
+・「パッチ済み＝安全」ではなく「侵害を前提に被害を最小化する」設計が必要になった</p>
+<p>■ これだけは覚えてほしい
+パッチ適用は引き続き最重要ですが、それだけでは完結しません。
+業務PCで「管理者権限を日常的に使っている」場合は、必要なときだけ使う運用に切り替えられないか上長と相談してみましょう！</p>
+<p>■ 自分はこう動く
+EDRの検知ルール自動更新が有効になっているか確認し、権限の最小化を意識した設計を開発・運用両面で進めていきたいです。</p>
+<p>参考:</p>
+<ul>
+<li>The Hacker News — <a href="https://thehackernews.com/2026/05/miniplasma-windows-0-day-enables-system.html">https://thehackernews.com/2026/05/miniplasma-windows-0-day-enables-system.html</a></li>
+<li>BleepingComputer — <a href="https://www.bleepingcomputer.com/news/microsoft/new-windows-miniplasma-zero-day-exploit-gives-system-access-poc-released/">https://www.bleepingcomputer.com/news/microsoft/new-windows-miniplasma-zero-day-exploit-gives-system-access-poc-released/</a></li>
+</ul>
+</article>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html>

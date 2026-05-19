@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-05-19-php-cve · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.CWi0Blq2.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/posts/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← posts</a> </div> <div id="ai-disclaimer" class="mb-8 px-4 py-3 bg-[#f9f9f9] border border-[#e8e8e8] rounded-lg text-sm text-[#666] flex items-start gap-3"> <span class="font-mono text-xs bg-[#eee] px-2 py-0.5 rounded shrink-0">AI</span> <p>
+This article is AI-assisted. Content may contain errors — please read critically.
+</p> <button id="dismiss-disclaimer" class="ml-auto shrink-0 text-[#bbb] hover:text-[#888] transition-colors text-lg leading-none" aria-label="閉じる">×</button> </div> <script type="module">const t="ai-disclaimer-dismissed",e=document.getElementById("ai-disclaimer"),i=document.getElementById("dismiss-disclaimer");localStorage.getItem(t)==="true"&&e&&(e.style.display="none");i?.addEventListener("click",()=>{e&&(e.style.display="none"),localStorage.setItem(t,"true")});</script> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888]
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+  "><p>お疲れ様です。WEB開発課の玉代勢です。</p>
+<p>【セキュリティ】PHP本体に11件の脆弱性——「自分が書いていないコード」も攻撃面</p>
+<p>2026年5月7日、PHP本体に11件の脆弱性が一斉修正されました。うち4件は重大で、リモートコード実行のリスクを含みます。</p>
+<p>■ 何が起きた？
+PHP本体のSOAPクライアント/サーバ機能に「Use After Free」という深刻な脆弱性（CVE-2026-6722）が確認されました。
+解放済みのメモリ領域を再利用するバグで、うまく悪用されると外部から任意のコードを実行される可能性があります。
+他にも文字列エンコード処理の脆弱性など、PHP本体そのものに4件の重大修正が含まれています。</p>
+<p>■ これまでと何が違う？
+・「脆弱性はライブラリやフレームワークにある」という前提が崩れる
+・PHP本体（ランタイム）自体が攻撃面になる
+・SOAPを「使っていない」と思っていても、PHPビルドにモジュールが含まれていれば攻撃対象になりうる</p>
+<p>■ これだけは覚えてほしい
+担当しているプロダクトのPHPバージョンを確認し、PHP 8.1/8.2/8.3/8.4の最新パッチが当たっているか確かめるようにしましょう！
+PHP 7系はすでに公式サポート終了（2022年11月）で修正が出ないため、移行計画を上長と相談してください。</p>
+<p>■ 自分はこう動く
+各プロダクトのPHPバージョンを一覧化し、古いバージョンが残っている場合の対応優先度を整理していきたいです。</p>
+<p>参考:</p>
+<ul>
+<li>Security NEXT — <a href="https://www.security-next.com/184498">https://www.security-next.com/184498</a></li>
+<li>PHP.net — <a href="https://www.php.net/releases/">https://www.php.net/releases/</a></li>
+</ul>
+</article>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html>
