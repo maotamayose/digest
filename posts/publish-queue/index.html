@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>記事公開キュー — 2026-05 セキュリティ10本シリーズ · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.D_O-pa3l.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/posts/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← posts</a> </div> <div id="ai-disclaimer" class="mb-8 px-4 py-3 bg-[#f9f9f9] border border-[#e8e8e8] rounded-lg text-sm text-[#666] flex items-start gap-3"> <span class="font-mono text-xs bg-[#eee] px-2 py-0.5 rounded shrink-0">AI</span> <p>
+This article is AI-assisted. Content may contain errors — please read critically.
+</p> <button id="dismiss-disclaimer" class="ml-auto shrink-0 text-[#bbb] hover:text-[#888] transition-colors text-lg leading-none" aria-label="閉じる">×</button> </div> <script type="module">const t="ai-disclaimer-dismissed",e=document.getElementById("ai-disclaimer"),i=document.getElementById("dismiss-disclaimer");localStorage.getItem(t)==="true"&&e&&(e.style.display="none");i?.addEventListener("click",()=>{e&&(e.style.display="none"),localStorage.setItem(t,"true")});</script> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888]
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+  "><h1>記事公開キュー — 2026-05 セキュリティ10本シリーズ</h1>
+<p>2026-05-20 のダイジェスト（<code>intel/2026/2026-05-20.md</code> ＋ <code>intel/security/2026-05-20.md</code>）から
+「インシデントレベル高・新規性高」で選んだ10本を、平日2本ペースで公開する。</p>
+<h2>スケジュール</h2>
+<table>
+<thead>
+<tr>
+<th>公開日</th>
+<th>状態</th>
+<th>記事</th>
+<th>ネタ出典</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5/20(水)</td>
+<td>✅下書き済</td>
+<td>はてな11億円流出（BEC・なりすまし送金指示）</td>
+<td>security 2026-05-20 追記2</td>
+</tr>
+<tr>
+<td>5/21(木)</td>
+<td>⬜予定</td>
+<td>Cloudflare Mythos が Apple の5年対策を5日で突破</td>
+<td>メイン 2026-05-20 セキュリティ節</td>
+</tr>
+<tr>
+<td>5/21(木)</td>
+<td>⬜予定</td>
+<td>GitHub 内部リポジトリ侵害（汚染VS Code拡張が経路）</td>
+<td>メイン 2026-05-20 セキュリティ節</td>
+</tr>
+<tr>
+<td>5/22(金)</td>
+<td>⬜予定</td>
+<td>GitHub Actions タグ書き換え攻撃</td>
+<td>メイン 2026-05-20 セキュリティ節</td>
+</tr>
+<tr>
+<td>5/22(金)</td>
+<td>⬜予定</td>
+<td>npm 600本汚染・Shai-Hulud 第3波</td>
+<td>security 2026-05-20 本体</td>
+</tr>
+<tr>
+<td>5/25(月)</td>
+<td>⬜予定</td>
+<td>TrustFall（Claude Code 等 AI CLI の任意コード実行）</td>
+<td>security 2026-05-20 本体</td>
+</tr>
+<tr>
+<td>5/25(月)</td>
+<td>⬜予定</td>
+<td>Linux カーネル LPE 3連鎖（Fragnesia）</td>
+<td>メイン 2026-05-20 技術節</td>
+</tr>
+<tr>
+<td>5/26(火)</td>
+<td>⬜予定</td>
+<td>EvilTokens PhaaS（OAuthデバイスコードで M365 340組織）</td>
+<td>メイン 2026-05-20 セキュリティ節</td>
+</tr>
+<tr>
+<td>5/26(火)</td>
+<td>⬜予定</td>
+<td>台湾新幹線が SDR 実験で停止</td>
+<td>security 2026-05-20 本体</td>
+</tr>
+<tr>
+<td>5/27(水)</td>
+<td>⬜予定</td>
+<td>Hugging Face トークナイザー1ファイル改竄</td>
+<td>security 2026-05-20 本体</td>
+</tr>
+</tbody></table>
+<h2>状態の意味</h2>
+<p>⬜予定 → ✅下書き済（<code>drafts/YYYY-MM-DD-slug.md</code> 作成）→ 📤投稿済（Google Chat 投稿 ＋ <code>posted-archive.md</code>・<code>feedback.md</code> 更新）</p>
+<h2>運用</h2>
+<ul>
+<li>各公開日に <code>/knowledge-post</code> を実行するとき、このキューの該当日の記事を指定する</li>
+<li>投稿が済んだら「状態」列を更新する</li>
+<li>GitHub Actions / npm Shai-Hulud / TrustFall / EvilTokens は前セッションのエンジニア向け下書きが <code>drafts/</code> に既存（<code>2026-05-20-github-actions-tag-hijack.md</code> 等）。再利用・更新で済む場合がある</li>
+</ul>
+</article>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html>
