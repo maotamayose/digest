@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-05-20-cisco-sdwan-kev · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.D_O-pa3l.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/posts/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← posts</a> </div> <div id="ai-disclaimer" class="mb-8 px-4 py-3 bg-[#f9f9f9] border border-[#e8e8e8] rounded-lg text-sm text-[#666] flex items-start gap-3"> <span class="font-mono text-xs bg-[#eee] px-2 py-0.5 rounded shrink-0">AI</span> <p>
+This article is AI-assisted. Content may contain errors — please read critically.
+</p> <button id="dismiss-disclaimer" class="ml-auto shrink-0 text-[#bbb] hover:text-[#888] transition-colors text-lg leading-none" aria-label="閉じる">×</button> </div> <script type="module">const t="ai-disclaimer-dismissed",e=document.getElementById("ai-disclaimer"),i=document.getElementById("dismiss-disclaimer");localStorage.getItem(t)==="true"&&e&&(e.style.display="none");i?.addEventListener("click",()=>{e&&(e.style.display="none"),localStorage.setItem(t,"true")});</script> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888]
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+  "><p>お疲れ様です。WEB開発課の玉代勢です。</p>
+<p>脆弱性スキャンの通知は、毎日のように飛んできます。
+「CVSS 9.8」「CVSS 10.0」——数字を見るたびに身構えますが、全部に今すぐ対応はできません。
+では、どれから手をつけるか。優先順位を、スコアの数字だけで決めていませんか。</p>
+<p>【セキュリティ】CVSS 10.0より優先度を決める4文字——&quot;KEV&quot;</p>
+<p>脆弱性の優先度は「スコアの高さ」ではなく「実際に悪用されているか」で決まります。</p>
+<p>■ 何が起きた？
+Cisco Catalyst SD-WAN Controller（企業のネットワーク全体を集中管理する制御装置）に、認証バイパスの脆弱性 CVE-2026-20182 が見つかりました。
+深刻度はCVSS 10.0、最大値です。
+未認証のリモート攻撃者が、細工したリクエストを送るだけで、内部の高権限ユーザーとしてログインできてしまいます。
+Cisco は2026年5月、実環境での限定的な悪用を確認しました。修正パッチは提供済みです。</p>
+<p>■ 技術的な仕組み
+弱点はピアリング認証（ネットワーク機器同士が信頼関係を結ぶための認証）の不具合です。
+攻撃者はこの認証を経ずに、高権限ユーザーとして装置にログインできます。
+一度入られると、NETCONF（ネットワーク機器の設定を操作するプロトコル）経由で、ネットワーク構成そのものを書き換えられます。</p>
+<p>■ なぜ&quot;KEV&quot;を見るのか
+CVSS 10.0 の脆弱性は、毎月のように出ます。
+スコアだけを見ると全部が最優先になり、かえって順位がつけられません。
+KEV（Known Exploited Vulnerabilities。米CISAが管理・無料公開している「悪用が実際に確認された脆弱性」の一覧）は、理論上の危険度ではなく、現実に攻撃で使われているものだけを集めています。
+今回のCVE-2026-20182 もKEVに追加され、CISAは政府機関に緊急の対応を求めました。
+CVSSが少し低くてもKEV入りのものは、CVSS 10.0でも悪用ゼロのものより先に直すべき場合があります。</p>
+<p>■ これまでと何が違う？
+・脆弱性の数が多すぎて、CVSSスコアだけでは優先順位が機能しなくなった
+・「実際に悪用されているか」という現実の指標が、対応の順番を決める軸になった
+・KEVカタログは誰でも無料で確認できる。判断材料は公開されている</p>
+<p>■ これだけは覚えてほしい
+脆弱性の通知を受けたら、CVSSスコアの数字だけでなく、それがKEVカタログに載っているか——実際に悪用されているか——を確認して優先順位を決めるようにしましょう！判断に迷えば上長に相談していきましょう。</p>
+<p>■ 自分はこう動く
+これまで脆弱性の通知を見たとき、CVSSスコアの数字に反応していました。
+これからは「実際に悪用されているか」をKEVで確認し、悪用されているものから手をつけるようにしたいです。
+SO課と脆弱性情報を共有するときも、この軸で話していきたいです。</p>
+<p>参考:</p>
+<ul>
+<li>The Hacker News — <a href="https://thehackernews.com/2026/05/cisco-catalyst-sd-wan-controller-auth.html">https://thehackernews.com/2026/05/cisco-catalyst-sd-wan-controller-auth.html</a></li>
+<li>Dark Reading — <a href="https://www.darkreading.com/vulnerabilities-threats/maximum-severity-cisco-sd-wan-bug-exploited">https://www.darkreading.com/vulnerabilities-threats/maximum-severity-cisco-sd-wan-bug-exploited</a></li>
+</ul>
+</article>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-05-20-chromadb-rce · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.D_O-pa3l.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/posts/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← posts</a> </div> <div id="ai-disclaimer" class="mb-8 px-4 py-3 bg-[#f9f9f9] border border-[#e8e8e8] rounded-lg text-sm text-[#666] flex items-start gap-3"> <span class="font-mono text-xs bg-[#eee] px-2 py-0.5 rounded shrink-0">AI</span> <p>
+This article is AI-assisted. Content may contain errors — please read critically.
+</p> <button id="dismiss-disclaimer" class="ml-auto shrink-0 text-[#bbb] hover:text-[#888] transition-colors text-lg leading-none" aria-label="閉じる">×</button> </div> <script type="module">const t="ai-disclaimer-dismissed",e=document.getElementById("ai-disclaimer"),i=document.getElementById("dismiss-disclaimer");localStorage.getItem(t)==="true"&&e&&(e.style.display="none");i?.addEventListener("click",()=>{e&&(e.style.display="none"),localStorage.setItem(t,"true")});</script> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888]
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+  "><p>お疲れ様です。WEB開発課の玉代勢です。</p>
+<p>社内文書をAIに読ませて答えさせる仕組みを、試したことがある方もいると思います。
+その裏側では、文書をベクトル（数値の並び）に変換して保存する「ベクターデータベース」が動いています。
+その「AIの記憶」を預けているデータベース、外から触れる状態になっていませんか。</p>
+<p>【セキュリティ】AIの&quot;記憶&quot;を預けるDBが、認証なしで乗っ取られる</p>
+<p>AIアプリの部品であるベクターDBそのものが、認証を素通りされる攻撃の入口になりました。</p>
+<p>■ 何が起きた？
+ChromaDB（AIアプリ向けのベクターデータベース。AIに参照させる文書を保存する定番のオープンソースソフト）に、最大深刻度の脆弱性 CVE-2026-45829 が見つかりました。
+影響を受けるのは Python の FastAPI 版です。
+バージョン1.0.0で混入し、1.5.8まで未修正のまま残っていました。
+ネットワークから到達できるデプロイは、HTTPリクエストを送れる相手なら誰からでも、認証なしで任意のコードを実行されえます。</p>
+<p>■ 技術的な仕組み
+原因は認証チェックの順序の不備です。
+クライアントが指定する embedding function（埋め込み関数。文書をベクトルに変換するモデルの指定）を、アクセス権のチェックよりも前にインスタンス化・実行してしまいます。
+攻撃者は外部モデルへの参照を仕込んだリクエストを送るだけです。
+発見した研究チームの表現では、権限チェックが動く頃には、モデルはすでに取得・実行されています。</p>
+<p>■ なぜ防ぎにくいか
+「認証をかけているから大丈夫」が効きません。認証チェックが走る前に攻撃コードが実行されます。
+さらにベクターDBは「ただのデータ置き場」と見られがちで、Webアプリと同じ強度のセキュリティ対象とは認識されにくいのです。</p>
+<p>■ これまでと何が違う？
+・AIアプリの構成部品（ベクターDB・埋め込みモデル・エージェント基盤）が、それ自体が攻撃の入口になっている
+・「社内用で公開していないつもり」でも、ネットワークから到達できれば対象になる
+・同じ日のニュースには、AIエージェント基盤 PraisonAI が脆弱性の公開直後に攻撃された件も並ぶ。AI周辺コンポーネントの脆弱性が立て続けに出ている</p>
+<p>■ これだけは覚えてほしい
+AIアプリでベクターDBやエージェント基盤を使っているなら、バージョンを最新に保ち、外部ネットワークから到達できる状態になっていないかを点検するようにしましょう！判断に迷う箇所は上長に相談していきましょう。</p>
+<p>■ 自分はこう動く
+ベクターDBやエージェント基盤は、つい「ただの部品」として軽く見てしまいがちです。
+これらもWebアプリと同じ攻撃面だと考え直し、AI機能を扱うときはバージョンと公開範囲を最初に確認するようにしたいです。</p>
+<p>参考:</p>
+<ul>
+<li>BleepingComputer — <a href="https://www.bleepingcomputer.com/news/security/max-severity-flaw-in-chromadb-for-ai-apps-allows-server-hijacking/">https://www.bleepingcomputer.com/news/security/max-severity-flaw-in-chromadb-for-ai-apps-allows-server-hijacking/</a></li>
+</ul>
+</article>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html>

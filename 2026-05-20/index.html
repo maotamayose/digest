@@ -27,6 +27,12 @@ digest /
 <p>Microsoft の署名サービスを悪用した偽コード署名証明書を提供していた MaaS オペレーションを摘発・停止。<a href="https://www.bleepingcomputer.com/news/security/cybercrime-service-disrupted-for-abusing-microsoft-platform-to-sign-malware/">BleepingComputer</a></p>
 <h3>Turla が Kazuar バックドアをモジュール型 P2P ボットネットに進化</h3>
 <p>ロシア FSB 系 APT Turla が Kazuar バックドアをモジュール型ピアツーピアボットネットに改造しステルス性・永続アクセスを大幅強化。<a href="https://thehackernews.com/2026/05/turla-turns-kazuar-backdoor-into.html">The Hacker News</a></p>
+<h3>NGINX rewrite モジュールに18年潜伏した欠陥、未認証 RCE</h3>
+<p>NGINX の rewrite モジュールに18年間存在した脆弱性が発見され、未認証のリモートコード実行が可能。古くから広く使われる設定パターンが影響を受け、既報の CVE-2026-42945（worker クラッシュ系）とは別系統。自前サーバーを運用する個人開発者は即時の設定点検が必要。<a href="https://thehackernews.com/2026/05/18-year-old-nginx-rewrite-module-flaw.html">The Hacker News</a></p>
+<h3>OpenAI が「Daybreak」発表、AI による脆弱性検出を自動化</h3>
+<p>OpenAI が AI で脆弱性検出・パッチ妥当性検証を行うツール「Daybreak」を発表。Microsoft MDASH・Anthropic Mythos と並び、AI による攻撃・防御双方のセキュリティ自動化が2026年の主要トレンドとして加速している。<a href="https://thehackernews.com/2026/05/openai-launches-daybreak-for-ai-powered.html">The Hacker News</a></p>
+<h3>OpenAI 社員端末が npm 汚染で侵害——TanStack 経由の Shai-Hulud</h3>
+<p>OpenAI が社内端末2台のマルウェア感染を開示。社員が npm パッケージ <code>TanStack</code> の汚染版を <code>npm install</code> した際、Mini Shai-Hulud のスティーラーが postinstall スクリプトで実行され認証情報が窃取された経路。本番システム・顧客データ・知的財産への影響は無しと公表。著名 AI 企業すら npm サプライチェーン汚染の影響圏内にあることを示す。<a href="https://thehackernews.com/2026/05/tanstack-supply-chain-attack-hits-two.html">The Hacker News</a></p>
 <p>▶ その他: intel/security/2026-05-20.md</p>
 <h2 id="ビジネス・スタートアップ">ビジネス・スタートアップ</h2>
 <h3>Google I/O 2026: Search・Gmail・Docs が全面 AI エージェント化</h3>
@@ -37,6 +43,10 @@ digest /
 <p>元 Iron Dome 研究者によるエージェンティックなメールセキュリティ企業が資金調達。AI 生成フィッシングの急増を背景に「AI で AI 攻撃を防ぐ」防御 AI カテゴリが新たな資金供給先として台頭。<a href="https://techcrunch.com/2026/05/19/from-teen-hacker-to-iron-dome-researcher-this-founder-raised-28m-to-fight-ai-phishing/">TechCrunch</a></p>
 <h3>MCP ネイティブ対応 Search API が LLM 開発の検索フローを解消</h3>
 <p>「検索→スクレイピング→CAPTCHA 突破→LLM 投入」の煩雑フローを解消する MCP 対応 Search API が登場。AI エージェント開発者の実課題に直結するインフラ層ツール。<a href="https://reddit.com/r/SideProject/comments/1thxcgn/web_scraping_for_llms_was_driving_us_insane_so_we/">Reddit</a></p>
+<h3>Recursive Superintelligence、$650M 調達でステルス脱却</h3>
+<p>元 Salesforce 主席科学者 R.Socher らがロンドンで創業、従業員30名未満で評価額 $4.65B・$650M を調達（GV・Greycroft 主導、Nvidia/AMD 参加）。「AI が自身の性能を分析し人手なしで自己改善する」賭けで、AI 研究の自動化が次の巨額資金フロンティアとして本格化した。<a href="https://thenextweb.com/news/recursive-superintelligence-self-improving-ai-funding">The Next Web</a></p>
+<h3>Parallel Web Systems、$2B 評価でエージェント向け検索 API に $100M</h3>
+<p>AI エージェント向けのリサーチ・検索 API を提供する Parallel Web Systems が評価額 $2B で $100M を調達。「他社プロダクトに組み込まれる検索インフラ」が一大カテゴリ化しており、LLM 向けスクレイピング代替・MCP 連携検索を自作する個人開発者の設計選択にも直結する。<a href="https://techstartups.com/2026/05/19/venture-capital-startup-funding-roundup-may-19-2026/">TechStartups</a></p>
 <h2 id="投資・資産運用">投資・資産運用</h2>
 <h3>ムーディーズ格下げ余波——米30年債一時5%超え</h3>
 <p>ムーディーズが米国債を Aaa から Aa1 へ引き下げ、米30年債利回りが一時5%超と2023年以来の高水準を記録。市場の「米国離れ」懸念が再燃し、金利上昇・ドル安の圧力が継続。<a href="https://www.nri.com/jp/media/column/kiuchi/20250519.html">NRI</a> / <a href="https://www.alliancebernstein.co.jp/market_fund/32523.html">AllianceBernstein</a></p>
@@ -46,6 +56,14 @@ digest /
 <p>5/19 終値は前日比265円安の 60,550円。米半導体株下落を引き継ぎキオクシア・フジクラが売られ AI 相場の調整局面が長期化。<a href="https://kabushiki.jp/news/751563">株式新聞Web</a></p>
 <h3>日銀利上げ観測が浮上——三菱 UFJ が上場来高値更新</h3>
 <p>GDP 上振れを受けて日銀早期利上げ観測が強まり三菱 UFJ が上場来高値。金融セクターへの注目度が急上昇する一方、AI・半導体との二極化が鮮明。<a href="https://www.youtube.com/watch?v=ftL7Fe3krIc">YouTube（日経CNBC系解説）</a></p>
+<h3>エヌビディア決算、5/20 引け後発表で AI 相場の試金石に</h3>
+<p>エヌビディアが米国時間5/20の取引終了後に FY27 第1四半期決算を発表する。粗利益率・第2四半期ガイダンス・中国向け売上への言及が焦点で、3日続落中の S&amp;P500 の方向を左右する最大イベント。オプション市場は決算後の大きな株価変動を織り込む。<a href="https://www.fool.com/investing/2026/05/19/nvda-stock-earnings-beat-date-may-20/">The Motley Fool</a></p>
+<h3>米超長期債利回りが約20年ぶり高水準、20年債 5.19%</h3>
+<p>5/19時点で米10年・20年・30年債利回りがそろって52週高値を更新（10年4.66%、20年5.19%、30年5.17%）。20年・30年債はほぼ20年ぶりの水準で、インフレ再加速懸念がイールドカーブ全体を押し上げている。既報「30年債一時5%超」から超長期ゾーン全体への波及が確認された。<a href="https://www.thestreet.com/stock-market-today/stock-market-today-may-19-2026-updates">TheStreet</a></p>
+<h3>ドル円 159円台で7営業日続伸、介入警戒ラインに接近</h3>
+<p>ドル円は5/20も円安が優勢で159円付近を維持し7営業日続伸。米長期金利の上昇が円売りの背景。ベッセント米財務長官の「過度な変動は望ましくない」発言で一時円高に振れたが即座に戻し、政府・日銀の介入警戒感が上値の重しとなっている。<a href="https://www.oanda.jp/lab-education/market_news/2026_05_20_usdjpy/">OANDA証券</a> / <a href="https://www.nikkei.com/article/DGXZQOFL19BNH0Z10C26A5000000/">日本経済新聞</a></p>
+<h3>日本の超長期国債利回りが急騰、20年債は約30年ぶり高水準</h3>
+<p>原油高によるインフレ懸念と財政拡大観測を背景に超長期ゾーンの金利上昇が加速。5/15に新発20年債利回りが一時3.66%と約30年ぶりの高水準、30年債4.01%・40年債4.235%は発行開始以来の最高値を記録した。住宅ローン金利・企業の資金調達コストへの波及が懸念される。<a href="https://www.bloomberg.com/jp/news/articles/2026-05-15/TF2AOHT9NJLS00">Bloomberg</a></p>
 <h2 id="地政学・国際情勢">地政学・国際情勢</h2>
 <h3>米中首脳会談後、合意内容で双方が対立</h3>
 <p>5/14 の北京会談で農産品・ボーイング・レアアース等の合意が成立も、台湾問題で中国は米国が「一線を越えた」と警告。合意内容の解釈が食い違い、サプライチェーン安定化は予断を許さない。<a href="https://www.aljazeera.com/news/2026/5/15/trump-xi-summit-china-us-disagree-on-what-they-agreed-on">Al Jazeera</a></p>
@@ -57,6 +75,10 @@ digest /
 <p>4/14〜5/12 の4週間で月間8,000機超のドローンを投入するも、45平方マイルの純損失。エストニア情報機関はロシア国内の厭戦感と経済悪化を指摘。<a href="https://www.russiamatters.org/news/russia-ukraine-war-report-card/russia-ukraine-war-report-card-may-13-2026">Russia Matters</a></p>
 <h3>イエメン内戦で11年最大の捕虜交換成立（1,600名超）</h3>
 <p>フーシ派と政府軍が国連・ICRC 仲介のもとアンマンで1,600名超の釈放に合意。中東情勢の部分的緩和の兆し。<a href="https://www.aljazeera.com/news/2026/5/14/yemen-govt-houthis-to-release-more-than-1600-pows-in-largest-swap">Al Jazeera</a></p>
+<h3>米軍の欧州追加撤退を NATO 司令官が明言、関与縮小が鮮明に</h3>
+<p>NATO 欧州連合軍司令官が「さらなる米軍撤退を当然予期すべき」と発言。独からの5,000人撤退・ポーランドへの派遣中止に続き、トランプ政権下で欧州駐留米軍の段階的縮小が鮮明になった。欧州自身の通常戦力強化を迫る構造転換。<a href="https://www.armytimes.com/news/your-military/2026/05/19/more-us-troop-withdrawals-from-europe-expected-nato-commander-says/">Army Times</a></p>
+<h3>G7、対中依存脱却へ重要鉱物の価格下限メカニズムを協議</h3>
+<p>パリで開幕した G7 財務相・中銀総裁会議で、EV・再エネ・防衛に不可欠なレアアース等の供給網を脱中国依存させる方策を協議。ベッセント米財務長官が重要鉱物の備蓄・価格下限メカニズムを検討中と表明し、中国による代替供給網の価格切り崩しを防ぐ狙い。<a href="https://www.investing.com/news/economy-news/g7-finance-chiefs-seek-to-tackle-imbalances-as-trade-strains-unity-4694580">Investing.com</a></p>
 <h2 id="不動産テック">不動産テック</h2>
 <h3>住友林業、米 Tri Pointe 買収クローズ（$45億）</h3>
 <p>関水ハウスに続き日系資本が米国トップ5 ビルダー入り。日本企業による米住宅市場での存在感が急拡大。<a href="https://www.housingwire.com/articles/drb-sumitomo-10-year-growth/">HousingWire</a></p>
@@ -66,6 +88,10 @@ digest /
 <p>イラン紛争によるインフレ圧力で FRB の利下げが遠のき、Q4 2026〜2027 前半も 6.3% 台を継続予測。<a href="https://www.inman.com/2026/05/19/mortgage-rate-forecast/">Inman</a></p>
 <h3>Prophetic AI「SiteAI」、土地収益性試算を分単位に圧縮</h3>
 <p>洪水・湿地・地形込みの区画収益試算を AI で自動生成。日本での用途地域・容積率ベース AI 査定への応用が示唆される。<a href="https://www.housingwire.com/articles/prophetic-ai-homebuilders-land/">HousingWire</a></p>
+<h3>ATTOM、AI エージェント向けデータ基盤「ATTOM Intelligence」発表</h3>
+<p>物件・所有・ローン・リスクデータを機械学習向けに構造化した「AI-Ready Property Data」を中核とするフレームワークを発表。API・バルク配信に加え MCP Server 統合をサポートし、物件データを AI エージェントが直接消費できる形に再設計。日本の物件 DB の AI エージェント対応にも示唆。<a href="https://www.attomdata.com/news/most-recent/attom-introduces-attom-intelligence-to-power-the-future-of-property-data-and-ai-driven-analytics/">ATTOM</a></p>
+<h3>Clear Capital、画像認識 AI の Restb.ai を買収</h3>
+<p>住宅評価テックの Clear Capital が、物件写真から特徴を最大99%精度で自動抽出するバルセロナ拠点の Restb.ai を買収（5/7クローズ）。評価プラットフォームと CubiCasa（間取り図）に統合し、住宅ローン審査の高速化を狙う。物件画像の自動構造化が査定ワークフローに組み込まれる流れ。<a href="https://www.housingwire.com/articles/clear-capital-restb-ai-acquisition/">HousingWire</a></p>
 <p>▶ 詳細: intel/real-estate/2026-05-20.md</p>
 <h2 id="seo・web動向">SEO・Web動向</h2>
 <h3>Google I/O: 検索が AI エージェント型インターフェースに完全移行</h3>
@@ -78,6 +104,10 @@ digest /
 <p>ユーザーが信頼マークを付けたサイトへの表示優先制度が本格展開。キーワード追跡よりブランド構築・ニュースレター・コミュニティが実質的な SEO 施策になりつつある。<a href="https://localdominator.co/seo-news/seo-news-roundup-may-11-to-17-2026/">Local Dominator</a></p>
 <h3>Google が AI 向け最適化の公式ガイドを公開——GEO を SEO の延長として定義</h3>
 <p>GEO を SEO の延長として公式定義した最初の一次ドキュメント。従来 SEO と GEO を統合した情報として整理されている。<a href="https://developers.google.com/search/blog/2026/05/a-new-resource-for-optimizing">Google Search Central Blog</a></p>
+<h3>5月13〜14日に検索順位の大規模変動、サイト消失も</h3>
+<p>12以上の追跡ツールが5/13〜14に同時に激しい順位変動を検知。Google は公式更新を確認しておらず Mueller も異常を否定する一方、「Crawled - currently not indexed」によるデインデックス拡大や Discover トラフィック停止の報告が出ている。3月コアアップデートの遅延コンポーネント説が有力で、個人サイト運営者はインデックス監視が必要。<a href="https://ppc.land/google-search-volatility-spikes-again-and-sites-are-vanishing-from-the-index/">PPC Land</a></p>
+<h3>SEO の新ゴールは「順位」ではなく「認知」</h3>
+<p>AI モデルは SERP をクロールせず訓練データ・引用パターン・ナレッジグラフから判断するため、高順位＝可視性が崩れたと Search Engine Land が指摘。施策はエンティティ監査（Wikidata・Knowledge Panel の説明統一）・引用される一次調査資産の作成・オフサイト言及の拡大の3軸へ、指標も「ブランド名検索量・未リンク言及数」へ転換すべきとする。<a href="https://searchengineland.com/seo-goal-recognition-476756">Search Engine Land</a></p>
 <h2 id="税務・法律・健康">税務・法律・健康</h2>
 <h3>インボイス仕入税額控除の経過措置が5段階・2031年9月まで延長</h3>
 <p>令和8年度改正で当初3段階だったスケジュールが5段階（80%→70%→50%→30%→0%）に変更、終了時期も延長。免税事業者向け「3割特例」（個人のみ）が 2026年10月から2年間新設される。<a href="https://www.oonumata.or.jp/2026/02/17/%E3%80%902026%E5%B9%B410%E6%9C%88%E6%94%B9%E6%AD%A3%E3%80%91%E4%BB%95%E5%85%A5%E7%A8%8E%E9%A1%8D%E6%8E%A7%E9%99%A4%E3%81%AE%E7%B5%8C%E9%81%8E%E6%8E%AA%E7%BD%AE%E3%81%8C2%E5%B9%B4%E5%BB%B6%E9%95%B7/">oonumata.or.jp</a></p>
@@ -85,6 +115,10 @@ digest /
 <p>ロチェスター大学が裸もぐらネズミ由来の高分子ヒアルロン酸生成遺伝子をマウスに導入し、がん抑制・炎症低下・健康寿命延伸を確認。異種間の長寿遺伝子移植が哺乳類で機能する初の実証事例。<a href="https://www.sciencedaily.com/releases/2026/05/260510030948.htm">ScienceDaily</a></p>
 <h3>ドナネマブが早期アルツハイマーの進行リスクを半減</h3>
 <p>東京都健康長寿医療センターが最新解析を公開。早期アルツハイマー病患者の「自立した生活」の維持期間を有意に延長し、介護負担の軽減効果を定量的に示した。<a href="https://www.tmghig.jp/research/">東京都健康長寿医療センター研究所</a></p>
+<h3>ラパマイシンが高齢者の運動効果を打ち消す（RCT）</h3>
+<p>抗老化薬として注目されるラパマイシンについて、運動習慣のない65〜85歳40人を対象とした二重盲検 RCT（週6mg・13週間）の結果が公表。投与群は30秒椅子立ち座りテストの回数がプラセボ群より平均約2回少なく、運動由来の筋機能向上が鈍る可能性が示された。健康な高齢者の安易な使用に疑問符。<a href="https://onlinelibrary.wiley.com/doi/10.1002/jcsm.70274">Journal of Cachexia, Sarcopenia and Muscle</a></p>
+<h3>学習院大、ミトコンドリア活性化で老齢マウス寿命40%延長</h3>
+<p>学習院大学が、老化ミトコンドリアの「数を増やす」「機能を高める」を同時に実現する植物由来化合物「マイトルビン」を発見。老齢マウスで加齢性心機能低下を改善し、高脂肪食負荷マウスでは生存期間中央値が約40%延長した。npj Aging に2026年4月18日付で掲載。<a href="https://www.univ.gakushuin.ac.jp/about/press/31764.html">学習院大学プレスリリース</a></p>
 <h2 id="市場ペイン・ユーザーの不満">市場ペイン・ユーザーの不満</h2>
 <h3>サブスク疲れ——オフライン・一括払いツールの市場空白</h3>
 <p>9,300件超の Reddit 投稿分析で約640件（7%）がオフライン・プライバシー重視の代替を明示的に求めている。クラウド前提の既存ツールに対して、一括払い・ローカル動作の選択肢がほぼ空白。<a href="https://nomusica.com/reddit-analysis-reveals-what-users-really-want-from-new-apps-and-saas-tools-in-2026/">Reddit Analysis – nomusica.com</a></p>
@@ -135,6 +169,12 @@ digest /
 <td>ガードレール層 OSS（Forge 型）の日本語コミュニティ</td>
 <td>Forge が OSS 公開済み。ドキュメント・事例の日本語化で差別化</td>
 <td>低</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>不動産データの MCP サーバー化</td>
+<td>ATTOM が AI-Ready Property Data + MCP 統合を発表。日本の物件 DB を AI エージェント向けに構造化する余地</td>
+<td>中</td>
 <td>[ ]</td>
 </tr>
 </tbody></table>
