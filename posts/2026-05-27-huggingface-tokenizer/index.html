@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-05-27-huggingface-tokenizer · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.D_O-pa3l.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/posts/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← posts</a> </div> <div id="ai-disclaimer" class="mb-8 px-4 py-3 bg-[#f9f9f9] border border-[#e8e8e8] rounded-lg text-sm text-[#666] flex items-start gap-3"> <span class="font-mono text-xs bg-[#eee] px-2 py-0.5 rounded shrink-0">AI</span> <p>
+This article is AI-assisted. Content may contain errors — please read critically.
+</p> <button id="dismiss-disclaimer" class="ml-auto shrink-0 text-[#bbb] hover:text-[#888] transition-colors text-lg leading-none" aria-label="閉じる">×</button> </div> <script type="module">const t="ai-disclaimer-dismissed",e=document.getElementById("ai-disclaimer"),i=document.getElementById("dismiss-disclaimer");localStorage.getItem(t)==="true"&&e&&(e.style.display="none");i?.addEventListener("click",()=>{e&&(e.style.display="none"),localStorage.setItem(t,"true")});</script> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888]
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+  "><p>お疲れ様です。WEB開発課の玉代勢です。</p>
+<p>先日、配布されているAIモデルを業務で試そうとした時、まず見るのはモデル本体のファイルだと思いました。重みのファイルが正しければひとまず安心、付属の設定ファイルはオマケ、というくらいの感覚でした。
+ですが今回の話は、そのオマケ扱いしていた付属ファイル1個が出力そのものを握っているという内容です。
+皆さんは、AIモデルを取ってきた時、本体以外のファイルまで中身を見ていますか？</p>
+<p>【セキュリティ】Hugging Face のトークナイザーファイル1本の改竄でAIモデルの出力を乗っ取り——「本体は無事」が安全の根拠にならない</p>
+<p>AIモデル本体ではなく、付属する平文ファイル1個を書き換えるだけで、モデルの出力をハイジャックしデータを抜けることが示されました。</p>
+<p>■ 何が起きた？
+・セキュリティ企業 HiddenLayer の研究チームが、Hugging Face で配布されるAIモデルに対する新しい攻撃面を公表した
+・改竄対象は <code>tokenizer.json</code> というファイル。多くのモデルにモデル本体と並んで同梱されている
+・このファイルを1ヶ所編集するだけで、モデルが出力する内容を攻撃者が直接コントロールでき、利用者の端末への足がかりを得る可能性もある
+・同じ調査では、約100件の悪意あるモデルも別途見つかっている（CVE番号・特定の悪用事例・日付は公表内容に含まれていません）</p>
+<p>■ 技術的な仕組み
+・AIモデルの出力は、まず整数IDの並びとして生成される。それを人間が読める言葉に変換（デコード）するのがトークナイザー
+・<code>tokenizer.json</code> は、その「IDと言葉の対応表」にあたる。攻撃者がこの対応表を書き換えると、モデルが本来意図した出力を、攻撃者の狙った別の文字列に差し替えられる
+・公開リポジトリからモデルをデプロイすると、本体に紐づくこの <code>tokenizer.json</code> も一緒にデプロイされる。研究チームは「tokenizer.json はモデルと並ぶ平文ファイルだが、デプロイしたシステムが実際に何をするかを決めている」と表現している</p>
+<p>■ なぜ防ぎにくいか
+・<code>tokenizer.json</code> は中身が改竄されていても、モデル自体は「正しく動くように見える」。エラーも出ず普通に応答が返るため、動作確認では気づけない
+・このファイルが「コード」ではなく「設定」として扱われていることが盲点。信頼コードベースのレビュー対象から外れ、誰の目視チェックも素通りする
+・モデル本体（重みファイル）の悪性スキャンを通っていても、付属ファイルの改竄はその検査の外側にある</p>
+<p>■ これまでと何が違う？
+・5/12 に共有した「Hugging Face で偽OpenAIリポジトリがトレンド1位（約24.4万DL）」は、攻撃者が偽物を新規に置く手口でした
+・今回は、正規に存在するモデルの付属ファイルを改竄する手口です。偽物を見分ける話ではなく、本物に見えるものの中身が書き換わっている話に進化しています
+・「リポジトリ名や提供元を公式サイトと照合する」だけでは足りなくなりました。本物のリポジトリでも、付属ファイルが汚染され得るためです
+・狙われるのが実行コードではなく「設定ファイル」である点が新しく、レビューの網が届いていない領域です</p>
+<p>■ これだけは覚えてほしい
+業務でHugging Face等からAIモデルを取得して使う場合は、モデル本体だけでなく <code>tokenizer.json</code> を含む付属ファイルまでレビュー対象に含め、判断に迷う場合は上長に相談するようにしましょう！</p>
+<p>（補足）
+・付属ファイルもGitLab等にコミットして差分が見える状態にしておくと、改竄や予期しない変化に気づきやすくなります
+・モデルの取得元・バージョンを固定し、更新時は付属ファイルの差分も確認する運用が有効です</p>
+<p>■ 自分はこう動く
+自分がAIモデルを業務に取り込む時、これまで本体ファイルだけを信頼の起点にしていた感覚を改めたいです。「設定ファイルだから安全」という暗黙の線引きをやめ、付属ファイルもコードと同じ重さでレビューしていきたいです。出所不明のモデルや付属ファイルの扱いについては、SO課の方々とも情報共有しながら点検していきたいです。</p>
+<p>参考:</p>
+<ul>
+<li>Dark Reading — <a href="https://www.darkreading.com/cloud-security/hugging-face-packages-weaponized-single-file-tweak">https://www.darkreading.com/cloud-security/hugging-face-packages-weaponized-single-file-tweak</a></li>
+</ul>
+</article>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html>

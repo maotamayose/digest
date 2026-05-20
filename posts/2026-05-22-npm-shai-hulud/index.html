@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-05-22-npm-shai-hulud · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.D_O-pa3l.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/posts/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← posts</a> </div> <div id="ai-disclaimer" class="mb-8 px-4 py-3 bg-[#f9f9f9] border border-[#e8e8e8] rounded-lg text-sm text-[#666] flex items-start gap-3"> <span class="font-mono text-xs bg-[#eee] px-2 py-0.5 rounded shrink-0">AI</span> <p>
+This article is AI-assisted. Content may contain errors — please read critically.
+</p> <button id="dismiss-disclaimer" class="ml-auto shrink-0 text-[#bbb] hover:text-[#888] transition-colors text-lg leading-none" aria-label="閉じる">×</button> </div> <script type="module">const t="ai-disclaimer-dismissed",e=document.getElementById("ai-disclaimer"),i=document.getElementById("dismiss-disclaimer");localStorage.getItem(t)==="true"&&e&&(e.style.display="none");i?.addEventListener("click",()=>{e&&(e.style.display="none"),localStorage.setItem(t,"true")});</script> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888]
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+  "><p>お疲れ様です。WEB開発課の玉代勢です。</p>
+<p>『砂の惑星 デューン』に出てくる巨大な砂虫シャイ・フルードは、砂漠を移動しながら自分の通り道そのものを作り変えていきます。
+名前を借りた同名のnpmワームが、まさにそれをやっていました。8日前にこの掲示板で第2波（169本超のOSSパッケージ汚染）を共有しましたが、その砂虫はもう次の波で戻ってきています。
+普段 <code>npm install</code> で何の気なしに入れているあのライブラリ、最後に更新されたのはいつか、答えられるでしょうか。</p>
+<p>【セキュリティ】Shai-Hulud第3波、npm 323パッケージ汚染——durabletask にはディスク消去まで</p>
+<p>自己増殖するnpmワームが第3波で規模を一気に拡大し、汚染先の一部にはディスク消去動作まで仕込まれていました。</p>
+<p>■ 何が起きた？
+2026年5月19日 UTC 01:56〜02:56 のわずか1時間に、Shai-Huludワームの第3波が323個のnpmパッケージに639個の悪意あるバージョンを公開しました。
+Alibaba製のチャートライブラリ群 <code>@antv</code> エコシステム、<code>echarts-for-react</code>、月間1000万ダウンロードの <code>jest-canvas-mock</code>、<code>timeago.js</code> などが含まれます。
+同時期、PyPI上のMicrosoft Azure関連Pythonパッケージ <code>durabletask</code> のバージョン1.4.1〜1.4.3も汚染されていました。</p>
+<p>■ 技術的な仕組み
+汚染版を取り込むと、ペイロードがクラウド認証情報を探索します。AWS Secrets Manager（全19リージョン）・Kubernetes・Azure Key Vault・GCP Secret Manager・HashiCorp Vault が対象です。
+窃取データはGzip圧縮しAES-256-GCMで暗号化、奪ったGitHub認証情報で攻撃者がリポジトリを自動作成しそこへアップロードします。
+さらにVS CodeとClaude Codeの設定にバックドアを埋め込んで居座ります。
+<code>durabletask</code> のペイロードは、システム設定がイスラエルまたはイランと判定されると6分の1の確率で <code>rm -rf /*</code> を実行します。窃取だけでなく破壊（ワイパー）動作が加わった点が今回の新要素です。</p>
+<p>■ なぜ防ぎにくいか
+汚染されたのは怪しい無名パッケージではなく、週間・月間で数百万ダウンロードされる定番ライブラリです。
+攻撃者は新規パッケージを公開していません。正規メンテナーの正規パッケージに、正規の更新として悪意あるバージョンを差し込んでいます。
+そして自己増殖型なので、自分が直接入れたパッケージが安全でも、その依存の依存が汚染版を引き込む経路が残ります。</p>
+<p>■ これまでと何が違う？
+・第2波（5/14・169本超）から第3波（5/19・323パッケージ）へ、わずか5日で汚染規模がおよそ倍増した
+・狙いがCI/CDシークレット窃取・自己増殖に加え、開発ツール（VS Code・Claude Code）へのバックドア常駐まで広がった
+・<code>durabletask</code> ではディスク消去ペイロードが確認され、「盗む」から「壊す」へ攻撃の幅が拡大した</p>
+<p>■ これだけは覚えてほしい
+外部パッケージはlockfileでバージョンを固定したうえで、不用意な一括アップデートを避け、依存更新で迷う箇所は上長に相談するようにしましょう！</p>
+<p>■ 自分はこう動く
+第2波の時に「OSSサプライチェーンは個人で守れる範囲を超えている」と書きましたが、5日でその通りに規模が膨らみました。
+自分は、自社リポジトリのlockfile運用と依存追加のレビューを改めて見直し、CIに渡しているトークンの権限が広すぎないかをSO課と共有しながら点検していきたいです。</p>
+<p>参考:</p>
+<ul>
+<li>BleepingComputer — <a href="https://www.bleepingcomputer.com/news/security/new-shai-hulud-malware-wave-compromises-600-npm-packages/">https://www.bleepingcomputer.com/news/security/new-shai-hulud-malware-wave-compromises-600-npm-packages/</a></li>
+<li>Aikido — <a href="https://www.aikido.dev/blog/durabletask-package-compromised-mini-shai-hulud">https://www.aikido.dev/blog/durabletask-package-compromised-mini-shai-hulud</a></li>
+</ul>
+</article>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html>

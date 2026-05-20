@@ -8,84 +8,75 @@ This article is AI-assisted. Content may contain errors — please read critical
     prose-a:text-accent prose-a:no-underline hover:prose-a:underline
   "><h1>記事公開キュー — 2026-05 セキュリティ10本シリーズ</h1>
 <p>2026-05-20 のダイジェスト（<code>intel/2026/2026-05-20.md</code> ＋ <code>intel/security/2026-05-20.md</code>）から
-「インシデントレベル高・新規性高」で選んだ10本を、平日2本ペースで公開する。</p>
+「インシデントレベル高・新規性高」で選んだ10本を、平日2本ペースで公開する。
+<strong>全10本の下書きは作成済み。</strong> 各公開日に内容を確認し、Google Chat へ投稿する。</p>
 <h2>スケジュール</h2>
 <table>
 <thead>
 <tr>
 <th>公開日</th>
 <th>状態</th>
-<th>記事</th>
-<th>ネタ出典</th>
+<th>記事 — 下書きファイル（<code>drafts/</code>）</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>5/20(水)</td>
 <td>✅下書き済</td>
-<td>はてな11億円流出（BEC・なりすまし送金指示）</td>
-<td>security 2026-05-20 追記2</td>
+<td>はてな11億円流出（BEC・なりすまし送金指示）— <code>2026-05-20-hatena-bec.md</code></td>
 </tr>
 <tr>
 <td>5/21(木)</td>
-<td>⬜予定</td>
-<td>Cloudflare Mythos が Apple の5年対策を5日で突破</td>
-<td>メイン 2026-05-20 セキュリティ節</td>
+<td>✅下書き済</td>
+<td>Cloudflare Mythos が Apple の5年対策を5日で突破 — <code>2026-05-21-cloudflare-mythos.md</code></td>
 </tr>
 <tr>
 <td>5/21(木)</td>
-<td>⬜予定</td>
-<td>GitHub 内部リポジトリ侵害（汚染VS Code拡張が経路）</td>
-<td>メイン 2026-05-20 セキュリティ節</td>
+<td>✅下書き済</td>
+<td>GitHub 内部リポジトリ侵害（汚染VS Code拡張が経路）— <code>2026-05-21-github-internal-breach.md</code></td>
 </tr>
 <tr>
 <td>5/22(金)</td>
-<td>⬜予定</td>
-<td>GitHub Actions タグ書き換え攻撃</td>
-<td>メイン 2026-05-20 セキュリティ節</td>
+<td>✅下書き済</td>
+<td>GitHub Actions タグ書き換え攻撃 — <code>2026-05-20-github-actions-tag-hijack.md</code></td>
 </tr>
 <tr>
 <td>5/22(金)</td>
-<td>⬜予定</td>
-<td>npm 600本汚染・Shai-Hulud 第3波</td>
-<td>security 2026-05-20 本体</td>
+<td>✅下書き済</td>
+<td>npm Shai-Hulud 第3波 — <code>2026-05-22-npm-shai-hulud.md</code></td>
 </tr>
 <tr>
 <td>5/25(月)</td>
-<td>⬜予定</td>
-<td>TrustFall（Claude Code 等 AI CLI の任意コード実行）</td>
-<td>security 2026-05-20 本体</td>
+<td>✅下書き済</td>
+<td>TrustFall（AI CLI の任意コード実行・5/8続報）— <code>2026-05-25-trustfall.md</code></td>
 </tr>
 <tr>
 <td>5/25(月)</td>
-<td>⬜予定</td>
-<td>Linux カーネル LPE 3連鎖（Fragnesia）</td>
-<td>メイン 2026-05-20 技術節</td>
+<td>✅下書き済</td>
+<td>Linux カーネル LPE 3連鎖（Fragnesia）— <code>2026-05-25-linux-kernel-lpe.md</code></td>
 </tr>
 <tr>
 <td>5/26(火)</td>
-<td>⬜予定</td>
-<td>EvilTokens PhaaS（OAuthデバイスコードで M365 340組織）</td>
-<td>メイン 2026-05-20 セキュリティ節</td>
+<td>✅下書き済</td>
+<td>EvilTokens PhaaS（OAuthデバイスコード）— <code>2026-05-20-eviltokens-oauth-devicecode.md</code></td>
 </tr>
 <tr>
 <td>5/26(火)</td>
-<td>⬜予定</td>
-<td>台湾新幹線が SDR 実験で停止</td>
-<td>security 2026-05-20 本体</td>
+<td>✅下書き済</td>
+<td>台湾新幹線が SDR 実験で停止 — <code>2026-05-26-taiwan-shinkansen-sdr.md</code></td>
 </tr>
 <tr>
 <td>5/27(水)</td>
-<td>⬜予定</td>
-<td>Hugging Face トークナイザー1ファイル改竄</td>
-<td>security 2026-05-20 本体</td>
+<td>✅下書き済</td>
+<td>Hugging Face トークナイザー改竄 — <code>2026-05-27-huggingface-tokenizer.md</code></td>
 </tr>
 </tbody></table>
 <h2>状態の意味</h2>
-<p>⬜予定 → ✅下書き済（<code>drafts/YYYY-MM-DD-slug.md</code> 作成）→ 📤投稿済（Google Chat 投稿 ＋ <code>posted-archive.md</code>・<code>feedback.md</code> 更新）</p>
+<p>✅下書き済（<code>drafts/</code> 作成済み）→ 📤投稿済（Google Chat 投稿 ＋ <code>posted-archive.md</code>・<code>feedback.md</code> 更新）</p>
 <h2>運用</h2>
 <ul>
-<li>各公開日に <code>/knowledge-post</code> を実行するとき、このキューの該当日の記事を指定する</li>
-<li>投稿が済んだら「状態」列を更新する</li>
-<li>GitHub Actions / npm Shai-Hulud / TrustFall / EvilTokens は前セッションのエンジニア向け下書きが <code>drafts/</code> に既存（<code>2026-05-20-github-actions-tag-hijack.md</code> 等）。再利用・更新で済む場合がある</li>
+<li>各公開日に該当の下書きを確認し、必要なら社内固有事例（いえらぶ社内の話など）を追記して Google Chat へ投稿する</li>
+<li>投稿が済んだら「状態」列を 📤投稿済 に更新する</li>
+<li>5/22 GitHub Actions・5/26 EvilTokens は前セッションの下書きを流用（ファイル名の日付が公開日と異なる点に注意）</li>
+<li>既出ネタ（TrustFall=5/8・Shai-Hulud=第2波・Linux=Copy Fail・HuggingFace=偽リポジトリ）は前回記事に触れる続報構成で執筆済み</li>
 </ul>
 </article>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html>

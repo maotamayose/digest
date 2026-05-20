@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-05-21-github-internal-breach · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.D_O-pa3l.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/posts/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← posts</a> </div> <div id="ai-disclaimer" class="mb-8 px-4 py-3 bg-[#f9f9f9] border border-[#e8e8e8] rounded-lg text-sm text-[#666] flex items-start gap-3"> <span class="font-mono text-xs bg-[#eee] px-2 py-0.5 rounded shrink-0">AI</span> <p>
+This article is AI-assisted. Content may contain errors — please read critically.
+</p> <button id="dismiss-disclaimer" class="ml-auto shrink-0 text-[#bbb] hover:text-[#888] transition-colors text-lg leading-none" aria-label="閉じる">×</button> </div> <script type="module">const t="ai-disclaimer-dismissed",e=document.getElementById("ai-disclaimer"),i=document.getElementById("dismiss-disclaimer");localStorage.getItem(t)==="true"&&e&&(e.style.display="none");i?.addEventListener("click",()=>{e&&(e.style.display="none"),localStorage.setItem(t,"true")});</script> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888]
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+  "><p>お疲れ様です。WEB開発課の玉代勢です。</p>
+<p>エディタに拡張機能を入れるとき、私はほとんど中身を見ません。
+便利そうなら入れる、それだけです。
+ですが今回のニュースは「その拡張機能が侵入の入口になり、最後はソースコード管理基盤の内部リポジトリまで盗まれた」という話でした。
+自分が普段なにげなく入れている拡張、どこまで信用していいのか——立ち止まって考えさせられました。</p>
+<p>【セキュリティ】GitHub の内部リポジトリ約4,000件が窃取されたと主張——入口は「汚染された VS Code 拡張」</p>
+<p>エディタの拡張機能ひとつから、ソースコード管理基盤の内部リポジトリまで侵入が届いた事案です。</p>
+<p>■ 何が起きた？</p>
+<p>2026年5月20日、ハッカー集団「TeamPCP」が、GitHub 社の内部リポジトリ約4,000件を窃取したと主張しました。
+GitHub 社は「攻撃者が言う約3,800件という数字は、現時点の調査と方向性として矛盾しない」と述べ、調査を進めています。
+「4,000件」はあくまで攻撃者側の主張で、全件が完全に流出したと確定したわけではありません。
+GitHub 社は「内部リポジトリの外にある顧客情報・顧客リポジトリへ影響した証拠はない」と説明しています。</p>
+<p>■ 技術的な仕組み</p>
+<p>侵入経路は、汚染された Visual Studio Code（VS Code）の拡張機能でした。
+従業員の端末がその拡張経由でマルウェアに感染し、その端末を踏み台にして内部リポジトリへアクセスされたとされています。
+TeamPCP は同時期に PyPI（Python のパッケージ配布元）の <code>durabletask</code> パッケージも汚染版に差し替えており、エディタ拡張・パッケージという「開発者が日常的に取り込むもの」を一貫して入口に使っています。</p>
+<p>■ なぜ防ぎにくいか</p>
+<p>拡張機能やパッケージは「自分で選んで入れたもの」です。
+不審な添付ファイルや怪しいリンクと違い、こちらから取りに行って、使い続けます。
+しかも一度入れた拡張は自動更新で中身が入れ替わります。入れた時点では正常でも、後から汚染版に差し替われば気づけません。
+「怪しいものを開かない」という普段の警戒が、そもそも発動しない経路だということです。</p>
+<p>■ これまでと何が違う？</p>
+<ul>
+<li>4月下旬〜5月上旬に共有した Vercel 事件（Chrome 拡張から約3億円相当が流出）と、入口は同じ「汚染された拡張機能」です。手口がブラウザからエディタへ広がっています</li>
+<li>狙われたのが個人の財布ではなく、ソースコード管理基盤の内部リポジトリそのものになりました</li>
+<li>従業員1台の端末の感染が、踏み台になって組織全体のコード資産に届きました。「端末1台くらい」では済まなくなっています</li>
+</ul>
+<p>■ これだけは覚えてほしい</p>
+<p>自分のエディタに今入っている拡張機能を一度見直し、使っていないもの・出所のあいまいなものは外すようにしましょう。
+そして新しい拡張を入れるときは、提供元と評価を確認し、業務に必要か迷ったら上長に相談していきましょう。</p>
+<p>■ 自分はこう動く</p>
+<p>自分も VS Code の拡張を整理して、入れた理由を思い出せないものから外していきたいです。
+GitLab（自社のソースコード管理）は、コードという最も守るべき資産が集まる場所です。
+そこへの入口が、端末に入れた拡張ひとつになりうると分かった以上、SO 課の方々とも情報を共有しながら、自分の開発環境を継続的に点検していきたいです。</p>
+<p>参考:</p>
+<ul>
+<li>ITmedia — <a href="https://www.itmedia.co.jp/news/articles/2605/20/news085.html">https://www.itmedia.co.jp/news/articles/2605/20/news085.html</a></li>
+<li>The Hacker News — <a href="https://thehackernews.com/2026/05/github-investigating-teampcp-claimed.html">https://thehackernews.com/2026/05/github-investigating-teampcp-claimed.html</a></li>
+</ul>
+</article>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html>

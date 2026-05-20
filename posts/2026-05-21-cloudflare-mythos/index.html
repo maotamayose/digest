@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-05-21-cloudflare-mythos · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.D_O-pa3l.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/posts/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← posts</a> </div> <div id="ai-disclaimer" class="mb-8 px-4 py-3 bg-[#f9f9f9] border border-[#e8e8e8] rounded-lg text-sm text-[#666] flex items-start gap-3"> <span class="font-mono text-xs bg-[#eee] px-2 py-0.5 rounded shrink-0">AI</span> <p>
+This article is AI-assisted. Content may contain errors — please read critically.
+</p> <button id="dismiss-disclaimer" class="ml-auto shrink-0 text-[#bbb] hover:text-[#888] transition-colors text-lg leading-none" aria-label="閉じる">×</button> </div> <script type="module">const t="ai-disclaimer-dismissed",e=document.getElementById("ai-disclaimer"),i=document.getElementById("dismiss-disclaimer");localStorage.getItem(t)==="true"&&e&&(e.style.display="none");i?.addEventListener("click",()=>{e&&(e.style.display="none"),localStorage.setItem(t,"true")});</script> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888]
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+  "><p>お疲れ様です。WEB開発課の玉代勢です。</p>
+<p>学生の頃、CTF（セキュリティの腕試し競技）で脆弱性を1つ見つけるのに何時間もかかった記憶があります。穴を見つける、それを突くコードを書く、別の穴と組み合わせて侵入経路をつなぐ。どれも人間の根気と勘の世界でした。
+その「根気と勘」を、AIが丸ごと肩代わりし始めています。
+コードレビューで「ここ危ないかも」と思ったとき、その判断を一晩で何百回も回す相手がいたら——と想像すると、これは他人事ではありません。</p>
+<p>【セキュリティ】脆弱性を「見つける」だけでなく「突く」までAIがやる——攻撃的AIの実用化</p>
+<p>AIが脆弱性の発見から攻撃の実証までを自律実行するフェーズに入りました。</p>
+<p>■ 何が起きた？</p>
+<p>2026年5月18日（米国東部時間）、CloudflareがAnthropicのAIモデル「Mythos Preview」を使った取り組み「Project Glasswing」を公表しました。
+このAIは脆弱性を見つけるだけでなく、それを突く攻撃コード（PoC）を生成し、複数の脆弱性をつないで侵入経路まで自動で組み立てます。
+開発の検証では50を超えるリポジトリにかけられました。国内ではITmediaがこの動きを特集し、Appleが5年がかりで講じたセキュリティ対策をAIが5日で突破したと報じています。</p>
+<p>■ 技術的な仕組み</p>
+<p>中心の機能は2つです。
+ひとつは「Proof generation」。脆弱性の実証コードを生成するだけでなく、それをコンパイルして実際に動くかまで自動で検証します。「動かないコードを出して終わり」ではないということです。
+もうひとつは「Exploit chain construction」。use-after-free のようなメモリ系の欠陥を識別し、ROPチェーンを組み立て、単独では刺さらない複数の脆弱性を連結して1本の攻撃経路にします。これまで攻撃者が手作業でやっていた工程です。</p>
+<p>■ なぜ防ぎにくいか</p>
+<p>これまでセキュリティ運用は「脆弱性が公開されてから対応を始める」時間軸を前提にしてきました。発見と武器化（攻撃コード化）の間に人間の手間という猶予があったからです。
+その猶予が消えます。発見・PoC生成・経路連結を1つのAIが連続で回せば、対応を始める頃には攻撃が成立しているという順序になりかねません。「優先度の高いものから直す」というトリアージ自体が、攻撃側のスピードに追いつかなくなる構図です。</p>
+<p>■ これまでと何が違う？</p>
+<p>・攻撃の準備工程が自動化された。発見から実証コードまで人手を介さず連続で進む
+・「単独では低リスク」だった脆弱性が危険になる。AIが他の穴と連結して経路を作るため、1つずつの深刻度評価だけでは足りない
+・防御側にもAIが立つ。OpenAIのDaybreak、MicrosoftのMDASHなどAIで脆弱性を検出する側のツールも同時期に出ており、攻撃AIと防御AIの二極化が進んでいる</p>
+<p>■ これだけは覚えてほしい</p>
+<p>依存しているライブラリ・フレームワーク・サーバーソフトのバージョンを把握し、更新通知が来たら後回しにせず適用するようにしましょう。
+・「単独では影響が小さい」と見送ってきた脆弱性も、連結される前提で見直す
+・公開済みCVEへの対応速度がこれまで以上に効いてくる。判断に迷うものは上長に相談する</p>
+<p>■ 自分はこう動く</p>
+<p>攻撃側の準備速度が上がった分、こちらの「気づいてから直すまで」を縮めることが現実的な対抗策だと考えています。自分が担当するGitLab上のコードについては、依存パッケージのバージョンと既知の脆弱性を定期的に確認し、低リスクと判断したものも「他の穴と組み合わさったら」という視点で見直していきたいです。
+脆弱性情報はSO課の方々とも共有し、対応の優先順位を一人で抱え込まず判断していきたいです。</p>
+<p>参考:</p>
+<ul>
+<li>ITmedia エンタープライズ「Cloudflare の Mythos」 — <a href="https://www.itmedia.co.jp/enterprise/articles/2605/20/news035.html">https://www.itmedia.co.jp/enterprise/articles/2605/20/news035.html</a></li>
+</ul>
+</article>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html>

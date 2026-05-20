@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-05-26-taiwan-shinkansen-sdr · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.D_O-pa3l.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/posts/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← posts</a> </div> <div id="ai-disclaimer" class="mb-8 px-4 py-3 bg-[#f9f9f9] border border-[#e8e8e8] rounded-lg text-sm text-[#666] flex items-start gap-3"> <span class="font-mono text-xs bg-[#eee] px-2 py-0.5 rounded shrink-0">AI</span> <p>
+This article is AI-assisted. Content may contain errors — please read critically.
+</p> <button id="dismiss-disclaimer" class="ml-auto shrink-0 text-[#bbb] hover:text-[#888] transition-colors text-lg leading-none" aria-label="閉じる">×</button> </div> <script type="module">const t="ai-disclaimer-dismissed",e=document.getElementById("ai-disclaimer"),i=document.getElementById("dismiss-disclaimer");localStorage.getItem(t)==="true"&&e&&(e.style.display="none");i?.addEventListener("click",()=>{e&&(e.style.display="none"),localStorage.setItem(t,"true")});</script> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888]
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+  "><p>お疲れ様です。WEB開発課の玉代勢です。</p>
+<p>学生のころ、文化祭でアンプの音量を上げすぎて、隣の教室のスピーカーから自分たちの演奏が漏れて流れたことがありました。
+悪気はゼロでも、電波や信号というのは「自分の手元」で終わってくれないことがあります。
+今日は、まさに「悪意ゼロの実験」が新幹線を止めてしまった話です。
+皆さんも、誰かのちょっとした操作が、想像以上に遠くまで届いてしまった経験はありませんか？</p>
+<p>【セキュリティ】学生の電波実験で新幹線4本が停止——攻撃ですらない「事故」で制御システムの穴が露呈した</p>
+<p>■ 何が起きた？</p>
+<p>2026年4月5日の深夜、台湾の高速鉄道（日本の新幹線にあたる路線）で、走行中の列車4本が48分間止まりました。
+原因は、23歳の大学生が趣味の無線実験をしていたことでした。
+ノートパソコンと、市販の無線受信機、市販のトランシーバー11台。それだけで、鉄道の緊急停止信号を流せてしまったのです。
+攻撃グループでもウイルスでもなく、学生1人の「実験」でこれが起きました。</p>
+<p>■ なぜ防ぎにくいか</p>
+<p>この鉄道の無線設定は、開業した2007年から約19年間、ほぼ変更されていませんでした。
+パスワードを19年間そのまま使い続けていたようなものです。
+「ちゃんとした暗号がかかっているから安全」と思われていた仕組みが、長く放置されたことで、市販の機材だけで破られる状態になっていました。
+攻撃が高度になったのではなく、守りが古いまま止まっていた、というのが怖いところです。</p>
+<p>■ これまでと何が違う？</p>
+<p>・「狙われたから危ない」ではなく、「実験が偶然当たっただけ」で重大な障害が起きた
+・特別な機材ではなく、誰でも買える市販品の組み合わせで起きた
+・19年前の設定がそのまま生きていた——「昔作ったまま誰も見直していない仕組み」が引き金になった</p>
+<p>■ これだけは覚えてほしい</p>
+<p>「昔から動いているから大丈夫」は、安全の理由にはなりません。
+長く使っている設定・アカウント・パスワードに心当たりがあれば、見直すきっかけにしましょう。
+自分の担当範囲で「これ何年も触っていないな」というものが出てきたら、放置せず上長に相談するようにしましょう！</p>
+<p>■ 自分はこう動く</p>
+<p>今回いちばん刺さったのは、悪意がなくても事故は起きる、という点です。
+自分の作ったコードや設定も「作った時は正しかった」だけで、何年も見直さなければ同じ穴になりかねません。
+古い設定を「動いているからそのまま」にせず、定期的に棚卸しする目を持っていきたいです。</p>
+<p>参考: Dark Reading「Taiwan Incident Highlights Cybersecurity Gaps」 <a href="https://www.darkreading.com/ics-ot-security/taiwan-incident-highlights-cybersecurity-gaps">https://www.darkreading.com/ics-ot-security/taiwan-incident-highlights-cybersecurity-gaps</a></p>
+</article>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html>
