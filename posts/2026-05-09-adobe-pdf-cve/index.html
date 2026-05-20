@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-05-09-adobe-pdf-cve · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.D_O-pa3l.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="mb-8"> <a href="/digest/posts/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← posts</a> </div> <div id="ai-disclaimer" class="mb-8 px-4 py-3 bg-[#f9f9f9] border border-[#e8e8e8] rounded-lg text-sm text-[#666] flex items-start gap-3"> <span class="font-mono text-xs bg-[#eee] px-2 py-0.5 rounded shrink-0">AI</span> <p>
+This article is AI-assisted. Content may contain errors — please read critically.
+</p> <button id="dismiss-disclaimer" class="ml-auto shrink-0 text-[#bbb] hover:text-[#888] transition-colors text-lg leading-none" aria-label="閉じる">×</button> </div> <script type="module">const t="ai-disclaimer-dismissed",e=document.getElementById("ai-disclaimer"),i=document.getElementById("dismiss-disclaimer");localStorage.getItem(t)==="true"&&e&&(e.style.display="none");i?.addEventListener("click",()=>{e&&(e.style.display="none"),localStorage.setItem(t,"true")});</script> <article class="prose prose-slate max-w-none
+    prose-h1:font-mono prose-h1:text-xl
+    prose-h2:font-mono prose-h2:text-xs prose-h2:uppercase prose-h2:tracking-widest prose-h2:text-[#888]
+    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+  "><p>お疲れ様です。WEB開発課の玉代勢です。</p>
+<p>【セキュリティ】「PDFを開いただけ」でファイルを盗まれる——4月のAdobe緊急パッチ、自分のPCに当たっているか確認</p>
+<p>先日「AIコーディングCLIにリポジトリclone+Enter1回で侵害される穴」（TrustFall / CVE-2026-39861）を共有しました。「アプリそのものに穴があり、ファイルを開くだけ／cloneするだけで侵害される」という構造の脆弱性です。</p>
+<p>実はその約1ヶ月前にも、同じ構造の脆弱性が公表されていました。Adobe Acrobat / Reader の CVE-2026-34621 です。「自動更新で配信済みでも未適用のケースが残る」のと、自分自身も気になって確認したかったのとで、改めて共有します。</p>
+<p>Adobe Acrobat と Reader に「PDFを開くだけで任意コード実行＋ファイル窃取」が成立する脆弱性。すでに2025年12月から実際に悪用されており、Adobeは4月12日に緊急パッチをリリース済みです。</p>
+<p>■ 何が起きた？
+・CVE-2026-34621。プロトタイプ汚染と呼ばれるJavaScriptの欠陥（CVSS 8.6）
+・細工されたPDFを開いた瞬間、本来アクセスできないはずのローカルファイルを読み出して攻撃者サーバーに送信できる
+・Adobeは4月12日に緊急修正をリリース、米CISAは翌13日にKEV（実際に悪用されている脆弱性カタログ）に登録
+・悪用観測は2025年12月まで遡る</p>
+<p>■ これまでと何が違う？
+・「不審な添付は開かない」では防げない。取引先・社内・お客様から届いた“普通のPDF”が標的になる
+・修正版は Acrobat/Reader DC が 26.001.21411、Acrobat 2024 が 24.001.30362（Win）/ 24.001.30360（mac）。これより前は全部該当</p>
+<p>■ これだけは覚えてほしい
+業務PCのAcrobat/Readerのバージョンを今日中に確認し、上記より古い場合は上長に相談して即アップデートするようにしましょう！</p>
+<p>（補足）
+・確認方法: Acrobat/Readerを開き「ヘルプ」→「アップデートの有無をチェック」
+・ブラウザ内蔵PDFビューア（Chrome/Edge）はAdobe製ではないため本件の対象外</p>
+<p>■ 自分はこう動く
+業務でAcrobat/Readerを入れているPCは社内に多くあるはずで、自分の業務環境も今日中にバージョンを確認していきたいです。SO課の方々とも本件を共有し、社内全体での更新状況を継続的に点検していきたいです。</p>
+<p>参考:</p>
+<ul>
+<li>The Hacker News — <a href="https://thehackernews.com/2026/04/adobe-patches-actively-exploited.html">https://thehackernews.com/2026/04/adobe-patches-actively-exploited.html</a></li>
+<li>Adobe Security Bulletin (APSB26-43) — <a href="https://helpx.adobe.com/security/products/acrobat/apsb26-43.html">https://helpx.adobe.com/security/products/acrobat/apsb26-43.html</a></li>
+<li>Help Net Security — <a href="https://www.helpnetsecurity.com/2026/04/13/adobe-acrobat-reader-cve-2026-34621-emergency-fix/">https://www.helpnetsecurity.com/2026/04/13/adobe-acrobat-reader-cve-2026-34621-emergency-fix/</a></li>
+<li>NVD CVE-2026-34621 — <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-34621">https://nvd.nist.gov/vuln/detail/CVE-2026-34621</a></li>
+</ul>
+</article>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html>

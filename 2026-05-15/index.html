@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-05-15 · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.D_O-pa3l.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="max-w-[1100px] mx-auto px-6"> <div class="mb-10"> <a href="/digest/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← home</a> </div> <div class="flex gap-16 items-start"> <!-- メインコンテンツ --> <article class="min-w-0 flex-1 prose-custom"><h1>2026-05-15 ダイジェスト</h1>
+<h2 id="技術・エンジニアリング">技術・エンジニアリング</h2>
+<h3>OpenAI Codex がモバイルアプリへ到達</h3>
+<p>ChatGPT モバイル版に Codex が統合され、スマートフォンからコード生成・タスク実行が可能になった。Claude Code と同じターミナル/CLI 市場への直接的な対抗手段であり、モバイルというチャネルで開発者獲得を狙う動き。<a href="https://openai.com/index/work-with-codex-from-anywhere/">OpenAI</a></p>
+<h3>arXiv、AIハルシネーション引用に1年間の投稿禁止</h3>
+<p>arXiv が「でたらめな文献引用」を含む論文に対し、1年間の投稿禁止処分を導入する方針を発表。AI生成コンテンツの品質管理を研究者個人の責任に帰着させる制度設計であり、学術出版における「AI出力ファクトチェック義務化」の先行事例となる。<a href="https://news.ycombinator.com/item?id=48140922">HN (306pt)</a></p>
+<h3>Claude Code SDK、Proプランから切り離し月$20クレジット制へ</h3>
+<p>6月15日から、Claude Agent SDK および <code>claude -p</code> 等のプログラマティック利用がサブスクリプション枠外となり、Pro会員には月$20のクレジットが別途付与される。超過分は従量課金に切り替わるため、スクリプト・自動化ヘビーユーザーはコスト設計の見直しが必要。<a href="https://news.ycombinator.com/item?id=48133373">HN</a></p>
+<h3>Cerebras が$5.5B IPO、株価初日108%高</h3>
+<p>AI推論チップメーカーの Cerebras Systems が $5.5B を調達し、2026年初の大型テック IPO を実現。初日に株価が108%上昇。GPU 代替アーキテクチャへの資本市場の信任を示しており、AIインフラの多様化（Nvidia 依存脱却）の号砲ともなる。<a href="https://techcrunch.com/2026/05/14/cerebras-raises-5-5b-kicking-off-2026s-ipo-season-with-a-bang/">TechCrunch</a></p>
+<h3>Amazonbot が robots.txt を遵守し始める</h3>
+<p>Amazon のクローラー Amazonbot がようやく robots.txt の disallow 指定に従うようになった。SEO・コンテンツ管理の観点でクローラー制御が実効性を持ち始めたことを意味し、AI学習目的のスクレイピングを robots.txt でブロックする戦略の有効性が高まる。<a href="https://xeiaso.net/notes/2026/amazonbot-respecting-robots-txt/">Xe Iaso (HN 142pt)</a></p>
+<h2 id="セキュリティ・脆弱性">セキュリティ・脆弱性</h2>
+<h3>node-ipc 3バージョンに開発者シークレット窃取バックドア</h3>
+<p>Socket/StepSecurityが <a href="mailto:node-ipc@9.1.6">node-ipc@9.1.6</a>, @9.2.3, @12.0.1 に悪意あるコードを確認。開発者の認証情報・シークレットを直接狙うスティーラーが混入しており、Vue CLI等の依存関係を通じた広範な影響が懸念される。TanStack攻撃と同じTeamPCP系のサプライチェーン汚染が続いている。<a href="https://thehackernews.com/2026/05/stealer-backdoor-found-in-3-node-ipc.html">The Hacker News</a></p>
+<h3>Cisco SD-WAN CVE-2026-20182（CVSS 10.0）、ゼロデイ攻撃で管理者権限奪取</h3>
+<p>Catalyst SD-WAN Controllerの認証バイパスが実環境で悪用中。パッチ適用前にadmin権限を取得された事例が確認され、今年2度目のCVSS満点脆弱性の実悪用となった。SD-WAN Manager（旧vManage）も対象。<a href="https://www.bleepingcomputer.com/news/security/cisco-warns-of-new-critical-sd-wan-flaw-exploited-in-zero-day-attacks/">BleepingComputer</a></p>
+<h3>NGINX CVE-2026-42945（CVSS v4: 9.2）：18年間潜伏したヒープバッファオーバーフロー</h3>
+<p>ngx_http_rewrite_moduleに18年間気づかれなかったヒープオーバーフロー。NGINX Plus/Open Source両方に影響し、RCEまたはDoSが可能。自律スキャンシステムによって発見されたことも注目点。<a href="https://thehackernews.com/2026/05/18-year-old-nginx-rewrite-module-flaw.html">The Hacker News</a></p>
+<h3>Mini Shai-Hulud第2波でOpenAI社員2名のデバイスが侵害</h3>
+<p>TeamPCPのワーム型攻撃がTanStack・UiPath・Mistral AI・OpenSearch・Guardrails AIの169本超のnpmパッケージに拡大。OpenAIはコード署名証明書のローテーションを実施したと公式発表。CI/CDパイプラインへの侵入経路として確立しつつある手口。<a href="https://www.bleepingcomputer.com/news/security/openai-confirms-security-breach-in-tanstack-supply-chain-attack/">BleepingComputer</a></p>
+<h3>TrustFall：AI コーディングCLI全般、悪意リポジトリからコード実行</h3>
+<p>悪意あるリポジトリをcloneするだけで、Claude Code / Cursor CLI / Gemini CLI / CoPilot CLIが警告不十分なままコードを実行する問題が実証された。日常的に使うツールチェーンが攻撃面となっており、開発者は知らないリポジトリのclone後の自動実行に注意が必要。<a href="https://www.darkreading.com/application-security/trustfall-exposes-claude-code-execution-risk">Dark Reading</a></p>
+<h3>Linux Fragnesia CVE-2026-46300（CVSS 7.8）：LPEの第3世代</h3>
+<p>Copy Fail、Dirty Fragに続くLinuxカーネルのページキャッシュ破壊系LPEが2週間で3件目。XFRMサブシステム経由でrootアクセスが可能。Ubuntu・RHEL・Debian・SUSE・Amazon Linux・Fedoraが対象。<a href="https://thehackernews.com/2026/05/new-fragnesia-linux-kernel-lpe-grants.html">The Hacker News</a></p>
+<h3>Windows BitLocker零デイ「YellowKey」＋CTFMON権限昇格「GreenPlasma」PoC公開</h3>
+<p>同一研究者が相次いで2つのゼロデイを公開。BitLockerで暗号化されたドライブへのバイパスと、Windows Collaborative Translation Frameworkを経路とする権限昇格がPoCとともに出回っている。Microsoftは未パッチ。<a href="https://www.bleepingcomputer.com/news/security/windows-bitlocker-zero-day-gives-access-to-protected-drives-poc-released/">BleepingComputer</a></p>
+<p>▶ その他: <a href="../security/2026-05-15.md">intel/security/2026-05-15.md</a></p>
+<h2 id="ビジネス・スタートアップ">ビジネス・スタートアップ</h2>
+<h3>AIが自分自身を改良するスタートアップに$650M</h3>
+<p>Richard Socher（元Salesforce Chief Scientist）が「AIが自律的に研究・自己改善するシステム」を掲げ$650Mを調達。&quot;研究×製品化&quot; を同一ループに置く設計で、基盤モデルの自己進化が商業化フェーズに入りつつある兆候。<a href="https://techcrunch.com/2026/05/14/what-happens-when-ai-starts-building-itself/">TechCrunch</a></p>
+<h3>SpaceXAI合併後に50名超が離脱</h3>
+<p>SpaceとxAIの合併からわずか数ヶ月で50名以上が退職。流動性イベント後のリテンション崩壊・バーンアウト・競合による人材引き抜きが重なり、大型M&amp;AがAI人材確保につながらないことを示す。<a href="https://techcrunch.com/2026/05/14/elon-musks-spacexai-has-been-bleeding-staff-since-its-merger/">TechCrunch</a></p>
+<h3>OpenAIがAppleに法的措置を検討</h3>
+<p>ChatGPTのiOS組み込み統合が期待したユーザー獲得につながらず、OpenAIがAppleへの訴訟を準備中と報道。プラットフォーム経由のAI配布モデルに限界が見え始めており、独自チャネル構築の重要性が再浮上。<a href="https://techcrunch.com/2026/05/14/openai-is-reportedly-preparing-legal-action-against-apple-it-wouldnt-be-the-first-partner-to-feel-burned/">TechCrunch</a></p>
+<h3>13ヶ月ソロ開発→ニッチB2B APIで初課金</h3>
+<p>フランスの建築許可データをAPI化した「PermisAPI」が13ヶ月かけて初の有料顧客を獲得。公共データ×B2B API×単一国ニッチという組み合わせは個人開発者が大手に競合されにくい典型パターン。日本の不動産・許認可系公開データで同手法は再現可能。<a href="https://reddit.com/r/SideProject/comments/1tdchij/showing_the_milestone_first_paying_customer_after/">Reddit r/SideProject</a></p>
+<h2 id="投資・資産運用">投資・資産運用</h2>
+<h3>ドル円158円台、再び円安進行 — 介入警戒続く</h3>
+<p>米中首脳会談を受けたドル買いとトランプ発言を材料に、5月15日朝のドル円は一時158.56円まで上昇。政府・日銀の円買い介入への警戒は残るものの、米インフレ高止まりとFRBの利下げ後退観測が円売り継続の下地となっている。<a href="https://www.oanda.jp/lab-education/market_news/2026_05_15_usdjpy/">OANDA</a></p>
+<h3>ナスダック100が最高値更新、半導体主導で日本株にも波及</h3>
+<p>5月14日の米国市場は、米中首脳会談でのNVIDIA「H200」対中販売認可報道が材料となり、半導体株主導でナスダック100が史上最高値を更新した。この流れは5月15日の東京市場にも波及し、日本株も堅調推移となっている。<a href="https://www.oanda.jp/lab-education/market_news/2026_05_15_us100/">OANDA</a></p>
+<h3>FOMCが3会合連続据え置き — 異例の4名反対で分断鮮明</h3>
+<p>4月29日のFOMC会合で政策金利は3.5〜3.75%に据え置かれた。賛否は8対4と分裂し、4名反対は1992年10月以来の異例事態。市場は年内利下げなしを織り込んでおり、次回会合は6月予定。<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260429a.htm">Federal Reserve</a></p>
+<h2 id="地政学・国際情勢">地政学・国際情勢</h2>
+<h3>UAEが5/1にOPEC脱退 — 日産480万barrelが市場を揺らす</h3>
+<p>UAEは5月1日付でOPECおよびOPEC+から正式脱退した。OPEC協定下では生産上限が320万bpdに制限されていたが、現在の実生産能力は480万bpdに達しており、ホルムズ海峡が再開した場合に最大160万bpdの超過供給が市場に流入する可能性がある。<a href="https://www.cnbc.com/2026/04/28/uae-opec-oil-iran.html">CNBC</a></p>
+<h3>トランプ、イラン停戦案を拒否 — ホルムズ海峡封鎖が長期化</h3>
+<p>5月12日、トランプ大統領はイランの最新停戦提案を拒否し、ホルムズ海峡の商業航行は依然停止状態が続いている。米国とイランは5月7日にも海峡内で交戦しており、原油価格高止まりが続く。<a href="https://www.bloomberg.com/news/articles/2026-05-12/iran-war-ceasefire-fragile-as-us-rejects-tehran-s-latest-offer">Bloomberg</a></p>
+<h3>米中が「貿易安定化」へ — 関税レビューと農産物購入が焦点</h3>
+<p>5月14日の北京首脳会談で、米中両首脳はSection 301関税の4年見直しと農産物・工業品の中国による対米購入拡大を協議した。半導体・レアアースを含む個別合意の実施が今後の焦点。<a href="https://www.cnbc.com/2026/05/14/trump-xi-summit-us-china-trade-taiwan-iran-nvidia.html">CNBC</a></p>
+<h2 id="不動産テック">不動産テック</h2>
+<h3>ZillowがCompassとシカゴMLSを提訴、リスティングデータ争奪戦が激化</h3>
+<p>Zillowは2026年5月12日、Compassが全国ブローカレッジへのZillow向けリスティングフィードを遮断したとして提訴した。Compassの「Private Exclusive」戦略がデータアクセスの閉鎖的運用を強める中、公開市場 vs クローズドネットワークの対立が業界の構造問題に発展している。<a href="https://www.inman.com/2026/05/12/zillow-sues-compass-and-chicagos-mls-over-private-listing-battle/">Inman</a></p>
+<h3>住宅トークン化法「Clarity Act」が40兆ドルの死んだ資産を解放へ</h3>
+<p>米国でClarify Actが可決されれば、住宅資産をトークン化して頭金に充当・PMI不要化・低コスト借入が可能になる可能性がある。既存の住宅購入障壁（頭金・審査）をブロックチェーン技術が根本から変える可能性を論じた論考で、不動産フィンテックの次フロンティアとして注目される。<a href="https://www.housingwire.com/articles/tokenized-equity-down-payments/">HousingWire</a></p>
+<h3>UWMがAIエージェント内製化、引受審査で1人16件/日を実現</h3>
+<p>米最大級の卸売モーゲージ会社UWMのCTO Jason Bressler氏は、内製AIエージェントによりアンダーライターの処理能力が1日16件に向上し、サービシングコールセンターの対応も自動化しつつあると発表した。「AIはコピー生成止まり」という現場の不満に対し、ローン業務特化の実装で反証する事例。<a href="https://www.housingwire.com/articles/uwm-in-house-ai-mortgage-underwriting-servicing/">HousingWire</a></p>
+<h2 id="seo・web動向">SEO・Web動向</h2>
+<h3>Google AI Overview、5月に5点刷新 — 被引用サイトはCTR+120%</h3>
+<p>5月6日、GoogleはAI OverviewおよびAI Modeのリンク表示を5点更新した。主要変更は①箇条書き横にリンクをインライン表示 ②デスクトップでホバー時サイトプレビュー ③Reddit等コミュニティ発言の引用 ④ニュース購読コンテンツの優先表示 ⑤AI Mode末尾に次の検索角度を提案。被引用ブランドのCTRが最大+120%増と報告されている。<a href="https://searchengineland.com/google-updates-links-within-ai-overviews-ai-mode-476571">Search Engine Land</a></p>
+<h3>Google May 2026コアアップデート — AI生成コンテンツへの審査強化</h3>
+<p>2026年5月のアルゴリズム更新は、E-E-A-T重視の強化が主軸。単に他ソースを言い換えたAI生成テキストは評価が下がり、著者の専門性と一次経験が確認できるコンテンツに流入が集中する傾向が確認されている。<a href="https://www.quantifimedia.com/google-algorithm-update-may-2026-what-changed-and-how-it-impacts-your-rankings">Quantifimedia</a></p>
+<h3>AI Overview非引用サイトはCTR -15〜46% — SEOの優先事項が転換</h3>
+<p>Ahrefs・Pew Research・Amsiveの調査では非引用サイトのCTRが15〜46%低下する一方、被引用サイトで+120%増加と明暗が分かれた。AI時代のSEOは「検索結果1位」より「AI Overviewへの引用」が流入を左右する新秩序に移行しつつある。<a href="https://www.seo-kreativ.de/en/blog/google-ai-overviews-updates-2026-en/">seo-kreativ.de</a></p>
+<h2 id="税務・法律・健康">税務・法律・健康</h2>
+<h3>副業の少額減価償却特例が2026年3月末で変更</h3>
+<p>2026年3月31日以前に取得した資産まで適用された30万円一括経費計上の特例が期限切れ。4月以降の副業設備投資は取得時期によって経費算入額が変わるため注意が必要。<a href="https://www.yayoi-kk.co.jp/shinkoku/oyakudachi/fukugyo-setsuzei/">弥生</a></p>
+<h3>ハダカデバネズミのHAS2遺伝子移植でマウスの寿命4.4%延長</h3>
+<p>ロチェスター大学の研究チームが、ハダカデバネズミの高分子ヒアルロン酸産生遺伝子「HAS2」をマウスに移植したところ、中央値寿命が約4.4%延長し、自然発生腫瘍の発生が有意に減少した。ヒアルロン酸が抗炎症・抗がん作用を持つ可能性を示す成果。<a href="https://www.sciencedaily.com/releases/2026/05/260510030948.htm">ScienceDaily</a></p>
+<h2 id="市場ペイン・ユーザーの不満">市場ペイン・ユーザーの不満</h2>
+<h3>オフマーケット物件横行で「見えない市場」への不満が噴出</h3>
+<p>バイヤーが「自分は良い物件を見逃している」と感じるケースが急増。Compassのプライベートリスティング戦略や「Coming Soon」運用の拡大が情報の非対称性を高め、Zillowへの訴訟にまで発展した。透明性・公平な情報アクセスへの需要は不動産テックに新たな商機を示している。<a href="https://www.inman.com/?p=1119514">Inman</a></p>
+<h3>住宅の「買い時感」が2020年以降最高水準 — 焦りと踏み切れない葛藤</h3>
+<p>リクルートSUUMOリサーチセンター調査（2025年12月〜2026年1月）で、住宅購入検討者の50%が「買い時」と回答し2020年以降最高値を記録。「値上がる前に買いたい」という焦りが高まる一方で、金利・価格高止まりへの不安から決断できないギャップが拡大。意思決定支援ツールへのニーズが高まっている。<a href="https://suumo.jp/journal/2026/05/13/216775/">SUUMO Journal</a></p>
+<h3>2026年春市場で成約破談増・詐欺急増 — エージェントも「異常」と困惑</h3>
+<p>Inmanのエージェント調査によれば、成約直前の破断案件増加・詐欺の急増・売り手の値下げ拒否が同時多発し、2026年春の市場を「buyer&#39;s/seller&#39;s市場の二項対立では説明できない」と複数エージェントが証言。成約確度の予測・詐欺検知・価格交渉支援を自動化するツールへの切実な現場ニーズが確認できる。<a href="https://www.inman.com/2026/05/13/weird-2026-housing-market-buyers-sellers/">Inman</a></p>
+<hr>
+<h2 id="事業チャンス候補">事業チャンス候補</h2>
+<table>
+<thead>
+<tr>
+<th>タイトル</th>
+<th>根拠</th>
+<th>難易度</th>
+<th>移動済み</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>日本の公共データ×B2B API（不動産・許認可系）</td>
+<td>PermisAPIが13ヶ月ソロ開発で初課金成功。日本の許可申請・物件登記データで同手法が再現可能</td>
+<td>中</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>AI Overview被引用最適化ツール</td>
+<td>被引用サイトCTR+120% vs 非引用-46%の格差が拡大。引用を狙ったコンテンツ構造分析・最適化SaaS</td>
+<td>中</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>住宅購入意思決定支援ツール</td>
+<td>「買い時」感50%最高水準なのに踏み切れない層が急増。金利×価格×個人条件を入力してシミュレーション</td>
+<td>小</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Claude Code SDK コスト最適化ミドルウェア</td>
+<td>6月15日から従量課金化。自動化ヘビーユーザー向けにキャッシング・バッチ処理でコスト削減するラッパーOSS</td>
+<td>小</td>
+<td>[ ]</td>
+</tr>
+</tbody></table>
+</article> <!-- スティッキーTOC --> <aside id="toc" class="hidden lg:block w-[180px] shrink-0 sticky top-28 opacity-0"> <p class="font-mono text-[10px] uppercase tracking-widest text-[#bbb] mb-4">Contents</p> <nav> <a href="#技術・エンジニアリング" data-toc-id="技術・エンジニアリング" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 技術・エンジニアリング </a><a href="#セキュリティ・脆弱性" data-toc-id="セキュリティ・脆弱性" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> セキュリティ・脆弱性 </a><a href="#ビジネス・スタートアップ" data-toc-id="ビジネス・スタートアップ" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> ビジネス・スタートアップ </a><a href="#投資・資産運用" data-toc-id="投資・資産運用" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 投資・資産運用 </a><a href="#地政学・国際情勢" data-toc-id="地政学・国際情勢" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 地政学・国際情勢 </a><a href="#不動産テック" data-toc-id="不動産テック" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 不動産テック </a><a href="#seo・web動向" data-toc-id="seo・web動向" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> SEO・Web動向 </a><a href="#税務・法律・健康" data-toc-id="税務・法律・健康" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 税務・法律・健康 </a><a href="#市場ペイン・ユーザーの不満" data-toc-id="市場ペイン・ユーザーの不満" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 市場ペイン・ユーザーの不満 </a><a href="#事業チャンス候補" data-toc-id="事業チャンス候補" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 事業チャンス候補 </a> </nav> </aside> </div> </div>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html> <script type="module" src="/digest/_astro/_date_.astro_astro_type_script_index_0_lang.DdWaqLcw.js"></script>

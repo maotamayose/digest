@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-05-05 · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.D_O-pa3l.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="max-w-[1100px] mx-auto px-6"> <div class="mb-10"> <a href="/digest/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← home</a> </div> <div class="flex gap-16 items-start"> <!-- メインコンテンツ --> <article class="min-w-0 flex-1 prose-custom"><h1>2026-05-05 ダイジェスト</h1>
+<h2 id="技術・エンジニアリング">技術・エンジニアリング</h2>
+<!-- sources-tech.md --><h3>DeepSeek V4 Pro × Claude Code 統合が HN 651pt 獲得</h3>
+<p>DeepClaudeはClaude CodeのエージェントループにDeepSeek V4 Proを差し込み、推論コストを大幅削減しながらClaudeのツール操作性を維持する構成。HN 651ptと274コメントで週間最高反響を記録しており、LLMコスト最適化の実践ニーズの高さを示している。<a href="https://github.com/aattaran/deepclaude">GitHub</a></p>
+<h3>Microsoft Edge がパスワードをメモリに平文保持</h3>
+<p>未使用パスワードを含む全認証情報が、Edgeプロセスのメモリ上にクリアテキストで常駐していることが確認された。HN 415ptと149コメントで注目を集め、エンドポイント侵害時の資格情報窃取リスクが実証された形。社内PCでEdgeを使うエンジニア・情シス担当は即座に確認が必要。<a href="https://twitter.com/L1v1ng0ffTh3L4N/status/2051308329880719730">Hacker News</a></p>
+<h3>OpenAI が低遅延 Voice AI の大規模配信技術を公開</h3>
+<p>音声入出力を超低遅延で数百万ユーザーに届けるための自社インフラ設計を解説した技術ブログをOpenAIが公開。HN 285ptを獲得。音声AIの事業活用を検討する個人開発者にとって、プロダクション要件のリアルな水準を把握できる一次資料になっている。<a href="https://openai.com/index/delivering-low-latency-voice-ai-at-scale/">OpenAI</a></p>
+<h3>Sierra AI、$950M 調達・評価額 $15B に</h3>
+<p>カスタマーサポート特化のAIエージェントSaaS「Sierra」が9.5億ドルの資金調達を発表し、評価額は150億ドルに到達。業種特化型エージェントSaaSが既にユニコーンを超えたカテゴリになりつつあり、不動産・法律等の日本市場向け垂直SaaS参入の参照点になる。<a href="https://sierra.ai/blog/better-customer-experiences-built-on-sierra">Sierra</a></p>
+<h3>Claude Code の WebFetch は Haiku が先読みしている</h3>
+<p>Claude CodeのWebFetchツールは、OpusやSonnetが直接Webページを読んでいるのではなく、内部でHaikuが先にサマリを生成し、その要約だけをメインモデルに渡す二段構成になっている。正確な情報取得が必要な場面ではRawコンテンツを指定する回避策が有効。<a href="https://zenn.dev/zhizhiarv/articles/claude-code-webfetch-haiku-summary">Zenn</a></p>
+<h2 id="セキュリティ・脆弱性">セキュリティ・脆弱性</h2>
+<!-- sources-security.md --><h3>MOVEit Automation に認証バイパスの緊急パッチ</h3>
+<p>Progress Softwareがエンタープライズ向けMFT製品MOVEit Automationのクリティカルな認証バイパス脆弱性に緊急パッチを公開した。2023年に大規模侵害を引き起こした同社製品の後継版であり、即時適用が強く推奨される。<a href="https://thehackernews.com/2026/05/progress-patches-critical-moveit.html">The Hacker News</a></p>
+<h3>Weaver E-cology CVE-2026-22679 が 3 月から実被害継続</h3>
+<p>中国製オフィス自動化SaaS「Weaver E-cology」のクリティカル脆弱性が3月中旬より悪用継続中。攻撃者はディスカバリコマンドを実行してイニシャルアクセスを確立しており、パッチ未適用環境への早急な対応が必要。<a href="https://www.bleepingcomputer.com/news/security/weaver-e-cology-critical-bug-exploited-in-attacks-since-march/">BleepingComputer</a></p>
+<h3>Silver Fox が ABCDoor でインド・ロシアを同時攻撃</h3>
+<p>中国系APT「Silver Fox」が税務署を騙るフィッシングメール1,600通以上を使い、インドとロシアの組織に新型バックドア「ABCDoor」とValleyRATを展開。2カ国に対してほぼ同一のTTPsを用いた二重作戦が確認された。<a href="https://thehackernews.com/2026/05/silver-fox-deploys-abcdoor-malware-via.html">The Hacker News</a></p>
+<h3>Amazon SES フィッシング踏み台利用が急増</h3>
+<p>攻撃者が正規AWSインフラ（Amazon SES）を経由してフィッシングメールを送信するケースが急増。AWSドメインから送信されるためレピュテーションベースのフィルタが無効化されるため、受信側での対策が困難。<a href="https://www.bleepingcomputer.com/news/security/amazon-ses-increasingly-abused-in-phishing-to-evade-detection/">BleepingComputer</a></p>
+<h3>ランサムウェア交渉人が犯罪組織の二重スパイと判明</h3>
+<p>ランサムウェア被害者側の交渉代行者として活動しながら、実際には攻撃側ギャングに内部情報を提供していた人物が有罪を認めた。サードパーティ交渉人の信頼性評価に新たな課題を突きつける事案。<a href="https://www.schneier.com/blog/archives/2026/05/a-ransomware-negotiator-was-working-for-a-ransomware-gang.html">Schneier on Security</a></p>
+<h3>国際作戦で詐欺センター 9 拠点・276 人・$701M を摘発</h3>
+<p>UAE警察主導の国際合同作戦が仮想通貨投資詐欺センター9拠点を閉鎖し、276人を逮捕・7億1百万ドル相当を押収した。米中当局も協力し、主にアメリカ人をターゲットとした組織的詐欺を壊滅。<a href="https://thehackernews.com/2026/05/global-crackdown-arrests-276-shuts-9.html">The Hacker News</a></p>
+<p>▶ その他: <a href="../security/2026-05-05.md">intel/security/2026-05-05.md</a></p>
+<h2 id="ビジネス・スタートアップ">ビジネス・スタートアップ</h2>
+<!-- sources-business.md --><h3>エンタープライズ AI 客取り合戦——Sierra $950M・Anthropic+OpenAI JV 設立</h3>
+<p>AnthropicとOpenAIが相次いでエンタープライズ向けJV設立を発表し、同日SierraはAI顧客体験の「グローバル標準」を目指して$950M（累計$1B超）を調達した。両社がアセット・マネージャーと組んで営業体制を強化する構図は、エンタープライズAIの販路争いが資本力勝負に移行したことを示している。<a href="https://techcrunch.com/2026/05/04/sierra-raises-950m-as-the-race-to-own-enterprise-ai-gets-serious/">TechCrunch</a></p>
+<h3>画像 AI がチャットボットを超えてアプリ成長を牽引</h3>
+<p>Appfiguresの調査によると、ビジュアルAIモデルのローンチはチャットボット系アップデートと比較して6.5倍多くのダウンロードを生む。画像生成AIをフックにした無料→有料導線設計が個人開発者の狙い目になる。<a href="https://techcrunch.com/2026/05/04/image-ai-models-now-drive-app-growth-beating-chatbot-upgrades/">TechCrunch</a></p>
+<h3>SaaS 全作より 1 本のゲームが課金ユーザーを獲得</h3>
+<p>2年間のインディーハッカーが複数SaaSを作るも最大1顧客止まりだったのに対し、初めて作ったゲームが最多課金ユーザーを獲得した。「問題起点より楽しさ起点の方がバイラルしやすい」という逆説は、課金転換に苦しむ個人開発者の戦略を見直す契機になる。<a href="https://reddit.com/r/indiehackers/comments/1t3s7c3/made_a_game_and_got_more_paying_users_than_i_did/">r/indiehackers</a></p>
+<h3>MVP 11 機能——ゼロユーザーからの教訓</h3>
+<p>「ユーザー認証・ダッシュボード・通知・3サービス統合」を全部入れた&quot;最小&quot;MVPを4ヶ月かけてリリースしたが誰も使わなかった。コメント88件で共感が殺到し、「本当のMVPは1機能・1ユーザー課題で十分」という結論に収束している。<a href="https://reddit.com/r/indiehackers/comments/1t23bhi/my_mvp_had_11_features_and_i_wondered_why_nobody/">r/indiehackers</a></p>
+<h3>LLM API 費用を 5 倍過払いしていた監査の実録</h3>
+<p>B2B SaaSで全機能をGPT-4oに向けていたところ、タスク別モデル選定に切り替えることでコストを約1/5に削減できた。AI機能を追加し始めた個人開発者がすぐ実践できる節約術。<a href="https://reddit.com/r/SaaS/comments/1svew4x/how_i_audited_our_llm_api_costs_and_found_we_were_overpaying_by_5x_on_most_calls/">r/SaaS</a></p>
+<h2 id="投資・資産運用">投資・資産運用</h2>
+<!-- sources-finance.md --><h3>日経平均、5 万 9 千円台で連休入り——米株高が支え</h3>
+<p>5月1日終値は5万9,513円（前日比+228円）。GWを挟みつつも、米ハイテク株の好調と円安水準が下支えとなった。連休明け（5月7日以降）の業績相場入りが焦点。<a href="https://www.nikkei.com/article/DGXZQOFL015830R00C26A5000000/">日本経済新聞</a></p>
+<h3>S&P500、中東不安で最高値から一時調整</h3>
+<p>5月1日の最高値7,230から、5月4日は中東情勢悪化・原油高を嫌気して7,200.75に下落（-0.41%）。Q1決算は84%が予想超過、通期EPS成長率21.3%予想で業績の土台は堅固。<a href="https://247wallst.com/investing/2026/05/04/stock-market-live-may-4-2026-sp-500-spy-sinks-on-iran-uncertainty-again/">247WallSt</a></p>
+<h3>FRB 議長交代迫る——Warsh 5 月 15 日就任へ</h3>
+<p>上院本会議で5月11日週に最終承認投票の見込み。Warsh氏のFRB独立性に関する発言が市場に不安感を与えており、金利据え置き路線（3.5〜3.75%）が維持されるか注目。<a href="https://www.cnbc.com/2026/04/29/trump-fed-nominee-kevin-warsh-senate-approval.html">CNBC</a></p>
+<h3>金価格、有事需要で底堅く——ゴールド ETF 再注目</h3>
+<p>金は一時1オンス4,540ドルまで軟化したが、ホルムズ海峡封鎖長期化のリスクから反発傾向。国内金価格は1グラム25,908円（5月1日）。ゴールドマンは2026年末5,400ドル、JPモルガンは6,300ドルを予想。<a href="https://www.nomura.co.jp/wealthstyle/article/0602/">野村証券</a></p>
+<h2 id="地政学・国際情勢">地政学・国際情勢</h2>
+<!-- sources-geopolitics.md --><h3>ホルムズ停戦延長、米軍誘導宣言にイランが強硬警告</h3>
+<p>条件付き停戦は継続中だが、トランプ政権が「米軍が船舶を海峡誘導する」と宣言。イラン議会安全保障委員長は「停戦違反と見なす」と反発し、緊張が再燃。事実上の封鎖状態は続いており、原油供給途絶の長期化リスクが消えていない。<a href="https://www.cnn.com/2026/05/03/world/live-news/iran-war-news">CNN</a></p>
+<h3>米中関税、5 月首脳会談前に 90 日休戦延長中</h3>
+<p>現行の対中関税は平均33%（IEEPA賦課金20%＋相互関税10%の90日猶予が8月まで延長）。5月中旬のトランプ・習会談で恒久合意の可能性もあるが、USTR主導のSection 301調査が並走中でハードルは高い。<a href="https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/">Tax Foundation</a></p>
+<h3>高市首相、防衛費 2% 達成を前倒し——台湾有事言及で中国反発</h3>
+<p>日本は2026年春に防衛費GDP比2%を達成。高市首相の「台湾有事は日本の存立危機事態に該当しうる」発言に対し中国が「一線を越えた」と強く批判。米国の孤立主義傾向を受け「準同盟国との多国間枠組み」構築への動きも加速。<a href="https://www.fpri.org/article/2026/04/japans-and-the-quest-for-its-new-normal/">FPRI</a></p>
+<h3>ドル円、介入後 155〜157 円台で膠着——野村は年末 152.5 円予想</h3>
+<p>4月30日の政府・日銀介入（160円台→155円台に急落）後、5月4日は155〜157円台でレンジ推移。160円付近が実質的な介入トリガーとして機能しており、上値は抑制。<a href="https://www.nomura.co.jp/wealthstyle/article/0676/">野村証券</a></p>
+<h2 id="不動産テック">不動産テック</h2>
+<!-- sources-realestate.md --><h3>MRED × Compass——地域 MLS が全米開放、PLN 戦争へ</h3>
+<p>シカゴ圏のMLS「MRED」がCompassと組み、全米の宅建士にアクセスを開放。Compassは傘下ブランドの最初の10万エージェント分の会費を補助し、物件をMREDのPrivate Listing Network（PLN）に一括供給する。地域MLSのNAR離脱・全国化が現実になったことで、既存の全国MLS体制が根底から揺らぐ構図。<a href="https://www.inman.com/2026/05/04/mred-goes-national-the-quiet-dismantling-of-our-mls-system/">Inman</a></p>
+<h3>国交省 620 万件を構造化——「FUDOSAN DB」が賃料推定 API を無料公開</h3>
+<p>国土交通省の不動産情報ライブラリ（売買取引価格620万件超・地価公示13万件）を統合し、機械学習による賃料推定エンジン（MAPE 1.8%）と収益シミュレーションをAPIとして無料公開（2026年4月βリリース）。住所と面積を入力するだけで全国の月額賃料を推定できる。<a href="https://www.jiji.com/jc/article?k=000000003.000177945&g=prt">時事ドットコム</a></p>
+<h3>Real-REMAX 統合——ブローカー集約は「手数料戦争」の序章</h3>
+<p>Real BrokerageによるREMAX買収とCompassによるAnywhere買収・Rocket Companies連合との三つどもえ構造が鮮明に。消費者向け手数料引き下げ圧力が最大の争点で、AIによるエージェント代替と並走する形でブローカー機能の再定義が加速。<a href="https://www.inman.com/2026/05/04/the-real-remax-deal-consumers-are-coming-for-your-commission/">Inman</a></p>
+<h3>AI が返してくれた時間をどこに再投資するか——エージェントの成長戦略論</h3>
+<p>AIで週10時間を取り戻したとき、見込み客開拓・関係深耕・教育などのどの活動に充てるかが差異化のカギになると論じるコラム。日本の不動産エージェント向けAI活用研修・コンサル市場の参入機会として読める。<a href="https://www.inman.com/2026/05/04/from-efficiency-to-growth-where-to-reinvest-the-hours-ai-returns/">Inman</a></p>
+<p>▶ その他: <a href="../real-estate/2026-05-05.md">intel/real-estate/2026-05-05.md</a></p>
+<h2 id="seo・web動向">SEO・Web動向</h2>
+<!-- sources-seo.md --><h3>AI Overview 非引用サイトの CTR が最大 35% 低下</h3>
+<p>Google AI Overviewが全米検索の25.8%に表示される中、引用されないページは検索1位でも平均34.5%のCTR低下を記録。一方、引用されたページはクリック率14.2%と非引用の5倍超。「順位1位を取る」より「AIに引用される」が新しい成功指標になりつつある。<a href="https://heroicrankings.com/seo/managed/google-ai-overview-statistics-2026/">Heroic Rankings</a></p>
+<h3>Google Discover が独立アルゴリズムへ移行</h3>
+<p>2026年2月5日、GoogleはDiscover専用の初のコアアップデートをリリース。煽り見出しに依存するサイトはDiscover流入が30〜60%減少。著者資格・引用元・編集プロセスがYMYLコンテンツの表示条件として事実上必須化。<a href="https://www.techwyse.com/blog/google-core-update/google-discover-core-update-2026-seo-impact">TechWyse</a></p>
+<h3>March 2026 コアアップデート完了——E-E-A-T 優遇を確認</h3>
+<p>3月27日〜4月8日に実施されたMarch 2026コアアップデートが完了。一次情報・実体験コンテンツの優遇と、AI生成薄コンテンツの降順が確認された。次回コアアップデートは6〜7月が有力。<a href="https://almcorp.com/blog/google-march-2026-core-update-complete/">ALM Corp</a></p>
+<h2 id="税務・法律・健康">税務・法律・健康</h2>
+<!-- sources-lifestyle.md --><h3>労基法 40 年ぶり改正——副業の時間通算ルールが廃止方向</h3>
+<p>2026年の労働基準法改正案で、副業・兼業時の「全社合算の労働時間通算」廃止が検討されている。各社が自社分のみで残業代を計算する仕組みに簡素化され、複数社掛け持ちの実質障壁が下がる。<a href="https://minagine.jp/media/management/2026new-roukihou-fukugyo/">HRソリューションラボ</a></p>
+<h3>副業 × 青色申告の節税——2026 年版チェックポイント</h3>
+<p>2026年4月から少額減価償却の即時費用化が30万円未満から40万円未満に拡大。副業者が備品・ソフトウェア購入時に活用できる枠が広がった。青色申告特別控除の75万円化は2027年分から。<a href="https://www.nikkei.com/article/DGXZQOUB05AU70V00C26A2000000/">日本経済新聞</a></p>
+<h3>「目的意識」が最強の長寿因子——2026 年ロンジェビティ調査</h3>
+<p>Life Time社の2026年ウェルネス調査によると、ロンジェビティは「GLP-1/ペプチド」を抑えて最重要トレンドに。「目的と社会的つながり」が慢性炎症を下げ、早期死亡リスクを有意に低下させる研究が続出。<a href="https://med.stanford.edu/news/insights/2026/01/healthy-habits-longevity-40s-and-50s.html">Stanford Medicine</a></p>
+<h2 id="市場ペイン・ユーザーの不満">市場ペイン・ユーザーの不満</h2>
+<!-- sources-pain.md --><h3>Firefox でクレカ決済がサイレントに失敗する</h3>
+<p>Ubuntu+Firefoxで高額購入しようとすると取引途中でサイレント拒否される。電話サポートに繋いでようやく「Firefoxが問題」と判明。ユーザー側にエラー理由が一切表示されないため原因特定が困難。ブラウザ判別による決済拒否を事前検知・警告するツールの需要が示唆される。<a href="https://news.ycombinator.com/item?id=48016156">Hacker News</a></p>
+<h3>RSS のないサイトの更新通知が取れない</h3>
+<p>RSSを提供しない多数のサイトの更新をリアルタイム検知したい。Webスクレイピング+差分検知+通知のパイプラインを個人向けに提供するサービスは空白地帯に近く、セルフホスト型・SaaS型どちらでも需要がある。<a href="https://reddit.com/r/webdev/comments/1hezn5a/notification_on_website_change/">reddit r/webdev</a></p>
+<h3>Chrome の Worker 起動が DevTools 非表示時に異常に遅い</h3>
+<p>複数Workerを並列起動するとDevToolsを閉じた状態では著しく遅いことが判明。回避策は「起動時にWASMをプリロードしてウォームアップ」という非直感的な手順。この挙動を診断するツールやワークアラウンドのboilerplateの需要がある。<a href="https://reddit.com/r/webdev/comments/1p8to06/spawning_multiple_thread_workers_is_slow_on/">reddit r/webdev</a></p>
+<hr>
+<h2 id="事業チャンス候補">事業チャンス候補</h2>
+<table>
+<thead>
+<tr>
+<th>タイトル</th>
+<th>根拠</th>
+<th>難易度</th>
+<th>移動済み</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FUDOSAN DB API を使った物件投資評価ツール</td>
+<td>国交省620万件が無料API化、個人開発者でも即参入可能</td>
+<td>低</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>RSSなしサイト更新通知SaaS</td>
+<td>HN/Reddit で繰り返し上がる未解決ペイン</td>
+<td>低〜中</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>ブラウザ別決済エラー検知ライブラリ</td>
+<td>Firefox+決済のサイレント失敗は開発者が解決できる問題</td>
+<td>低</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>業種特化型AIエージェントSaaS（日本向け）</td>
+<td>Sierraが$15B評価、不動産・法律等の日本垂直市場は空白</td>
+<td>高</td>
+<td>[ ]</td>
+</tr>
+</tbody></table>
+</article> <!-- スティッキーTOC --> <aside id="toc" class="hidden lg:block w-[180px] shrink-0 sticky top-28 opacity-0"> <p class="font-mono text-[10px] uppercase tracking-widest text-[#bbb] mb-4">Contents</p> <nav> <a href="#技術・エンジニアリング" data-toc-id="技術・エンジニアリング" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 技術・エンジニアリング </a><a href="#セキュリティ・脆弱性" data-toc-id="セキュリティ・脆弱性" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> セキュリティ・脆弱性 </a><a href="#ビジネス・スタートアップ" data-toc-id="ビジネス・スタートアップ" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> ビジネス・スタートアップ </a><a href="#投資・資産運用" data-toc-id="投資・資産運用" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 投資・資産運用 </a><a href="#地政学・国際情勢" data-toc-id="地政学・国際情勢" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 地政学・国際情勢 </a><a href="#不動産テック" data-toc-id="不動産テック" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 不動産テック </a><a href="#seo・web動向" data-toc-id="seo・web動向" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> SEO・Web動向 </a><a href="#税務・法律・健康" data-toc-id="税務・法律・健康" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 税務・法律・健康 </a><a href="#市場ペイン・ユーザーの不満" data-toc-id="市場ペイン・ユーザーの不満" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 市場ペイン・ユーザーの不満 </a><a href="#事業チャンス候補" data-toc-id="事業チャンス候補" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 事業チャンス候補 </a> </nav> </aside> </div> </div>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html> <script type="module" src="/digest/_astro/_date_.astro_astro_type_script_index_0_lang.DdWaqLcw.js"></script>
