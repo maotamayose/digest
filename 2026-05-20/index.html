@@ -12,6 +12,14 @@ digest /
 <p>欧州最大の AI 企業 Mistral が「AI スタック全体を自社で持つ」戦略を宣言（HN 128pt）。企業向け AI 調達に欧州発の垂直統合プレーヤーが台頭し、Anthropic/Google との三極構造が鮮明化。<a href="https://www.emmi.ai/news/mistral-ai-acquires-emmi-ai">Emmi AI</a></p>
 <h3>ガードレールだけで 8B モデルを 53%→99% 精度に引き上げる「Forge」</h3>
 <p>Texas Instruments の AI ディレクターがオープンソース信頼性レイヤー「Forge」を公開。リトライ誘導・ステップ強制・エラー回復のみで多ステップ精度を大幅改善。モデルを変えずにエッジ推論・セルフホスト環境の信頼性を確保できる実用パターン。<a href="https://github.com/antoinezambelli/forge">GitHub</a></p>
+<h3>Google Cloud が Railway のアカウントを無断停止、PaaS が全断</h3>
+<p>PaaS 事業者 Railway の Google Cloud アカウントが5/19 に無通告で「制限」状態にされ、オーバーフロー用 VM・CloudSQL・API が全消失して全顧客ワークロードが停止した。Railway はコントロールプレーンまで GCP 上で動かしていたため土台ごと崩れた。Google・Railway 双方からブロック理由の説明は無し。自社サービスを単一クラウドのアカウント健全性に賭けるリスクが顕在化。<a href="https://www.theregister.com/off-prem/2026/05/20/google-cloud-suspended-major-customer-railwaycom-without-cause-causing-outage/5243111">The Register</a></p>
+<h3>Linux カーネルに root 奪取の権限昇格脆弱性が3連鎖</h3>
+<p>CopyFail（4/29）→Dirty Frag（5/7）→Fragnesia（5/13）と、非特権ユーザーが直接 root を取れる LPE が立て続けに公開。いずれもページキャッシュ操作の悪用で、Dirty Frag は zero-copy 送信パスの splice() で読み取り専用ページを書き換える。Fragnesia は Dirty Frag のパッチ自体が誤って生んだ欠陥。VPS 運用者は即時のカーネル更新が必須。<a href="https://www.gentoo.org/news/2026/05/19/copy-fail-fragnesia-vulnerabilities.html">Gentoo</a></p>
+<h3>Gemini CLI が6/18に終了、Antigravity CLI へ強制移行</h3>
+<p>Google が Gemini CLI と Gemini Code Assist IDE 拡張を2026/6/18 に停止し、後継の Antigravity CLI へ統合すると発表。AI エージェント開発基盤「Antigravity」への一本化戦略で、新 CLI は Go 製・マルチエージェント対応。CLI をスクリプトに組み込んでいる個人開発者は1ヶ月以内の移行作業が必要。<a href="https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/">Google Developers Blog</a></p>
+<h3>OpenAI が画像に SynthID 透かしを採用、検証ツールを公開</h3>
+<p>OpenAI が画像出力に Google DeepMind の SynthID 不可視透かしを埋め込み、C2PA にも加入して二層の来歴システムを構築すると発表。透かしはスクショ・リサイズ・加工後も残る。画像をアップロードして OpenAI 製か判定する公開検証ツールも先行公開し、AI 生成画像の真正性検証が業界標準化へ動く。<a href="https://techcrunch.com/2026/05/19/openai-is-making-it-easier-to-check-if-an-image-was-made-by-their-models/">TechCrunch</a></p>
 <h2 id="セキュリティ・脆弱性">セキュリティ・脆弱性</h2>
 <h3>npm 600本汚染・durabletask も陥落、Shai-Hulud 第3波</h3>
 <p>新波として npm 600本超が汚染され、Microsoft 関連 Python パッケージ <code>durabletask</code> も3バージョン連続感染。CI/CD シークレット搾取・VS Code/Claude Code へのバックドア埋め込みに加え、イスラエル・イランのシステムではディスク消去ペイロードが確認された。<a href="https://www.bleepingcomputer.com/news/security/new-shai-hulud-malware-wave-compromises-600-npm-packages/">BleepingComputer</a> / <a href="https://www.aikido.dev/blog/durabletask-package-compromised-mini-shai-hulud">Aikido</a></p>
@@ -33,6 +41,16 @@ digest /
 <p>OpenAI が AI で脆弱性検出・パッチ妥当性検証を行うツール「Daybreak」を発表。Microsoft MDASH・Anthropic Mythos と並び、AI による攻撃・防御双方のセキュリティ自動化が2026年の主要トレンドとして加速している。<a href="https://thehackernews.com/2026/05/openai-launches-daybreak-for-ai-powered.html">The Hacker News</a></p>
 <h3>OpenAI 社員端末が npm 汚染で侵害——TanStack 経由の Shai-Hulud</h3>
 <p>OpenAI が社内端末2台のマルウェア感染を開示。社員が npm パッケージ <code>TanStack</code> の汚染版を <code>npm install</code> した際、Mini Shai-Hulud のスティーラーが postinstall スクリプトで実行され認証情報が窃取された経路。本番システム・顧客データ・知的財産への影響は無しと公表。著名 AI 企業すら npm サプライチェーン汚染の影響圏内にあることを示す。<a href="https://thehackernews.com/2026/05/tanstack-supply-chain-attack-hits-two.html">The Hacker News</a></p>
+<h3>はてな、ビジネスチャットの偽送金指示で最大約11億円が流出</h3>
+<p>はてなの従業員が、役職員を装った第三者からビジネスチャット上で虚偽の送金指示を受け、外部口座へ送金。最大約11億円の資金流出が判明し特別調査委員会を設置した。攻撃の技術詳細は未公表だが、内部統制の隙を突く BEC（ビジネスメール詐欺）型の手口で、上場企業でも実害に至った。<a href="https://scan.netsecurity.ne.jp/article/2026/05/20/55310.html">ScanNetSecurity</a></p>
+<h3>GitHub 内部リポジトリに不正アクセス、汚染 VS Code 拡張が経路</h3>
+<p>ハッカー集団「TeamPCP」が GitHub の内部リポジトリ約4,000件を窃取したと主張し、GitHub が調査に入った。侵入経路は汚染された VS Code 拡張で、感染した従業員端末を踏み台にした。同集団は npm 汚染も展開しており、エディタ拡張がサプライチェーン攻撃の主要入口になっている現実を示す。顧客リポジトリへの影響証拠は現時点で無し。<a href="https://www.itmedia.co.jp/news/articles/2605/20/news085.html">ITmedia</a> / <a href="https://thehackernews.com/2026/05/github-investigating-teampcp-claimed.html">The Hacker News</a></p>
+<h3>LLM アプリ開発基盤「Dify」に複数のクリティカル脆弱性</h3>
+<p>ノーコード/ローコードで AI アプリを構築できる Dify に複数のクリティカル脆弱性が判明。個人開発者・スタートアップの採用が多く、自前ホスティング環境が直接の攻撃対象になりうる。ChromaDB・OpenClaw・PraisonAI に続き、AI 開発ツールチェーン全体の脆弱性露出が継続している。<a href="https://www.security-next.com/184566">Security NEXT</a></p>
+<h3>Claude・Cloudflare の「Mythos」、攻撃的 AI の実用化を国内が特集</h3>
+<p>ITmedia が Anthropic の AI 脆弱性発見システム Claude Mythos を特集。Cloudflare の「Mythos Preview」は AI が脆弱性発見から PoC 生成まで自律実行し、Apple が5年かけた対策を5日で突破、複数の脆弱性を連結して攻撃経路を自動生成したと報じられた。攻撃 AI と防御 AI（OpenAI Daybreak・Microsoft MDASH）の二極化が業界構造の変化として論じられている。<a href="https://www.itmedia.co.jp/enterprise/articles/2605/20/news035.html">ITmedia</a></p>
+<h3>PAN-OS に認証不要 root RCE、CVE-2026-0300 が野外悪用</h3>
+<p>Palo Alto Networks PAN-OS の User-ID 認証ポータル（Captive Portal）にバッファオーバーフロー脆弱性。認証不要で root 権限の任意コード実行が可能なゼロデイで、Unit 42 が野外悪用を観測・解析、CISA は KEV に追加した。ファイアウォール自体が認証なしで完全乗っ取りされる最悪クラスで、エッジ機器がランサム・APT の侵入口になる典型例。<a href="https://unit42.paloaltonetworks.com/captive-portal-zero-day/">Unit 42</a> / <a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/13/news034.html">ITmedia</a></p>
 <p>▶ その他: intel/security/2026-05-20.md</p>
 <h2 id="ビジネス・スタートアップ">ビジネス・スタートアップ</h2>
 <h3>Google I/O 2026: Search・Gmail・Docs が全面 AI エージェント化</h3>
@@ -47,6 +65,14 @@ digest /
 <p>元 Salesforce 主席科学者 R.Socher らがロンドンで創業、従業員30名未満で評価額 $4.65B・$650M を調達（GV・Greycroft 主導、Nvidia/AMD 参加）。「AI が自身の性能を分析し人手なしで自己改善する」賭けで、AI 研究の自動化が次の巨額資金フロンティアとして本格化した。<a href="https://thenextweb.com/news/recursive-superintelligence-self-improving-ai-funding">The Next Web</a></p>
 <h3>Parallel Web Systems、$2B 評価でエージェント向け検索 API に $100M</h3>
 <p>AI エージェント向けのリサーチ・検索 API を提供する Parallel Web Systems が評価額 $2B で $100M を調達。「他社プロダクトに組み込まれる検索インフラ」が一大カテゴリ化しており、LLM 向けスクレイピング代替・MCP 連携検索を自作する個人開発者の設計選択にも直結する。<a href="https://techstartups.com/2026/05/19/venture-capital-startup-funding-roundup-may-19-2026/">TechStartups</a></p>
+<h3>G2、Gartner の3レビューサイトを買収しソフト発見市場を寡占化</h3>
+<p>G2 が Capterra・Software Advice・GetApp を Gartner から約1.1億ドルで買収。年間2億人超の購買者と600万件のレビューを束ね「AI 時代の B2B ソフト発見の system of record」を狙う。AI が購入判断を代行する時代、レビュー獲得の窓口が一社に集約される構造変化で、SaaS の発見導線設計の見直しを迫る。<a href="https://thenextweb.com/news/g2-bold-move-to-reshape-software-discovery-with-major-acquisition-from-gartner">The Next Web</a></p>
+<h3>Publicis、データ協調基盤 LiveRamp を約22億ドルで買収</h3>
+<p>広告大手 Publicis が ID 協調・データクリーンルームの LiveRamp を全現金22億ドルで買収。Cookie 廃止後の ID 基盤を広告代理店が垂直統合する動きで、サードパーティ Cookie に依存しない計測・名寄せのニーズが個人開発の SaaS にも波及する。<a href="https://news.crunchbase.com/sections/saas/">Crunchbase News</a></p>
+<h3>Akamai、AI ブラウザ制御の LayerX を約2億ドルで買収</h3>
+<p>Akamai が「ブラウザ内の AI 利用を制御する」LayerX（ARR 約1,000万ドル）を約2.05億ドルで買収。社員が ChatGPT 等にデータを貼り付けるリスクを企業ブラウザで止める領域で、ARR の20倍超で買い手がついた。「AI 利用ガバナンス」が新カテゴリとして成立した実証。<a href="https://news.crunchbase.com/sections/saas/">Crunchbase News</a></p>
+<h3>Google「Universal Cart」、ネット全体の購買を横断追跡</h3>
+<p>Google I/O 2026 で発表。複数デバイス・複数小売店・数日にまたがる買い物を一つのカートに統合する。EC 事業者にとっては自社サイト外でカートが完結し、決済・在庫連携の主導権が Google に移るリスク。個人開発の EC 系 SaaS はこのカート API への対応可否が生存条件になりうる。<a href="https://techcrunch.com/2026/05/19/googles-new-universal-cart-wants-to-follow-your-entire-shopping-journey-across-the-internet/">TechCrunch</a></p>
 <h2 id="投資・資産運用">投資・資産運用</h2>
 <h3>ムーディーズ格下げ余波——米30年債一時5%超え</h3>
 <p>ムーディーズが米国債を Aaa から Aa1 へ引き下げ、米30年債利回りが一時5%超と2023年以来の高水準を記録。市場の「米国離れ」懸念が再燃し、金利上昇・ドル安の圧力が継続。<a href="https://www.nri.com/jp/media/column/kiuchi/20250519.html">NRI</a> / <a href="https://www.alliancebernstein.co.jp/market_fund/32523.html">AllianceBernstein</a></p>
@@ -64,6 +90,8 @@ digest /
 <p>ドル円は5/20も円安が優勢で159円付近を維持し7営業日続伸。米長期金利の上昇が円売りの背景。ベッセント米財務長官の「過度な変動は望ましくない」発言で一時円高に振れたが即座に戻し、政府・日銀の介入警戒感が上値の重しとなっている。<a href="https://www.oanda.jp/lab-education/market_news/2026_05_20_usdjpy/">OANDA証券</a> / <a href="https://www.nikkei.com/article/DGXZQOFL19BNH0Z10C26A5000000/">日本経済新聞</a></p>
 <h3>日本の超長期国債利回りが急騰、20年債は約30年ぶり高水準</h3>
 <p>原油高によるインフレ懸念と財政拡大観測を背景に超長期ゾーンの金利上昇が加速。5/15に新発20年債利回りが一時3.66%と約30年ぶりの高水準、30年債4.01%・40年債4.235%は発行開始以来の最高値を記録した。住宅ローン金利・企業の資金調達コストへの波及が懸念される。<a href="https://www.bloomberg.com/jp/news/articles/2026-05-15/TF2AOHT9NJLS00">Bloomberg</a></p>
+<h3>日経平均が3週ぶり6万円割れ、5営業日続落</h3>
+<p>5/20 の日経平均終値は前日比801.96円安の59,748.63円。終値で6万円を割ったのは約3週間ぶり。米10年債利回りが4.6%台後半に上昇、国内の新発10年債も2.8%に上昇し、AI 期待で買われたソフトバンクグループ・東京エレクトロンなど高値圏の主力株に利益確定売りが拡大した。<a href="https://www.nikkei.com/article/DGXZQOUB200RZ0Q6A520C2000000/">日本経済新聞</a></p>
 <h2 id="地政学・国際情勢">地政学・国際情勢</h2>
 <h3>米中首脳会談後、合意内容で双方が対立</h3>
 <p>5/14 の北京会談で農産品・ボーイング・レアアース等の合意が成立も、台湾問題で中国は米国が「一線を越えた」と警告。合意内容の解釈が食い違い、サプライチェーン安定化は予断を許さない。<a href="https://www.aljazeera.com/news/2026/5/15/trump-xi-summit-china-us-disagree-on-what-they-agreed-on">Al Jazeera</a></p>
@@ -79,6 +107,10 @@ digest /
 <p>NATO 欧州連合軍司令官が「さらなる米軍撤退を当然予期すべき」と発言。独からの5,000人撤退・ポーランドへの派遣中止に続き、トランプ政権下で欧州駐留米軍の段階的縮小が鮮明になった。欧州自身の通常戦力強化を迫る構造転換。<a href="https://www.armytimes.com/news/your-military/2026/05/19/more-us-troop-withdrawals-from-europe-expected-nato-commander-says/">Army Times</a></p>
 <h3>G7、対中依存脱却へ重要鉱物の価格下限メカニズムを協議</h3>
 <p>パリで開幕した G7 財務相・中銀総裁会議で、EV・再エネ・防衛に不可欠なレアアース等の供給網を脱中国依存させる方策を協議。ベッセント米財務長官が重要鉱物の備蓄・価格下限メカニズムを検討中と表明し、中国による代替供給網の価格切り崩しを防ぐ狙い。<a href="https://www.investing.com/news/economy-news/g7-finance-chiefs-seek-to-tackle-imbalances-as-trade-strains-unity-4694580">Investing.com</a></p>
+<h3>NATO 機がエストニア領空でウクライナ製ドローンを撃墜</h3>
+<p>5/19、バルト空域警備のルーマニア軍 F-16 がエストニア南部上空で迷走ドローンを撃墜。NATO 戦闘機がバルト諸国領空でウクライナ製ドローンを撃墜したのは初。ロシアが電子戦でウクライナの長距離ドローンを NATO 東端へ誘導している疑いが指摘され、NATO が直接交戦に踏み込んだ点でエスカレーション。<a href="https://www.bbc.com/news/articles/c302jy8z4vro">BBC World</a></p>
+<h3>トランプが台湾に「独立に走るな」と警告</h3>
+<p>習近平との北京会談直後、トランプが Fox News で台湾について「誰かを独立に走らせるつもりはない」と発言。台湾外交部は「すでに主権独立国家」と反論した。米国の台湾コミットメント後退観測として、TSMC・半導体サプライチェーン、日本の経済安保に直結する。<a href="https://www.bbc.com/news/articles/clyp9mk3mrgo">BBC World</a></p>
 <h2 id="不動産テック">不動産テック</h2>
 <h3>住友林業、米 Tri Pointe 買収クローズ（$45億）</h3>
 <p>関水ハウスに続き日系資本が米国トップ5 ビルダー入り。日本企業による米住宅市場での存在感が急拡大。<a href="https://www.housingwire.com/articles/drb-sumitomo-10-year-growth/">HousingWire</a></p>
@@ -92,6 +124,10 @@ digest /
 <p>物件・所有・ローン・リスクデータを機械学習向けに構造化した「AI-Ready Property Data」を中核とするフレームワークを発表。API・バルク配信に加え MCP Server 統合をサポートし、物件データを AI エージェントが直接消費できる形に再設計。日本の物件 DB の AI エージェント対応にも示唆。<a href="https://www.attomdata.com/news/most-recent/attom-introduces-attom-intelligence-to-power-the-future-of-property-data-and-ai-driven-analytics/">ATTOM</a></p>
 <h3>Clear Capital、画像認識 AI の Restb.ai を買収</h3>
 <p>住宅評価テックの Clear Capital が、物件写真から特徴を最大99%精度で自動抽出するバルセロナ拠点の Restb.ai を買収（5/7クローズ）。評価プラットフォームと CubiCasa（間取り図）に統合し、住宅ローン審査の高速化を狙う。物件画像の自動構造化が査定ワークフローに組み込まれる流れ。<a href="https://www.housingwire.com/articles/clear-capital-restb-ai-acquisition/">HousingWire</a></p>
+<h3>国交省「地理空間 MCP Server」公開、不動産 DB 25種を AI が直接消費</h3>
+<p>国土交通省が「不動産情報ライブラリ」の25種データ（地価公示・取引価格・防災・地形・人口など）を自然言語で LLM から取得できる「地理空間 MCP Server（α版）」を公開。GIS/API の専門知識なしで問い合わせできる。米 ATTOM の MCP 統合と同じく、公的データを AI エージェント向けに構造化する潮流が日本でも始動した。<a href="https://www.mlit.go.jp/report/press/tochi_fudousan_kensetsugyo17_hh_000001_00076.html">国交省</a></p>
+<h3>リコー×LIFULL、360度データ＋AI で賃貸物件動画を自動生成</h3>
+<p>リコーと LIFULL が提携し、RICOH THETA の既存360度データから追加撮影なしで AI が集客動画を自動生成、6月に LIFULL HOME&#39;S で活用開始。動画制作の負荷が普及の壁だったが、撮影済み資産の再利用で解消する。物件メディアのコンテンツ生産コストを AI で圧縮する事例。<a href="https://jp.ricoh.com/release/2026/0511_1">リコー</a></p>
 <p>▶ 詳細: intel/real-estate/2026-05-20.md</p>
 <h2 id="seo・web動向">SEO・Web動向</h2>
 <h3>Google I/O: 検索が AI エージェント型インターフェースに完全移行</h3>
@@ -108,6 +144,8 @@ digest /
 <p>12以上の追跡ツールが5/13〜14に同時に激しい順位変動を検知。Google は公式更新を確認しておらず Mueller も異常を否定する一方、「Crawled - currently not indexed」によるデインデックス拡大や Discover トラフィック停止の報告が出ている。3月コアアップデートの遅延コンポーネント説が有力で、個人サイト運営者はインデックス監視が必要。<a href="https://ppc.land/google-search-volatility-spikes-again-and-sites-are-vanishing-from-the-index/">PPC Land</a></p>
 <h3>SEO の新ゴールは「順位」ではなく「認知」</h3>
 <p>AI モデルは SERP をクロールせず訓練データ・引用パターン・ナレッジグラフから判断するため、高順位＝可視性が崩れたと Search Engine Land が指摘。施策はエンティティ監査（Wikidata・Knowledge Panel の説明統一）・引用される一次調査資産の作成・オフサイト言及の拡大の3軸へ、指標も「ブランド名検索量・未リンク言及数」へ転換すべきとする。<a href="https://searchengineland.com/seo-goal-recognition-476756">Search Engine Land</a></p>
+<h3>Google、「FAQ リッチリザルト」を検索結果から完全廃止</h3>
+<p>Google が構造化データベースの FAQ リッチリザルト（質問のアコーディオン表示）を5/7 から表示しなくなったと発表。6月に Search Console のサポート削除、8月に API サポート削除と段階廃止する。FAQPage マークアップ自体は残せるが Google からの SERP 占有効果は消える。FAQ スキーマで SERP 面積を稼いでいた個人サイトには直接の影響。<a href="https://searchengineland.com/google-to-no-longer-support-faq-rich-results-476957">Search Engine Land</a></p>
 <h2 id="税務・法律・健康">税務・法律・健康</h2>
 <h3>インボイス仕入税額控除の経過措置が5段階・2031年9月まで延長</h3>
 <p>令和8年度改正で当初3段階だったスケジュールが5段階（80%→70%→50%→30%→0%）に変更、終了時期も延長。免税事業者向け「3割特例」（個人のみ）が 2026年10月から2年間新設される。<a href="https://www.oonumata.or.jp/2026/02/17/%E3%80%902026%E5%B9%B410%E6%9C%88%E6%94%B9%E6%AD%A3%E3%80%91%E4%BB%95%E5%85%A5%E7%A8%8E%E9%A1%8D%E6%8E%A7%E9%99%A4%E3%81%AE%E7%B5%8C%E9%81%8E%E6%8E%AA%E7%BD%AE%E3%81%8C2%E5%B9%B4%E5%BB%B6%E9%95%B7/">oonumata.or.jp</a></p>
@@ -119,6 +157,14 @@ digest /
 <p>抗老化薬として注目されるラパマイシンについて、運動習慣のない65〜85歳40人を対象とした二重盲検 RCT（週6mg・13週間）の結果が公表。投与群は30秒椅子立ち座りテストの回数がプラセボ群より平均約2回少なく、運動由来の筋機能向上が鈍る可能性が示された。健康な高齢者の安易な使用に疑問符。<a href="https://onlinelibrary.wiley.com/doi/10.1002/jcsm.70274">Journal of Cachexia, Sarcopenia and Muscle</a></p>
 <h3>学習院大、ミトコンドリア活性化で老齢マウス寿命40%延長</h3>
 <p>学習院大学が、老化ミトコンドリアの「数を増やす」「機能を高める」を同時に実現する植物由来化合物「マイトルビン」を発見。老齢マウスで加齢性心機能低下を改善し、高脂肪食負荷マウスでは生存期間中央値が約40%延長した。npj Aging に2026年4月18日付で掲載。<a href="https://www.univ.gakushuin.ac.jp/about/press/31764.html">学習院大学プレスリリース</a></p>
+<h3>コーヒー・茶のカフェイン1日2-3杯で認知症リスク35%低下</h3>
+<p>JAMA に発表された米コホート研究。13万人超を最長43年追跡し、カフェイン1日250-300mg（コーヒー2-3杯相当）摂取群で75歳未満の認知症発症リスクが35%低下（75歳超では約19%）。それ以上の摂取で追加の予防効果はなかった。<a href="https://www.sciencedaily.com/releases/2026/05/260512202350.htm">ScienceDaily</a></p>
+<h3>日常会話の「えーと」や間が早期の認知機能低下サイン</h3>
+<p>カナダの Baycrest・トロント大らの研究。AI で発話の微細特徴（間の頻度・話速・フィラー語・語想起の困難さ）を解析したところ、年齢・教育を調整しても認知テスト成績を強く予測した。発話は非侵襲で在宅モニタリングに使え、健康管理 SaaS・音声プロダクトの応用余地がある。<a href="https://www.sciencedaily.com/releases/2026/05/260512202333.htm">ScienceDaily</a></p>
+<h3>青色申告特別控除、最高75万円へ拡大（令和9年分から）</h3>
+<p>令和8年度税制改正大綱に明記。仕訳帳・総勘定元帳を電子帳簿保存法要件で保存するか電子取引データを会計ソフト連携で保存すれば最高75万円控除。書面申告は55万円、それ以外は10万円に縮小する。適用は2027年分（2028年2-3月申告）からで、個人事業主は会計ソフトの電子帳簿対応を前倒しで整える必要がある。<a href="https://shirube.zaikyo.or.jp/article/2026/01/12/10340271.html">税のしるべ</a></p>
+<h3>暗号資産が申告分離課税へ、最高55%→約20%・損失繰越も導入</h3>
+<p>令和8年度税制改正大綱で、暗号資産取引を一定条件下で分離課税対象とすると明記。現行の総合課税（最高約55%）から所得税15%＋住民税5%の約20%へ。3年間の損失繰越控除も創設する。適用は金融商品取引法改正法の施行日の翌年1月1日以後（2028年見込み）。<a href="https://www.fsa.go.jp/news/r7/sonota/20251226-2/01.pdf">金融庁</a></p>
 <h2 id="市場ペイン・ユーザーの不満">市場ペイン・ユーザーの不満</h2>
 <h3>サブスク疲れ——オフライン・一括払いツールの市場空白</h3>
 <p>9,300件超の Reddit 投稿分析で約640件（7%）がオフライン・プライバシー重視の代替を明示的に求めている。クラウド前提の既存ツールに対して、一括払い・ローカル動作の選択肢がほぼ空白。<a href="https://nomusica.com/reddit-analysis-reveals-what-users-really-want-from-new-apps-and-saas-tools-in-2026/">Reddit Analysis – nomusica.com</a></p>
@@ -173,7 +219,13 @@ digest /
 </tr>
 <tr>
 <td>不動産データの MCP サーバー化</td>
-<td>ATTOM が AI-Ready Property Data + MCP 統合を発表。日本の物件 DB を AI エージェント向けに構造化する余地</td>
+<td>ATTOM が AI-Ready Property Data + MCP 統合を発表。国交省も地理空間 MCP Server を公開。民間物件 DB を AI エージェント向けに構造化する余地</td>
+<td>中</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>AI 生成コードのセキュリティ監査</td>
+<td>「AI に EC サイトを作らせたら動くが守れないコード」が実証され、Dify 等 AI 開発基盤の脆弱性も頻発。Vibe Coding 成果物の検査需要</td>
 <td>中</td>
 <td>[ ]</td>
 </tr>
