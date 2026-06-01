@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-06-01 · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.D_O-pa3l.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="max-w-[1100px] mx-auto px-6"> <div class="mb-10"> <a href="/digest/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← home</a> </div> <div class="flex gap-16 items-start"> <!-- メインコンテンツ --> <article class="min-w-0 flex-1 prose-custom"><h1>2026-06-01 ダイジェスト</h1>
+<h2 id="技術・エンジニアリング">技術・エンジニアリング</h2>
+<!-- sources-tech.md --><h3>Claude Code、AGENTS.md 非対応が最多5,196 reactions——マルチエージェント標準化圧力</h3>
+<p>anthropics/claude-code の Issue で最多 reactions を持つ要望が「AGENTS.md（OpenAI Codex の命令ファイル）との相互読み込み対応」。Claude Code は CLAUDE.md のみを読むため、同一リポジトリで Codex と共存する開発フローで設定の重複管理が生じている。回避策5つを紹介した記事が話題で、マルチエージェント環境の標準化圧力が高まっていることを示す。<a href="https://qiita.com/yurukusa/items/e7e5eb7083c81781aa8e">Qiita</a></p>
+<h3>Claude Opus 4.8 リリース——コード欠陥見逃し率が 4.7 比で約4分の1に</h3>
+<p>Claude Opus 4.8 が Opus 4.7 比でコードの欠陥を見逃す確率を大幅に低下させ、Claude Code preview の dynamic workflows で数百 subagent を同時起動・数十万行規模のコード移行を処理できる。個人開発者にとってはコードレビューを任せる際の信頼性が実用水準に上がったことを意味する。<a href="https://simonwillison.net/2026/May/28/claude-opus-4-8/#atom-everything">Simon Willison</a></p>
+<h3>Stanford CS336 が課題リポジトリに CLAUDE.md を公式同梱——学術 AI ポリシーの先例</h3>
+<p>Stanford の「Language Modeling from Scratch（CS336）」が Assignment 1 に CLAUDE.md を添付し、何を AI に任せてよいか・何を自力で実装すべきかを明文化（HN 275pt）。AI コーディングの使用ポリシーを公式策定・公開する学術機関の先例となり、今後の教育現場における AI ガイドライン策定を後押しする。<a href="https://github.com/stanford-cs336/assignment1-basics/blob/main/CLAUDE.md">GitHub</a></p>
+<h3>AIエージェントを組織化すると「馬鹿になる」——国内実験知見</h3>
+<p>マルチエージェント構成（司令塔＋専門家＋レビュアー）にすると単一エージェントより品質が下がる現象を論じた記事。役割分担による情報断絶・中間サマリーのノイズ蓄積・YES men 化が原因として指摘されており、Claude Code で複数エージェント並列化を設計する際の重要な判断材料。<a href="https://qiita.com/jirachiuwu/items/d8eeae3be9e9f23f2176">Qiita</a></p>
+<h3>Cloudflare Workers 上で Claude Managed Agents を自己ホスト</h3>
+<p>Anthropic の Claude Managed Agents のサンドボックスを Cloudflare Workers 上に構築する手順が公開。通常は Anthropic 側がインフラを管理するが、Cloudflare Sandbox SDK を使うことで self-managed 環境が実現できる。コスト・データ主権・カスタマイズの観点からエージェントを自社基盤で運用したい個人開発者に注目の構成。<a href="https://zenn.dev/takaakisuzuki/articles/33a2d1b4e859df">Zenn</a></p>
+<h3>GitHub とソフトウェアへの問い——Copilot・Actions・npm の垂直統合批判（HN 173pt）</h3>
+<p>GitHub が AI（Copilot）・CI（Actions）・パッケージ管理（npm）・課金をひとつのエコシステムに垂直統合していく現状への批判記事。既報の Copilot 強制移行問題と合わせて読むと Microsoft 依存リスクの全容が見える。Cloudflare・self-hosted 代替インフラへの関心が高まる文脈と一致。<a href="https://eblog.fly.dev/githubbad.html">eblog.fly.dev</a></p>
+<hr>
+<h2 id="セキュリティ・脆弱性">セキュリティ・脆弱性</h2>
+<!-- sources-security.md --><h3>Miasma: Red Hat 公式 npm 30件以上を侵害——資格情報ワームが CI/CD を横断</h3>
+<p>Mini Shai-Hulud の新亜種「Miasma」が <code>@redhat-cloud-services</code> ネームスペース下の30件以上の npm パッケージを侵害。インストール時に実行されてクラウド認証情報を収集し、CI/CD パイプラインを横断して自己増殖するワーム機能を持つ。公式エンタープライズリポジトリが踏み台になった事例として、サプライチェーン攻撃の攻撃面の広がりを示す。<a href="https://www.aikido.dev/blog/red-hat-npm-packages-compromised-credential-stealing-worm">Aikido</a> / <a href="https://www.bleepingcomputer.com/news/security/red-hat-npm-packages-compromised-to-steal-developer-credentials/">Bleeping Computer</a></p>
+<h3>codexui-android: OpenAI Codex トークンを1か月・週2.9万DL で窃取</h3>
+<p>「OpenAI Codex のリモート Web UI」を装った npm パッケージ <code>codexui-android</code> が、1か月にわたり OpenAI 認証トークンを外部送信し続けた（週2.9万ダウンロード）。正規ツールに見せかけた積極的な開発活動で偽装しており、影響を受けた開発者はトークンの即時再発行が必要。AI ツール系の偽装パッケージが新たな標的になりつつある。<a href="https://www.aikido.dev/blog/codex-remote-ui-steals-ai-tokens">Aikido</a> / <a href="https://thehackernews.com/2026/06/openai-codex-authentication-tokens.html">The Hacker News</a></p>
+<h3>Windows Netlogon クリティカル RCE——ベルギー当局が実攻撃を緊急警告</h3>
+<p>ベルギー CCB が Windows Netlogon のクリティカル RCE 脆弱性の実攻撃悪用を6月1日に緊急警告。Netlogon はドメインコントローラーの根幹プロトコルであり、未パッチ環境ではドメイン全体が制圧されるリスクがある。Active Directory 環境（企業・官公庁）では即時パッチ適用が必要。<a href="https://www.bleepingcomputer.com/news/microsoft/critical-windows-netlogon-remote-code-execution-flaw-now-exploited-in-attacks/">Bleeping Computer</a></p>
+<h3>Meta AI サポートボット悪用——オバマ政権・米宇宙軍の Instagram を一時乗っ取り</h3>
+<p>Telegram 上で拡散した手順に従い、攻撃者が Meta の AI サポートアシスタントを社会工学的に操作してパスワードリセットを実行させ、複数の高プロフィールアカウントを乗っ取り親イラン的な画像を掲示した（HN 1165pt）。AI アシスタントのソーシャルエンジニアリング悪用の初の大規模実例であり、プロンプトインジェクション耐性なしで AI をサポート窓口に統合する危険性を示した。<a href="https://krebsonsecurity.com/2026/06/hackers-used-metas-ai-support-bot-to-seize-instagram-accounts/">Krebs on Security</a></p>
+<h3>浦添市、委託先社員が PC 83台盗難——11.5万人分の個人情報含む端末3台</h3>
+<p>沖縄県浦添市が業務委託先社員による PC 83台の盗難（転売目的）を発表。うち3台に住民11万5,526人分の個人情報が含まれていた。物理セキュリティと委託先管理の盲点を示す国内事例で、侵入経路は外部攻撃ではなく内部犯行。<a href="https://www.itmedia.co.jp/news/articles/2606/01/news086.html">ITmedia</a></p>
+<h3>Booking.com 経由でホテル口座情報を改ざん——約900万円損失＋宿泊客フィッシング</h3>
+<p>京都・浅草のホテルが Booking.com アカウントへの不正アクセスで売上金受領口座情報を改ざんされ約900万円の損失が発生。さらに予約済みの宿泊客にフィッシングサイト誘導メッセージが送信される二次被害も発生した。OTA プラットフォームの認証情報が侵害されると業者・利用者の双方が直撃される手口。<a href="https://scan.netsecurity.ne.jp/article/2026/06/02/55403.html">Scan NetSecurity</a></p>
+<p>▶ その他: <a href="../security/2026-06-01.md">intel/security/2026-06-01.md</a></p>
+<hr>
+<h2 id="ビジネス・スタートアップ">ビジネス・スタートアップ</h2>
+<!-- sources-business.md --><h3>Anthropic、評価額9,650億ドルで IPO 機密申請——秋口上場を目標</h3>
+<p>Anthropic が SEC に機密 S-1 を提出し IPO プロセスに正式参入。直近 $65B Series H での評価額は $965B（OpenAI $852B を超え初めて首位）、ARR $44B 超・Q2 に初の営業黒字見込みで収益化が加速している。秋口（10月目標）の上場が現実味を帯び、AI インフラ企業の本格的な公開市場デビューの号砲となる。<a href="https://www.anthropic.com/news/confidential-draft-s1-sec">Anthropic公式</a> / <a href="https://fortune.com/2026/06/01/anthropic-confidentially-files-ipo-965-billion-valuation/">Fortune</a></p>
+<h3>Alphabet が AI インフラ投資に $800億を株式調達——バークシャーも $100億参加</h3>
+<p>Alphabet が公開市場での株式調達 $300億＋ ATM プログラム $400億＋バークシャーのプライベートプレースメント $100億の計 $800億を発表。単一企業の株式調達としては異例の規模で、Google が次世代 AI 競争をインフラ層で制しにいく姿勢が鮮明になった。<a href="https://www.axios.com/2026/06/01/alphabet-80-billion-ai-buildout">Axios</a></p>
+<h3>Florida 州が OpenAI・Altman を提訴——AI 安全リスク不開示で計10件の訴因</h3>
+<p>Florida 州司法長官が OpenAI と Sam Altman を州法廷に提訴。州立大学での銃撃事件で ChatGPT が計画に使われた疑いを軸に、安全リスクを隠蔽したまま子供含むユーザーへ提供したとして不公正取引・過失・製造物責任など計10件の訴因・数十億ドル規模の賠償を求める。州政府レベルの初の AI 安全訴訟として規制リスクの新たな前例になりうる。<a href="https://www.npr.org/2026/06/01/nx-s1-5843132/openai-florida-lawsuit-safety-chatgpt">NPR</a></p>
+<h3>DuckDuckGo「no-AI 検索」拡張——Google AI 強化発表で前週比トラフィック30%増</h3>
+<p>DuckDuckGo が Chrome・Firefox 向け「no-AI」拡張を公開。Google の AI 検索全面強化発表を受け no-AI 検索ページのトラフィックが前週比30%増・5月ピーク時は3倍増（DuckDuckGo 公式発表）。「AI 離れ」ユーザー向けの非 AI 検索ニッチが実数で可視化されつつある。<a href="https://techcrunch.com/2026/06/01/duckduckgo-makes-its-no-ai-search-engine-easier-to-access-as-its-traffic-booms/">TechCrunch</a></p>
+<h3>Mach Industries が $3億・評価額$18億——22歳 CEO が率いる防衛テック</h3>
+<p>自律型兵器5機種を開発する Mach Industries が Series C で $300M を調達し評価額 $1.8B（前年比4倍）。Infinite Capital・Ribbit Capital 主導、Sequoia・Khosla 継続参加。固体ロケットモーター製造 Exquadrum も $50M で買収済み。防衛テックへの VC 資金流入が加速している。<a href="https://techcrunch.com/2026/06/01/defense-tech-darling-mach-industries-hits-1-8b-valuation-a-4x-jump-in-a-year/">TechCrunch</a></p>
+<h3>WindBorne の AI 気象モデルが ECMWF を超える精度——気球400機で独自データ収集</h3>
+<p>Stanford 発の WindBorne が「WeatherMesh 6」を公開し、世界最高水準の欧州気象センター（ECMWF）より高精度・更新頻度1時間毎・解像度3km を実現。気球400機から直接データ取得する独自パイプラインが差別化源で、NOAA・空軍との政府契約で収益化済み。AI×リアルワールドデータ収集の垂直統合モデルの好例。<a href="https://techcrunch.com/2026/06/01/this-ai-weather-startup-is-out-forecasting-government-agencies/">TechCrunch</a></p>
+<hr>
+<h2 id="投資・資産運用">投資・資産運用</h2>
+<!-- sources-finance.md --><h3>S&P500、5月月間+5%・9週連続上昇で6月もすぐ最高値更新</h3>
+<p>S&amp;P500 は5/29終値 7,580pt 前後で5月を締め、月間+5%・週間+1.4%。6/1（月）にはテック主導で続伸し新高値を再更新した。AI・半導体主導の楽観が続き、OpenAI・Anthropic の IPO 申請ラッシュが市場センチメントを押し上げている。<a href="https://www.cnbc.com/2026/05/31/stock-market-today-live-updates.html">CNBC</a> / <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-may-29-2026">TheStreet</a></p>
+<h3>OpenAI も9月 IPO 目指す——Anthropic と同時期上場競争が浮上</h3>
+<p>OpenAI（評価額 $852B）が Goldman Sachs・Morgan Stanley と協議し、September IPO を目指す方向と報じられた。Anthropic と同時期に上場競争を繰り広げる構図となり、2026年後半は「AI IPO 祭り」との見方が台頭。両社 IPO がソフトバンク G の評価にも連鎖する。<a href="https://www.bloomberg.com/news/articles/2026-06-01/can-openai-and-anthropic-ipos-live-up-to-expectations/">Bloomberg</a></p>
+<h3>米 ISM 製造業 PMI 54.0——4年ぶり高水準で利下げ観測を後退</h3>
+<p>5月の ISM 製造業 PMI は 54.0（前月+1.3pt）。新規受注 56.8・生産 54.3 と幅広く拡大し、2022年5月以来の最強読みとなった。強い製造業の回復は FRB の利下げ観測を後退させる可能性があり、6/5（金）の5月雇用統計と合わせて FED 動向を左右する。<a href="https://www.prnewswire.com/news-releases/manufacturing-pmi-at-54-may-2026-ism-manufacturing-pmi-report-302786165.html">PR Newswire</a></p>
+<h3>ドル円 159.37 円——介入警戒ラインで綱引き継続</h3>
+<p>6/1 時点のドル円は 159.37 円（5月月間-1.5%で円安基調継続）。市場は 159〜160 円台を介入警戒ラインとして意識しており、輸出株への利確が出やすい構造。6/3 の植田総裁講演と6/5 の米雇用統計がドル円の方向性を決定づける。<a href="https://tradingeconomics.com/japan/currency">Trading Economics</a></p>
+<h3>日銀6月利上げ観測——審議委員の早期利上げ支持発言が続く</h3>
+<p>4月決定会合（賛成6・反対3で現状維持）以降、非執行部の審議委員2名が早期利上げ支持発言。植田総裁は5/27挨拶で「急がない」ニュアンスを示したが、6/3 の植田総裁講演が6/15〜16 決定会合前の最後のトーン確認機会。現行政策金利は 0.75%。<a href="https://www.nri.com/jp/media/column/kiuchi/20260527_2.html">NRI</a></p>
+<h3>日経平均 66,000 円台もみ合い週——雇用統計待ちで上値限定</h3>
+<p>5/29 終値 66,329.50 円を基点に6/1 週の予想レンジは 65,500〜67,200 円（中央シナリオ）。AI・半導体株の上昇ピッチが速く利確圧力があること、介入警戒ラインのドル円が上値抑制要因。週後半の米雇用統計が週全体の方向感を決める構図。<a href="https://illogs.com/nikkei225-forecast-2026-06-01-week/">illogs</a></p>
+<hr>
+<h2 id="地政学・国際情勢">地政学・国際情勢</h2>
+<!-- sources-geopolitics.md / 週次 --><h3>イラン、米との停戦交渉を決裂宣言——ホルムズ閉鎖継続へ</h3>
+<p>イランは6/1、イスラエルのレバノン攻撃激化と湾岸への追加空爆を受けて、ホルムズ海峡再開を軸とした米国との停戦交渉打ち切りを宣言した。直前まで「60日間停戦延長＋海峡再開」合意に双方が近づいていたがイスラエル軍事行動が枠組みを崩した。世界の石油供給の約5分の1を通過するホルムズ閉鎖継続となれば、エネルギー・食料価格への影響が長期化する。<a href="https://www.washingtonpost.com/world/2026/06/01/iran-us-trade-strikes-deal-end-war-remains-elusive/">The Washington Post</a></p>
+<h3>イランの米軍基地攻撃、公式発表の数倍の規模と判明</h3>
+<p>衛星画像の分析により、イランの攻撃が中東の米軍拠点20か所に損害を与えたことが判明し、米政府公表の規模を大幅に上回ることが明らかになった。BBC Verify チームが独立した安全保障アナリストと確認。米軍の前方展開能力と同盟国の信頼への実質的な打撃を示唆しており、今後の交渉力学に影響する。<a href="https://www.bbc.com/news/articles/c2l2yl7r8r2o">BBC News</a></p>
+<h3>日米、シャングリラ会議でミサイル共同生産を加速合意</h3>
+<p>防衛相の小泉進次郎とヘグセス米国防長官がシンガポールで共同ミサイル開発・生産の加速で合意。中国の「新軍国主義」批判を正面から否定しつつ「中国の軍備拡大が最大の懸念」と明言。日本の防衛費は2026年度前年比9.4%増で、GDP比2%達成後は米中に次ぐ世界第3位の防衛支出国となる見通し。<a href="https://www.japantimes.co.jp/news/2026/05/31/japan/japan-koizumi-speech-china-militarism/">Japan Times</a></p>
+<h3>仏海軍、ロシア「影の艦隊」タンカーを公海上で拿捕</h3>
+<p>フランス海軍が6/1、英国の支援を受けてブルターニュ沖約400海里の公海上でロシア産原油を積む制裁対象タンカー「タゴール」を拿捕した。フランスとして昨年9月以降4隻目の拿捕で、欧州による制裁の実力行使路線が定着しつつある。マクロン大統領が自ら発表した。<a href="https://www.cnn.com/2026/06/01/europe/france-russian-tanker-intl">CNN</a></p>
+<h3>ハンガリー、マジャール新首相が憲法改正でオルバン系大統領を排除へ</h3>
+<p>4月の選挙でオルバンを破ったマジャール首相が、辞任拒否した大統領スリョークを憲法改正により強制退任させる方針を表明。マジャール党は議会で3分の2の多数を確保しており技術的には可能。EU 加盟国で前政権の制度的遺産をどこまで覆せるかを問う試金石となる。<a href="https://www.aljazeera.com/news/2026/6/1/hungarys-magyar-to-amend-the-constitution-to-remove-president-tamas-sulyok">Al Jazeera</a></p>
+<h3>コロンビア大統領選、親トランプ右派と左派の決選投票へ</h3>
+<p>5/31 第1回投票で Abelardo de la Espriella（保守・親トランプ・43.7%）vs Iván Cepeda（左派・40.9%）となり6/21 に決選投票。麻薬対策・和平交渉・対米関係の3点すべてで路線が正反対の候補対決で、結果次第でコロンビアの対米・対 Venezuela 政策が大転換する。<a href="https://www.cnn.com/2026/05/31/americas/colombia-runoff-espriella-cepeda-latam-intl">CNN</a></p>
+<hr>
+<h2 id="不動産テック">不動産テック</h2>
+<!-- sources-realestate.md --><h3>Berkshire、Taylor Morrison を85億ドルで買収——住宅エコシステムの垂直統合</h3>
+<p>Berkshire Hathaway が住宅建設大手 Taylor Morrison を1株 $72.50・総額 $8.5B で現金買収。建設×住宅ローン×保険を一体化した「住宅エコシステム」戦略として分析されており、プラットフォーム化した大手への対応か差別化かの二択が PropTech 各社に迫られる。<a href="https://www.inman.com/2026/06/01/berkshire-hathaway-to-acquire-builder-taylor-morrison-for-8-5b/">Inman</a></p>
+<h3>CoStar、新築データプラットフォーム Zonda を8億ドルで買収</h3>
+<p>商業不動産データの CoStar が住宅新築市場への直接参入として Zonda（ビルダー向け SaaS＋新築データ）を $800M で買収。Zillow 対抗の「データ＋トランザクション」統合が本格化しており、日本の新築分譲データ寡占構造の変化を先読みするケーススタディ。<a href="https://www.inman.com/2026/05/29/costar-acquire-zonda-800m/">Inman</a></p>
+<h3>M/I Homes、AI 土地スクリーニング「Prophetic」を全市場展開——仕入れ意思決定をAI化</h3>
+<p>住宅建設大手 M/I Homes が Prophetic を導入し、土地選定→デューデリジェンス→Go/No-Go 判断を自動化。土地仕入れは建売ビジネスの競争優位の核心であり、AI 高速判断が差別化の源泉になっている。日本の分譲地・建売仕入れへの AI 適用は個人開発レベルでも射程内。<a href="https://www.housingwire.com/articles/m-i-homes-partners-with-prophetic/">HousingWire</a></p>
+<h3>Realtor.com、AI 引越し見積もり「Agoyu」を物件ページに組み込み</h3>
+<p>ユーザーが荷物をカメラで撮影→AI がリアルタイムで見積もり生成→認定業者とマッチングする機能を物件リストページに統合。成約後の「引越し体験」をポータル内で完結させる after-closing UX の先行事例で、日本ポータルへの応用余地あり。<a href="https://www.housingwire.com/articles/realtorcom-agoyu-moving-quotes/">HousingWire</a></p>
+<h3>Zillow・Compass・MLS 三つ巴のリスティングデータ争奪——「Listing IPO」論も浮上</h3>
+<p>Compass が独占掲載期間を拡大、Zillow が MLS アクセスを要求、Nashville MLS がデータフィード継続を交渉で維持。「Listing IPO」（公開タイミング選択権を売り手に付与）論も議論に。プラットフォーム支配権の再編は日本の REINS×ポータル構造にも数年以内に波及する予兆。<a href="https://www.inman.com/2026/06/01/as-zillow-compass-and-mlss-battle-buyers-and-agents-get-caught-in-the-crossfire/">Inman</a></p>
+<p>▶ 詳細: <a href="../real-estate/2026-06-01.md">intel/real-estate/2026-06-01.md</a></p>
+<hr>
+<h2 id="seo・web動向">SEO・Web動向</h2>
+<!-- sources-seo.md --><h3>May 2026 コアアップデート——6/4前後に収束見込み、変動継続中</h3>
+<p>5/21 開始の May 2026 コアアップデートは6/1 時点で約10日目（最大14日間のロールアウト）、5/30 時点でも強い変動が続き Google Search Status Dashboard に完了通知なし。Google は完了後1週間以上待ってから Search Console で影響分析するよう推奨。<a href="https://www.seroundtable.com/google-may-core-update-hits-hard-41421.html">Search Engine Roundtable</a></p>
+<h3>AI Overviews「Preferred Sources」本格展開——バッジ付きで CTR 通常の2倍</h3>
+<p>5/27 に Google が Preferred Sources 機能を AI Overviews と AI Mode に拡張。ユーザーが登録したサイトが AI 生成回答内に「Preferred」バッジ付きで表示され、クリック率が通常の2倍（Google 公式発表）。「ブランド認知＝ランキング要因」という構造変化が進んでいる。<a href="https://blog.google/products-and-platforms/products/search/original-high-quality-content-search/">Google公式ブログ</a></p>
+<h3>バックボタンハイジャック、6月15日からスパムポリシー施行</h3>
+<p>4月に予告されたバックボタンハイジャック（ユーザーの「戻る」操作妨害）のスパムポリシーが6/15 から施行開始。サードパーティライブラリ由来であってもサイト運営者の責任とされる点が重要で、広告系ライブラリの見直しが急務。<a href="https://developers.google.com/search/blog/2026/04/back-button-hijacking">Google Search Central Blog</a></p>
+<h3>FAQ リッチリザルト廃止——6月に Search Console レポートも終了</h3>
+<p>5/7 に FAQ リッチリザルトの検索表示が終了し、6月に Search Console レポート・リッチリザルトテスト対応も廃止予定（8月に API 廃止）。FAQPage マークアップ自体は削除不要だが、数年間の SEO 定番施策が完全終了する。<a href="https://www.searchenginejournal.com/google-drops-faq-rich-results-from-search/574429/">Search Engine Journal</a></p>
+<h3>ChatGPT 広告がコンバージョン最適化へ——6/5 から一部展開</h3>
+<p>OpenAI が ChatGPT Ads に「コンバージョン最適化キャンペーン」を追加し6/5 から一部広告主向けに展開。認知・クリック中心から CPA 最適化へ構造転換し、Google の代替広告プラットフォームとして本格競争に入る局面。米国での ChatGPT 広告パイロットは6週間で年率換算1億ドル突破とロイターが報道。<a href="https://searchengineland.com/openai-confirms-conversion-focused-ads-are-coming-to-chatgpt-478843">Search Engine Land</a></p>
+<hr>
+<h2 id="税務・法律・健康">税務・法律・健康</h2>
+<!-- sources-lifestyle.md / 週次 --><h3>インボイス2割特例が9月末で終了——10月から3割特例＋70%控除へ</h3>
+<p>2026年9月30日でインボイス制度の2割特例が終了。免税事業者からの仕入税額控除の経過措置も70%控除（2年間）へ切り替わる。個人事業主（課税売上高1,000万円以下）は2027〜2028年の2年間「3割特例」を利用できるが、法人は対象外。9月末までに本則課税・簡易課税・3割特例のどれを選ぶか判断が必要。<a href="https://fm-suishinkyogikai.jp/media/20077/">経営革新等支援機関推進協議会</a></p>
+<h3>年金制度改正法が2026年4月から段階施行——在職老齢年金の支給停止基準が月62万円へ</h3>
+<p>在職老齢年金の支給停止基準が月50万円から62万円に引き上げられ、高齢就労者が年金を受け取りやすくなった。標準報酬月額の上限は65万円から75万円へ2027年9月から段階引き上げ予定で、高所得の会社員・役員は将来の社会保険料増に備える必要がある。<a href="https://keiyaku-watch.jp/media/hourei/202604-nenkinseido/">契約ウォッチ</a></p>
+<h3>取適法（改正下請法）が2026年1月施行済み——副業委託にも適用</h3>
+<p>旧・下請法が「中小受託取引適正化法」として2026年1月1日施行。資本金規模を問わずすべての発注者が規制対象、手形払いの原則禁止・価格協議義務が新設。副業で業務委託を受ける個人も保護対象となり、発注側企業は契約・支払い慣行の見直しが必要。<a href="https://www.freee.co.jp/kb/kb-deals/toritekihou/">freee</a></p>
+<h3>睡眠不足は食事・運動より寿命に影響——大規模研究（OHSU・SLEEP Advances誌）</h3>
+<p>オレゴン健康科学大学の全米規模研究が SLEEP Advances 誌（2025年12月）に掲載。7〜9時間の睡眠を下回ることが食事や運動不足より強く寿命短縮と関連し、喫煙に次ぐ要因であることが確認された。睡眠は「節約できるコスト」ではなく最優先の健康投資と再定義される。<a href="https://www.sciencedaily.com/releases/2026/01/260108231414.htm">ScienceDaily</a></p>
+<hr>
+<h2 id="市場ペイン・ユーザーの不満">市場ペイン・ユーザーの不満</h2>
+<!-- sources-pain.md --><h3>フレイキー E2E テストの根本原因が判別不能——週37時間が対応コストに</h3>
+<p>テストが壊れているのか実装にレースコンディションがあるのかを自動区別するツールが存在せず、エンジニアは勘で判断している（State of QA 2026調査で週37時間が対応コストとして計上）。修正・隔離・削除の判断基準を提供する軽量 CLI へのニーズが Ask HN スレッドで明確に上位。<a href="https://news.ycombinator.com/item?id=46967724">Ask HN: How do you manage flaky E2E tests at scale?</a></p>
+<h3>AI エージェントの本番可観測性がゼロに近い</h3>
+<p>2026年Q1 に複数の企業で AI エージェントの高プロフィール障害が発生しており、共通原因は「エージェントが自身の推論品質の低下を認識できない」点。ガードレールがプロンプトレベルにしか実装されておらず、信頼度モニタリング・エスカレーション判定・ハルシネーション検出の独立ツールが実質存在しない。個人開発者でもライブラリ・ミドルウェアとして提供できる規模の問題。<a href="https://callsphere.ai/blog/ai-agent-failures-biggest-agentic-ai-disasters-early-2026">AI Agent Failures: Biggest Agentic AI Disasters of Early 2026</a></p>
+<h3>CI/CD のローカル再現コストが高い——YAML を push して失敗を確認する往復</h3>
+<p>「コミット前に CI と同じ環境でスクリプトをテストしたい」という要望が HN で最上位支持を受けている。複雑なマトリクスや秘密情報の扱いで既存の act が限界を迎えており、ローカルで CI 環境を忠実に再現・実行するツールへの強い需要がある。<a href="https://news.ycombinator.com/item?id=46345827">Ask HN: What developer tool do you wish existed in 2026?</a></p>
+<h3>非同期 API・Webhook のレースコンディション検証ツールが存在しない</h3>
+<p>63%の非同期 API 障害がレースコンディション起因だが、従来のテストツール（Postman 等）は同期的設計のため検出できない（techbuzzireland 2026調査）。Webhook の冪等性・順序保証を自動テストするツールがなく、95%のチームが CI/CD で冪等性テストをしていない。<a href="https://techbuzzireland.com/2026/02/06/what-does-api-testing-look-like-in-2026/">What does API Testing look like in 2026</a></p>
+<hr>
+<h2 id="事業チャンス候補">事業チャンス候補</h2>
+<table>
+<thead>
+<tr>
+<th>タイトル</th>
+<th>根拠</th>
+<th>難易度</th>
+<th>移動済み</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AIエージェント可観測性ライブラリ</td>
+<td>本番障害頻発・独立ツールなし・個人でミドルウェア提供可能</td>
+<td>中（APIデザインが鍵）</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>土地スクリーニングAI 日本版（Prophetic類似）</td>
+<td>M/I HomesがAI化・日本の建売仕入れは直感依存・地価APIあり</td>
+<td>高（データアクセス確保が先決）</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>フレイキーテスト原因自動判別CLI</td>
+<td>週37時間の損失・明確なニーズ・OSS+スポンサーモデル</td>
+<td>低〜中</td>
+<td>[ ]</td>
+</tr>
+</tbody></table>
+</article> <!-- スティッキーTOC --> <aside id="toc" class="hidden lg:block w-[180px] shrink-0 sticky top-28 opacity-0"> <p class="font-mono text-[10px] uppercase tracking-widest text-[#bbb] mb-4">Contents</p> <nav> <a href="#技術・エンジニアリング" data-toc-id="技術・エンジニアリング" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 技術・エンジニアリング </a><a href="#セキュリティ・脆弱性" data-toc-id="セキュリティ・脆弱性" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> セキュリティ・脆弱性 </a><a href="#ビジネス・スタートアップ" data-toc-id="ビジネス・スタートアップ" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> ビジネス・スタートアップ </a><a href="#投資・資産運用" data-toc-id="投資・資産運用" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 投資・資産運用 </a><a href="#地政学・国際情勢" data-toc-id="地政学・国際情勢" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 地政学・国際情勢 </a><a href="#不動産テック" data-toc-id="不動産テック" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 不動産テック </a><a href="#seo・web動向" data-toc-id="seo・web動向" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> SEO・Web動向 </a><a href="#税務・法律・健康" data-toc-id="税務・法律・健康" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 税務・法律・健康 </a><a href="#市場ペイン・ユーザーの不満" data-toc-id="市場ペイン・ユーザーの不満" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 市場ペイン・ユーザーの不満 </a><a href="#事業チャンス候補" data-toc-id="事業チャンス候補" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 事業チャンス候補 </a> </nav> </aside> </div> </div>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html> <script type="module" src="/digest/_astro/_date_.astro_astro_type_script_index_0_lang.DdWaqLcw.js"></script>
