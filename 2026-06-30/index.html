@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-06-30 · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.DRif9ewQ.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="max-w-[1100px] mx-auto px-6"> <div class="mb-10"> <a href="/digest/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← home</a> </div> <div class="flex gap-16 items-start"> <!-- メインコンテンツ --> <article class="min-w-0 flex-1 prose-custom"><h1>2026-06-30 ダイジェスト</h1>
+<h2 id="技術・エンジニアリング">技術・エンジニアリング</h2>
+<h3>Qwen 3.6 27B がローカル開発の最適解に</h3>
+<p>HN 541pt・471コメントと今週最大の反響。AlibabaのQwen 3.6 27Bモデルが、RTX 4090一台で動作しつつフロンティアモデル相当のコーディング性能を示した。クラウドAPI依存を排除できる個人開発者の実用LLM候補として急浮上。<a href="https://quesma.com/blog/qwen-36-is-awesome/">quesma Blog</a></p>
+<h3>Ornith-1.0——自己改善型OSSコーディングエージェント</h3>
+<p>HN 137pt。DeepReinforce AIが公開した「Self-Scaffolding」アーキテクチャのコーディングエージェント。推論ログから自己学習し繰り返し精度を上げる設計で、クローズドモデル依存を排除するOSSエコシステムの本流に位置する。<a href="https://github.com/deepreinforce-ai/Ornith-1">GitHub</a></p>
+<h3>Supreme Court、ジオフェンス令状に憲法上の令状要件を適用</h3>
+<p>HN 390pt。修正第4条の保護がジオフェンス令状（特定地点付近の全員データを根こそぎ取得）に適用されると最高裁が判断。位置情報を収集するサービスがデータを捜査機関に提供する際の法的義務が変わり、不動産・地図・広告アプリに影響が波及する可能性がある。<a href="https://www.theguardian.com/us-news/2026/jun/29/supreme-court-geofence-warrants-case-decision">The Guardian</a></p>
+<h3>Samsung/SK Hynix/Micronがメモリ価格固定で米国提訴</h3>
+<p>HN 344pt。3社のメモリカルテル訴訟が司法問題に発展。AI学習・推論インフラのコスト構造を揺るがす可能性があり、GPU・サーバー投資判断に直結する動向。<a href="https://en.sedaily.com/international/2026/06/29/samsung-sk-hynix-micron-sued-in-us-over-memory-price-fixing">Seoul Economic Daily</a></p>
+<h3>Rocket Lab、衛星通信Iridiumを買収</h3>
+<p>HN 340pt。打ち上げビジネスからNEOネットワーク事業者に転換する大型M&amp;A。SpaceXのStarlink垂直統合と同様のパターンが加速しており、IoT・地方通信インフラの競合地図が変わり得る。<a href="https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-acquire-iridium-historic-deal-creating-fully">Rocket Lab IR</a></p>
+<h3>Bedrock Extended Thinking×ツール使用で10回目から無応答バグ</h3>
+<p>toolブロック除去後にreasoningContentブロックが連続する構造がValidationExceptionを引き起こし、以降のリクエストが静かに失敗するカスケード障害。CloudWatch+DynamoDB+Model Invocation Loggingを横断しないと原因特定できない点が難しく、Extended ThinkingをAPI実装で使うチームが踏みやすい地雷。<a href="https://dev.classmethod.jp/articles/bedrock-converse-extended-thinking-tool-use-validation-exception/">DevelopersIO</a></p>
+<h3>Lighthouse に Agentic Browsing カテゴリが追加</h3>
+<p>Chrome DevToolsの監査ツールに、AIエージェントがサイトを操作しやすいかを評価する新カテゴリが追加。llms.txt・構造化ナビゲーション対応がSEOと並ぶ最適化軸になりつつあることを示す業界シグナル。<a href="https://dev.classmethod.jp/articles/lighthouse-agentic-browsing-mcp-audit/">DevelopersIO</a></p>
+<h3>Claude Codeの全権限で rm -rf される実例</h3>
+<p><code>--dangerously-skip-permissions</code>付与状態でClaudeが「不要な一時ファイル」と判断した検証用ディレクトリをrm -rfしてコミットした事例。権限を5段階に絞るまでの設計が整理されており、エージェントに全権限を渡す際のリスク管理として参照価値が高い。<a href="https://zenn.dev/kenimo49/articles/claude-code-permission-5-stages-incident">Zenn</a></p>
+<h3>.self TLD——セルフホスト向け新トップレベルドメイン提案</h3>
+<p>HN 241pt。HCCFが<code>.self</code>という新TLDを提案。<code>device.self</code>のようにISP・クラウドDNSに依存しないセルフホストサーバーへの命名を可能にする設計。分散インフラ・プライバシー重視の流れを背景に注目度が高い。<a href="https://hccf.onmy.cloud/2026/06/21/reclaiming-our-digital-selves-hccfs-vision-for-a-human-centered-top-level-domain/">HCCF Blog</a></p>
+<h3>韓国、メモリチップ＋ヒューマノイドに1兆ドル国家投資</h3>
+<p>HN 48pt。半導体（HBM含む）とヒューマノイドロボット製造への$1T規模の国家投資計画が発表。クラウドGPU価格・AI API料金の中長期変動要因として注視すべき。<a href="https://arstechnica.com/ai/2026/06/south-korea-to-spend-1t-on-more-memory-chip-production-and-humanoid-robots/">Ars Technica</a></p>
+<h2 id="セキュリティ・脆弱性">セキュリティ・脆弱性</h2>
+<h3>SimpleHelp認証バイパス→Djinnスティーラー展開</h3>
+<p>リモートサポートツールSimpleHelpのクリティカルな認証バイパス脆弱性 CVE-2026-48558 を悪用し、Windows/macOS/Linux対応の情報窃取マルウェア「Djinn Stealer」が展開されている。クラウド認証情報を標的とし、CISA が注意喚起済み。開発・管理環境に直撃するリモートサポートツール経由の侵害パターン。<a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-simplehelp-flaw-deploy-new-djinn-infostealer-taskweaver-malware/">BleepingComputer</a></p>
+<h3>日産従業員データ侵害——Oracle PeopleSoftゼロデイ</h3>
+<p>ShinyHuntersがOracle PeopleSoftのゼロデイ脆弱性を悪用し、日産の現・元従業員データを窃取。全米保険監督官協会（NAIC）も同攻撃で被害を受けており、Oracle ERP を利用する国内組織への波及リスクが高い。<a href="https://www.bleepingcomputer.com/news/security/nissan-discloses-employee-data-breach-linked-to-oracle-zero-day-attacks/">BleepingComputer</a></p>
+<h3>陸自USBでマルウェア——義務付きウイルスチェック未実施</h3>
+<p>陸上自衛隊中部方面総監部のUSBメモリからマルウェアが検知され、防衛省・自衛隊が義務付けるウイルスチェックが徹底されていなかったことで発覚が遅れた。USB経由の侵入は非軍事組織でも起きうる典型パターン。<a href="https://atmarkit.itmedia.co.jp/ait/articles/2606/30/news061.html">ITmedia</a></p>
+<h3>Cisco SD-WAN ゼロデイ——開示2ヶ月前から悪用</h3>
+<p>CVE-2026-20245（CVSS 7.8）がMandiantの調査で公開前2ヶ月間にわたりゼロデイ悪用されていたことが判明。不正ピアリングでroot権限を取得する手口で、セキュリティ機器自体が侵入経路になるパターンが継続している。<a href="https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-zero-day-cve-2026.html">The Hacker News</a></p>
+<h3>ShapedPlugin WordPress公式チャネル経由でバックドア配布</h3>
+<p>攻撃者がShapedPluginのビルド・配布パイプラインを侵害し、Proプラグインの公式ライセンス更新チャネルにバックドアコードを注入。正規の更新として配信されるため受け取る側での検知が困難なサプライチェーン攻撃。<a href="https://thehackernews.com/2026/06/shapedplugin-wordpress-pro-plugins.html">The Hacker News</a></p>
+<h3>Gaslight——macOSマルウェアがAI解析ツールを逆用</h3>
+<p>Rust製macOSインフォスティーラー「Gaslight」が、マルウェア解析者のAIツールをプロンプトインジェクションで誤誘導し解析を中断させる。AI防御をAI攻撃で無効化するという新しい手口で、高信頼度でロシア系に帰属。<a href="https://thehackernews.com/2026/06/new-gaslight-macos-malware-uses-prompt.html">The Hacker News</a></p>
+<h3>Microsoft「認証ロンダリング」——正規サービス多段悪用</h3>
+<p>Calendly・Google・Cloudflareの正規サービスを多段に組み合わせ、メール認証フィルターをすり抜ける攻撃手法をMicrosoftが解析・公表。各レイヤーが正規サービスとして通過を許すため、従来のフィッシングフィルターでは検知が困難。<a href="https://atmarkit.itmedia.co.jp/ait/articles/2606/30/news066.html">ITmedia</a></p>
+<p>▶ その他: <a href="../security/2026-06-30.md">intel/security/2026-06-30.md</a></p>
+<h2 id="ビジネス・スタートアップ">ビジネス・スタートアップ</h2>
+<h3>Baseten、AIインフェレンス基盤で15億ドル調達——評価額130億ドル</h3>
+<p>AIモデル実行基盤を提供するBasetenがSeries Fで$15億を調達。収益前年比20倍成長、日次インフェレンス呼び出し10億件超。「モデルを作る」のではなく「動かす基盤」への巨額投資が続き、インフェレンスレイヤーが次の戦場であることを裏付けた。<a href="https://www.businesswire.com/news/home/20260622645563/en/Baseten-Raises-$1.5-Billion-to-Power-the-Next-Era-of-AI-Inference">Business Wire</a></p>
+<h3>Chatbot Arenaが年商100億円突破——AI評価ビジネスという新カテゴリ</h3>
+<p>UC Berkeley発のAIリーダーボードが商用開始8ヶ月で年換算収益$1億を達成。AIモデル性能の第三者評価を企業・ラボに売るモデルが独立した商業レイヤーに育ちつつある。<a href="https://techcrunch.com/2026/06/29/arena-the-ai-leaderboard-everyone-uses-is-now-a-100m-business/">TechCrunch</a></p>
+<h3>AnthropicがカリフォルニアとAI提供契約——州政府市場が本格始動</h3>
+<p>Anthropicが州政府向けにClaudeを半額提供する契約をNewsom知事と締結。連邦政府との対立を深めるAnthropicが州政府を新たなエンタープライズ開拓先にする構図が鮮明になった。行政DX×AIの商流が国内外で加速する予兆。<a href="https://techcrunch.com/2026/06/29/anthropic-and-gov-newsom-forge-deal-allowing-california-government-to-use-claude-at-half-price/">TechCrunch</a></p>
+<h3>Chamath、企業向けAIコーディング「8090 Labs」でSeries A 1.35億ドル</h3>
+<p>Salesforce Ventures主導で調達、Chamath自らCEO就任。製品「Software Factory」は本番コード生成に特化し監査証跡などエンタープライズ要件を備える。同社は「AIコーディングの年間ランニングコストが$1,000万超に膨らむ」とも警告しており、コスト最適化ニーズ自体がビジネス機会になっている。<a href="https://techcrunch.com/2026/06/29/chamath-palihapitiya-raises-135m-series-a-for-his-ai-coding-startup-takes-ceo-role/">TechCrunch</a></p>
+<h3>韓国メモリ大手2社が総額5,500億ドル超の投資を宣言——RAMageddon対応</h3>
+<p>Samsung・SKハイニックスがAI推論需要向けにHBMファブへ巨額投資を表明。AI業界共通のメモリ不足（RAMageddon）がハードウェアサプライチェーン全体を再編しつつある。<a href="https://techcrunch.com/2026/06/29/south-korean-tech-giants-commit-over-550b-to-ease-ramageddon/">TechCrunch</a></p>
+<h3>TIDALがAI生成音楽のマネタイズを遮断——クリエイター経済の分断が加速</h3>
+<p>AI生成楽曲への収益分配停止・アーティスト模倣作品の自動削除に踏み切った。AIコンテンツと人間クリエイターの収益配分ルール形成が音楽業界で先行しており、画像・動画・テキスト分野への波及は時間の問題。<a href="https://techcrunch.com/2026/06/29/tidal-cracks-down-on-ai-music-by-cutting-off-monetization/">TechCrunch</a></p>
+<h3>インディーハッカー2026——1人SaaSの収益上限が大幅に上昇</h3>
+<p>AIツール普及で1人開発者が$10K〜$200K MRRに到達する事例が急増。競争優位の源泉が「開発速度」から「ニッチの深さ」に移行しつつあり、縦型マイクロSaaS（月額980〜2,980円）がヒットパターンとして定着。<a href="https://monolit.sh/blog/why-indie-hackers-are-winning-against-funded-startups-2026">monolit.sh</a> / <a href="https://shiftb.dev/articles/indie-dev-success-stories">ShiftB</a></p>
+<h2 id="投資・資産運用">投資・資産運用</h2>
+<h3>日銀が政策金利1.0%へ引き上げ——31年ぶり高水準</h3>
+<p>6月15〜16日の決定会合で0.25%利上げを決定、政策金利1.0%は1995年以来最高水準。7:1の賛成多数で、次の利上げは12月がメインシナリオ（野村證券）。住宅ローン・社債への影響が波及する。<a href="https://www.dlri.co.jp/report/macro/623090.html">第一ライフ資産運用経済研究所</a></p>
+<h3>日経平均、四半期末は69,360円——6/26に2,566円安</h3>
+<p>6月23日に一時2,000円超の急落（AI・半導体株調整）があり、6月26日終値は69,360円（前週末比-2.65%）。6/29は+107円と反発。AI・半導体株調整が短期的な上値を押さえる構図が続く。<a href="https://diamond.jp/zai/articles/-/1069301">ダイヤモンドZAi</a></p>
+<h3>ビットコイン、60,000ドル割れ後の底固め局面</h3>
+<p>5月末の75,000ドル台から6月初旬に61,000ドル台まで急落（ETFからの資金流出・AI株へのシフト）。マイナーの15〜20%が生産コスト割れ状態で、860万円前後で推移。<a href="https://crypto-times.jp/news-btc-price-falls-below-production-cost/">CRYPTO TIMES</a></p>
+<h2 id="不動産テック">不動産テック</h2>
+<h3>GoogleがHouseCanary経由で物件広告を全米展開——MLSの囲い込みに楔</h3>
+<p>6月にHouseCanaryのComeHome.comデータを使った物件リスト広告を全50州に拡大。参加MLSの物件がモバイル検索に広告費ゼロで表示される。Zillow・Realtor.comに割り込む検索エンジンの動きで、日本の不動産ポータル市場への波及シナリオとして注視すべき。<a href="https://www.inman.com/2026/06/29/google-home-listing-ads-expanding-how-real-estate-agents-participate/">Inman</a></p>
+<h3>住所変更登記が2026年4月に義務化——違反で過料5万円</h3>
+<p>改正不動産登記法が4月1日施行。住所・氏名変更から2年以内の登記が義務化され、違反は5万円以下の過料。「スマート変更登記」（法務局職権・無料）との組み合わせ対応が急務で、登記自動化ツールの需要が急増中。<a href="https://www.moj.go.jp/MINJI/minji05_00693.html">法務省</a></p>
+<h3>区分所有法改正（2026年4月）——老朽マンション建替え決議要件を緩和</h3>
+<p>所在不明所有者を議決権母数から除外可能に。バリアフリー化等は4/5から3/4以上で可決できるよう緩和。高齢化・老朽化ストックの再生を後押しし、建替えコンサル・管理組合支援サービスに需要を生む可能性がある。<a href="https://sakk.jp/other/2026%E5%B9%B4%E3%81%AF%E3%80%8C%E4%B8%8D%E5%8B%95%E7%94%A3%E3%83%AB%E3%83%BC%E3%83%AB%E5%A4%A7%E8%BB%A2%E6%8F%9B%E3%80%8D%E3%81%AE%E5%B9%B4%E3%81%AB%E2%94%80%E2%94%80%E7%99%BB%E8%A8%98%E7%BE%A9/">株式会社SA</a></p>
+<h3>外国人不動産取得に国籍登記義務化——2026年度運用開始</h3>
+<p>不動産取得登記時に国籍情報の提供を義務化する運用が2026年度にスタート。安全保障上の懸念エリアを念頭に置いた規制強化で、海外向け不動産マーケットプレイスは取引プロセスへの追加確認フローが必要になる。<a href="https://www.nikkei.com/article/DGXZQOUA154LS0V11C25A2000000/">日本経済新聞</a></p>
+<h3>フロリダ州Live Local 4.0署名——ゾーニング規制を州が全面上書き</h3>
+<p>DeSantis知事が手頃な住宅供給促進のLive Local Act第4弾に署名、7月1日施行。地方自治体がゾーニングで手頃な住宅を実質的に拒否してきた抜け穴を閉鎖する。住宅供給不足都市での規制緩和→開発加速の立法モデルとして参考になる。<a href="https://www.housingwire.com/articles/desantis-live-local-4-official/">HousingWire</a></p>
+<h3>AI資産家層が高級不動産市場を塗り替えている——The Agency報告</h3>
+<p>AIスタートアップで富を築いた新興富裕層が高級物件市場（$1M〜$5M帯）の主要バイヤー層として台頭し、供給逼迫を引き起こしているとThe Agencyが分析。AI産業が生む富が直接的に不動産市況を変えている構図。<a href="https://www.housingwire.com/articles/ai-wealth-luxury-buyers/">HousingWire</a></p>
+<h3>米Q1：引越し検討層が過去最高の20%——Redfin調査</h3>
+<p>住宅探索者の20%が居住エリア外への移住を検討——同社調査史上最高水準。遠隔勤務定着と住宅コスト格差の固定化を示すデータで、エリア特化型バーティカルサービスの機会に直結。<a href="https://www.inman.com/2026/06/29/redfin-relocation-record-q1-2026/">Inman</a></p>
+<h2 id="seo・web動向">SEO・Web動向</h2>
+<h3>Google、AI Overview/AIモードのオプトアウト機能をSearch Consoleに追加</h3>
+<p>6月3日、英国CMAの法的拘束力ある指令を受け、GoogleはSearch ConsoleにAI Overview・AI Mode・Discover上のAI Overviewから自サイトを除外できるトグルを追加。除外しても通常検索結果には引き続き表示される。サイト運営者がAI検索への表示可否を初めて制御できるようになる転換点。<a href="https://9to5google.com/2026/06/02/google-ai-mode-overviews-opt-out/">9to5Google</a></p>
+<h3>Google、June 2026 Spam Updateを6月24〜26日に展開完了</h3>
+<p>AIスパム検知エンジンSpamBrainの強化が軸で、薄いコンテンツ・誘導リダイレクト・キーワードスタッフィングを標的に2日間で完了。影響を受けたサイトの回復には「数ヶ月単位」かかるとGoogleが明言している。<a href="https://searchengineland.com/google-releases-june-2026-spam-update-481002">Search Engine Land</a></p>
+<h3>AI ModeがGemini 3.5 Flash採用・月間10億ユーザー超え</h3>
+<p>Google I/O 2026以降の展開として、AI ModeのデフォルトモデルがGemini 3.5 Flashに更新され月間アクティブユーザーが10億人を突破。クエリ数は四半期ごとに2倍以上のペースで増加中で、AIモード経由「サイテーション最適化」がSEO実務での新たな焦点になりつつある。<a href="https://blog.google/products-and-platforms/products/search/search-io-2026/">Google Blog</a></p>
+<h2 id="市場ペイン・ユーザーの不満">市場ペイン・ユーザーの不満</h2>
+<h3>ローカルファースト・オフライン動作ツールの欠如</h3>
+<p>クラウド必須・サブスク前提のアプリに嫌気が差したユーザーが急増している。写真整理・レシピ管理・日記など「インターネット不要でハードドライブで完結したい」という需要が9,300件超のReddit調査で確認された。既存ソリューションはクラウド設計から抜け出せておらず、データ主権とサブスク疲れの両方を解消できていない。<a href="https://digitalbiztalk.com/article/what-9300-reddit-posts-reveal-about-app-gaps-in-2026">Digital Biz Talk</a></p>
+<h3>プライバシー重視版アプリへの未充足需要</h3>
+<p>月経追跡・家計管理・日記など「データを売らない・銀行口座を連携しない・E2E暗号化」という具体的なプライバシー要件を持つユーザーが、プレミアム価格を払っても良いと明言している。現在の主要アプリはデータ収集モデルから抜け出せておらず、明確な市場空白がある。<a href="https://digitalbiztalk.com/article/what-9300-reddit-posts-reveal-about-app-gaps-in-2026">Digital Biz Talk</a></p>
+<h3>Postman肥大化問題——軽量APIクライアントの不在</h3>
+<p>Postmanが機能過多・重量化したことへの不満がHNで繰り返し上がっている。Bruno・Yaak等の代替が登場しているものの「1つのことだけ完璧にやる」シンプルなAPIクライアントへの需要は解消されていない。<a href="https://news.ycombinator.com/item?id=46345827">Hacker News</a></p>
+<h3>コード呼び出しグラフのリアルタイム可視化ツール</h3>
+<p>「関数Aが何から呼ばれ何を呼ぶか」を別ウィンドウにリアルタイム表示する機能が22upvoteと最多共感。VSCode Peek定義では不十分で、Source Insight相当の体験をLinux・無料で得られるものが存在しない。AIコード生成が増えた2026年に読解負荷が増大している。<a href="https://news.ycombinator.com/item?id=46345827">Hacker News</a></p>
+<h3>App Store審査の恣意性と対応遅延</h3>
+<p>審査基準が不透明で対応に数日を要する問題が、個人・小規模開発者のリリースサイクルを直撃している。TestFlight・PWAはいずれも代替として不完全で、審査プロセス自体を透明化・自動化するツールへの需要がある。<a href="https://news.ycombinator.com/item?id=48337409">Hacker News</a></p>
+<hr>
+<h2 id="事業チャンス候補">事業チャンス候補</h2>
+<table>
+<thead>
+<tr>
+<th>タイトル</th>
+<th>根拠</th>
+<th>難易度</th>
+<th>移動済み</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>E2E暗号化プライバシーアプリ（月経/家計/日記）</td>
+<td>Reddit 9,300件の調査が需要を裏付け・プレミアム価格を払う意志あり</td>
+<td>中</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>マンション管理組合DXツール（建替え決議サポート）</td>
+<td>区分所有法改正（2026年4月）×登記義務化×AI</td>
+<td>中</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Agentic Browsing対応コンサル（llms.txt+構造化ナビ）</td>
+<td>Lighthouse新カテゴリ登場・AI Mode月間10億ユーザー超えで需要急拡大</td>
+<td>低</td>
+<td>[ ]</td>
+</tr>
+</tbody></table>
+</article> <!-- スティッキーTOC --> <aside id="toc" class="hidden lg:block w-[180px] shrink-0 sticky top-28 opacity-0"> <p class="font-mono text-[10px] uppercase tracking-widest text-[#bbb] mb-4">Contents</p> <nav> <a href="#技術・エンジニアリング" data-toc-id="技術・エンジニアリング" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 技術・エンジニアリング </a><a href="#セキュリティ・脆弱性" data-toc-id="セキュリティ・脆弱性" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> セキュリティ・脆弱性 </a><a href="#ビジネス・スタートアップ" data-toc-id="ビジネス・スタートアップ" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> ビジネス・スタートアップ </a><a href="#投資・資産運用" data-toc-id="投資・資産運用" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 投資・資産運用 </a><a href="#不動産テック" data-toc-id="不動産テック" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 不動産テック </a><a href="#seo・web動向" data-toc-id="seo・web動向" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> SEO・Web動向 </a><a href="#市場ペイン・ユーザーの不満" data-toc-id="市場ペイン・ユーザーの不満" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 市場ペイン・ユーザーの不満 </a><a href="#事業チャンス候補" data-toc-id="事業チャンス候補" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 事業チャンス候補 </a> </nav> </aside> </div> </div>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html> <script type="module" src="/digest/_astro/_date_.astro_astro_type_script_index_0_lang.DdWaqLcw.js"></script>

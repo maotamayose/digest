@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Daily intelligence digest"><title>2026-05-30 · digest</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/digest/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/digest/_astro/_date_.DRif9ewQ.css"></head> <body class="bg-white text-[#111] font-sans antialiased"> <!-- プログレスバー --> <div id="progress-bar" class="fixed top-0 left-0 right-0 h-[3px] z-50 origin-left scale-x-0" style="background: #7c3aed; box-shadow: 0 0 8px #7c3aed;"></div> <!-- フローティングナビ --> <header class="fixed top-5 left-1/2 -translate-x-1/2 z-40"> <nav class="flex items-center gap-1 px-4 py-2 bg-white/80 backdrop-blur-md border border-[#f0f0f0] rounded-full shadow-sm text-sm text-[#888]"> <a href="/digest/" class="font-mono text-xs px-3 py-1 hover:text-accent transition-colors">
+digest /
+</a> <span class="text-[#e0e0e0]">|</span> <a href="/digest/" class="px-3 py-1 hover:text-accent transition-colors">home</a> <a href="/digest/posts/" class="px-3 py-1 hover:text-accent transition-colors">posts</a> </nav> </header> <!-- コンテンツ --> <main class="pt-24 pb-20" style="view-transition-name: main-content">  <div class="max-w-[1100px] mx-auto px-6"> <div class="mb-10"> <a href="/digest/" class="font-mono text-xs text-[#888] hover:text-accent transition-colors">← home</a> </div> <div class="flex gap-16 items-start"> <!-- メインコンテンツ --> <article class="min-w-0 flex-1 prose-custom"><h1>2026-05-30 ダイジェスト</h1>
+<h2 id="技術・エンジニアリング">技術・エンジニアリング</h2>
+<h3>「MCP is dead」論、HNで議論沸騰（106pt）</h3>
+<p>MCPのツール定義がClaudeの200Kコンテキストの約10.5%を恒常的に食い、Linear1社で12,800トークン消費・呼び出しは3倍（初回9.4倍）遅いと実測。対案は「Skills」パターン——全ツール定義を先読みせず、CLIコマンドとAPIドキュメントをskillに埋め込み、呼ばれた時だけロードして直接実行する。前日のCloudflare portals（code mode）と同じ「MCPの常時ロードは重い」という構造批判の流れで、Anthropic Skills/Cloudflare両方向から既存MCP常時接続モデルが否定されつつある。個人開発のエージェント設計に直結する論点。<a href="https://www.quandri.io/engineering-blog/mcp-is-dead">HN/Quandri</a></p>
+<h3>SQLiteだけで耐久ワークフロー（HN 398pt）</h3>
+<p>前日のDBOS（Postgresで耐久ワークフロー）に続き、今度はSQLite単体で同等を実現する事例がHNトップ級に。外部キュー・専用ワークフローエンジンなしに、SQLiteのトランザクションとポーリングだけで失敗時再開可能な耐久実行を組む設計。「重量級基盤を持たず個人/小規模でエージェントの長時間タスクを永続化する」という需要が連日上位に来ており、業界が軽量ワークフロー基盤へ収束しつつある兆候。<a href="https://obeli.sk/blog/sqlite-is-all-you-need-for-durable-workflows/">HN/obeli.sk</a></p>
+<h3>Liquid AI、1BアクティブのオンデバイスMoEを公開（HN 160pt）</h3>
+<p>LFM2.5-8B-A1B＝総8B・アクティブ1BのMoEを38Tトークンで訓練。M5 Maxで253 tok/s、スマホで約30 tok/s、128Kコンテキストでツール呼び出しに最適化。クラウドAPIに頼らずエッジ/端末上でエージェントを回す路線が実用域に入りつつあり、API課金を避けたいindie開発のローカル推論オプションとして注目。前駆比でハルシネーション率も大幅低下。<a href="https://www.liquid.ai/blog/lfm2-5-8b-a1b">HN/Liquid AI</a></p>
+<h3>Bun、コア約100万行をZig→RustへAI主導で大移行</h3>
+<p>BunがコアランタイムをZigからRustへ移行。Claude Codeが1Mトークンのコンテキスト窓を使い2000ファイル超のPRを一括生成し「全域最適化」でアーキ一貫性を維持した、と。Miriチェック失敗やunsafe多用への批判で「Vibe Coding」論争が再燃。1Mコンテキスト×コーディングエージェントが、人間では現実的でなかった「全コードベース横断リファクタ」という新カテゴリの仕事を開きつつある実例。<a href="https://zenn.dev/you2h/articles/20260516-article-de8f72c7">Zenn</a></p>
+<h3>Claude Codeトークン節約が一大ジャンル化（Headroom等）</h3>
+<p>HNの「Headroom」（Macメニューバーアプリ、トークン約50%削減を謳い60 DAUで累計10.5Bトークン＝約$35k節約を主張）に加え、Zenn/Qiitaでも「31のトークン節約テクニック」「CLAUDE.md設計でトークン節約」「auto memoryが性能低下の原因」等が連日上位。Opus 4.8の上限緩和と引き換えに「同一プラン内でいかに使い倒すか」のコスト最適化が独立した需要・プロダクト領域になっている。個人開発の運用コスト管理に直結。<a href="https://extraheadroom.com/">HN/Headroom</a></p>
+<h3>Claudeスキル系OSS、中国発のコンテンツ生成系が突出</h3>
+<p>GitHub trendingで <code>op7418/guizang-social-card-skill</code>（★1180）が小红书カルーセル＋公式アカ表紙をHTML→PNGで量産するClaude/Codexスキルとして急伸。<code>withkynam/vibecode-pro-max-kit</code>（★509、12 agents/32 skills）も。スキルの主戦場が「コード補助」から「SNS/マーケ向けビジュアル量産」へ拡大しており、非エンジニア向けコンテンツ生成スキルが配布物として成立し始めている。SEO/不動産テックの自分の関心とも、コンテンツ量産の観点で接点あり。<a href="https://github.com/op7418/guizang-social-card-skill">GitHub</a></p>
+<h2 id="セキュリティ・脆弱性">セキュリティ・脆弱性</h2>
+<h3>Silent Ransom、偽IT担当として法律事務所に来訪しデータ窃取</h3>
+<p>FBIが警告。恐喝集団Silent Ransom Groupが法律事務所を標的に、電話やリモート支援を装うだけでなく偽IT担当として物理的に来訪・なりすまし、ソーシャルエンジニアリングでサーバ・DBへアクセスしてデータを窃取している。攻撃経路は人を欺くなりすまし（vishing・現地なりすまし）でアクセス権を奪う手口で、技術より「人」を突く点が新しい。非エンジニアにも刺さる「IT担当を名乗る人物」の脅威。<a href="https://www.darkreading.com/cyberattacks-data-breaches/ransomware-actors-steal-law-firm-data">Dark Reading</a></p>
+<h3>Megalodon、6時間で5,561リポジトリに悪性CI/CDを注入</h3>
+<p>捨てアカウントと偽の作者ID（build-bot, ci-bot等）を使い、6時間で5,718件の悪性コミットを5,561のGitHubリポジトリへ自動投入。CI/CDワークフローを改ざんし認証情報・開発者シークレットを窃取した。攻撃経路は偽作者を装ったPR/fork経由のリポジトリ汚染。GlassWormに続く「開発者環境を直接狙う」潮流の最新形で、自動化規模が桁違い。<a href="https://thehackernews.com/2026/05/megalodon-github-attack-targets-5561.html">The Hacker News</a></p>
+<h3>Charter Communications、490万件流出（ShinyHunters）</h3>
+<p>米通信大手Charterが4月初旬にハッキングされ、恐喝集団ShinyHuntersが490万アカウントの個人情報を窃取。HIBPが流出を確認した。ShinyHuntersは一連の大型恐喝キャンペーンの中核で、窃取資格情報やソーシャルエンジニアリングによるSaaS/CRM侵害を多用する。大手通信の顧客基盤が一気に流出した規模感が重要。<a href="https://www.bleepingcomputer.com/news/security/charter-communications-data-breach-affects-49-million-accounts/">Bleeping Computer</a></p>
+<h3>Microsoft、F5機器侵害からAD攻撃に発展した多段侵入を公開</h3>
+<p>旧版F5 BIG-IP機器の侵害を起点に、LinuxサーバやConfluenceへ侵入しActive Directory攻撃へ発展した実事例をMicrosoftが公開。境界機器（F5）の更新遅延が突破口となり、内部アプリを経てADまで到達した。境界機器と内部アプリの更新を後回しにすると一点突破で全社侵害に至る、という教訓が明確で社内共有向き。<a href="https://atmarkit.itmedia.co.jp/ait/articles/2605/26/news036.html">ITmedia</a></p>
+<h3>Marimo脆弱性で侵入後、攻撃者がLLMエージェントで後続行動を自動化</h3>
+<p>公開Marimo（Pythonノートブック基盤）のCVE-2026-39987で初期侵入した攻撃者が、侵害後の探索・横展開をLLMエージェントに実行させた実観測例。「攻撃者が侵入後にAIエージェントを実運用した」初期事例として象徴的で、防御側のブレークアウトタイム短縮（侵入から横展開まで平均30分）の現実を裏づける。<a href="https://thehackernews.com/2026/05/attackers-use-llm-agent-for-post.html">The Hacker News</a></p>
+<h3>ChatGPT共有リンクを悪用、偽OpenAI障害ページでマルウェア配布</h3>
+<p>攻撃者がChatGPTのコンテンツ共有機能を悪用し、偽のOpenAI障害ページを表示してChatGPTデスクトップアプリ偽装のマルウェアをDLさせる。攻撃経路は正規ドメインの共有リンク上に悪性ページをホストし、サービスの信頼を借りる手口。AIツール利用者を直接狙う事例で、当方の関心領域（AIツール周辺リスク）に直結。<a href="https://www.bleepingcomputer.com/news/security/chatgpt-share-links-abused-to-host-fake-outage-pages-to-deliver-malware/">Bleeping Computer</a></p>
+<h3>オランダ当局、1,700万台規模のボットネットを停止</h3>
+<p>オランダ当局が1,700万台規模の感染デバイス群から成るボットネットを停止し、地元プロバイダで200超のサーバを押収。あわせてEUへのロシア系サイバー攻撃・偽情報作戦のIT基盤を運用していた「弾よけホスティング」2社の共同経営者を逮捕した。攻撃経路は感染端末群を束ねたDDoS・中継インフラで、テイクダウンの大規模性が重要。<a href="https://www.bleepingcomputer.com/news/security/dutch-govt-disrupts-malware-botnet-with-17-million-infected-devices/">Bleeping Computer</a></p>
+<p>▶ その他: <a href="../security/2026-05-30.md">intel/security/2026-05-30.md</a></p>
+<h2 id="ビジネス・スタートアップ">ビジネス・スタートアップ</h2>
+<h3>Groq、Nvidia $20B「acqui-hire」直後に後継会社へ$650M調達</h3>
+<p>NvidiaがGroqの推論アクセラレータ技術と主要経営陣（CEO Jonathan Ross含む「Groqの主だった人材ほぼ全員」）を$20Bのライセンス契約で吸い上げた直後、残されたGroqのneocloud事業を$650Mで再資本化する動き。既存投資家のDisruptive/Infinitumが全額カバー可能で、後継ビークル「Groq2」でハードからAI推論クラウドへピボットする。実質「技術と人をNvidiaに売り、箱（クラウド事業）だけ残して再起動」という珍しい構造。<a href="https://techcrunch.com/2026/05/29/after-nvidias-20b-not-acqui-hire-ai-chip-startup-groq-reportedly-raising-650m/">TechCrunch</a></p>
+<h3>Glean、ARR$300Mへ——「AI予算削減」が最大の売り文句に</h3>
+<p>エンタープライズAI検索のGleanが15カ月で3倍成長しARR$300M到達（評価額$7.2B）。注目は売り方の転換で、コンテキストグラフでAIに必要情報を与えることで「トークン消費30%減」を訴求。CFOがAI支出に厳しくなる局面で「AIをそのまま社内システムに放つより安い」という逆張りのバリュープロップが効いている。AIコスト最適化が新カテゴリ化しつつある（技術セクションのトークン節約トレンドと同根）。<a href="https://techcrunch.com/2026/05/28/gleans-top-line-crosses-300m-as-ai-budget-cutting-becomes-its-major-selling-point/">TechCrunch</a></p>
+<h3>indie実体験：3プロダクト$28k/月——「人力SaaS」で需要検証してから自動化</h3>
+<p>Samuel Rondotが StoryShort.ai（動画自動生成・$20k）/ Artemis（LinkedIn自動化・$5k）/ Capacity.so（ノーコードAIサイト・$3k）の3本で月$28k。前史のMathPlanner（$30k）は実は「WordPress＋インドの作業者による人力自動化」で、まず需要を検証してから本物の自動化に投資した点が肝。差別化は広告でなくSEO/YouTube/AI検索最適化で日400クリック獲得。スタックはNext.js+Node+Mongoで反復速度優先。<a href="https://www.indiehackers.com/post/tech/learning-to-code-and-building-a-28k-mo-portfolio-of-saas-products-OA5p18fXtvHGxP9xTAwG">Indie Hackers</a></p>
+<h3>XCENA、$135M調達——「AIのボトルネックは計算でなくメモリ」に賭ける</h3>
+<p>韓国のチップスタートアップ（Samsung/SK Hynix出身者が2022年創業）がSeries Bで$135M調達、評価額$570M・累計$185M。DRAMの至近に計算機能を置く「computational memory controller（MX1）」で、推論時のCPU/GPU↔メモリ間の高コストな往復を削減する。Samsungファウンドリで2026年内量産、売上は2027年見込み。CXL×near-memory computeという構造変化のサイン。<a href="https://techcrunch.com/2026/05/29/xcena-secures-135m-at-570m-valuation-betting-on-memory-as-ais-real-bottleneck/">TechCrunch</a></p>
+<h3>コーダーが「AIなしで働くのを拒む」リスク／Cognition創業者の警鐘</h3>
+<p>開発者がAI前提でしか働かなくなる一方、研究者は「速くはなるが良いコードを生むとは限らず、将来の技術的負債になる」と警告。同日のCognition（Devin）創業者Scott Wuの「コーディングエージェントは人間を置換すべきでない」発言と対になる。Claude Code等を日常使いする立場として、生産性と品質のトレードオフを言語化した論点。<a href="https://techcrunch.com/2026/05/29/coders-are-refusing-to-work-without-ai-and-that-could-come-back-to-bite-them/">TechCrunch（拒むコーダー）</a> / <a href="https://techcrunch.com/2026/05/29/cognitions-scott-wu-says-ai-coding-agents-shouldnt-replace-humans/">TechCrunch（Scott Wu）</a></p>
+<h2 id="投資・資産運用">投資・資産運用</h2>
+<h3>日経平均、初の6万6000円台 1636円高で月間締め</h3>
+<p>5月29日（5月最終売買日）の日経平均は前日比1636円高の66,505.02円と大幅反発し、初めて6万6000円台に乗せた。ファーストリテイリングとソフトバンクGの2銘柄だけで約612円分を押し上げた構図。東証プライムの売買代金は16兆3127億円と初の16兆円台で、AI・半導体への資金集中が一極化している点が重要。<a href="https://kabutan.jp/news/marketnews/?b=n202605291132">株探</a> / <a href="https://www.nikkei.com/article/DGXZQOUB218IO0R20C26A5000000/">日経</a></p>
+<h3>村田製がストップ高、AI物色が「製造装置→電子部品」へ波及</h3>
+<p>村田製作所が5月29日に前日比1502円（18%）高の1万40円とストップ高。AIデータセンター向けMLCC（積層セラミックコンデンサ、世界シェア4割強）の特需思惑が買いを呼んだ。時価総額は4月末の10兆円から18兆円へ急伸。AI相場の物色対象が半導体製造装置から「電子部品」へ広がった転換点として重要。<a href="https://www.nikkei.com/article/DGXZQOUF250XY0V20C26A5000000/">日経</a></p>
+<h3>米3指数が5月を最高値で締め、Nasdaq月間+8%</h3>
+<p>5月29日の米株はS&amp;P500が+0.22%の7,580.06、Nasdaqが+0.2%の26,972.62、ダウが+0.72%の51,032.46といずれも最高値。イラン和平協議の進展観測とテック株高が牽引。月間ではNasdaq+8%超、S&amp;P500+5%、ダウ約+3%と「テック主導の上昇月」を確定させた。<a href="https://www.cnbc.com/2026/05/28/stock-market-today-live-updates.html">CNBC</a></p>
+<h3>日銀6月利上げ織り込み76%でも円安が剝落しない構造</h3>
+<p>市場の6月利上げ織り込みは5月27日時点で76%まで上昇したが、ドル円は159円台で高止まり。背景は(1)高市政権が「政府・日銀アコード」順守を強調し緩和志向＋3.1兆円の補正で財政拡張、(2)米4月CPIが3.8%でウォルシュ新FRB議長がインフレ重視、(3)中東リスクのドル買い。日米金利差が想定通り縮まらないリスクが重要。<a href="https://www.oanda.jp/lab-education/market_news/20260527_bessent_boj/">OANDA</a></p>
+<h3>長期金利の上昇継続、補正予算で10年債2.8%台へ</h3>
+<p>インフレ懸念と3.1兆円の補正予算を背景にJGB長期金利が連日上昇し、5月20日には10年債利回りが2.809%まで上昇。日銀の6月利上げが「なお不透明」とされる中での金利上昇で、財政拡張×金融政策の不整合が国債需給に直接効いている（既報「10年2.7%」からの続伸）。<a href="https://www.nikkei.com/article/DGXZQOFL1913NTZ10C26A5000000/">日経</a></p>
+<h2 id="地政学・国際情勢">地政学・国際情勢</h2>
+<h3>イラン核合意、枠組み接近も大統領が未署名で宙づり</h3>
+<p>米とイランは停戦を恒久的settlementへ転換する「暫定合意」に到達したが、トランプ大統領は提案に署名せず、ハメネイ師の承認も不透明。覚書はホルムズ海峡再開・イラン港湾封鎖解除・核協議60日間開始を含むが、高濃縮ウランの扱いと濃縮継続の可否が最大の係争点として残り、共和党内からも反発が出ている。エネルギー市場を左右するため、合意の最終形が世界の原油価格に直結する。<a href="https://www.bbc.com/news/articles/c0r2d40r91qo">BBC</a></p>
+<h3>ロシア製ドローンがルーマニア住宅街に着弾、NATO・EUが非難</h3>
+<p>ロシアのドローンがNATO加盟国ルーマニアの住宅ブロックに着弾し、NATOとEUが揃って非難した。ルーマニアは「ウクライナ上空で自国防空に撃たれ軌道が逸れた可能性が高い」と説明。意図的攻撃ではないとしても、戦闘の余波がNATO領内の民間居住区に物理的被害を及ぼした点が重大で、同盟の防空態勢と「巻き込まれ」リスクの議論を再燃させる。<a href="https://www.bbc.com/news/articles/c93x4nxlkjeo">BBC</a></p>
+<h3>ネタニヤフ、ガザ統制を70%へ拡大指示——停戦条件と矛盾</h3>
+<p>ネタニヤフ首相がIDFにガザの統制範囲を70%へ拡大するよう指示したと表明。これは2025年10月にイスラエルとハマスが合意した停戦条件に明確に反する。停戦の事実上の形骸化を意味し、人道状況の一段の悪化と、米イラン交渉を含む地域全体の緊張連鎖に波及する。<a href="https://www.bbc.com/news/articles/ceqpelq5reqo">BBC</a></p>
+<h3>ウクライナ、AIドローンでロシア補給車列を精密打撃</h3>
+<p>BBC Verifyの映像分析で、ウクライナが占領地域でロシア軍の弾薬・燃料・食料を運ぶ車列をAIドローンで攻撃していることが確認された。AIによる自律的な標的識別が補給線攻撃の精度を上げており、戦場でのドローン戦が「人間の操縦」から「AI支援の自律打撃」へ移行しつつある転換点を示す。<a href="https://www.bbc.com/news/articles/cdjp0n7rn41o">BBC</a></p>
+<h3>スペイン首相サンチェス、汚職スキャンダルで政権存続の瀬戸際</h3>
+<p>8年在任のサンチェス首相が、側近・親族をめぐる複数の汚職捜査により政権存続をかけた局面に。EU主要国の現職首脳の動揺は、欧州の政治的安定とEU内の政策協調（対ロ・対米通商等）に影響しうる。<a href="https://www.bbc.com/news/articles/c1w21gn340xo">BBC</a></p>
+<h2 id="不動産テック">不動産テック</h2>
+<h3>CoStar、新築住宅データ大手Zondaを$800Mで買収</h3>
+<p>CoStarがZonda（新築建設データ・ビルダー向けSaaS・新築マーケットプレイス）を現金$800Mで買収。Zondaは北米のビルダー・サプライヤー・レンダー3,000社超に供給する。CoStarは商用→住宅検索（Homes.com）と拡大してきたが、今回で約$1兆規模の米新築市場に直接参入し、データ・マーケットプレイス・ビルダーソフトの3層を握る「データ帝国」を完成させにいく動き。<a href="https://www.inman.com/2026/05/29/costar-acquire-zonda-800m/">Inman</a></p>
+<h3>Dream Finders、Beazer Homesに敵対的買収（$25.75/株）</h3>
+<p>Dream Finders Homesが同業Beazerへ現金$25.75/株の敵対的買収を公表。2月$28.50→3月$29が拒否され株主直接アプローチへ。提示額はBeazer簿価の約6割でしかなく取締役会は「著しい過小評価」と拒否。統合で全米7位ビルダーが誕生。金利高・マージン圧迫下で、スケールと土地戦略を巡る米住宅建設の業界再編が荒々しい次フェーズに入った象徴。<a href="https://www.housingwire.com/articles/dream-finders-beazer-hostile-takeover/">HousingWire</a></p>
+<h3>テネシーMLSもZillowフィードを6/1遮断</h3>
+<p>テネシー州MLS（Realtracs）がIDX表示違反を理由に6/1でZillow配信を停止、ブローカーは自前フィード構築へ。Zillow vs MLSの対立が州・MLS単位で連鎖拡大し、ポータル依存から自前配信へのシフトを後押しする構造変化。係争のMLS波及に対し著名ブローカーは「自分の市場に飛び火したら提訴する」と表明。<a href="https://www.housingwire.com/articles/tennessee-zillow-listings-realtracs/">HousingWire</a></p>
+<h3>Clariti、自治体の許認可遅延をAIで解消する「AI Studio」</h3>
+<p>許認可SaaSのClaritiが自治体向けAI Studioを開始。建設許認可の審査短縮を狙い、ホノルルで審査70%高速化と主張。許認可期限を定める「shot clock法」を多州が導入する中、住宅供給のボトルネックである許認可プロセスにAIが入り始めた事例。<a href="https://www.housingwire.com/articles/clariti-ai-permitting-studio/">HousingWire</a></p>
+<h3>高円寺アパートメントに単身者向け「テラス棟」新設</h3>
+<p>旧JR社宅をリノベした「交流が活発な名物賃貸」高円寺アパートメントに単身層中心の新築テラス棟が加わった。1階店舗・芝生広場・季節イベントで入居者交流を仕掛ける運営モデルで、「都会のシングルは近所付き合いしない」前提を覆し、コミュニティ価値を賃料外の差別化軸にする事例。<a href="https://suumo.jp/journal/2026/05/29/217143/">SUUMOジャーナル</a></p>
+<p>▶ その他: <a href="../real-estate/2026-05-30.md">intel/real-estate/2026-05-30.md</a></p>
+<h2 id="seo・web動向">SEO・Web動向</h2>
+<h3>SERPの「1位」が画面下へ、ピクセル基準の可視性研究</h3>
+<p>rank-tracking社のTom Capper氏の分析によると、デスクトップで自然検索1位の中央値はページ上端から約635px下に位置し、標準的な800pxビューポート内でも下方に沈む。モバイルでは約3分の2の確率で1位が初期表示に映らない。情報系SERPはAI Overviews単独で上部約3分の1（Knowledge Graph込みで41%）を占有し、商用SERPは広告＋ショッピングが60%超、自然検索は16%まで圧縮される。「順位」でなく「視覚的占有面積」でキーワードを優先すべきという示唆。<a href="https://www.searchenginejournal.com/updated-serps-new-study-measures-the-serp-in-pixels-not-ranks-recap/577359/">Search Engine Journal</a></p>
+<h3>Search ConsoleがFAQリッチリザルトを段階廃止</h3>
+<p>FAQリッチリザルトは5月7日に検索結果への表示を停止済み。続いて2026年6月にSearch Consoleの「FAQ検索アピアランス」フィルタ・リッチリザルトレポート・テストのサポートが削除され、8月にはSearch Console APIでのFAQデータ取得も停止する。FAQ構造化データ自体（FAQPage）はSchema.orgの有効型として残るが、SERP拡張効果はもう得られない。FAQ schemaを計測に組み込むサイトはAPI改修期限（8月）に注意。<a href="https://searchengineland.com/google-to-no-longer-support-faq-rich-results-476957">Search Engine Land</a></p>
+<h3>AI Overviewの出現率、商用クエリで激減</h3>
+<p>Seer Interactiveの2026年データでは、AI Overviewsの出現率は情報系36%に対し商用8%・取引系5%と差が大きく、EC検索に限ると当初の29%から4%まで低下。Googleが取引・購買導線では従来型の検索構造を意図的に温存している兆候とされる。一方でトップ10ページからのAI回答内引用率は76%→38%へ半減し、「1位表示＝AI回答に引用される」という前提が崩れた。商用ページはAIに引用されにくく自然検索の比重が相対的に保たれる構図。<a href="https://www.searchenginejournal.com/google-ai-overview-data-looks-different-for-commercial-queries/577350/">Search Engine Journal</a></p>
+<h3>AI Modeのデフォルトモデルが Gemini 3.5 Flash に</h3>
+<p>Google I/O 2026で、AI Modeのグローバル既定モデルが Gemini 3.5 Flash へ更新された（I/Oでの検索再設計は既報、本項はモデル世代交代の新情報）。AI Modeは月間10億ユーザー超、AI Overviewsは25億に到達。応答生成モデルの世代が上がることで、AI回答の引用選好や要約挙動が変化し得るため、引用獲得（GEO/LLMO）施策は再検証が必要になる。<a href="https://blog.google/products-and-platforms/products/search/search-io-2026/">Google Blog</a></p>
+<h3>YouTube、未開示のAI生成動画を自動検出・ラベル表示</h3>
+<p>YouTubeが、クリエイターが申告していない写実的なAI生成コンテンツを自システムで自動検出しラベルを付与する仕組みを展開開始。長尺は動画プレーヤー直下、Shortsは動画上のオーバーレイ表示で視認性が上がる。ラベルは推薦アルゴリズムや収益化資格に直接影響しないとされるが、視聴者がラベルを見て視聴時間を減らせばエンゲージメント信号経由で間接的にパフォーマンスへ波及し得る。<a href="https://www.searchenginejournal.com/youtube-now-auto-detects-ai-content-labels-it-for-viewers/576015/">Search Engine Journal</a></p>
+<h2 id="税務・法律・健康">税務・法律・健康</h2>
+<h3>インボイス2割特例が2026年9月末で終了、3割特例へ</h3>
+<p>免税事業者からの転換組が使えた「2割特例」が令和8年9月30日で終了し、令和8年度税制改正で代わりに「3割特例」が2年間（2026/10〜2028/9）創設された。ただし対象は<strong>個人事業主のみで法人は除外</strong>。同時に未登録事業者からの仕入税額控除も80%→70%へ引き下げられる。確定申告で消費税を払うフリーランスの納税額が実質増えるため、簡易課税への切替（届出期限2026/12/31）の検討が要る。<a href="https://www.yamada-partners.jp/tax-topics/r080126">山田&amp;パートナーズ</a></p>
+<h3>仕入税額控除の経過措置が2年延長、終了は2031年9月に後ろ倒し</h3>
+<p>当初は段階的にゼロへ向かう予定だった免税事業者からの仕入税額控除の経過措置が、80→70→50→30→0%の5段階に組み替えられ、完全終了が2031年9月まで延長された。さらに<strong>一の免税事業者からの仕入が年1億円超の部分は経過措置の対象外</strong>という上限が新設。発注側（個人事業主に外注する立場）の消費税負担見通しが変わるため、発注計画に影響する。<a href="https://sogyotecho.jp/inputtaxcredit-extension/">ソウギョウテチョウ</a></p>
+<h3>フリーランス新法、施行1年で勧告4件・指導441件</h3>
+<p>2024年11月施行のフリーランス新法について、公取委が施行から11カ月で勧告4件（小学館・島村楽器ほか）・指導441件・計445件の是正措置を公表。最多の違反は「取引条件の明示義務違反と報酬支払遅延」で、アニメ制作・ゲーム開発・出版・放送・フィットネスが目立つ。発注者として個人へ外注する際、契約書面の明示が実運用上の必須リスク対策になっている。<a href="https://www.corporate-legal.jp/news/6174">企業法務ナビ</a> / <a href="https://www.jftc.go.jp/fllaw_limited.html">公正取引委員会</a></p>
+<h3>睡眠は食事・運動より寿命の予測因子として強い（観察研究）</h3>
+<p>オレゴン健康科学大が米2019〜2025年の調査データを解析しSleep Advances誌に発表。7時間未満の睡眠不足は、食事・運動・社会的孤立よりも寿命との関連が強く、喫煙に次ぐ第2位だった。雇用状況や学歴で調整しても関連は維持。観察研究のため因果は断定できないが、生活習慣の優先順位として睡眠を上位に置く根拠になる。<a href="https://www.sciencealert.com/one-critical-factor-predicts-longevity-better-than-diet-or-exercise-study-finds">ScienceAlert</a></p>
+<h2 id="市場ペイン・ユーザーの不満">市場ペイン・ユーザーの不満</h2>
+<h3>小規模大家のメンテ忘れ・経費記録の散乱</h3>
+<p>10戸未満の個人大家が、HVAC点検・害虫駆除のリマインド忘れ、賃料/リース/修繕の管理を表計算で散発的にこなしている。エンタープライズ物件管理SaaSは過剰・高価で手が出ず、「基本機能だけの軽量ツール」が空白地帯。リマインダ＋経費ログという薄い機能で刺さる余地。<a href="https://medium.com/@e2larsen/50-saas-ideas-pulled-straight-from-reddit-pain-points-a64569371691">50 SaaS Ideas from Reddit Pain Points</a></p>
+<h3>営業担当が欲しいのは「次に誰へ電話するか」だけ</h3>
+<p>SaaS CRMは「マネージャーが見たい指標」を追うよう作られ、現場の営業が必要とする受信トレイ密着の次アクション提示が無い。ダッシュボードやチャートを削ぎ落とし、メール内に住まう・連絡先を自動補完し次の一手を促すだけのツールへの渇望。<a href="https://www.saasniche.com/blog/50-micro-saas-opportunities-from-reddit-in-2026">SaaSNiche: 50 Micro-SaaS from Reddit 2026</a></p>
+<h3>小規模会計事務所の手作業地獄（QuickBooks/Xero連携）</h3>
+<p>小規模会計事務所が、銀行勘定の照合・クライアントへの督促・定型レポート生成といった繰り返し作業を、会計ソフトが自動化しないまま手でこなしている。QuickBooks/Xero と繋いで定型ワークフローを自動化する薄いレイヤーに需要。「construction クライアント向けのWIPレポート自動化」のような具体ワークフローで検証済みと言及。<a href="https://www.saasniche.com/blog/50-micro-saas-opportunities-from-reddit-in-2026">SaaSNiche</a></p>
+<h3>現場系の見積アプリが「別の客の情報を誤送信」</h3>
+<p>配管/電気工事の職人が使う見積アプリで、別クライアントの個人情報を含むまま誤った宛先へ送ってしまう事故が起きている。安全に・数分で見積を切れるツールへの需要。MSP/IT現場でも「モバイルでクラッシュ・1チケット入力に数十クリック」という不満があり、オフライン対応のモバイル起票が空白。<a href="https://medium.com/@e2larsen/50-saas-ideas-pulled-straight-from-reddit-pain-points-a64569371691">50 SaaS Ideas from Reddit Pain Points</a></p>
+<h3>代理店のSOPがNotionで腐り、退職で知識が消える</h3>
+<p>代理店の業務手順書（SOP）がNotionに置かれるが陳腐化が速く、従業員が辞めると知識が失われる。20名超のインフルエンサー関係を管理するマーケチームも表計算をすぐ卒業するが、エンタープライズ管理ツールの費用は正当化できない——「表計算では足りないがエンタープライズは過剰」の中間層が一貫した狙い目。<a href="https://www.saasniche.com/blog/50-micro-saas-opportunities-from-reddit-in-2026">SaaSNiche</a></p>
+<hr>
+<h2 id="事業チャンス候補">事業チャンス候補</h2>
+<table>
+<thead>
+<tr>
+<th>タイトル</th>
+<th>根拠</th>
+<th>難易度</th>
+<th>移動済み</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>「表計算では足りないがエンタープライズは過剰」中間層向け軽量ツール</td>
+<td>pain全ニッチで反復するメタ・ペイン。小規模大家／営業現場／会計事務所／代理店SOPで共通。薄い機能（リマインダ＋ログ／次アクション提示）で刺さる</td>
+<td>中</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Claude Code等のトークン節約プロダクト</td>
+<td>Headroom（60DAUで$35k節約主張）＋Glean（トークン30%減を売り文句にARR$300M）。AIコスト最適化が独立カテゴリ化。CLAUDE.md設計・skill化のノウハウは自分の強み</td>
+<td>中</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>非エンジニア向けコンテンツ生成スキル配布</td>
+<td>GitHub trendingで中国発SNSカード量産スキルが★1180。スキルが「コード補助」から「マーケ向けビジュアル量産」へ拡大。SEO/不動産の自分の関心と接続可</td>
+<td>低</td>
+<td>[ ]</td>
+</tr>
+</tbody></table>
+</article> <!-- スティッキーTOC --> <aside id="toc" class="hidden lg:block w-[180px] shrink-0 sticky top-28 opacity-0"> <p class="font-mono text-[10px] uppercase tracking-widest text-[#bbb] mb-4">Contents</p> <nav> <a href="#技術・エンジニアリング" data-toc-id="技術・エンジニアリング" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 技術・エンジニアリング </a><a href="#セキュリティ・脆弱性" data-toc-id="セキュリティ・脆弱性" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> セキュリティ・脆弱性 </a><a href="#ビジネス・スタートアップ" data-toc-id="ビジネス・スタートアップ" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> ビジネス・スタートアップ </a><a href="#投資・資産運用" data-toc-id="投資・資産運用" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 投資・資産運用 </a><a href="#地政学・国際情勢" data-toc-id="地政学・国際情勢" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 地政学・国際情勢 </a><a href="#不動産テック" data-toc-id="不動産テック" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 不動産テック </a><a href="#seo・web動向" data-toc-id="seo・web動向" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> SEO・Web動向 </a><a href="#税務・法律・健康" data-toc-id="税務・法律・健康" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 税務・法律・健康 </a><a href="#市場ペイン・ユーザーの不満" data-toc-id="市場ペイン・ユーザーの不満" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 市場ペイン・ユーザーの不満 </a><a href="#事業チャンス候補" data-toc-id="事業チャンス候補" class="toc-link block text-xs text-[#999] py-1 hover:text-accent transition-colors leading-relaxed"> 事業チャンス候補 </a> </nav> </aside> </div> </div>  </main> <script type="module" src="/digest/_astro/Layout.astro_astro_type_script_index_0_lang.SN-FpIL3.js"></script></body></html> <script type="module" src="/digest/_astro/_date_.astro_astro_type_script_index_0_lang.DdWaqLcw.js"></script>
